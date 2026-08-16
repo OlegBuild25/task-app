@@ -11,7 +11,6 @@
 
   <title>Task</title>
 
-  <!-- Telegram Mini App -->
   <script src="https://telegram.org/js/telegram-web-app.js"></script>
 
   <style>
@@ -23,6 +22,7 @@
     body {
       margin: 0;
       background: #f4f6f8;
+
       font-family:
         -apple-system,
         BlinkMacSystemFont,
@@ -31,6 +31,12 @@
         sans-serif;
 
       color: #1c1c1e;
+    }
+
+    button,
+    select,
+    input {
+      font: inherit;
     }
 
     .container {
@@ -49,9 +55,9 @@
     }
 
 
-    /* =========================
-       ГЛАВНЫЙ ЭКРАН
-    ========================== */
+    /* ========================================
+       HEADER
+    ======================================== */
 
     .header {
       margin-bottom: 24px;
@@ -60,19 +66,29 @@
     .header-title {
       font-size: 30px;
       font-weight: 750;
+
       margin: 0 0 5px;
+
       letter-spacing: -0.7px;
     }
 
     .header-subtitle {
       margin: 0;
+
       font-size: 15px;
+
       color: #8e8e93;
     }
+
+
+    /* ========================================
+       ГЛАВНОЕ МЕНЮ
+    ======================================== */
 
     .menu {
       display: flex;
       flex-direction: column;
+
       gap: 10px;
     }
 
@@ -102,6 +118,7 @@
 
     .menu-button:active {
       transform: scale(0.98);
+
       background: #f7f7f8;
     }
 
@@ -153,8 +170,13 @@
       background: #ffeaf3;
     }
 
+    .teal {
+      background: #e5f8f6;
+    }
+
     .menu-text {
       flex: 1;
+
       text-align: left;
     }
 
@@ -187,15 +209,16 @@
     }
 
 
-    /* =========================
-       ОБЩИЕ ЭЛЕМЕНТЫ
-    ========================== */
+    /* ========================================
+       ОБЩИЕ ЭЛЕМЕНТЫ ЭКРАНОВ
+    ======================================== */
 
     .back-button {
       border: none;
       background: none;
 
       font-size: 17px;
+
       color: #2481cc;
 
       padding: 4px 0;
@@ -232,9 +255,9 @@
     }
 
 
-    /* =========================
-       КАРТОЧКА СОТРУДНИКА
-    ========================== */
+    /* ========================================
+       СОТРУДНИК
+    ======================================== */
 
     .employee-card {
       background: #ffffff;
@@ -298,9 +321,9 @@
     }
 
 
-    /* =========================
+    /* ========================================
        ВЫБОР ОБЪЕКТА
-    ========================== */
+    ======================================== */
 
     .object-list {
       display: flex;
@@ -348,14 +371,15 @@
       font-weight: bold;
     }
 
-    .object-button.selected .object-check {
+    .object-button.selected
+    .object-check {
       display: block;
     }
 
 
-    /* =========================
+    /* ========================================
        НАЧАЛ / ЗАКОНЧИЛ
-    ========================== */
+    ======================================== */
 
     .work-type-grid {
       display: grid;
@@ -409,9 +433,9 @@
     }
 
 
-    /* =========================
+    /* ========================================
        ВРЕМЯ
-    ========================== */
+    ======================================== */
 
     .time-card {
       background: #ffffff;
@@ -440,9 +464,9 @@
     }
 
 
-    /* =========================
+    /* ========================================
        ФОТО
-    ========================== */
+    ======================================== */
 
     .photo-box {
       min-height: 220px;
@@ -480,9 +504,9 @@
     }
 
 
-    /* =========================
+    /* ========================================
        КНОПКИ
-    ========================== */
+    ======================================== */
 
     .action-button {
       width: 100%;
@@ -517,36 +541,312 @@
     }
 
 
-    /* =========================
-       СТАТУС ОТПРАВКИ
-    ========================== */
+    /* ========================================
+       ТАБЕЛЬ
+    ======================================== */
 
-    .status-card {
-      display: none;
+    .filters-card {
+      background: #ffffff;
 
-      background: #e8f2ff;
+      border-radius: 20px;
 
-      border: 1px solid #bfdcff;
+      padding: 16px;
+
+      box-shadow:
+        0 2px 8px rgba(0, 0, 0, 0.04);
+
+      margin-bottom: 16px;
+    }
+
+    .filter-label {
+      display: block;
+
+      font-size: 12px;
+      font-weight: 600;
+
+      color: #8e8e93;
+
+      margin-bottom: 7px;
+    }
+
+    .month-input,
+    .employee-select {
+      width: 100%;
+
+      height: 48px;
+
+      border: 1px solid #e1e1e6;
+      border-radius: 13px;
+
+      background: #f7f7f8;
+
+      padding: 0 12px;
+
+      color: #1c1c1e;
+
+      outline: none;
+    }
+
+    .filter-group + .filter-group {
+      margin-top: 14px;
+    }
+
+    .summary-card {
+      background: #ffffff;
+
+      border-radius: 20px;
+
+      padding: 18px;
+
+      margin-bottom: 16px;
+
+      box-shadow:
+        0 2px 8px rgba(0, 0, 0, 0.04);
+    }
+
+    .summary-name {
+      font-size: 20px;
+      font-weight: 750;
+
+      margin-bottom: 4px;
+    }
+
+    .summary-rate {
+      font-size: 14px;
+
+      color: #8e8e93;
+
+      margin-bottom: 18px;
+    }
+
+    .summary-grid {
+      display: grid;
+
+      grid-template-columns:
+        repeat(2, 1fr);
+
+      gap: 10px;
+    }
+
+    .summary-item {
+      background: #f7f7f8;
+
+      border-radius: 15px;
+
+      padding: 13px;
+    }
+
+    .summary-label {
+      font-size: 12px;
+
+      color: #8e8e93;
+
+      margin-bottom: 5px;
+    }
+
+    .summary-value {
+      font-size: 20px;
+      font-weight: 750;
+    }
+
+    .salary-box {
+      margin-top: 12px;
+
+      background: #e9f8ef;
+
+      border-radius: 16px;
+
+      padding: 16px;
+    }
+
+    .salary-label {
+      font-size: 13px;
+
+      color: #4f7560;
+
+      margin-bottom: 4px;
+    }
+
+    .salary-value {
+      font-size: 27px;
+      font-weight: 800;
+
+      color: #157347;
+    }
+
+    .timesheet-list {
+      display: flex;
+      flex-direction: column;
+
+      gap: 10px;
+    }
+
+    .day-card {
+      background: #ffffff;
+
       border-radius: 18px;
 
       padding: 16px;
 
-      margin-top: 16px;
-
-      color: #1765a6;
-
-      font-size: 15px;
-      font-weight: 600;
-
-      text-align: center;
+      box-shadow:
+        0 2px 8px rgba(0, 0, 0, 0.04);
     }
 
-    .status-card.active {
-      display: block;
+    .day-top {
+      display: flex;
+
+      align-items: flex-start;
+      justify-content: space-between;
+
+      gap: 10px;
+
+      margin-bottom: 12px;
+    }
+
+    .day-date {
+      font-size: 17px;
+      font-weight: 750;
+    }
+
+    .day-employee {
+      margin-top: 3px;
+
+      font-size: 13px;
+
+      color: #8e8e93;
+    }
+
+    .day-status {
+      flex-shrink: 0;
+
+      border-radius: 50px;
+
+      padding: 6px 10px;
+
+      font-size: 12px;
+      font-weight: 700;
+    }
+
+    .status-full {
+      background: #e9f8ef;
+
+      color: #157347;
+    }
+
+    .status-half {
+      background: #fff7dc;
+
+      color: #936a00;
+    }
+
+    .status-review {
+      background: #ffe9e9;
+
+      color: #b42318;
+    }
+
+    .status-zero {
+      background: #eeeeF1;
+
+      color: #66666b;
+    }
+
+    .day-object {
+      font-size: 14px;
+
+      margin-bottom: 12px;
+
+      color: #48484a;
+    }
+
+    .day-times {
+      display: grid;
+
+      grid-template-columns:
+        1fr 1fr;
+
+      gap: 8px;
+
+      margin-bottom: 12px;
+    }
+
+    .time-mini-card {
+      background: #f7f7f8;
+
+      border-radius: 13px;
+
+      padding: 10px 12px;
+    }
+
+    .time-mini-label {
+      font-size: 11px;
+
+      color: #8e8e93;
+
+      margin-bottom: 4px;
+    }
+
+    .time-mini-value {
+      font-size: 16px;
+      font-weight: 700;
+    }
+
+    .day-bottom {
+      display: flex;
+
+      align-items: center;
+      justify-content: space-between;
+
+      gap: 10px;
+
+      border-top: 1px solid #f0f0f2;
+
+      padding-top: 12px;
+    }
+
+    .paid-days {
+      font-size: 14px;
+
+      color: #66666b;
+    }
+
+    .day-salary {
+      font-size: 17px;
+      font-weight: 750;
+    }
+
+
+    /* ========================================
+       LOADING / ERRORS
+    ======================================== */
+
+    .loading-card,
+    .empty-card,
+    .error-card {
+      background: #ffffff;
+
+      border-radius: 18px;
+
+      padding: 22px;
+
+      text-align: center;
+
+      color: #8e8e93;
+
+      margin-top: 16px;
+    }
+
+    .error-card {
+      background: #fff1f1;
+
+      color: #b42318;
+    }
+
+    .hidden {
+      display: none !important;
     }
 
   </style>
-
 </head>
 
 
@@ -555,9 +855,9 @@
 <div class="container">
 
 
-  <!-- =========================
+  <!-- ========================================
        ГЛАВНЫЙ ЭКРАН
-  ========================== -->
+  ========================================= -->
 
   <div
     id="mainScreen"
@@ -597,6 +897,36 @@
 
           <span class="menu-description">
             Начало и окончание работы
+          </span>
+
+        </div>
+
+        <div class="arrow">
+          ›
+        </div>
+
+      </button>
+
+
+      <!-- НОВЫЙ РАЗДЕЛ ТАБЕЛЬ -->
+
+      <button
+        class="menu-button"
+        onclick="openTimesheetScreen()"
+      >
+
+        <div class="icon teal">
+          📊
+        </div>
+
+        <div class="menu-text">
+
+          <span class="menu-title">
+            Табель
+          </span>
+
+          <span class="menu-description">
+            Рабочие дни и зарплата
           </span>
 
         </div>
@@ -889,19 +1219,18 @@
 
 
 
-  <!-- =========================
+  <!-- ========================================
        ФОТООТМЕТКА
-  ========================== -->
+  ========================================= -->
 
   <div
     id="photoScreen"
     class="screen"
   >
 
-
     <button
       class="back-button"
-      onclick="goBack()"
+      onclick="goToMain()"
     >
       ← Назад
     </button>
@@ -916,9 +1245,6 @@
       Отметка сотрудника о начале или окончании работы на объекте.
     </p>
 
-
-
-    <!-- СОТРУДНИК -->
 
     <div class="employee-card">
 
@@ -955,16 +1281,12 @@
     </div>
 
 
-
-    <!-- ОБЪЕКТ -->
-
     <div class="section-title">
       1. Выберите объект
     </div>
 
 
     <div class="object-list">
-
 
       <button
         class="object-button"
@@ -1013,12 +1335,8 @@
 
       </button>
 
-
     </div>
 
-
-
-    <!-- ТИП ОТМЕТКИ -->
 
     <div class="section-title">
       2. Выберите тип отметки
@@ -1026,7 +1344,6 @@
 
 
     <div class="work-type-grid">
-
 
       <button
         class="work-type-button start"
@@ -1059,12 +1376,8 @@
 
       </button>
 
-
     </div>
 
-
-
-    <!-- ВРЕМЯ -->
 
     <div class="time-card">
 
@@ -1081,9 +1394,6 @@
 
     </div>
 
-
-
-    <!-- ФОТО -->
 
     <div class="section-title">
       3. Сделайте фото
@@ -1126,16 +1436,126 @@
       ✓ Отправить отметку
     </button>
 
+  </div>
 
-    <div
-      id="statusCard"
-      class="status-card"
+
+
+  <!-- ========================================
+       ТАБЕЛЬ
+  ========================================= -->
+
+  <div
+    id="timesheetScreen"
+    class="screen"
+  >
+
+    <button
+      class="back-button"
+      onclick="goToMain()"
     >
-      Отправляем отметку...
+      ← Назад
+    </button>
+
+
+    <h2 class="page-title">
+      📊 Табель
+    </h2>
+
+
+    <p class="page-description">
+      Рабочие дни, отметки и начисленная заработная плата.
+    </p>
+
+
+    <div class="filters-card">
+
+
+      <div class="filter-group">
+
+        <label
+          class="filter-label"
+          for="timesheetMonth"
+        >
+          Месяц
+        </label>
+
+        <input
+          id="timesheetMonth"
+          class="month-input"
+          type="month"
+          onchange="loadTimesheet()"
+        >
+
+      </div>
+
+
+      <div
+        id="employeeFilterGroup"
+        class="filter-group hidden"
+      >
+
+        <label
+          class="filter-label"
+          for="timesheetEmployee"
+        >
+          Сотрудник
+        </label>
+
+        <select
+          id="timesheetEmployee"
+          class="employee-select"
+          onchange="renderTimesheet()"
+        >
+
+          <option value="all">
+            Все сотрудники
+          </option>
+
+        </select>
+
+      </div>
+
+
     </div>
 
 
+    <div
+      id="timesheetLoading"
+      class="loading-card"
+    >
+      Загружаем табель...
+    </div>
+
+
+    <div
+      id="timesheetError"
+      class="error-card hidden"
+    >
+    </div>
+
+
+    <div
+      id="summaryContainer"
+    >
+    </div>
+
+
+    <div
+      id="timesheetList"
+      class="timesheet-list"
+    >
+    </div>
+
+
+    <div
+      id="timesheetEmpty"
+      class="empty-card hidden"
+    >
+      За выбранный месяц отметок пока нет.
+    </div>
+
   </div>
+
 
 </div>
 
@@ -1143,9 +1563,9 @@
 
 <script>
 
-  /* =========================
+  /* ========================================
      TELEGRAM
-  ========================== */
+  ======================================== */
 
   const tg =
     window.Telegram &&
@@ -1163,10 +1583,13 @@
   }
 
 
+  const TIMESHEET_API =
+    "https://rvsqqbhxomiynourskgy.supabase.co/functions/v1/timesheet-api";
 
-  /* =========================
+
+  /* ========================================
      ПЕРЕМЕННЫЕ
-  ========================== */
+  ======================================== */
 
   let selectedObject = null;
 
@@ -1179,11 +1602,12 @@
   let telegramId = null;
 
 
+  let timesheetData = null;
 
-  /* =========================
-     ПОЛУЧАЕМ ПОЛЬЗОВАТЕЛЯ
-     ИЗ TELEGRAM
-  ========================== */
+
+  /* ========================================
+     TELEGRAM USER
+  ======================================== */
 
   if (
     tg &&
@@ -1204,7 +1628,9 @@
       "Сотрудник";
 
 
-    if (telegramUser.last_name) {
+    if (
+      telegramUser.last_name
+    ) {
 
       employeeName +=
         " " +
@@ -1215,10 +1641,9 @@
   }
 
 
-
-  /* =========================
+  /* ========================================
      ДАТА
-  ========================== */
+  ======================================== */
 
   function formatDate(date) {
 
@@ -1234,10 +1659,36 @@
   }
 
 
+  function formatShortDate(
+    dateText
+  ) {
 
-  /* =========================
+    if (!dateText) {
+      return "—";
+    }
+
+
+    const date =
+      new Date(
+        dateText +
+        "T00:00:00"
+      );
+
+
+    return date.toLocaleDateString(
+      "ru-RU",
+      {
+        day: "2-digit",
+        month: "long"
+      }
+    );
+
+  }
+
+
+  /* ========================================
      ВРЕМЯ
-  ========================== */
+  ======================================== */
 
   function formatTime(date) {
 
@@ -1279,10 +1730,56 @@
   }
 
 
+  function shortTime(
+    time
+  ) {
 
-  /* =========================
+    if (!time) {
+      return "—";
+    }
+
+
+    return String(time)
+      .substring(
+        0,
+        5
+      );
+
+  }
+
+
+  /* ========================================
+     ДЕНЬГИ
+  ======================================== */
+
+  function formatMoney(
+    value,
+    currency = "THB"
+  ) {
+
+    const number =
+      Number(value || 0);
+
+
+    return (
+      new Intl.NumberFormat(
+        "ru-RU",
+        {
+          maximumFractionDigits: 0
+        }
+      ).format(number)
+      +
+      " "
+      +
+      currency
+    );
+
+  }
+
+
+  /* ========================================
      ОБНОВЛЯЕМ ДАТУ И ВРЕМЯ
-  ========================== */
+  ======================================== */
 
   function updateDateAndTime() {
 
@@ -1325,21 +1822,57 @@
   updateDateAndTime();
 
 
+  /* ========================================
+     ПЕРЕКЛЮЧЕНИЕ ЭКРАНОВ
+  ======================================== */
 
-  /* =========================
-     ОТКРЫТЬ ФОТООТМЕТКУ
-  ========================== */
+  function hideAllScreens() {
 
-  function openPhotoScreen() {
+    document
+      .querySelectorAll(
+        ".screen"
+      )
+      .forEach(
+        function(screen) {
+
+          screen
+            .classList
+            .remove(
+              "active"
+            );
+
+        }
+      );
+
+  }
+
+
+  function goToMain() {
+
+    hideAllScreens();
+
 
     document
       .getElementById(
         "mainScreen"
       )
       .classList
-      .remove(
+      .add(
         "active"
       );
+
+
+    window.scrollTo(
+      0,
+      0
+    );
+
+  }
+
+
+  function openPhotoScreen() {
+
+    hideAllScreens();
 
 
     document
@@ -1363,31 +1896,57 @@
   }
 
 
+  function openTimesheetScreen() {
 
-  /* =========================
-     НАЗАД
-  ========================== */
-
-  function goBack() {
-
-    document
-      .getElementById(
-        "photoScreen"
-      )
-      .classList
-      .remove(
-        "active"
-      );
+    hideAllScreens();
 
 
     document
       .getElementById(
-        "mainScreen"
+        "timesheetScreen"
       )
       .classList
       .add(
         "active"
       );
+
+
+    if (
+      !document
+        .getElementById(
+          "timesheetMonth"
+        )
+        .value
+    ) {
+
+      const now =
+        new Date();
+
+
+      const year =
+        now.getFullYear();
+
+
+      const month =
+        String(
+          now.getMonth() + 1
+        ).padStart(
+          2,
+          "0"
+        );
+
+
+      document
+        .getElementById(
+          "timesheetMonth"
+        )
+        .value =
+        `${year}-${month}`;
+
+    }
+
+
+    loadTimesheet();
 
 
     window.scrollTo(
@@ -1398,10 +1957,9 @@
   }
 
 
-
-  /* =========================
+  /* ========================================
      ВЫБОР ОБЪЕКТА
-  ========================== */
+  ======================================== */
 
   function selectObject(
     button,
@@ -1441,10 +1999,9 @@
   }
 
 
-
-  /* =========================
-     ВЫБОР НАЧАЛ / ЗАКОНЧИЛ
-  ========================== */
+  /* ========================================
+     НАЧАЛ / ЗАКОНЧИЛ
+  ======================================== */
 
   function selectWorkType(
     button,
@@ -1484,18 +2041,12 @@
   }
 
 
-
-  /* =========================
-     МОЖНО ЛИ ДЕЛАТЬ ФОТО
-  ========================== */
-
   function checkPhotoAvailability() {
 
     const photoButton =
-      document
-        .getElementById(
-          "photoButton"
-        );
+      document.getElementById(
+        "photoButton"
+      );
 
 
     if (
@@ -1542,10 +2093,9 @@
   }
 
 
-
-  /* =========================
-     ОТКРЫТЬ КАМЕРУ
-  ========================== */
+  /* ========================================
+     ФОТО
+  ======================================== */
 
   function openCamera() {
 
@@ -1568,11 +2118,6 @@
   }
 
 
-
-  /* =========================
-     ПОКАЗАТЬ ФОТО
-  ========================== */
-
   function showPhoto(event) {
 
     const file =
@@ -1582,9 +2127,7 @@
 
 
     if (!file) {
-
       return;
-
     }
 
 
@@ -1610,10 +2153,9 @@
 
 
         const sendButton =
-          document
-            .getElementById(
-              "sendButton"
-            );
+          document.getElementById(
+            "sendButton"
+          );
 
 
         sendButton.disabled =
@@ -1636,11 +2178,9 @@
   }
 
 
-
-  /* =========================
-     ОТПРАВИТЬ ОТМЕТКУ
-     В TELEGRAM БОТА
-  ========================== */
+  /* ========================================
+     ОТПРАВКА ОТМЕТКИ В БОТА
+  ======================================== */
 
   function sendMark() {
 
@@ -1659,14 +2199,6 @@
       new Date();
 
 
-    const date =
-      formatDate(now);
-
-
-    const time =
-      formatTime(now);
-
-
     const markData = {
 
       employee:
@@ -1682,32 +2214,19 @@
         selectedWorkType,
 
       date:
-        date,
+        formatDate(now),
 
       time:
-        time
+        formatTime(now)
 
     };
 
 
     if (
       tg &&
-      typeof tg.sendData === "function"
+      typeof tg.sendData ===
+        "function"
     ) {
-
-      const statusCard =
-        document
-          .getElementById(
-            "statusCard"
-          );
-
-
-      statusCard
-        .classList
-        .add(
-          "active"
-        );
-
 
       tg.sendData(
         JSON.stringify(
@@ -1722,6 +2241,822 @@
       );
 
     }
+
+  }
+
+
+  /* ========================================
+     ЗАГРУЗКА ТАБЕЛЯ
+  ======================================== */
+
+  async function loadTimesheet() {
+
+    const loading =
+      document.getElementById(
+        "timesheetLoading"
+      );
+
+
+    const errorBox =
+      document.getElementById(
+        "timesheetError"
+      );
+
+
+    const empty =
+      document.getElementById(
+        "timesheetEmpty"
+      );
+
+
+    loading.classList.remove(
+      "hidden"
+    );
+
+
+    errorBox.classList.add(
+      "hidden"
+    );
+
+
+    empty.classList.add(
+      "hidden"
+    );
+
+
+    document
+      .getElementById(
+        "summaryContainer"
+      )
+      .innerHTML = "";
+
+
+    document
+      .getElementById(
+        "timesheetList"
+      )
+      .innerHTML = "";
+
+
+    if (
+      !tg ||
+      !tg.initData
+    ) {
+
+      loading.classList.add(
+        "hidden"
+      );
+
+
+      errorBox.innerText =
+        "Табель необходимо открывать внутри Telegram.";
+
+
+      errorBox.classList.remove(
+        "hidden"
+      );
+
+
+      return;
+
+    }
+
+
+    const month =
+      document
+        .getElementById(
+          "timesheetMonth"
+        )
+        .value;
+
+
+    try {
+
+      const response =
+        await fetch(
+          TIMESHEET_API,
+          {
+            method:
+              "POST",
+
+            headers: {
+              "Content-Type":
+                "application/json"
+            },
+
+            body:
+              JSON.stringify(
+                {
+                  initData:
+                    tg.initData,
+
+                  month:
+                    month
+                }
+              )
+          }
+        );
+
+
+      const data =
+        await response.json();
+
+
+      if (!response.ok) {
+
+        throw new Error(
+          data.error ||
+          "Не удалось загрузить табель"
+        );
+
+      }
+
+
+      timesheetData =
+        data;
+
+
+      setupEmployeeFilter();
+
+
+      renderTimesheet();
+
+
+      loading.classList.add(
+        "hidden"
+      );
+
+    } catch (error) {
+
+      console.error(
+        error
+      );
+
+
+      loading.classList.add(
+        "hidden"
+      );
+
+
+      errorBox.innerText =
+        "Ошибка загрузки табеля: "
+        +
+        error.message;
+
+
+      errorBox.classList.remove(
+        "hidden"
+      );
+
+    }
+
+  }
+
+
+  /* ========================================
+     ФИЛЬТР СОТРУДНИКОВ
+  ======================================== */
+
+  function setupEmployeeFilter() {
+
+    const group =
+      document.getElementById(
+        "employeeFilterGroup"
+      );
+
+
+    const select =
+      document.getElementById(
+        "timesheetEmployee"
+      );
+
+
+    if (
+      timesheetData.role !==
+      "admin"
+    ) {
+
+      group.classList.add(
+        "hidden"
+      );
+
+
+      return;
+
+    }
+
+
+    group.classList.remove(
+      "hidden"
+    );
+
+
+    const previousValue =
+      select.value;
+
+
+    select.innerHTML =
+      '<option value="all">Все сотрудники</option>';
+
+
+    (
+      timesheetData.employees ||
+      []
+    ).forEach(
+      function(employee) {
+
+        const option =
+          document.createElement(
+            "option"
+          );
+
+
+        option.value =
+          String(
+            employee.id
+          );
+
+
+        const fullName =
+          [
+            employee.first_name,
+            employee.last_name
+          ]
+          .filter(Boolean)
+          .join(" ");
+
+
+        option.textContent =
+          fullName;
+
+
+        select.appendChild(
+          option
+        );
+
+      }
+    );
+
+
+    const exists =
+      Array
+        .from(
+          select.options
+        )
+        .some(
+          option =>
+            option.value ===
+            previousValue
+        );
+
+
+    if (exists) {
+
+      select.value =
+        previousValue;
+
+    } else {
+
+      select.value =
+        "all";
+
+    }
+
+  }
+
+
+  /* ========================================
+     РЕНДЕР ТАБЕЛЯ
+  ======================================== */
+
+  function renderTimesheet() {
+
+    if (!timesheetData) {
+      return;
+    }
+
+
+    const select =
+      document.getElementById(
+        "timesheetEmployee"
+      );
+
+
+    const selectedEmployee =
+      timesheetData.role ===
+      "admin"
+        ? select.value
+        : String(
+            timesheetData
+              .current_user
+              .id
+          );
+
+
+    let daily =
+      timesheetData
+        .daily_timesheet ||
+      [];
+
+
+    let summaries =
+      timesheetData
+        .monthly_summary ||
+      [];
+
+
+    if (
+      selectedEmployee !==
+      "all"
+    ) {
+
+      daily =
+        daily.filter(
+          row =>
+            String(
+              row.employee_id
+            ) ===
+            selectedEmployee
+        );
+
+
+      summaries =
+        summaries.filter(
+          row =>
+            String(
+              row.employee_id
+            ) ===
+            selectedEmployee
+        );
+
+    }
+
+
+    renderSummary(
+      summaries,
+      selectedEmployee
+    );
+
+
+    renderDays(
+      daily
+    );
+
+  }
+
+
+  /* ========================================
+     ИТОГ МЕСЯЦА
+  ======================================== */
+
+  function renderSummary(
+    summaries,
+    selectedEmployee
+  ) {
+
+    const container =
+      document.getElementById(
+        "summaryContainer"
+      );
+
+
+    container.innerHTML = "";
+
+
+    if (
+      selectedEmployee ===
+      "all"
+    ) {
+
+      summaries.forEach(
+        function(summary) {
+
+          container.innerHTML +=
+            createSummaryCard(
+              summary
+            );
+
+        }
+      );
+
+
+      return;
+
+    }
+
+
+    if (
+      summaries.length === 0
+    ) {
+
+      return;
+
+    }
+
+
+    container.innerHTML =
+      createSummaryCard(
+        summaries[0]
+      );
+
+  }
+
+
+  function createSummaryCard(
+    summary
+  ) {
+
+    const name =
+      summary.employee_name ||
+      [
+        summary.first_name,
+        summary.last_name
+      ]
+      .filter(Boolean)
+      .join(" ");
+
+
+    const currency =
+      summary.currency ||
+      "THB";
+
+
+    return `
+      <div class="summary-card">
+
+        <div class="summary-name">
+          ${escapeHtml(name)}
+        </div>
+
+        <div class="summary-rate">
+          Дневная ставка:
+          ${formatMoney(
+            summary.daily_rate,
+            currency
+          )}
+        </div>
+
+        <div class="summary-grid">
+
+          <div class="summary-item">
+            <div class="summary-label">
+              Полных дней
+            </div>
+
+            <div class="summary-value">
+              ${summary.full_days || 0}
+            </div>
+          </div>
+
+
+          <div class="summary-item">
+            <div class="summary-label">
+              Половин дня
+            </div>
+
+            <div class="summary-value">
+              ${summary.half_days || 0}
+            </div>
+          </div>
+
+
+          <div class="summary-item">
+            <div class="summary-label">
+              Оплачиваемых дней
+            </div>
+
+            <div class="summary-value">
+              ${Number(
+                summary.total_paid_days || 0
+              )}
+            </div>
+          </div>
+
+
+          <div class="summary-item">
+            <div class="summary-label">
+              Требуют проверки
+            </div>
+
+            <div class="summary-value">
+              ${summary.review_days || 0}
+            </div>
+          </div>
+
+        </div>
+
+
+        <div class="salary-box">
+
+          <div class="salary-label">
+            Начислено за месяц
+          </div>
+
+          <div class="salary-value">
+            ${formatMoney(
+              summary.total_salary,
+              currency
+            )}
+          </div>
+
+        </div>
+
+      </div>
+    `;
+
+  }
+
+
+  /* ========================================
+     ДНИ
+  ======================================== */
+
+  function renderDays(
+    daily
+  ) {
+
+    const list =
+      document.getElementById(
+        "timesheetList"
+      );
+
+
+    const empty =
+      document.getElementById(
+        "timesheetEmpty"
+      );
+
+
+    list.innerHTML = "";
+
+
+    if (
+      daily.length === 0
+    ) {
+
+      empty.classList.remove(
+        "hidden"
+      );
+
+
+      return;
+
+    }
+
+
+    empty.classList.add(
+      "hidden"
+    );
+
+
+    daily
+      .slice()
+      .sort(
+        (a, b) =>
+          new Date(
+            b.work_date
+          )
+          -
+          new Date(
+            a.work_date
+          )
+      )
+      .forEach(
+        function(day) {
+
+          const status =
+            getStatusStyle(
+              day.day_status
+            );
+
+
+          const name =
+            day.employee_name ||
+            [
+              day.first_name,
+              day.last_name
+            ]
+            .filter(Boolean)
+            .join(" ");
+
+
+          const currency =
+            day.currency ||
+            "THB";
+
+
+          const card =
+            document.createElement(
+              "div"
+            );
+
+
+          card.className =
+            "day-card";
+
+
+          card.innerHTML = `
+
+            <div class="day-top">
+
+              <div>
+
+                <div class="day-date">
+                  ${formatShortDate(
+                    day.work_date
+                  )}
+                </div>
+
+                <div class="day-employee">
+                  ${escapeHtml(name)}
+                </div>
+
+              </div>
+
+
+              <div
+                class="day-status ${status.className}"
+              >
+                ${escapeHtml(
+                  status.text
+                )}
+              </div>
+
+            </div>
+
+
+            <div class="day-object">
+              🏗️
+              ${
+                day.objects
+                  ? escapeHtml(
+                      day.objects
+                    )
+                  : "Объект не указан"
+              }
+            </div>
+
+
+            <div class="day-times">
+
+              <div class="time-mini-card">
+
+                <div class="time-mini-label">
+                  Начало
+                </div>
+
+                <div class="time-mini-value">
+                  ${shortTime(
+                    day.start_time
+                  )}
+                </div>
+
+              </div>
+
+
+              <div class="time-mini-card">
+
+                <div class="time-mini-label">
+                  Окончание
+                </div>
+
+                <div class="time-mini-value">
+                  ${shortTime(
+                    day.finish_time
+                  )}
+                </div>
+
+              </div>
+
+            </div>
+
+
+            <div class="day-bottom">
+
+              <div class="paid-days">
+                Зачтено:
+                ${Number(
+                  day.paid_days || 0
+                )}
+                дня
+              </div>
+
+              <div class="day-salary">
+                ${formatMoney(
+                  day.day_salary,
+                  currency
+                )}
+              </div>
+
+            </div>
+
+          `;
+
+
+          list.appendChild(
+            card
+          );
+
+        }
+      );
+
+  }
+
+
+  function getStatusStyle(
+    status
+  ) {
+
+    if (
+      status ===
+      "Полный день"
+    ) {
+
+      return {
+        className:
+          "status-full",
+
+        text:
+          "1 день"
+      };
+
+    }
+
+
+    if (
+      status ===
+      "Половина дня"
+    ) {
+
+      return {
+        className:
+          "status-half",
+
+        text:
+          "0,5 дня"
+      };
+
+    }
+
+
+    if (
+      status ===
+      "Требует проверки"
+    ) {
+
+      return {
+        className:
+          "status-review",
+
+        text:
+          "Проверить"
+      };
+
+    }
+
+
+    return {
+      className:
+        "status-zero",
+
+      text:
+        status || "Нет данных"
+    };
+
+  }
+
+
+  /* ========================================
+     HTML SECURITY
+  ======================================== */
+
+  function escapeHtml(
+    value
+  ) {
+
+    return String(
+      value ?? ""
+    )
+    .replaceAll(
+      "&",
+      "&amp;"
+    )
+    .replaceAll(
+      "<",
+      "&lt;"
+    )
+    .replaceAll(
+      ">",
+      "&gt;"
+    )
+    .replaceAll(
+      '"',
+      "&quot;"
+    )
+    .replaceAll(
+      "'",
+      "&#039;"
+    );
 
   }
 
