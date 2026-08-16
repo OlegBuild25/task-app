@@ -1,14 +1,21 @@
 <!DOCTYPE html>
 <html lang="ru">
+
 <head>
   <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <meta
+    name="viewport"
+    content="width=device-width, initial-scale=1.0"
+  >
 
   <title>Task</title>
 
-  <script src="https://telegram.org/js/telegram-web-app.js?63"></script>
+  <!-- Telegram Mini App -->
+  <script src="https://telegram.org/js/telegram-web-app.js"></script>
 
   <style>
+
     * {
       box-sizing: border-box;
     }
@@ -16,7 +23,13 @@
     body {
       margin: 0;
       background: #f4f6f8;
-      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Arial, sans-serif;
+      font-family:
+        -apple-system,
+        BlinkMacSystemFont,
+        "Segoe UI",
+        Arial,
+        sans-serif;
+
       color: #1c1c1e;
     }
 
@@ -34,6 +47,11 @@
     .screen.active {
       display: block;
     }
+
+
+    /* =========================
+       ГЛАВНЫЙ ЭКРАН
+    ========================== */
 
     .header {
       margin-bottom: 24px;
@@ -61,15 +79,25 @@
     .menu-button {
       width: 100%;
       min-height: 72px;
+
       display: flex;
       align-items: center;
+
       border: none;
       border-radius: 18px;
+
       background: #ffffff;
+
       padding: 11px 14px;
-      box-shadow: 0 2px 8px rgba(0,0,0,0.04);
+
+      box-shadow:
+        0 2px 8px rgba(0, 0, 0, 0.04);
+
       cursor: pointer;
-      transition: 0.12s ease;
+
+      transition:
+        transform 0.12s ease,
+        background 0.12s ease;
     }
 
     .menu-button:active {
@@ -81,22 +109,49 @@
       width: 48px;
       height: 48px;
       min-width: 48px;
+
       display: flex;
       align-items: center;
       justify-content: center;
+
       border-radius: 14px;
+
       font-size: 24px;
+
       margin-right: 14px;
     }
 
-    .blue { background: #e8f2ff; }
-    .green { background: #e9f8ef; }
-    .yellow { background: #fff7dc; }
-    .orange { background: #fff0e5; }
-    .purple { background: #f2eaff; }
-    .red { background: #ffe9e9; }
-    .gray { background: #eeeeF1; }
-    .pink { background: #ffeaf3; }
+    .blue {
+      background: #e8f2ff;
+    }
+
+    .green {
+      background: #e9f8ef;
+    }
+
+    .yellow {
+      background: #fff7dc;
+    }
+
+    .orange {
+      background: #fff0e5;
+    }
+
+    .purple {
+      background: #f2eaff;
+    }
+
+    .red {
+      background: #ffe9e9;
+    }
+
+    .gray {
+      background: #eeeeF1;
+    }
+
+    .pink {
+      background: #ffeaf3;
+    }
 
     .menu-text {
       flex: 1;
@@ -105,65 +160,99 @@
 
     .menu-title {
       display: block;
+
       font-size: 17px;
       font-weight: 600;
+
       color: #202124;
+
       margin-bottom: 3px;
     }
 
     .menu-description {
       display: block;
+
       font-size: 13px;
+
       color: #9a9aa0;
     }
 
     .arrow {
       font-size: 29px;
+      font-weight: 300;
+
       color: #c7c7cc;
+
       padding-left: 8px;
     }
+
+
+    /* =========================
+       ОБЩИЕ ЭЛЕМЕНТЫ
+    ========================== */
 
     .back-button {
       border: none;
       background: none;
+
       font-size: 17px;
       color: #2481cc;
+
       padding: 4px 0;
+
       margin-bottom: 20px;
+
       cursor: pointer;
     }
 
     .page-title {
       font-size: 28px;
       font-weight: 750;
+
       margin: 0 0 8px;
     }
 
     .page-description {
       color: #8e8e93;
+
       font-size: 15px;
+
       margin: 0 0 20px;
+
       line-height: 1.4;
     }
 
     .section-title {
       font-size: 15px;
       font-weight: 700;
+
       color: #5d5d62;
+
       margin: 22px 0 10px;
     }
 
+
+    /* =========================
+       КАРТОЧКА СОТРУДНИКА
+    ========================== */
+
     .employee-card {
       background: #ffffff;
+
       border-radius: 18px;
+
       padding: 16px;
+
       margin-bottom: 18px;
-      box-shadow: 0 2px 8px rgba(0,0,0,0.04);
+
+      box-shadow:
+        0 2px 8px rgba(0, 0, 0, 0.04);
     }
 
     .employee-row {
       display: flex;
       align-items: center;
+
       gap: 12px;
     }
 
@@ -171,11 +260,15 @@
       width: 48px;
       height: 48px;
       min-width: 48px;
+
       border-radius: 50%;
+
       background: #e8f2ff;
+
       display: flex;
       align-items: center;
       justify-content: center;
+
       font-size: 24px;
     }
 
@@ -185,7 +278,9 @@
 
     .employee-label {
       font-size: 12px;
+
       color: #8e8e93;
+
       margin-bottom: 3px;
     }
 
@@ -196,40 +291,59 @@
 
     .employee-date {
       font-size: 14px;
+
       color: #8e8e93;
+
       margin-top: 4px;
     }
+
+
+    /* =========================
+       ВЫБОР ОБЪЕКТА
+    ========================== */
 
     .object-list {
       display: flex;
       flex-direction: column;
+
       gap: 10px;
     }
 
     .object-button {
       width: 100%;
       min-height: 64px;
+
       display: flex;
       align-items: center;
       justify-content: space-between;
+
       background: #ffffff;
+
       border: 2px solid transparent;
       border-radius: 16px;
+
       padding: 0 18px;
+
       font-size: 17px;
       font-weight: 600;
+
       cursor: pointer;
-      box-shadow: 0 2px 8px rgba(0,0,0,0.04);
+
+      box-shadow:
+        0 2px 8px rgba(0, 0, 0, 0.04);
     }
 
     .object-button.selected {
       border-color: #2481cc;
+
       background: #eef7ff;
     }
 
     .object-check {
       display: none;
+
       color: #2481cc;
+
       font-size: 22px;
       font-weight: bold;
     }
@@ -238,55 +352,85 @@
       display: block;
     }
 
+
+    /* =========================
+       НАЧАЛ / ЗАКОНЧИЛ
+    ========================== */
+
     .work-type-grid {
       display: grid;
+
       grid-template-columns: 1fr 1fr;
+
       gap: 10px;
     }
 
     .work-type-button {
-      min-height: 100px;
+      min-height: 105px;
+
       border: 2px solid transparent;
       border-radius: 18px;
+
       background: #ffffff;
+
       padding: 16px 10px;
+
       cursor: pointer;
-      box-shadow: 0 2px 8px rgba(0,0,0,0.04);
+
+      box-shadow:
+        0 2px 8px rgba(0, 0, 0, 0.04);
     }
 
     .work-icon {
       display: block;
+
       font-size: 28px;
+
       margin-bottom: 8px;
     }
 
     .work-title {
       display: block;
+
       font-size: 16px;
       font-weight: 700;
     }
 
     .work-type-button.start.selected {
       border-color: #30a46c;
+
       background: #edfaf3;
     }
 
     .work-type-button.finish.selected {
       border-color: #e05d5d;
+
       background: #fff1f1;
     }
 
+
+    /* =========================
+       ВРЕМЯ
+    ========================== */
+
     .time-card {
       background: #ffffff;
+
       border-radius: 18px;
+
       padding: 16px;
+
       margin-top: 18px;
-      box-shadow: 0 2px 8px rgba(0,0,0,0.04);
+
+      box-shadow:
+        0 2px 8px rgba(0, 0, 0, 0.04);
     }
 
     .time-label {
       font-size: 13px;
+
       color: #8e8e93;
+
       margin-bottom: 5px;
     }
 
@@ -295,24 +439,39 @@
       font-weight: 750;
     }
 
+
+    /* =========================
+       ФОТО
+    ========================== */
+
     .photo-box {
       min-height: 220px;
+
       background: #ffffff;
+
       border: 2px dashed #d1d1d6;
       border-radius: 20px;
+
       display: flex;
       justify-content: center;
       align-items: center;
+
       text-align: center;
+
       color: #8e8e93;
+
       padding: 20px;
+
       margin: 10px 0 14px;
     }
 
     .photo-box img {
       width: 100%;
-      max-height: 450px;
+
+      max-height: 500px;
+
       object-fit: contain;
+
       border-radius: 16px;
     }
 
@@ -320,15 +479,26 @@
       display: none;
     }
 
+
+    /* =========================
+       КНОПКИ
+    ========================== */
+
     .action-button {
       width: 100%;
+
       border: none;
       border-radius: 16px;
+
       padding: 17px;
+
       color: white;
+
       font-size: 17px;
       font-weight: 650;
+
       cursor: pointer;
+
       margin-bottom: 10px;
     }
 
@@ -342,170 +512,411 @@
 
     .disabled-button {
       opacity: 0.4;
+
       cursor: default;
     }
 
-    .success-card {
+
+    /* =========================
+       СТАТУС ОТПРАВКИ
+    ========================== */
+
+    .status-card {
       display: none;
-      background: #edfaf3;
-      border: 1px solid #bfe8d0;
+
+      background: #e8f2ff;
+
+      border: 1px solid #bfdcff;
       border-radius: 18px;
-      padding: 18px;
-      margin-top: 18px;
+
+      padding: 16px;
+
+      margin-top: 16px;
+
+      color: #1765a6;
+
+      font-size: 15px;
+      font-weight: 600;
+
+      text-align: center;
     }
 
-    .success-card.active {
+    .status-card.active {
       display: block;
     }
 
-    .success-title {
-      font-size: 18px;
-      font-weight: 750;
-      margin-bottom: 10px;
-      color: #157347;
-    }
-
-    .success-line {
-      font-size: 15px;
-      margin: 5px 0;
-    }
   </style>
+
 </head>
+
 
 <body>
 
 <div class="container">
 
-  <div id="mainScreen" class="screen active">
+
+  <!-- =========================
+       ГЛАВНЫЙ ЭКРАН
+  ========================== -->
+
+  <div
+    id="mainScreen"
+    class="screen active"
+  >
 
     <div class="header">
-      <h1 class="header-title">Task</h1>
-      <p class="header-subtitle">Рабочая панель</p>
+
+      <h1 class="header-title">
+        Task
+      </h1>
+
+      <p class="header-subtitle">
+        Рабочая панель
+      </p>
+
     </div>
+
 
     <div class="menu">
 
-      <button class="menu-button" onclick="openPhotoScreen()">
-        <div class="icon blue">📸</div>
-        <div class="menu-text">
-          <span class="menu-title">Фотоотметка</span>
-          <span class="menu-description">Начало и окончание работы</span>
+
+      <button
+        class="menu-button"
+        onclick="openPhotoScreen()"
+      >
+
+        <div class="icon blue">
+          📸
         </div>
-        <div class="arrow">›</div>
+
+        <div class="menu-text">
+
+          <span class="menu-title">
+            Фотоотметка
+          </span>
+
+          <span class="menu-description">
+            Начало и окончание работы
+          </span>
+
+        </div>
+
+        <div class="arrow">
+          ›
+        </div>
+
       </button>
 
-      <button class="menu-button">
-        <div class="icon green">⚙️</div>
-        <div class="menu-text">
-          <span class="menu-title">Рабочий процесс</span>
-          <span class="menu-description">Задачи и статус работ</span>
-        </div>
-        <div class="arrow">›</div>
-      </button>
 
       <button class="menu-button">
-        <div class="icon yellow">💡</div>
-        <div class="menu-text">
-          <span class="menu-title">База знаний</span>
-          <span class="menu-description">Инструкции и материалы</span>
+
+        <div class="icon green">
+          ⚙️
         </div>
-        <div class="arrow">›</div>
+
+        <div class="menu-text">
+
+          <span class="menu-title">
+            Рабочий процесс
+          </span>
+
+          <span class="menu-description">
+            Задачи и статус работ
+          </span>
+
+        </div>
+
+        <div class="arrow">
+          ›
+        </div>
+
       </button>
 
-      <button class="menu-button">
-        <div class="icon blue">⚡</div>
-        <div class="menu-text">
-          <span class="menu-title">Быстрый отчёт</span>
-          <span class="menu-description">Быстро сообщить о работе</span>
-        </div>
-        <div class="arrow">›</div>
-      </button>
 
       <button class="menu-button">
-        <div class="icon purple">📝</div>
-        <div class="menu-text">
-          <span class="menu-title">Дневной отчёт</span>
-          <span class="menu-description">Итоги рабочего дня</span>
+
+        <div class="icon yellow">
+          💡
         </div>
-        <div class="arrow">›</div>
+
+        <div class="menu-text">
+
+          <span class="menu-title">
+            База знаний
+          </span>
+
+          <span class="menu-description">
+            Инструкции и материалы
+          </span>
+
+        </div>
+
+        <div class="arrow">
+          ›
+        </div>
+
       </button>
 
-      <button class="menu-button">
-        <div class="icon orange">🧾</div>
-        <div class="menu-text">
-          <span class="menu-title">Счета и фактуры</span>
-          <span class="menu-description">Документы и оплаты</span>
-        </div>
-        <div class="arrow">›</div>
-      </button>
 
       <button class="menu-button">
-        <div class="icon gray">🏭</div>
-        <div class="menu-text">
-          <span class="menu-title">Данные поставщиков</span>
-          <span class="menu-description">Контакты и информация</span>
+
+        <div class="icon blue">
+          ⚡
         </div>
-        <div class="arrow">›</div>
+
+        <div class="menu-text">
+
+          <span class="menu-title">
+            Быстрый отчёт
+          </span>
+
+          <span class="menu-description">
+            Быстро сообщить о работе
+          </span>
+
+        </div>
+
+        <div class="arrow">
+          ›
+        </div>
+
       </button>
 
-      <button class="menu-button">
-        <div class="icon yellow">⚡</div>
-        <div class="menu-text">
-          <span class="menu-title">Показания счётчика</span>
-          <span class="menu-description">Передать текущие показания</span>
-        </div>
-        <div class="arrow">›</div>
-      </button>
 
       <button class="menu-button">
-        <div class="icon blue">👷</div>
-        <div class="menu-text">
-          <span class="menu-title">Информация о работнике</span>
-          <span class="menu-description">Профиль сотрудника</span>
+
+        <div class="icon purple">
+          📝
         </div>
-        <div class="arrow">›</div>
+
+        <div class="menu-text">
+
+          <span class="menu-title">
+            Дневной отчёт
+          </span>
+
+          <span class="menu-description">
+            Итоги рабочего дня
+          </span>
+
+        </div>
+
+        <div class="arrow">
+          ›
+        </div>
+
       </button>
 
-      <button class="menu-button">
-        <div class="icon red">📍</div>
-        <div class="menu-text">
-          <span class="menu-title">Смотрер</span>
-          <span class="menu-description">Контроль рабочего процесса</span>
-        </div>
-        <div class="arrow">›</div>
-      </button>
 
       <button class="menu-button">
-        <div class="icon pink">🎁</div>
-        <div class="menu-text">
-          <span class="menu-title">Премия</span>
-          <span class="menu-description">Бонусы и вознаграждения</span>
+
+        <div class="icon orange">
+          🧾
         </div>
-        <div class="arrow">›</div>
+
+        <div class="menu-text">
+
+          <span class="menu-title">
+            Счета и фактуры
+          </span>
+
+          <span class="menu-description">
+            Документы и оплаты
+          </span>
+
+        </div>
+
+        <div class="arrow">
+          ›
+        </div>
+
       </button>
 
+
       <button class="menu-button">
-        <div class="icon purple">🌐</div>
-        <div class="menu-text">
-          <span class="menu-title">Выбор языка</span>
-          <span class="menu-description">Язык приложения</span>
+
+        <div class="icon gray">
+          🏭
         </div>
-        <div class="arrow">›</div>
+
+        <div class="menu-text">
+
+          <span class="menu-title">
+            Данные поставщиков
+          </span>
+
+          <span class="menu-description">
+            Контакты и информация
+          </span>
+
+        </div>
+
+        <div class="arrow">
+          ›
+        </div>
+
       </button>
+
+
+      <button class="menu-button">
+
+        <div class="icon yellow">
+          ⚡
+        </div>
+
+        <div class="menu-text">
+
+          <span class="menu-title">
+            Показания счётчика
+          </span>
+
+          <span class="menu-description">
+            Передать текущие показания
+          </span>
+
+        </div>
+
+        <div class="arrow">
+          ›
+        </div>
+
+      </button>
+
+
+      <button class="menu-button">
+
+        <div class="icon blue">
+          👷
+        </div>
+
+        <div class="menu-text">
+
+          <span class="menu-title">
+            Информация о работнике
+          </span>
+
+          <span class="menu-description">
+            Профиль сотрудника
+          </span>
+
+        </div>
+
+        <div class="arrow">
+          ›
+        </div>
+
+      </button>
+
+
+      <button class="menu-button">
+
+        <div class="icon red">
+          📍
+        </div>
+
+        <div class="menu-text">
+
+          <span class="menu-title">
+            Смотрер
+          </span>
+
+          <span class="menu-description">
+            Контроль рабочего процесса
+          </span>
+
+        </div>
+
+        <div class="arrow">
+          ›
+        </div>
+
+      </button>
+
+
+      <button class="menu-button">
+
+        <div class="icon pink">
+          🎁
+        </div>
+
+        <div class="menu-text">
+
+          <span class="menu-title">
+            Премия
+          </span>
+
+          <span class="menu-description">
+            Бонусы и вознаграждения
+          </span>
+
+        </div>
+
+        <div class="arrow">
+          ›
+        </div>
+
+      </button>
+
+
+      <button class="menu-button">
+
+        <div class="icon purple">
+          🌐
+        </div>
+
+        <div class="menu-text">
+
+          <span class="menu-title">
+            Выбор языка
+          </span>
+
+          <span class="menu-description">
+            Язык приложения
+          </span>
+
+        </div>
+
+        <div class="arrow">
+          ›
+        </div>
+
+      </button>
+
 
     </div>
+
   </div>
 
 
-  <div id="photoScreen" class="screen">
 
-    <button class="back-button" onclick="goBack()">← Назад</button>
+  <!-- =========================
+       ФОТООТМЕТКА
+  ========================== -->
 
-    <h2 class="page-title">📸 Фотоотметка</h2>
+  <div
+    id="photoScreen"
+    class="screen"
+  >
+
+
+    <button
+      class="back-button"
+      onclick="goBack()"
+    >
+      ← Назад
+    </button>
+
+
+    <h2 class="page-title">
+      📸 Фотоотметка
+    </h2>
+
 
     <p class="page-description">
       Отметка сотрудника о начале или окончании работы на объекте.
     </p>
+
+
 
     <!-- СОТРУДНИК -->
 
@@ -513,17 +924,27 @@
 
       <div class="employee-row">
 
-        <div class="employee-avatar">👷</div>
+        <div class="employee-avatar">
+          👷
+        </div>
 
         <div class="employee-info">
 
-          <div class="employee-label">Сотрудник</div>
-
-          <div id="employeeName" class="employee-name">
-            Олег
+          <div class="employee-label">
+            Сотрудник
           </div>
 
-          <div id="currentDate" class="employee-date">
+          <div
+            id="employeeName"
+            class="employee-name"
+          >
+            Сотрудник
+          </div>
+
+          <div
+            id="currentDate"
+            class="employee-date"
+          >
             —
           </div>
 
@@ -534,54 +955,116 @@
     </div>
 
 
+
+    <!-- ОБЪЕКТ -->
+
     <div class="section-title">
       1. Выберите объект
     </div>
 
+
     <div class="object-list">
 
-      <button class="object-button" onclick="selectObject(this, '1')">
-        <span>🏗️ Объект 1</span>
-        <span class="object-check">✓</span>
+
+      <button
+        class="object-button"
+        onclick="selectObject(this, '1')"
+      >
+
+        <span>
+          🏗️ Объект 1
+        </span>
+
+        <span class="object-check">
+          ✓
+        </span>
+
       </button>
 
-      <button class="object-button" onclick="selectObject(this, '2')">
-        <span>🏗️ Объект 2</span>
-        <span class="object-check">✓</span>
+
+      <button
+        class="object-button"
+        onclick="selectObject(this, '2')"
+      >
+
+        <span>
+          🏗️ Объект 2
+        </span>
+
+        <span class="object-check">
+          ✓
+        </span>
+
       </button>
 
-      <button class="object-button" onclick="selectObject(this, '3')">
-        <span>🏗️ Объект 3</span>
-        <span class="object-check">✓</span>
+
+      <button
+        class="object-button"
+        onclick="selectObject(this, '3')"
+      >
+
+        <span>
+          🏗️ Объект 3
+        </span>
+
+        <span class="object-check">
+          ✓
+        </span>
+
       </button>
+
 
     </div>
 
+
+
+    <!-- ТИП ОТМЕТКИ -->
 
     <div class="section-title">
       2. Выберите тип отметки
     </div>
 
+
     <div class="work-type-grid">
+
 
       <button
         class="work-type-button start"
         onclick="selectWorkType(this, 'Начал работу')"
       >
-        <span class="work-icon">▶️</span>
-        <span class="work-title">Начал работу</span>
+
+        <span class="work-icon">
+          ▶️
+        </span>
+
+        <span class="work-title">
+          Начал работу
+        </span>
+
       </button>
+
 
       <button
         class="work-type-button finish"
         onclick="selectWorkType(this, 'Закончил работу')"
       >
-        <span class="work-icon">⏹️</span>
-        <span class="work-title">Закончил работу</span>
+
+        <span class="work-icon">
+          ⏹️
+        </span>
+
+        <span class="work-title">
+          Закончил работу
+        </span>
+
       </button>
+
 
     </div>
 
+
+
+    <!-- ВРЕМЯ -->
 
     <div class="time-card">
 
@@ -589,20 +1072,31 @@
         Текущее время
       </div>
 
-      <div id="currentTime" class="time-value">
+      <div
+        id="currentTime"
+        class="time-value"
+      >
         --:--
       </div>
 
     </div>
 
 
+
+    <!-- ФОТО -->
+
     <div class="section-title">
       3. Сделайте фото
     </div>
 
-    <div class="photo-box" id="photoBox">
+
+    <div
+      class="photo-box"
+      id="photoBox"
+    >
       Сначала выберите объект и тип отметки
     </div>
+
 
     <input
       type="file"
@@ -612,6 +1106,7 @@
       onchange="showPhoto(event)"
     >
 
+
     <button
       id="photoButton"
       class="action-button photo-button disabled-button"
@@ -620,6 +1115,7 @@
     >
       📸 Сделать или выбрать фото
     </button>
+
 
     <button
       id="sendButton"
@@ -631,53 +1127,98 @@
     </button>
 
 
-    <div id="successCard" class="success-card">
-
-      <div class="success-title">
-        ✓ Табельная отметка сохранена
-      </div>
-
-      <div id="successEmployee" class="success-line"></div>
-      <div id="successDate" class="success-line"></div>
-      <div id="successObject" class="success-line"></div>
-      <div id="successType" class="success-line"></div>
-      <div id="successTime" class="success-line"></div>
-
+    <div
+      id="statusCard"
+      class="status-card"
+    >
+      Отправляем отметку...
     </div>
+
 
   </div>
 
 </div>
 
 
+
 <script>
 
+  /* =========================
+     TELEGRAM
+  ========================== */
+
+  const tg =
+    window.Telegram &&
+    window.Telegram.WebApp
+      ? window.Telegram.WebApp
+      : null;
+
+
+  if (tg) {
+
+    tg.ready();
+
+    tg.expand();
+
+  }
+
+
+
+  /* =========================
+     ПЕРЕМЕННЫЕ
+  ========================== */
+
   let selectedObject = null;
+
   let selectedWorkType = null;
+
   let photoSelected = false;
 
-  // Пока имя задаём вручную.
-  // Позже Telegram будет подставлять его автоматически.
   let employeeName = "Олег";
 
-if (
-  window.Telegram &&
-  window.Telegram.WebApp &&
-  window.Telegram.WebApp.initDataUnsafe &&
-  window.Telegram.WebApp.initDataUnsafe.user
-) {
+  let telegramId = null;
 
-  const telegramUser =
-    window.Telegram.WebApp.initDataUnsafe.user;
 
-  employeeName =
-    telegramUser.first_name || "Сотрудник";
 
-  if (telegramUser.last_name) {
-    employeeName += " " + telegramUser.last_name;
+  /* =========================
+     ПОЛУЧАЕМ ПОЛЬЗОВАТЕЛЯ
+     ИЗ TELEGRAM
+  ========================== */
+
+  if (
+    tg &&
+    tg.initDataUnsafe &&
+    tg.initDataUnsafe.user
+  ) {
+
+    const telegramUser =
+      tg.initDataUnsafe.user;
+
+
+    telegramId =
+      telegramUser.id;
+
+
+    employeeName =
+      telegramUser.first_name ||
+      "Сотрудник";
+
+
+    if (telegramUser.last_name) {
+
+      employeeName +=
+        " " +
+        telegramUser.last_name;
+
+    }
+
   }
-}
 
+
+
+  /* =========================
+     ДАТА
+  ========================== */
 
   function formatDate(date) {
 
@@ -689,239 +1230,504 @@ if (
         year: "numeric"
       }
     );
+
   }
 
+
+
+  /* =========================
+     ВРЕМЯ
+  ========================== */
 
   function formatTime(date) {
 
     const hours =
-      String(date.getHours()).padStart(2, "0");
+      String(
+        date.getHours()
+      ).padStart(
+        2,
+        "0"
+      );
+
 
     const minutes =
-      String(date.getMinutes()).padStart(2, "0");
+      String(
+        date.getMinutes()
+      ).padStart(
+        2,
+        "0"
+      );
+
 
     const seconds =
-      String(date.getSeconds()).padStart(2, "0");
+      String(
+        date.getSeconds()
+      ).padStart(
+        2,
+        "0"
+      );
 
-    return hours + ":" + minutes + ":" + seconds;
+
+    return (
+      hours +
+      ":" +
+      minutes +
+      ":" +
+      seconds
+    );
+
   }
 
+
+
+  /* =========================
+     ОБНОВЛЯЕМ ДАТУ И ВРЕМЯ
+  ========================== */
 
   function updateDateAndTime() {
 
-    const now = new Date();
+    const now =
+      new Date();
 
-    document.getElementById("employeeName").innerText =
-      employeeName;
 
-    document.getElementById("currentTime").innerText =
+    document
+      .getElementById(
+        "currentTime"
+      )
+      .innerText =
       formatTime(now);
 
-    document.getElementById("currentDate").innerText =
+
+    document
+      .getElementById(
+        "currentDate"
+      )
+      .innerText =
       formatDate(now);
+
+
+    document
+      .getElementById(
+        "employeeName"
+      )
+      .innerText =
+      employeeName;
+
   }
 
 
-  setInterval(updateDateAndTime, 1000);
+  setInterval(
+    updateDateAndTime,
+    1000
+  );
+
+
   updateDateAndTime();
 
 
+
+  /* =========================
+     ОТКРЫТЬ ФОТООТМЕТКУ
+  ========================== */
+
   function openPhotoScreen() {
 
-    document.getElementById("mainScreen")
-      .classList.remove("active");
+    document
+      .getElementById(
+        "mainScreen"
+      )
+      .classList
+      .remove(
+        "active"
+      );
 
-    document.getElementById("photoScreen")
-      .classList.add("active");
+
+    document
+      .getElementById(
+        "photoScreen"
+      )
+      .classList
+      .add(
+        "active"
+      );
+
 
     updateDateAndTime();
 
-    window.scrollTo(0, 0);
+
+    window.scrollTo(
+      0,
+      0
+    );
+
   }
 
+
+
+  /* =========================
+     НАЗАД
+  ========================== */
 
   function goBack() {
 
-    document.getElementById("photoScreen")
-      .classList.remove("active");
+    document
+      .getElementById(
+        "photoScreen"
+      )
+      .classList
+      .remove(
+        "active"
+      );
 
-    document.getElementById("mainScreen")
-      .classList.add("active");
 
-    window.scrollTo(0, 0);
+    document
+      .getElementById(
+        "mainScreen"
+      )
+      .classList
+      .add(
+        "active"
+      );
+
+
+    window.scrollTo(
+      0,
+      0
+    );
+
   }
 
 
-  function selectObject(button, objectName) {
 
-    document.querySelectorAll(".object-button")
-      .forEach(function(item) {
-        item.classList.remove("selected");
-      });
+  /* =========================
+     ВЫБОР ОБЪЕКТА
+  ========================== */
 
-    button.classList.add("selected");
+  function selectObject(
+    button,
+    objectName
+  ) {
 
-    selectedObject = objectName;
+    document
+      .querySelectorAll(
+        ".object-button"
+      )
+      .forEach(
+        function(item) {
+
+          item
+            .classList
+            .remove(
+              "selected"
+            );
+
+        }
+      );
+
+
+    button
+      .classList
+      .add(
+        "selected"
+      );
+
+
+    selectedObject =
+      objectName;
+
 
     checkPhotoAvailability();
+
   }
 
 
-  function selectWorkType(button, workType) {
 
-    document.querySelectorAll(".work-type-button")
-      .forEach(function(item) {
-        item.classList.remove("selected");
-      });
+  /* =========================
+     ВЫБОР НАЧАЛ / ЗАКОНЧИЛ
+  ========================== */
 
-    button.classList.add("selected");
+  function selectWorkType(
+    button,
+    workType
+  ) {
 
-    selectedWorkType = workType;
+    document
+      .querySelectorAll(
+        ".work-type-button"
+      )
+      .forEach(
+        function(item) {
+
+          item
+            .classList
+            .remove(
+              "selected"
+            );
+
+        }
+      );
+
+
+    button
+      .classList
+      .add(
+        "selected"
+      );
+
+
+    selectedWorkType =
+      workType;
+
 
     checkPhotoAvailability();
+
   }
 
+
+
+  /* =========================
+     МОЖНО ЛИ ДЕЛАТЬ ФОТО
+  ========================== */
 
   function checkPhotoAvailability() {
 
     const photoButton =
-      document.getElementById("photoButton");
+      document
+        .getElementById(
+          "photoButton"
+        );
 
-    if (selectedObject && selectedWorkType) {
 
-      photoButton.disabled = false;
-      photoButton.classList.remove("disabled-button");
+    if (
+      selectedObject &&
+      selectedWorkType
+    ) {
 
-      document.getElementById("photoBox").innerText =
-        "Теперь можно сделать фото";
+      photoButton.disabled =
+        false;
+
+
+      photoButton
+        .classList
+        .remove(
+          "disabled-button"
+        );
+
+
+      if (!photoSelected) {
+
+        document
+          .getElementById(
+            "photoBox"
+          )
+          .innerText =
+          "Теперь можно сделать фото";
+
+      }
 
     } else {
 
-      photoButton.disabled = true;
-      photoButton.classList.add("disabled-button");
+      photoButton.disabled =
+        true;
+
+
+      photoButton
+        .classList
+        .add(
+          "disabled-button"
+        );
+
     }
+
   }
 
+
+
+  /* =========================
+     ОТКРЫТЬ КАМЕРУ
+  ========================== */
 
   function openCamera() {
 
-    if (!selectedObject || !selectedWorkType) {
+    if (
+      !selectedObject ||
+      !selectedWorkType
+    ) {
+
       return;
+
     }
 
-    document.getElementById("photoInput").click();
+
+    document
+      .getElementById(
+        "photoInput"
+      )
+      .click();
+
   }
 
+
+
+  /* =========================
+     ПОКАЗАТЬ ФОТО
+  ========================== */
 
   function showPhoto(event) {
 
-    const file = event.target.files[0];
+    const file =
+      event
+        .target
+        .files[0];
+
 
     if (!file) {
+
       return;
+
     }
 
-    const reader = new FileReader();
 
-    reader.onload = function(e) {
+    const reader =
+      new FileReader();
 
-      document.getElementById("photoBox").innerHTML =
-        '<img src="' + e.target.result + '">';
 
-      photoSelected = true;
+    reader.onload =
+      function(e) {
 
-      const sendButton =
-        document.getElementById("sendButton");
+        document
+          .getElementById(
+            "photoBox"
+          )
+          .innerHTML =
+          '<img src="' +
+          e.target.result +
+          '">';
 
-      sendButton.disabled = false;
-      sendButton.classList.remove("disabled-button");
-    };
 
-    reader.readAsDataURL(file);
+        photoSelected =
+          true;
+
+
+        const sendButton =
+          document
+            .getElementById(
+              "sendButton"
+            );
+
+
+        sendButton.disabled =
+          false;
+
+
+        sendButton
+          .classList
+          .remove(
+            "disabled-button"
+          );
+
+      };
+
+
+    reader.readAsDataURL(
+      file
+    );
+
   }
 
+
+
+  /* =========================
+     ОТПРАВИТЬ ОТМЕТКУ
+     В TELEGRAM БОТА
+  ========================== */
 
   function sendMark() {
 
-  if (
-    !selectedObject ||
-    !selectedWorkType ||
-    !photoSelected
-  ) {
-    return;
-  }
+    if (
+      !selectedObject ||
+      !selectedWorkType ||
+      !photoSelected
+    ) {
 
-  const now = new Date();
+      return;
 
-  const date = formatDate(now);
-  const time = formatTime(now);
+    }
 
-  let telegramId = null;
 
-  if (
-    window.Telegram &&
-    window.Telegram.WebApp &&
-    window.Telegram.WebApp.initDataUnsafe &&
-    window.Telegram.WebApp.initDataUnsafe.user
-  ) {
-    telegramId =
-      window.Telegram.WebApp.initDataUnsafe.user.id;
-  }
+    const now =
+      new Date();
 
-  const markData = {
-    employee: employeeName,
-    telegram_id: telegramId,
-    object: selectedObject,
-    work_type: selectedWorkType,
-    date: date,
-    time: time
-  };
 
-  if (
-    window.Telegram &&
-    window.Telegram.WebApp
-  ) {
+    const date =
+      formatDate(now);
 
-    Telegram.WebApp.sendData(
-      JSON.stringify(markData)
-    );
 
-  } else {
+    const time =
+      formatTime(now);
 
-    alert("Отправка работает только внутри Telegram");
-  }
-}
 
-    const now = new Date();
+    const markData = {
 
-    const date = formatDate(now);
-    const time = formatTime(now);
+      employee:
+        employeeName,
 
-    document.getElementById("successEmployee").innerText =
-      "Сотрудник: " + employeeName;
+      telegram_id:
+        telegramId,
 
-    document.getElementById("successDate").innerText =
-      "Дата: " + date;
+      object:
+        selectedObject,
 
-    document.getElementById("successObject").innerText =
-      "Объект: " + selectedObject;
+      work_type:
+        selectedWorkType,
 
-    document.getElementById("successType").innerText =
-      "Отметка: " + selectedWorkType;
+      date:
+        date,
 
-    document.getElementById("successTime").innerText =
-      "Время: " + time;
+      time:
+        time
 
-    document.getElementById("successCard")
-      .classList.add("active");
+    };
 
-    window.scrollTo({
-      top: document.body.scrollHeight,
-      behavior: "smooth"
-    });
+
+    if (
+      tg &&
+      typeof tg.sendData === "function"
+    ) {
+
+      const statusCard =
+        document
+          .getElementById(
+            "statusCard"
+          );
+
+
+      statusCard
+        .classList
+        .add(
+          "active"
+        );
+
+
+      tg.sendData(
+        JSON.stringify(
+          markData
+        )
+      );
+
+    } else {
+
+      alert(
+        "Отправка отметки работает только внутри Telegram"
+      );
+
+    }
+
   }
 
 </script>
 
+
 </body>
+
 </html>
