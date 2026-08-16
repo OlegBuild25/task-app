@@ -843,13 +843,56 @@ if (
 
   function sendMark() {
 
-    if (
-      !selectedObject ||
-      !selectedWorkType ||
-      !photoSelected
-    ) {
-      return;
-    }
+  if (
+    !selectedObject ||
+    !selectedWorkType ||
+    !photoSelected
+  ) {
+    return;
+  }
+
+  const now = new Date();
+
+  const date = formatDate(now);
+  const time = formatTime(now);
+
+  let telegramId = null;
+
+  if (
+    window.Telegram &&
+    window.Telegram.WebApp &&
+    window.Telegram.WebApp.initDataUnsafe &&
+    window.Telegram.WebApp.initDataUnsafe.user
+  ) {
+    telegramId =
+      window.Telegram.WebApp.initDataUnsafe.user.id;
+  }
+
+  const markData = {
+    employee: employeeName,
+    telegram_id: telegramId,
+    object: selectedObject,
+    work_type: selectedWorkType,
+    date: date,
+    time: time
+  };
+
+  if (
+    window.Telegram &&
+    window.Telegram.WebApp
+  ) {
+
+    Telegram.WebApp.sendData(
+      JSON.stringify(markData)
+    );
+
+  } else {
+
+    alert(
+      "Отправка работает только внутри Telegram"
+    );
+  }
+}
 
     const now = new Date();
 
