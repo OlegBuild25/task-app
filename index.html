@@ -2,6 +2,7 @@
 <html lang="ru">
 
 <head>
+
   <meta charset="UTF-8">
 
   <meta
@@ -13,6 +14,7 @@
 
   <script src="https://telegram.org/js/telegram-web-app.js"></script>
 
+
   <style>
 
     * {
@@ -21,6 +23,7 @@
 
     body {
       margin: 0;
+
       background: #f4f6f8;
 
       font-family:
@@ -47,7 +50,9 @@
     .container {
       width: 100%;
       max-width: 650px;
+
       margin: 0 auto;
+
       padding: 24px 16px 40px;
     }
 
@@ -73,31 +78,37 @@
     }
 
     .header-title {
+      margin: 0 0 5px;
+
       font-size: 30px;
       font-weight: 750;
-      margin: 0 0 5px;
+
       letter-spacing: -0.7px;
     }
 
     .header-subtitle {
       margin: 0;
+
       font-size: 15px;
+
       color: #8e8e93;
     }
 
 
     /* =========================
-       ГЛАВНОЕ МЕНЮ
+       MENU
     ========================= */
 
     .menu {
       display: flex;
       flex-direction: column;
+
       gap: 10px;
     }
 
     .menu-button {
       width: 100%;
+
       min-height: 72px;
 
       display: flex;
@@ -118,12 +129,14 @@
 
     .menu-button:active {
       transform: scale(0.98);
+
       background: #f7f7f8;
     }
 
     .icon {
       width: 48px;
       height: 48px;
+
       min-width: 48px;
 
       display: flex;
@@ -137,86 +150,172 @@
       margin-right: 14px;
     }
 
-    .blue { background: #e8f2ff; }
-    .green { background: #e9f8ef; }
-    .yellow { background: #fff7dc; }
-    .orange { background: #fff0e5; }
-    .purple { background: #f2eaff; }
-    .red { background: #ffe9e9; }
-    .gray { background: #eeeeF1; }
-    .pink { background: #ffeaf3; }
-    .teal { background: #e5f8f6; }
+    .blue {
+      background: #e8f2ff;
+    }
+
+    .green {
+      background: #e9f8ef;
+    }
+
+    .yellow {
+      background: #fff7dc;
+    }
+
+    .orange {
+      background: #fff0e5;
+    }
+
+    .purple {
+      background: #f2eaff;
+    }
+
+    .red {
+      background: #ffe9e9;
+    }
+
+    .gray {
+      background: #eeeeF1;
+    }
+
+    .pink {
+      background: #ffeaf3;
+    }
+
+    .teal {
+      background: #e5f8f6;
+    }
 
     .menu-text {
       flex: 1;
+
       text-align: left;
     }
 
     .menu-title {
       display: block;
+
+      margin-bottom: 3px;
+
       font-size: 17px;
       font-weight: 600;
+
       color: #202124;
-      margin-bottom: 3px;
     }
 
     .menu-description {
       display: block;
+
       font-size: 13px;
+
       color: #9a9aa0;
     }
 
     .arrow {
-      font-size: 29px;
-      color: #c7c7cc;
       padding-left: 8px;
+
+      font-size: 29px;
+
+      color: #c7c7cc;
     }
 
 
     /* =========================
-       ОБЩИЕ
+       COMMON
     ========================= */
 
     .back-button {
       border: none;
+
       background: none;
-      font-size: 17px;
-      color: #2481cc;
+
       padding: 4px 0;
+
       margin-bottom: 20px;
+
+      font-size: 17px;
+
+      color: #2481cc;
+
       cursor: pointer;
     }
 
     .page-title {
+      margin: 0 0 8px;
+
       font-size: 28px;
       font-weight: 750;
-      margin: 0 0 8px;
     }
 
     .page-description {
-      color: #8e8e93;
-      font-size: 15px;
       margin: 0 0 20px;
+
+      font-size: 15px;
+
       line-height: 1.4;
+
+      color: #8e8e93;
     }
 
     .section-title {
+      margin: 22px 0 10px;
+
       font-size: 15px;
       font-weight: 700;
+
       color: #5d5d62;
-      margin: 22px 0 10px;
+    }
+
+    .primary-button {
+      width: 100%;
+
+      border: none;
+      border-radius: 16px;
+
+      padding: 16px;
+
+      background: #2481cc;
+
+      color: white;
+
+      font-size: 16px;
+      font-weight: 700;
+
+      cursor: pointer;
+    }
+
+    .secondary-button {
+      width: 100%;
+
+      border: none;
+      border-radius: 14px;
+
+      padding: 13px;
+
+      background: #f2eaff;
+
+      color: #6941c6;
+
+      font-size: 14px;
+      font-weight: 700;
+
+      cursor: pointer;
     }
 
 
     /* =========================
-       СОТРУДНИК
+       EMPLOYEE INFO
     ========================= */
 
     .employee-card {
       background: #ffffff;
+
       border-radius: 18px;
+
       padding: 16px;
+
       margin-bottom: 18px;
+
       box-shadow:
         0 2px 8px rgba(0,0,0,0.04);
     }
@@ -224,19 +323,23 @@
     .employee-row {
       display: flex;
       align-items: center;
+
       gap: 12px;
     }
 
     .employee-avatar {
       width: 48px;
       height: 48px;
+
       min-width: 48px;
-      border-radius: 50%;
-      background: #e8f2ff;
 
       display: flex;
       align-items: center;
       justify-content: center;
+
+      border-radius: 50%;
+
+      background: #e8f2ff;
 
       font-size: 24px;
     }
@@ -246,9 +349,11 @@
     }
 
     .employee-label {
-      font-size: 12px;
-      color: #8e8e93;
       margin-bottom: 3px;
+
+      font-size: 12px;
+
+      color: #8e8e93;
     }
 
     .employee-name {
@@ -257,36 +362,40 @@
     }
 
     .employee-date {
-      font-size: 14px;
-      color: #8e8e93;
       margin-top: 4px;
+
+      font-size: 14px;
+
+      color: #8e8e93;
     }
 
 
     /* =========================
-       ОБЪЕКТЫ
+       OBJECT
     ========================= */
 
     .object-list {
       display: flex;
       flex-direction: column;
+
       gap: 10px;
     }
 
     .object-button {
       width: 100%;
+
       min-height: 64px;
 
       display: flex;
       align-items: center;
       justify-content: space-between;
 
-      background: #ffffff;
-
       border: 2px solid transparent;
       border-radius: 16px;
 
       padding: 0 18px;
+
+      background: #ffffff;
 
       font-size: 17px;
       font-weight: 600;
@@ -299,14 +408,17 @@
 
     .object-button.selected {
       border-color: #2481cc;
+
       background: #eef7ff;
     }
 
     .object-check {
       display: none;
-      color: #2481cc;
+
       font-size: 22px;
       font-weight: bold;
+
+      color: #2481cc;
     }
 
     .object-button.selected .object-check {
@@ -315,12 +427,13 @@
 
 
     /* =========================
-       ТИП ОТМЕТКИ
+       WORK TYPE
     ========================= */
 
     .work-type-grid {
       display: grid;
       grid-template-columns: 1fr 1fr;
+
       gap: 10px;
     }
 
@@ -330,9 +443,9 @@
       border: 2px solid transparent;
       border-radius: 18px;
 
-      background: #ffffff;
-
       padding: 16px 10px;
+
+      background: #ffffff;
 
       cursor: pointer;
 
@@ -342,45 +455,55 @@
 
     .work-icon {
       display: block;
-      font-size: 28px;
+
       margin-bottom: 8px;
+
+      font-size: 28px;
     }
 
     .work-title {
       display: block;
+
       font-size: 16px;
       font-weight: 700;
     }
 
     .work-type-button.start.selected {
       border-color: #30a46c;
+
       background: #edfaf3;
     }
 
     .work-type-button.finish.selected {
       border-color: #e05d5d;
+
       background: #fff1f1;
     }
 
 
     /* =========================
-       ВРЕМЯ
+       TIME
     ========================= */
 
     .time-card {
-      background: #ffffff;
-      border-radius: 18px;
-      padding: 16px;
       margin-top: 18px;
+
+      padding: 16px;
+
+      border-radius: 18px;
+
+      background: #ffffff;
 
       box-shadow:
         0 2px 8px rgba(0,0,0,0.04);
     }
 
     .time-label {
-      font-size: 13px;
-      color: #8e8e93;
       margin-bottom: 5px;
+
+      font-size: 13px;
+
+      color: #8e8e93;
     }
 
     .time-value {
@@ -390,31 +513,37 @@
 
 
     /* =========================
-       ФОТО
+       PHOTO
     ========================= */
 
     .photo-box {
       min-height: 220px;
-      background: #ffffff;
+
+      display: flex;
+      align-items: center;
+      justify-content: center;
+
+      margin: 10px 0 14px;
 
       border: 2px dashed #d1d1d6;
       border-radius: 20px;
 
-      display: flex;
-      justify-content: center;
-      align-items: center;
+      padding: 20px;
+
+      background: #ffffff;
 
       text-align: center;
-      color: #8e8e93;
 
-      padding: 20px;
-      margin: 10px 0 14px;
+      color: #8e8e93;
     }
 
     .photo-box img {
       width: 100%;
+
       max-height: 500px;
+
       object-fit: contain;
+
       border-radius: 16px;
     }
 
@@ -424,14 +553,20 @@
 
     .action-button {
       width: 100%;
+
       border: none;
       border-radius: 16px;
+
       padding: 17px;
+
+      margin-bottom: 10px;
+
       color: white;
+
       font-size: 17px;
       font-weight: 650;
+
       cursor: pointer;
-      margin-bottom: 10px;
     }
 
     .photo-button {
@@ -444,37 +579,51 @@
 
     .disabled-button {
       opacity: 0.4;
+
       cursor: default;
     }
 
     .photo-status {
       margin-top: 10px;
+
       text-align: center;
+
       font-size: 14px;
+
       color: #8e8e93;
     }
 
     .success-message {
-      background: #e9f8ef;
-      color: #157347;
-      padding: 14px;
-      border-radius: 15px;
-      text-align: center;
-      font-weight: 650;
       margin-top: 12px;
+
+      padding: 14px;
+
+      border-radius: 15px;
+
+      background: #e9f8ef;
+
+      color: #157347;
+
+      text-align: center;
+
+      font-weight: 650;
     }
 
 
     /* =========================
-       ТАБЕЛЬ
+       TIMESHEET
     ========================= */
 
     .filters-card,
     .summary-card {
-      background: #ffffff;
-      border-radius: 20px;
-      padding: 16px;
       margin-bottom: 16px;
+
+      padding: 16px;
+
+      border-radius: 20px;
+
+      background: #ffffff;
+
       box-shadow:
         0 2px 8px rgba(0,0,0,0.04);
     }
@@ -482,10 +631,13 @@
     .filter-label,
     .modal-label {
       display: block;
+
+      margin-bottom: 7px;
+
       font-size: 12px;
       font-weight: 650;
+
       color: #8e8e93;
-      margin-bottom: 7px;
     }
 
     .month-input,
@@ -494,10 +646,14 @@
     .modal-select,
     .modal-textarea {
       width: 100%;
+
       border: 1px solid #e1e1e6;
       border-radius: 13px;
+
       background: #f7f7f8;
+
       color: #1c1c1e;
+
       outline: none;
     }
 
@@ -506,13 +662,16 @@
     .modal-input,
     .modal-select {
       height: 48px;
+
       padding: 0 12px;
     }
 
     .modal-textarea {
       min-height: 90px;
-      resize: vertical;
+
       padding: 12px;
+
+      resize: vertical;
     }
 
     .filter-group + .filter-group {
@@ -520,33 +679,41 @@
     }
 
     .summary-name {
+      margin-bottom: 4px;
+
       font-size: 20px;
       font-weight: 750;
-      margin-bottom: 4px;
     }
 
     .summary-rate {
-      font-size: 14px;
-      color: #8e8e93;
       margin-bottom: 18px;
+
+      font-size: 14px;
+
+      color: #8e8e93;
     }
 
     .summary-grid {
       display: grid;
       grid-template-columns: repeat(2, 1fr);
+
       gap: 10px;
     }
 
     .summary-item {
-      background: #f7f7f8;
-      border-radius: 15px;
       padding: 13px;
+
+      border-radius: 15px;
+
+      background: #f7f7f8;
     }
 
     .summary-label {
-      font-size: 12px;
-      color: #8e8e93;
       margin-bottom: 5px;
+
+      font-size: 12px;
+
+      color: #8e8e93;
     }
 
     .summary-value {
@@ -556,33 +723,43 @@
 
     .salary-box {
       margin-top: 12px;
-      background: #e9f8ef;
-      border-radius: 16px;
+
       padding: 16px;
+
+      border-radius: 16px;
+
+      background: #e9f8ef;
     }
 
     .salary-label {
-      font-size: 13px;
-      color: #4f7560;
       margin-bottom: 4px;
+
+      font-size: 13px;
+
+      color: #4f7560;
     }
 
     .salary-value {
       font-size: 27px;
       font-weight: 800;
+
       color: #157347;
     }
 
     .timesheet-list {
       display: flex;
       flex-direction: column;
+
       gap: 10px;
     }
 
     .day-card {
-      background: #ffffff;
-      border-radius: 18px;
       padding: 16px;
+
+      border-radius: 18px;
+
+      background: #ffffff;
+
       box-shadow:
         0 2px 8px rgba(0,0,0,0.04);
     }
@@ -595,7 +772,9 @@
       display: flex;
       align-items: flex-start;
       justify-content: space-between;
+
       gap: 10px;
+
       margin-bottom: 12px;
     }
 
@@ -606,72 +785,95 @@
 
     .day-employee {
       margin-top: 3px;
+
       font-size: 13px;
+
       color: #8e8e93;
     }
 
     .corrected-label {
       display: inline-block;
+
       margin-top: 7px;
+
       padding: 4px 8px;
+
       border-radius: 20px;
+
       background: #f2eaff;
+
       color: #6941c6;
+
       font-size: 11px;
       font-weight: 700;
     }
 
     .day-status {
       flex-shrink: 0;
-      border-radius: 50px;
+
       padding: 6px 10px;
+
+      border-radius: 50px;
+
       font-size: 12px;
       font-weight: 700;
     }
 
     .status-full {
       background: #e9f8ef;
+
       color: #157347;
     }
 
     .status-half {
       background: #fff7dc;
+
       color: #936a00;
     }
 
     .status-review {
       background: #ffe9e9;
+
       color: #b42318;
     }
 
     .status-zero {
       background: #eeeeF1;
+
       color: #66666b;
     }
 
     .day-object {
-      font-size: 14px;
       margin-bottom: 12px;
+
+      font-size: 14px;
+
       color: #48484a;
     }
 
     .day-times {
       display: grid;
       grid-template-columns: 1fr 1fr;
+
       gap: 8px;
+
       margin-bottom: 12px;
     }
 
     .time-mini-card {
-      background: #f7f7f8;
-      border-radius: 13px;
       padding: 10px 12px;
+
+      border-radius: 13px;
+
+      background: #f7f7f8;
     }
 
     .time-mini-label {
-      font-size: 11px;
-      color: #8e8e93;
       margin-bottom: 4px;
+
+      font-size: 11px;
+
+      color: #8e8e93;
     }
 
     .time-mini-value {
@@ -683,13 +885,17 @@
       display: flex;
       align-items: center;
       justify-content: space-between;
+
       gap: 10px;
-      border-top: 1px solid #f0f0f2;
+
       padding-top: 12px;
+
+      border-top: 1px solid #f0f0f2;
     }
 
     .paid-days {
       font-size: 14px;
+
       color: #66666b;
     }
 
@@ -700,45 +906,61 @@
 
     .override-note {
       margin-top: 10px;
+
       padding: 10px 12px;
+
       border-radius: 12px;
+
       background: #faf8ff;
+
       color: #6941c6;
+
       font-size: 13px;
+
       line-height: 1.4;
     }
 
 
     /* =========================
-       ФОТО В ТАБЕЛЕ
+       PHOTOS IN TIMESHEET
     ========================= */
 
     .attendance-photos {
       display: grid;
       grid-template-columns: 1fr 1fr;
+
       gap: 9px;
+
       margin-top: 13px;
     }
 
     .attendance-photo-card {
-      background: #f7f7f8;
-      border-radius: 14px;
       overflow: hidden;
+
+      border-radius: 14px;
+
+      background: #f7f7f8;
     }
 
     .attendance-photo-title {
       padding: 9px 10px;
+
       font-size: 12px;
       font-weight: 700;
+
       color: #5d5d62;
     }
 
     .attendance-photo {
       width: 100%;
       height: 150px;
+
       display: block;
+
       object-fit: cover;
+
       background: #eeeeF1;
+
       cursor: pointer;
     }
 
@@ -749,44 +971,260 @@
       align-items: center;
       justify-content: center;
 
-      text-align: center;
       padding: 10px;
 
+      text-align: center;
+
       color: #aaaab0;
+
       font-size: 12px;
     }
 
 
     /* =========================
-       ADMIN
+       ADMIN BUTTONS
     ========================= */
 
     .admin-buttons {
       display: grid;
       grid-template-columns: 1fr;
+
       gap: 8px;
+
       margin-top: 13px;
     }
 
     .admin-edit-button,
     .history-button {
       width: 100%;
+
       border: none;
       border-radius: 13px;
+
       padding: 12px;
+
       font-size: 14px;
       font-weight: 700;
+
       cursor: pointer;
     }
 
     .admin-edit-button {
       background: #f2eaff;
+
       color: #6941c6;
     }
 
     .history-button {
       background: #eef7ff;
+
       color: #1769aa;
+    }
+
+
+    /* =========================
+       EMPLOYEES
+    ========================= */
+
+    .employees-top {
+      margin-bottom: 16px;
+    }
+
+    .add-employee-button {
+      width: 100%;
+
+      border: none;
+      border-radius: 16px;
+
+      padding: 16px;
+
+      background: #2481cc;
+
+      color: white;
+
+      font-size: 16px;
+      font-weight: 700;
+
+      cursor: pointer;
+    }
+
+    .employees-list {
+      display: flex;
+      flex-direction: column;
+
+      gap: 10px;
+    }
+
+    .staff-card {
+      padding: 16px;
+
+      border-radius: 18px;
+
+      background: #ffffff;
+
+      box-shadow:
+        0 2px 8px rgba(0,0,0,0.04);
+    }
+
+    .staff-card.inactive {
+      opacity: 0.65;
+    }
+
+    .staff-top {
+      display: flex;
+      align-items: flex-start;
+
+      gap: 12px;
+    }
+
+    .staff-avatar {
+      width: 48px;
+      height: 48px;
+
+      min-width: 48px;
+
+      display: flex;
+      align-items: center;
+      justify-content: center;
+
+      border-radius: 50%;
+
+      background: #e8f2ff;
+
+      font-size: 22px;
+    }
+
+    .staff-main {
+      flex: 1;
+
+      min-width: 0;
+    }
+
+    .staff-name {
+      font-size: 17px;
+      font-weight: 750;
+
+      overflow-wrap: anywhere;
+    }
+
+    .staff-username {
+      margin-top: 3px;
+
+      font-size: 13px;
+
+      color: #8e8e93;
+    }
+
+    .staff-status {
+      flex-shrink: 0;
+
+      padding: 5px 9px;
+
+      border-radius: 20px;
+
+      font-size: 11px;
+      font-weight: 750;
+    }
+
+    .staff-active {
+      background: #e9f8ef;
+
+      color: #157347;
+    }
+
+    .staff-inactive {
+      background: #eeeeF1;
+
+      color: #66666b;
+    }
+
+    .staff-details {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+
+      gap: 8px;
+
+      margin-top: 15px;
+    }
+
+    .staff-detail {
+      padding: 10px;
+
+      border-radius: 12px;
+
+      background: #f7f7f8;
+    }
+
+    .staff-detail-label {
+      margin-bottom: 4px;
+
+      font-size: 11px;
+
+      color: #8e8e93;
+    }
+
+    .staff-detail-value {
+      font-size: 14px;
+      font-weight: 650;
+
+      overflow-wrap: anywhere;
+    }
+
+    .staff-role {
+      display: inline-block;
+
+      margin-top: 12px;
+
+      padding: 5px 9px;
+
+      border-radius: 20px;
+
+      background: #f2eaff;
+
+      color: #6941c6;
+
+      font-size: 11px;
+      font-weight: 700;
+    }
+
+    .staff-actions {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+
+      gap: 8px;
+
+      margin-top: 14px;
+    }
+
+    .staff-edit-button,
+    .staff-toggle-button {
+      border: none;
+      border-radius: 12px;
+
+      padding: 11px 8px;
+
+      font-size: 13px;
+      font-weight: 700;
+
+      cursor: pointer;
+    }
+
+    .staff-edit-button {
+      background: #eef7ff;
+
+      color: #1769aa;
+    }
+
+    .staff-toggle-button {
+      background: #fff0f0;
+
+      color: #b42318;
+    }
+
+    .staff-toggle-button.activate {
+      background: #e9f8ef;
+
+      color: #157347;
     }
 
 
@@ -797,16 +1235,22 @@
     .loading-card,
     .empty-card,
     .error-card {
-      background: #ffffff;
-      border-radius: 18px;
-      padding: 22px;
-      text-align: center;
-      color: #8e8e93;
       margin-top: 16px;
+
+      padding: 22px;
+
+      border-radius: 18px;
+
+      background: #ffffff;
+
+      text-align: center;
+
+      color: #8e8e93;
     }
 
     .error-card {
       background: #fff1f1;
+
       color: #b42318;
     }
 
@@ -817,12 +1261,17 @@
 
     .modal-overlay {
       display: none;
+
       position: fixed;
+
       inset: 0;
+
       z-index: 9999;
-      background: rgba(0,0,0,0.45);
+
       align-items: flex-end;
       justify-content: center;
+
+      background: rgba(0,0,0,0.45);
     }
 
     .modal-overlay.active {
@@ -832,38 +1281,52 @@
     .modal {
       width: 100%;
       max-width: 650px;
+
       max-height: 92vh;
+
       overflow-y: auto;
-      background: #f4f6f8;
-      border-radius: 24px 24px 0 0;
+
       padding: 20px 16px 30px;
+
+      border-radius: 24px 24px 0 0;
+
+      background: #f4f6f8;
     }
 
     .modal-handle {
       width: 44px;
       height: 5px;
-      border-radius: 10px;
-      background: #d1d1d6;
+
       margin: 0 auto 20px;
+
+      border-radius: 10px;
+
+      background: #d1d1d6;
     }
 
     .modal-title {
+      margin-bottom: 4px;
+
       font-size: 23px;
       font-weight: 750;
-      margin-bottom: 4px;
     }
 
     .modal-subtitle {
-      font-size: 14px;
-      color: #8e8e93;
       margin-bottom: 20px;
+
+      font-size: 14px;
+
+      color: #8e8e93;
     }
 
     .modal-card {
-      background: white;
-      border-radius: 18px;
-      padding: 16px;
       margin-bottom: 12px;
+
+      padding: 16px;
+
+      border-radius: 18px;
+
+      background: white;
     }
 
     .modal-field {
@@ -876,43 +1339,65 @@
 
     .save-edit-button {
       width: 100%;
+
       border: none;
       border-radius: 16px;
-      background: #2481cc;
-      color: white;
+
       padding: 16px;
+
+      background: #2481cc;
+
+      color: white;
+
       font-size: 16px;
       font-weight: 700;
+
       cursor: pointer;
     }
 
     .remove-edit-button {
       width: 100%;
+
+      margin-top: 10px;
+
       border: none;
       border-radius: 16px;
-      background: #ffffff;
-      color: #b42318;
+
       padding: 15px;
+
+      background: #ffffff;
+
+      color: #b42318;
+
       font-size: 15px;
       font-weight: 650;
-      margin-top: 10px;
+
       cursor: pointer;
     }
 
     .close-modal-button {
       width: 100%;
+
       border: none;
-      background: transparent;
-      color: #66666b;
+
       padding: 14px;
+
+      background: transparent;
+
+      color: #66666b;
+
       font-size: 15px;
+
       cursor: pointer;
     }
 
     .saving-message {
       margin-top: 12px;
+
       text-align: center;
+
       font-size: 14px;
+
       color: #8e8e93;
     }
 
@@ -924,45 +1409,60 @@
     .history-list {
       display: flex;
       flex-direction: column;
+
       gap: 10px;
     }
 
     .history-item {
-      background: #ffffff;
-      border-radius: 16px;
       padding: 15px;
+
+      border-radius: 16px;
+
+      background: #ffffff;
     }
 
     .history-date {
-      font-size: 12px;
-      color: #8e8e93;
       margin-bottom: 9px;
+
+      font-size: 12px;
+
+      color: #8e8e93;
     }
 
     .history-change {
+      margin-bottom: 7px;
+
       font-size: 15px;
       font-weight: 700;
-      margin-bottom: 7px;
     }
 
     .history-line {
-      font-size: 13px;
-      color: #5d5d62;
       margin-top: 5px;
+
+      font-size: 13px;
+
       line-height: 1.4;
+
+      color: #5d5d62;
     }
 
     .history-arrow {
-      color: #8e8e93;
       margin: 0 5px;
+
+      color: #8e8e93;
     }
 
     .history-comment {
       margin-top: 10px;
-      background: #f7f7f8;
-      border-radius: 10px;
+
       padding: 10px;
+
+      border-radius: 10px;
+
+      background: #f7f7f8;
+
       font-size: 13px;
+
       line-height: 1.4;
     }
 
@@ -975,16 +1475,17 @@
       display: none;
 
       position: fixed;
+
       inset: 0;
 
       z-index: 20000;
-
-      background: rgba(0,0,0,0.92);
 
       align-items: center;
       justify-content: center;
 
       padding: 16px;
+
+      background: rgba(0,0,0,0.92);
     }
 
     .photo-viewer.active {
@@ -994,8 +1495,23 @@
     .photo-viewer img {
       max-width: 100%;
       max-height: 90vh;
+
       object-fit: contain;
+
       border-radius: 10px;
+    }
+
+
+    @media (max-width: 400px) {
+
+      .staff-details {
+        grid-template-columns: 1fr;
+      }
+
+      .staff-actions {
+        grid-template-columns: 1fr;
+      }
+
     }
 
   </style>
@@ -1005,33 +1521,60 @@
 
 <body>
 
+
 <div class="container">
 
 
-  <!-- ГЛАВНЫЙ ЭКРАН -->
+  <!-- =========================
+       MAIN
+  ========================== -->
 
-  <div id="mainScreen" class="screen active">
+  <div
+    id="mainScreen"
+    class="screen active"
+  >
 
     <div class="header">
-      <h1 class="header-title">Task</h1>
-      <p class="header-subtitle">Рабочая панель</p>
+
+      <h1 class="header-title">
+        Task
+      </h1>
+
+      <p class="header-subtitle">
+        Рабочая панель
+      </p>
+
     </div>
 
 
     <div class="menu">
 
+
       <button
         class="menu-button"
         onclick="openPhotoScreen()"
       >
-        <div class="icon blue">📸</div>
 
-        <div class="menu-text">
-          <span class="menu-title">Фотоотметка</span>
-          <span class="menu-description">Начало и окончание работы</span>
+        <div class="icon blue">
+          📸
         </div>
 
-        <div class="arrow">›</div>
+        <div class="menu-text">
+
+          <span class="menu-title">
+            Фотоотметка
+          </span>
+
+          <span class="menu-description">
+            Начало и окончание работы
+          </span>
+
+        </div>
+
+        <div class="arrow">
+          ›
+        </div>
+
       </button>
 
 
@@ -1039,125 +1582,328 @@
         class="menu-button"
         onclick="openTimesheetScreen()"
       >
-        <div class="icon teal">📊</div>
 
-        <div class="menu-text">
-          <span class="menu-title">Табель</span>
-          <span class="menu-description">Рабочие дни и зарплата</span>
+        <div class="icon teal">
+          📊
         </div>
 
-        <div class="arrow">›</div>
+        <div class="menu-text">
+
+          <span class="menu-title">
+            Табель
+          </span>
+
+          <span class="menu-description">
+            Рабочие дни и зарплата
+          </span>
+
+        </div>
+
+        <div class="arrow">
+          ›
+        </div>
+
       </button>
 
 
-      <button class="menu-button">
-        <div class="icon green">⚙️</div>
-        <div class="menu-text">
-          <span class="menu-title">Рабочий процесс</span>
-          <span class="menu-description">Задачи и статус работ</span>
+      <button
+        class="menu-button"
+      >
+
+        <div class="icon green">
+          ⚙️
         </div>
-        <div class="arrow">›</div>
+
+        <div class="menu-text">
+
+          <span class="menu-title">
+            Рабочий процесс
+          </span>
+
+          <span class="menu-description">
+            Задачи и статус работ
+          </span>
+
+        </div>
+
+        <div class="arrow">
+          ›
+        </div>
+
       </button>
 
 
-      <button class="menu-button">
-        <div class="icon yellow">💡</div>
-        <div class="menu-text">
-          <span class="menu-title">База знаний</span>
-          <span class="menu-description">Инструкции и материалы</span>
+      <button
+        class="menu-button"
+      >
+
+        <div class="icon yellow">
+          💡
         </div>
-        <div class="arrow">›</div>
+
+        <div class="menu-text">
+
+          <span class="menu-title">
+            База знаний
+          </span>
+
+          <span class="menu-description">
+            Инструкции и материалы
+          </span>
+
+        </div>
+
+        <div class="arrow">
+          ›
+        </div>
+
       </button>
 
 
-      <button class="menu-button">
-        <div class="icon blue">⚡</div>
-        <div class="menu-text">
-          <span class="menu-title">Быстрый отчёт</span>
-          <span class="menu-description">Быстро сообщить о работе</span>
+      <button
+        class="menu-button"
+      >
+
+        <div class="icon blue">
+          ⚡
         </div>
-        <div class="arrow">›</div>
+
+        <div class="menu-text">
+
+          <span class="menu-title">
+            Быстрый отчёт
+          </span>
+
+          <span class="menu-description">
+            Быстро сообщить о работе
+          </span>
+
+        </div>
+
+        <div class="arrow">
+          ›
+        </div>
+
       </button>
 
 
-      <button class="menu-button">
-        <div class="icon purple">📝</div>
-        <div class="menu-text">
-          <span class="menu-title">Дневной отчёт</span>
-          <span class="menu-description">Итоги рабочего дня</span>
+      <button
+        class="menu-button"
+      >
+
+        <div class="icon purple">
+          📝
         </div>
-        <div class="arrow">›</div>
+
+        <div class="menu-text">
+
+          <span class="menu-title">
+            Дневной отчёт
+          </span>
+
+          <span class="menu-description">
+            Итоги рабочего дня
+          </span>
+
+        </div>
+
+        <div class="arrow">
+          ›
+        </div>
+
       </button>
 
 
-      <button class="menu-button">
-        <div class="icon orange">🧾</div>
-        <div class="menu-text">
-          <span class="menu-title">Счета и фактуры</span>
-          <span class="menu-description">Документы и оплаты</span>
+      <button
+        class="menu-button"
+      >
+
+        <div class="icon orange">
+          🧾
         </div>
-        <div class="arrow">›</div>
+
+        <div class="menu-text">
+
+          <span class="menu-title">
+            Счета и фактуры
+          </span>
+
+          <span class="menu-description">
+            Документы и оплаты
+          </span>
+
+        </div>
+
+        <div class="arrow">
+          ›
+        </div>
+
       </button>
 
 
-      <button class="menu-button">
-        <div class="icon gray">🏭</div>
-        <div class="menu-text">
-          <span class="menu-title">Данные поставщиков</span>
-          <span class="menu-description">Контакты и информация</span>
+      <button
+        class="menu-button"
+      >
+
+        <div class="icon gray">
+          🏭
         </div>
-        <div class="arrow">›</div>
+
+        <div class="menu-text">
+
+          <span class="menu-title">
+            Данные поставщиков
+          </span>
+
+          <span class="menu-description">
+            Контакты и информация
+          </span>
+
+        </div>
+
+        <div class="arrow">
+          ›
+        </div>
+
       </button>
 
 
-      <button class="menu-button">
-        <div class="icon yellow">⚡</div>
-        <div class="menu-text">
-          <span class="menu-title">Показания счётчика</span>
-          <span class="menu-description">Передать текущие показания</span>
+      <button
+        class="menu-button"
+      >
+
+        <div class="icon yellow">
+          ⚡
         </div>
-        <div class="arrow">›</div>
+
+        <div class="menu-text">
+
+          <span class="menu-title">
+            Показания счётчика
+          </span>
+
+          <span class="menu-description">
+            Передать текущие показания
+          </span>
+
+        </div>
+
+        <div class="arrow">
+          ›
+        </div>
+
       </button>
 
 
-      <button class="menu-button">
-        <div class="icon blue">👷</div>
-        <div class="menu-text">
-          <span class="menu-title">Информация о работнике</span>
-          <span class="menu-description">Профиль сотрудника</span>
+      <button
+        id="employeesMenuButton"
+        class="menu-button"
+        onclick="openEmployeesScreen()"
+      >
+
+        <div class="icon blue">
+          👷
         </div>
-        <div class="arrow">›</div>
+
+        <div class="menu-text">
+
+          <span class="menu-title">
+            Сотрудники
+          </span>
+
+          <span class="menu-description">
+            Управление сотрудниками
+          </span>
+
+        </div>
+
+        <div class="arrow">
+          ›
+        </div>
+
       </button>
 
 
-      <button class="menu-button">
-        <div class="icon red">📍</div>
-        <div class="menu-text">
-          <span class="menu-title">Смотрер</span>
-          <span class="menu-description">Контроль рабочего процесса</span>
+      <button
+        class="menu-button"
+      >
+
+        <div class="icon red">
+          📍
         </div>
-        <div class="arrow">›</div>
+
+        <div class="menu-text">
+
+          <span class="menu-title">
+            Смотрер
+          </span>
+
+          <span class="menu-description">
+            Контроль рабочего процесса
+          </span>
+
+        </div>
+
+        <div class="arrow">
+          ›
+        </div>
+
       </button>
 
 
-      <button class="menu-button">
-        <div class="icon pink">🎁</div>
-        <div class="menu-text">
-          <span class="menu-title">Премия</span>
-          <span class="menu-description">Бонусы и вознаграждения</span>
+      <button
+        class="menu-button"
+      >
+
+        <div class="icon pink">
+          🎁
         </div>
-        <div class="arrow">›</div>
+
+        <div class="menu-text">
+
+          <span class="menu-title">
+            Премия
+          </span>
+
+          <span class="menu-description">
+            Бонусы и вознаграждения
+          </span>
+
+        </div>
+
+        <div class="arrow">
+          ›
+        </div>
+
       </button>
 
 
-      <button class="menu-button">
-        <div class="icon purple">🌐</div>
-        <div class="menu-text">
-          <span class="menu-title">Выбор языка</span>
-          <span class="menu-description">Язык приложения</span>
+      <button
+        class="menu-button"
+      >
+
+        <div class="icon purple">
+          🌐
         </div>
-        <div class="arrow">›</div>
+
+        <div class="menu-text">
+
+          <span class="menu-title">
+            Выбор языка
+          </span>
+
+          <span class="menu-description">
+            Язык приложения
+          </span>
+
+        </div>
+
+        <div class="arrow">
+          ›
+        </div>
+
       </button>
+
 
     </div>
 
@@ -1165,9 +1911,14 @@
 
 
 
-  <!-- ФОТООТМЕТКА -->
+  <!-- =========================
+       PHOTO
+  ========================== -->
 
-  <div id="photoScreen" class="screen">
+  <div
+    id="photoScreen"
+    class="screen"
+  >
 
     <button
       class="back-button"
@@ -1176,7 +1927,11 @@
       ← Назад
     </button>
 
-    <h2 class="page-title">📸 Фотоотметка</h2>
+
+    <h2 class="page-title">
+      📸 Фотоотметка
+    </h2>
+
 
     <p class="page-description">
       Отметка сотрудника о начале или окончании работы на объекте.
@@ -1187,7 +1942,9 @@
 
       <div class="employee-row">
 
-        <div class="employee-avatar">👷</div>
+        <div class="employee-avatar">
+          👷
+        </div>
 
         <div class="employee-info">
 
@@ -1227,8 +1984,15 @@
         class="object-button"
         onclick="selectObject(this, '1')"
       >
-        <span>🏗️ Объект 1</span>
-        <span class="object-check">✓</span>
+
+        <span>
+          🏗️ Объект 1
+        </span>
+
+        <span class="object-check">
+          ✓
+        </span>
+
       </button>
 
 
@@ -1236,8 +2000,15 @@
         class="object-button"
         onclick="selectObject(this, '2')"
       >
-        <span>🏗️ Объект 2</span>
-        <span class="object-check">✓</span>
+
+        <span>
+          🏗️ Объект 2
+        </span>
+
+        <span class="object-check">
+          ✓
+        </span>
+
       </button>
 
 
@@ -1245,8 +2016,15 @@
         class="object-button"
         onclick="selectObject(this, '3')"
       >
-        <span>🏗️ Объект 3</span>
-        <span class="object-check">✓</span>
+
+        <span>
+          🏗️ Объект 3
+        </span>
+
+        <span class="object-check">
+          ✓
+        </span>
+
       </button>
 
     </div>
@@ -1263,8 +2041,15 @@
         class="work-type-button start"
         onclick="selectWorkType(this, 'start')"
       >
-        <span class="work-icon">▶️</span>
-        <span class="work-title">Начал работу</span>
+
+        <span class="work-icon">
+          ▶️
+        </span>
+
+        <span class="work-title">
+          Начал работу
+        </span>
+
       </button>
 
 
@@ -1272,8 +2057,15 @@
         class="work-type-button finish"
         onclick="selectWorkType(this, 'finish')"
       >
-        <span class="work-icon">⏹️</span>
-        <span class="work-title">Закончил работу</span>
+
+        <span class="work-icon">
+          ⏹️
+        </span>
+
+        <span class="work-title">
+          Закончил работу
+        </span>
+
       </button>
 
     </div>
@@ -1356,9 +2148,14 @@
 
 
 
-  <!-- ТАБЕЛЬ -->
+  <!-- =========================
+       TIMESHEET
+  ========================== -->
 
-  <div id="timesheetScreen" class="screen">
+  <div
+    id="timesheetScreen"
+    class="screen"
+  >
 
     <button
       class="back-button"
@@ -1436,7 +2233,9 @@
     ></div>
 
 
-    <div id="summaryContainer"></div>
+    <div
+      id="summaryContainer"
+    ></div>
 
 
     <div
@@ -1455,11 +2254,83 @@
   </div>
 
 
+
+  <!-- =========================
+       EMPLOYEES
+  ========================== -->
+
+  <div
+    id="employeesScreen"
+    class="screen"
+  >
+
+    <button
+      class="back-button"
+      onclick="goToMain()"
+    >
+      ← Назад
+    </button>
+
+
+    <h2 class="page-title">
+      👷 Сотрудники
+    </h2>
+
+
+    <p class="page-description">
+      Добавление сотрудников, изменение ставок, ролей и доступа к приложению.
+    </p>
+
+
+    <div class="employees-top">
+
+      <button
+        class="add-employee-button"
+        onclick="openCreateEmployeeModal()"
+      >
+        + Добавить сотрудника
+      </button>
+
+    </div>
+
+
+    <div
+      id="employeesLoading"
+      class="loading-card hidden"
+    >
+      Загружаем сотрудников...
+    </div>
+
+
+    <div
+      id="employeesError"
+      class="error-card hidden"
+    ></div>
+
+
+    <div
+      id="employeesList"
+      class="employees-list"
+    ></div>
+
+
+    <div
+      id="employeesEmpty"
+      class="empty-card hidden"
+    >
+      Сотрудников пока нет.
+    </div>
+
+  </div>
+
+
 </div>
 
 
 
-<!-- РЕДАКТИРОВАНИЕ -->
+<!-- =========================
+     TIMESHEET EDIT MODAL
+========================== -->
 
 <div
   id="editModal"
@@ -1471,9 +2342,11 @@
 
     <div class="modal-handle"></div>
 
+
     <div class="modal-title">
       Редактировать день
     </div>
+
 
     <div
       id="editModalSubtitle"
@@ -1484,6 +2357,7 @@
 
 
     <div class="modal-card">
+
 
       <div class="modal-field">
 
@@ -1542,6 +2416,7 @@
 
       </div>
 
+
     </div>
 
 
@@ -1578,13 +2453,16 @@
       Сохраняем...
     </div>
 
+
   </div>
 
 </div>
 
 
 
-<!-- ИСТОРИЯ -->
+<!-- =========================
+     HISTORY MODAL
+========================== -->
 
 <div
   id="historyModal"
@@ -1645,13 +2523,192 @@
       Закрыть
     </button>
 
+
   </div>
 
 </div>
 
 
 
-<!-- ПРОСМОТР ФОТО -->
+<!-- =========================
+     EMPLOYEE MODAL
+========================== -->
+
+<div
+  id="employeeModal"
+  class="modal-overlay"
+  onclick="employeeOverlayClick(event)"
+>
+
+  <div class="modal">
+
+    <div class="modal-handle"></div>
+
+
+    <div
+      id="employeeModalTitle"
+      class="modal-title"
+    >
+      Добавить сотрудника
+    </div>
+
+
+    <div
+      id="employeeModalSubtitle"
+      class="modal-subtitle"
+    >
+      Заполните данные сотрудника
+    </div>
+
+
+    <div class="modal-card">
+
+
+      <div class="modal-field">
+
+        <label class="modal-label">
+          Telegram ID
+        </label>
+
+        <input
+          id="staffTelegramId"
+          class="modal-input"
+          type="number"
+          inputmode="numeric"
+          placeholder="Например: 123456789"
+        >
+
+      </div>
+
+
+      <div class="modal-field">
+
+        <label class="modal-label">
+          Имя
+        </label>
+
+        <input
+          id="staffFirstName"
+          class="modal-input"
+          type="text"
+          placeholder="Имя"
+        >
+
+      </div>
+
+
+      <div class="modal-field">
+
+        <label class="modal-label">
+          Фамилия
+        </label>
+
+        <input
+          id="staffLastName"
+          class="modal-input"
+          type="text"
+          placeholder="Фамилия"
+        >
+
+      </div>
+
+
+      <div class="modal-field">
+
+        <label class="modal-label">
+          Username Telegram
+        </label>
+
+        <input
+          id="staffUsername"
+          class="modal-input"
+          type="text"
+          placeholder="@username"
+        >
+
+      </div>
+
+
+      <div class="modal-field">
+
+        <label class="modal-label">
+          Дневная ставка, THB
+        </label>
+
+        <input
+          id="staffDailyRate"
+          class="modal-input"
+          type="number"
+          inputmode="decimal"
+          min="0"
+          step="0.01"
+          placeholder="Например: 2000"
+        >
+
+      </div>
+
+
+      <div class="modal-field">
+
+        <label class="modal-label">
+          Роль
+        </label>
+
+        <select
+          id="staffRole"
+          class="modal-select"
+        >
+
+          <option value="employee">
+            Сотрудник
+          </option>
+
+          <option value="admin">
+            Администратор
+          </option>
+
+        </select>
+
+      </div>
+
+
+    </div>
+
+
+    <button
+      id="saveEmployeeButton"
+      class="save-edit-button"
+      onclick="saveEmployee()"
+    >
+      ✓ Сохранить
+    </button>
+
+
+    <button
+      class="close-modal-button"
+      onclick="closeEmployeeModal()"
+    >
+      Отмена
+    </button>
+
+
+    <div
+      id="employeeSavingMessage"
+      class="saving-message hidden"
+    >
+      Сохраняем...
+    </div>
+
+
+  </div>
+
+</div>
+
+
+
+<!-- =========================
+     PHOTO VIEWER
+========================== -->
 
 <div
   id="photoViewer"
@@ -1671,16 +2728,26 @@
 
 <script>
 
+
+  /* =========================
+     TELEGRAM
+  ========================= */
+
   const tg =
     window.Telegram &&
     window.Telegram.WebApp
-      ? window.Telegram.WebApp
-      : null;
+      ?
+      window.Telegram.WebApp
+      :
+      null;
 
 
   if (tg) {
+
     tg.ready();
+
     tg.expand();
+
   }
 
 
@@ -1688,17 +2755,45 @@
     "https://rvsqqbhxomiynourskgy.supabase.co/functions/v1/timesheet-api";
 
 
-  let selectedObject = null;
-  let selectedWorkType = null;
+  let selectedObject =
+    null;
 
-  let selectedPhotoBase64 = null;
-  let selectedPhotoMime = "image/jpeg";
 
-  let employeeName = "Олег";
-  let telegramId = null;
+  let selectedWorkType =
+    null;
 
-  let timesheetData = null;
-  let editingDay = null;
+
+  let selectedPhotoBase64 =
+    null;
+
+
+  let selectedPhotoMime =
+    "image/jpeg";
+
+
+  let employeeName =
+    "Сотрудник";
+
+
+  let telegramId =
+    null;
+
+
+  let timesheetData =
+    null;
+
+
+  let editingDay =
+    null;
+
+
+  let employeesData =
+    [];
+
+
+  let editingEmployee =
+    null;
+
 
 
   if (
@@ -1710,132 +2805,219 @@
     const user =
       tg.initDataUnsafe.user;
 
+
     telegramId =
       user.id;
+
 
     employeeName =
       user.first_name ||
       "Сотрудник";
 
-    if (user.last_name) {
+
+    if (
+      user.last_name
+    ) {
+
       employeeName +=
-        " " +
+        " "
+        +
         user.last_name;
+
     }
 
   }
 
 
+
   /* =========================
-     ДАТА И ВРЕМЯ
+     DATE
   ========================= */
 
-  function formatDate(date) {
+  function formatDate(
+    date
+  ) {
 
     return date.toLocaleDateString(
       "ru-RU",
       {
-        day: "2-digit",
-        month: "long",
-        year: "numeric"
+        day:
+          "2-digit",
+
+        month:
+          "long",
+
+        year:
+          "numeric"
       }
     );
 
   }
 
 
-  function localDateISO(date) {
+  function localDateISO(
+    date
+  ) {
 
     const year =
       date.getFullYear();
 
+
     const month =
       String(
         date.getMonth() + 1
-      ).padStart(2, "0");
+      )
+      .padStart(
+        2,
+        "0"
+      );
+
 
     const day =
       String(
         date.getDate()
-      ).padStart(2, "0");
+      )
+      .padStart(
+        2,
+        "0"
+      );
 
-    return `${year}-${month}-${day}`;
+
+    return (
+      year
+      +
+      "-"
+      +
+      month
+      +
+      "-"
+      +
+      day
+    );
 
   }
 
 
-  function formatShortDate(value) {
+  function formatShortDate(
+    value
+  ) {
 
     if (!value) {
       return "—";
     }
 
+
     const date =
       new Date(
-        value + "T00:00:00"
+        value
+        +
+        "T00:00:00"
       );
+
 
     return date.toLocaleDateString(
       "ru-RU",
       {
-        day: "2-digit",
-        month: "long"
+        day:
+          "2-digit",
+
+        month:
+          "long"
       }
     );
 
   }
 
 
-  function formatDateTime(value) {
+  function formatDateTime(
+    value
+  ) {
 
     if (!value) {
       return "—";
     }
 
+
     const date =
-      new Date(value);
+      new Date(
+        value
+      );
+
 
     return date.toLocaleString(
       "ru-RU",
       {
-        day: "2-digit",
-        month: "2-digit",
-        year: "numeric",
-        hour: "2-digit",
-        minute: "2-digit"
+        day:
+          "2-digit",
+
+        month:
+          "2-digit",
+
+        year:
+          "numeric",
+
+        hour:
+          "2-digit",
+
+        minute:
+          "2-digit"
       }
     );
 
   }
 
 
-  function formatTime(date) {
+  function formatTime(
+    date
+  ) {
 
     return [
+
       String(
         date.getHours()
-      ).padStart(2, "0"),
+      )
+      .padStart(
+        2,
+        "0"
+      ),
 
       String(
         date.getMinutes()
-      ).padStart(2, "0"),
+      )
+      .padStart(
+        2,
+        "0"
+      ),
 
       String(
         date.getSeconds()
-      ).padStart(2, "0")
+      )
+      .padStart(
+        2,
+        "0"
+      )
+
     ].join(":");
 
   }
 
 
-  function shortTime(value) {
+  function shortTime(
+    value
+  ) {
 
     if (!value) {
       return "—";
     }
 
-    return String(value)
-      .substring(0, 5);
+
+    return String(
+      value
+    )
+    .substring(
+      0,
+      5
+    );
 
   }
 
@@ -1849,10 +3031,15 @@
       new Intl.NumberFormat(
         "ru-RU",
         {
-          maximumFractionDigits: 0
+          maximumFractionDigits:
+            0
         }
-      ).format(
-        Number(value || 0)
+      )
+      .format(
+        Number(
+          value ||
+          0
+        )
       )
       +
       " "
@@ -1868,19 +3055,26 @@
     const now =
       new Date();
 
+
     document
       .getElementById(
         "currentTime"
       )
       .innerText =
-      formatTime(now);
+      formatTime(
+        now
+      );
+
 
     document
       .getElementById(
         "currentDate"
       )
       .innerText =
-      formatDate(now);
+      formatDate(
+        now
+      );
+
 
     document
       .getElementById(
@@ -1897,22 +3091,28 @@
     1000
   );
 
+
   updateDateAndTime();
 
 
+
   /* =========================
-     ЭКРАНЫ
+     SCREENS
   ========================= */
 
   function hideAllScreens() {
 
     document
-      .querySelectorAll(".screen")
+      .querySelectorAll(
+        ".screen"
+      )
       .forEach(
         screen =>
           screen
             .classList
-            .remove("active")
+            .remove(
+              "active"
+            )
       );
 
   }
@@ -1922,14 +3122,21 @@
 
     hideAllScreens();
 
+
     document
       .getElementById(
         "mainScreen"
       )
       .classList
-      .add("active");
+      .add(
+        "active"
+      );
 
-    window.scrollTo(0, 0);
+
+    window.scrollTo(
+      0,
+      0
+    );
 
   }
 
@@ -1938,18 +3145,27 @@
 
     hideAllScreens();
 
+
     resetPhotoForm();
+
 
     document
       .getElementById(
         "photoScreen"
       )
       .classList
-      .add("active");
+      .add(
+        "active"
+      );
+
 
     updateDateAndTime();
 
-    window.scrollTo(0, 0);
+
+    window.scrollTo(
+      0,
+      0
+    );
 
   }
 
@@ -1958,24 +3174,31 @@
 
     hideAllScreens();
 
+
     document
       .getElementById(
         "timesheetScreen"
       )
       .classList
-      .add("active");
-
-
-    const monthInput =
-      document.getElementById(
-        "timesheetMonth"
+      .add(
+        "active"
       );
 
 
-    if (!monthInput.value) {
+    const monthInput =
+      document
+        .getElementById(
+          "timesheetMonth"
+        );
+
+
+    if (
+      !monthInput.value
+    ) {
 
       const now =
         new Date();
+
 
       monthInput.value =
         now.getFullYear()
@@ -1984,20 +3207,55 @@
         +
         String(
           now.getMonth() + 1
-        ).padStart(2, "0");
+        )
+        .padStart(
+          2,
+          "0"
+        );
 
     }
 
 
     loadTimesheet();
 
-    window.scrollTo(0, 0);
+
+    window.scrollTo(
+      0,
+      0
+    );
 
   }
 
 
+  async function openEmployeesScreen() {
+
+    hideAllScreens();
+
+
+    document
+      .getElementById(
+        "employeesScreen"
+      )
+      .classList
+      .add(
+        "active"
+      );
+
+
+    window.scrollTo(
+      0,
+      0
+    );
+
+
+    await loadEmployees();
+
+  }
+
+
+
   /* =========================
-     ФОТООТМЕТКА
+     PHOTO FORM
   ========================= */
 
   function resetPhotoForm() {
@@ -2005,11 +3263,14 @@
     selectedObject =
       null;
 
+
     selectedWorkType =
       null;
 
+
     selectedPhotoBase64 =
       null;
+
 
     selectedPhotoMime =
       "image/jpeg";
@@ -2021,9 +3282,11 @@
       )
       .forEach(
         item =>
-          item.classList.remove(
-            "selected"
-          )
+          item
+            .classList
+            .remove(
+              "selected"
+            )
       );
 
 
@@ -2033,18 +3296,19 @@
       )
       .forEach(
         item =>
-          item.classList.remove(
-            "selected"
-          )
+          item
+            .classList
+            .remove(
+              "selected"
+            )
       );
 
 
-    const input =
-      document.getElementById(
+    document
+      .getElementById(
         "photoInput"
-      );
-
-    input.value =
+      )
+      .value =
       "";
 
 
@@ -2057,12 +3321,15 @@
 
 
     const photoButton =
-      document.getElementById(
-        "photoButton"
-      );
+      document
+        .getElementById(
+          "photoButton"
+        );
+
 
     photoButton.disabled =
       true;
+
 
     photoButton
       .classList
@@ -2072,12 +3339,15 @@
 
 
     const sendButton =
-      document.getElementById(
-        "sendButton"
-      );
+      document
+        .getElementById(
+          "sendButton"
+        );
+
 
     sendButton.disabled =
       true;
+
 
     sendButton
       .classList
@@ -2091,7 +3361,9 @@
         "photoStatus"
       )
       .classList
-      .add("hidden");
+      .add(
+        "hidden"
+      );
 
 
     document
@@ -2099,7 +3371,9 @@
         "photoSuccess"
       )
       .classList
-      .add("hidden");
+      .add(
+        "hidden"
+      );
 
   }
 
@@ -2115,15 +3389,19 @@
       )
       .forEach(
         item =>
-          item.classList.remove(
-            "selected"
-          )
+          item
+            .classList
+            .remove(
+              "selected"
+            )
       );
 
 
     button
       .classList
-      .add("selected");
+      .add(
+        "selected"
+      );
 
 
     selectedObject =
@@ -2146,15 +3424,19 @@
       )
       .forEach(
         item =>
-          item.classList.remove(
-            "selected"
-          )
+          item
+            .classList
+            .remove(
+              "selected"
+            )
       );
 
 
     button
       .classList
-      .add("selected");
+      .add(
+        "selected"
+      );
 
 
     selectedWorkType =
@@ -2169,18 +3451,21 @@
   function checkPhotoAvailability() {
 
     const button =
-      document.getElementById(
-        "photoButton"
-      );
+      document
+        .getElementById(
+          "photoButton"
+        );
 
 
     if (
-      selectedObject &&
+      selectedObject
+      &&
       selectedWorkType
     ) {
 
       button.disabled =
         false;
+
 
       button
         .classList
@@ -2189,7 +3474,9 @@
         );
 
 
-      if (!selectedPhotoBase64) {
+      if (
+        !selectedPhotoBase64
+      ) {
 
         document
           .getElementById(
@@ -2205,6 +3492,7 @@
       button.disabled =
         true;
 
+
       button
         .classList
         .add(
@@ -2219,7 +3507,8 @@
   function openCamera() {
 
     if (
-      !selectedObject ||
+      !selectedObject
+      ||
       !selectedWorkType
     ) {
       return;
@@ -2235,10 +3524,14 @@
   }
 
 
-  async function showPhoto(event) {
+  async function showPhoto(
+    event
+  ) {
 
     const file =
-      event.target.files[0];
+      event
+        .target
+        .files[0];
 
 
     if (!file) {
@@ -2247,17 +3540,21 @@
 
 
     const status =
-      document.getElementById(
-        "photoStatus"
-      );
+      document
+        .getElementById(
+          "photoStatus"
+        );
 
 
     status.innerText =
       "Подготавливаем фото...";
 
+
     status
       .classList
-      .remove("hidden");
+      .remove(
+        "hidden"
+      );
 
 
     try {
@@ -2273,6 +3570,7 @@
       selectedPhotoBase64 =
         compressed.base64;
 
+
       selectedPhotoMime =
         compressed.mime;
 
@@ -2282,19 +3580,23 @@
           "photoBox"
         )
         .innerHTML =
-        '<img src="' +
-        compressed.preview +
+        '<img src="'
+        +
+        compressed.preview
+        +
         '">';
 
 
       const sendButton =
-        document.getElementById(
-          "sendButton"
-        );
+        document
+          .getElementById(
+            "sendButton"
+          );
 
 
       sendButton.disabled =
         false;
+
 
       sendButton
         .classList
@@ -2305,7 +3607,9 @@
 
       status
         .classList
-        .add("hidden");
+        .add(
+          "hidden"
+        );
 
     } catch (error) {
 
@@ -2368,13 +3672,15 @@
                 let width =
                   image.width;
 
+
                 let height =
                   image.height;
 
 
                 if (
                   width >
-                  maxSize ||
+                  maxSize
+                  ||
                   height >
                   maxSize
                 ) {
@@ -2388,35 +3694,40 @@
 
                   width =
                     Math.round(
-                      width * scale
+                      width *
+                      scale
                     );
 
 
                   height =
                     Math.round(
-                      height * scale
+                      height *
+                      scale
                     );
 
                 }
 
 
                 const canvas =
-                  document.createElement(
-                    "canvas"
-                  );
+                  document
+                    .createElement(
+                      "canvas"
+                    );
 
 
                 canvas.width =
                   width;
+
 
                 canvas.height =
                   height;
 
 
                 const context =
-                  canvas.getContext(
-                    "2d"
-                  );
+                  canvas
+                    .getContext(
+                      "2d"
+                    );
 
 
                 context.drawImage(
@@ -2433,26 +3744,28 @@
 
 
                 const dataUrl =
-                  canvas.toDataURL(
-                    mime,
-                    quality
-                  );
-
-
-                const base64 =
-                  dataUrl.split(",")[1];
+                  canvas
+                    .toDataURL(
+                      mime,
+                      quality
+                    );
 
 
                 resolve(
                   {
+
                     base64:
-                      base64,
+                      dataUrl
+                        .split(
+                          ","
+                        )[1],
 
                     mime:
                       mime,
 
                     preview:
                       dataUrl
+
                   }
                 );
 
@@ -2465,9 +3778,10 @@
           };
 
 
-        reader.readAsDataURL(
-          file
-        );
+        reader
+          .readAsDataURL(
+            file
+          );
 
       }
     );
@@ -2478,8 +3792,10 @@
   async function saveAttendance() {
 
     if (
-      !selectedObject ||
-      !selectedWorkType ||
+      !selectedObject
+      ||
+      !selectedWorkType
+      ||
       !selectedPhotoBase64
     ) {
       return;
@@ -2487,21 +3803,24 @@
 
 
     const button =
-      document.getElementById(
-        "sendButton"
-      );
+      document
+        .getElementById(
+          "sendButton"
+        );
 
 
     const status =
-      document.getElementById(
-        "photoStatus"
-      );
+      document
+        .getElementById(
+          "photoStatus"
+        );
 
 
     const success =
-      document.getElementById(
-        "photoSuccess"
-      );
+      document
+        .getElementById(
+          "photoSuccess"
+        );
 
 
     button.disabled =
@@ -2511,14 +3830,19 @@
     status.innerText =
       "Сохраняем фотоотметку...";
 
+
     status
       .classList
-      .remove("hidden");
+      .remove(
+        "hidden"
+      );
 
 
     success
       .classList
-      .add("hidden");
+      .add(
+        "hidden"
+      );
 
 
     const now =
@@ -2527,7 +3851,7 @@
 
     try {
 
-      await callTimesheetApi(
+      await callApi(
         {
 
           action:
@@ -2540,10 +3864,14 @@
             selectedWorkType,
 
           work_date:
-            localDateISO(now),
+            localDateISO(
+              now
+            ),
 
           mark_time:
-            formatTime(now),
+            formatTime(
+              now
+            ),
 
           photo_base64:
             selectedPhotoBase64,
@@ -2557,18 +3885,25 @@
 
       status
         .classList
-        .add("hidden");
+        .add(
+          "hidden"
+        );
 
 
       success
         .classList
-        .remove("hidden");
+        .remove(
+          "hidden"
+        );
 
 
-      if (tg) {
+      if (
+        tg &&
+        tg.HapticFeedback
+      ) {
 
         tg.HapticFeedback
-          ?.notificationOccurred(
+          .notificationOccurred(
             "success"
           );
 
@@ -2583,7 +3918,7 @@
           goToMain();
 
         },
-        1600
+        1500
       );
 
     } catch (error) {
@@ -2602,16 +3937,18 @@
   }
 
 
+
   /* =========================
      API
   ========================= */
 
-  async function callTimesheetApi(
+  async function callApi(
     payload
   ) {
 
     if (
-      !tg ||
+      !tg
+      ||
       !tg.initData
     ) {
 
@@ -2626,35 +3963,57 @@
       await fetch(
         TIMESHEET_API,
         {
+
           method:
             "POST",
 
           headers: {
+
             "Content-Type":
               "application/json"
+
           },
 
           body:
             JSON.stringify(
               {
+
                 initData:
                   tg.initData,
 
                 ...payload
+
               }
             )
+
         }
       );
 
 
-    const result =
-      await response.json();
+    let result;
 
 
-    if (!response.ok) {
+    try {
+
+      result =
+        await response.json();
+
+    } catch {
 
       throw new Error(
-        result.error ||
+        "Сервер вернул некорректный ответ"
+      );
+
+    }
+
+
+    if (
+      !response.ok
+    ) {
+
+      throw new Error(
+        result.error
+        ||
         "Ошибка сервера"
       );
 
@@ -2666,30 +4025,39 @@
   }
 
 
+
   /* =========================
-     ТАБЕЛЬ
+     TIMESHEET
   ========================= */
 
   async function loadTimesheet() {
 
     const loading =
-      document.getElementById(
-        "timesheetLoading"
-      );
+      document
+        .getElementById(
+          "timesheetLoading"
+        );
+
 
     const errorBox =
-      document.getElementById(
-        "timesheetError"
-      );
+      document
+        .getElementById(
+          "timesheetError"
+        );
 
 
     loading
       .classList
-      .remove("hidden");
+      .remove(
+        "hidden"
+      );
+
 
     errorBox
       .classList
-      .add("hidden");
+      .add(
+        "hidden"
+      );
 
 
     try {
@@ -2703,31 +4071,38 @@
 
 
       timesheetData =
-        await callTimesheetApi(
+        await callApi(
           {
+
             action:
               "get_timesheet",
 
             month:
               month
+
           }
         );
 
 
       setupEmployeeFilter();
 
+
       renderTimesheet();
 
 
       loading
         .classList
-        .add("hidden");
+        .add(
+          "hidden"
+        );
 
     } catch (error) {
 
       loading
         .classList
-        .add("hidden");
+        .add(
+          "hidden"
+        );
 
 
       errorBox.innerText =
@@ -2738,7 +4113,9 @@
 
       errorBox
         .classList
-        .remove("hidden");
+        .remove(
+          "hidden"
+        );
 
     }
 
@@ -2748,14 +4125,17 @@
   function setupEmployeeFilter() {
 
     const group =
-      document.getElementById(
-        "employeeFilterGroup"
-      );
+      document
+        .getElementById(
+          "employeeFilterGroup"
+        );
+
 
     const select =
-      document.getElementById(
-        "timesheetEmployee"
-      );
+      document
+        .getElementById(
+          "timesheetEmployee"
+        );
 
 
     if (
@@ -2763,18 +4143,23 @@
       "admin"
     ) {
 
-      group.classList.add(
-        "hidden"
-      );
+      group
+        .classList
+        .add(
+          "hidden"
+        );
+
 
       return;
 
     }
 
 
-    group.classList.remove(
-      "hidden"
-    );
+    group
+      .classList
+      .remove(
+        "hidden"
+      );
 
 
     const oldValue =
@@ -2786,15 +4171,18 @@
 
 
     (
-      timesheetData.employees ||
+      timesheetData.employees
+      ||
       []
-    ).forEach(
+    )
+    .forEach(
       employee => {
 
         const option =
-          document.createElement(
-            "option"
-          );
+          document
+            .createElement(
+              "option"
+            );
 
 
         option.value =
@@ -2808,8 +4196,12 @@
             employee.first_name,
             employee.last_name
           ]
-          .filter(Boolean)
-          .join(" ");
+          .filter(
+            Boolean
+          )
+          .join(
+            " "
+          );
 
 
         select.appendChild(
@@ -2847,7 +4239,9 @@
 
   function renderTimesheet() {
 
-    if (!timesheetData) {
+    if (
+      !timesheetData
+    ) {
       return;
     }
 
@@ -2871,13 +4265,15 @@
 
     let daily =
       timesheetData
-        .daily_timesheet ||
+        .daily_timesheet
+      ||
       [];
 
 
     let summaries =
       timesheetData
-        .monthly_summary ||
+        .monthly_summary
+      ||
       [];
 
 
@@ -2887,23 +4283,27 @@
     ) {
 
       daily =
-        daily.filter(
-          row =>
-            String(
-              row.employee_id
-            ) ===
-            selected
-        );
+        daily
+          .filter(
+            row =>
+              String(
+                row.employee_id
+              )
+              ===
+              selected
+          );
 
 
       summaries =
-        summaries.filter(
-          row =>
-            String(
-              row.employee_id
-            ) ===
-            selected
-        );
+        summaries
+          .filter(
+            row =>
+              String(
+                row.employee_id
+              )
+              ===
+              selected
+          );
 
     }
 
@@ -2925,9 +4325,10 @@
   ) {
 
     const container =
-      document.getElementById(
-        "summaryContainer"
-      );
+      document
+        .getElementById(
+          "summaryContainer"
+        );
 
 
     container.innerHTML =
@@ -2938,13 +4339,18 @@
       summary => {
 
         const name =
-          summary.employee_name ||
+          summary.employee_name
+          ||
           [
             summary.first_name,
             summary.last_name
           ]
-          .filter(Boolean)
-          .join(" ");
+          .filter(
+            Boolean
+          )
+          .join(
+            " "
+          );
 
 
         container.innerHTML += `
@@ -2956,6 +4362,7 @@
             </div>
 
             <div class="summary-rate">
+
               Дневная ставка:
               ${
                 formatMoney(
@@ -2963,6 +4370,7 @@
                   summary.currency
                 )
               }
+
             </div>
 
 
@@ -3001,12 +4409,7 @@
                 </div>
 
                 <div class="summary-value">
-                  ${
-                    Number(
-                      summary.total_paid_days ||
-                      0
-                    )
-                  }
+                  ${Number(summary.total_paid_days || 0)}
                 </div>
 
               </div>
@@ -3047,6 +4450,7 @@
             </div>
 
           </div>
+
         `;
 
       }
@@ -3060,14 +4464,17 @@
   ) {
 
     const list =
-      document.getElementById(
-        "timesheetList"
-      );
+      document
+        .getElementById(
+          "timesheetList"
+        );
+
 
     const empty =
-      document.getElementById(
-        "timesheetEmpty"
-      );
+      document
+        .getElementById(
+          "timesheetEmpty"
+        );
 
 
     list.innerHTML =
@@ -3075,12 +4482,16 @@
 
 
     if (
-      daily.length === 0
+      daily.length ===
+      0
     ) {
 
       empty
         .classList
-        .remove("hidden");
+        .remove(
+          "hidden"
+        );
+
 
       return;
 
@@ -3089,24 +4500,34 @@
 
     empty
       .classList
-      .add("hidden");
+      .add(
+        "hidden"
+      );
 
 
     daily
       .slice()
       .sort(
-        (a,b) =>
-          new Date(b.work_date)
+        (
+          a,
+          b
+        ) =>
+          new Date(
+            b.work_date
+          )
           -
-          new Date(a.work_date)
+          new Date(
+            a.work_date
+          )
       )
       .forEach(
         day => {
 
           const card =
-            document.createElement(
-              "div"
-            );
+            document
+              .createElement(
+                "div"
+              );
 
 
           card.className =
@@ -3122,13 +4543,18 @@
 
 
           const name =
-            day.employee_name ||
+            day.employee_name
+            ||
             [
               day.first_name,
               day.last_name
             ]
-            .filter(Boolean)
-            .join(" ");
+            .filter(
+              Boolean
+            )
+            .join(
+              " "
+            );
 
 
           const status =
@@ -3137,29 +4563,18 @@
             );
 
 
-          let corrected =
-            "";
-
-
-          if (
+          const corrected =
             day.is_overridden
-          ) {
-
-            corrected =
-              '<div class="corrected-label">✏️ Изменено администратором</div>';
-
-          }
+              ?
+              '<div class="corrected-label">✏️ Изменено администратором</div>'
+              :
+              "";
 
 
-          let note =
-            "";
-
-
-          if (
+          const note =
             day.override_note
-          ) {
-
-            note = `
+              ?
+              `
 
               <div class="override-note">
 
@@ -3167,32 +4582,34 @@
                   Комментарий:
                 </strong>
 
-                ${escapeHtml(
-                  day.override_note
-                )}
+                ${escapeHtml(day.override_note)}
 
               </div>
 
-            `;
-
-          }
+              `
+              :
+              "";
 
 
           const startPhoto =
             day.start_photo_url
               ?
               `
-                <img
-                  class="attendance-photo"
-                  src="${escapeAttribute(day.start_photo_url)}"
-                  onclick="openPhotoViewer('${escapeJsString(day.start_photo_url)}')"
-                >
+
+              <img
+                class="attendance-photo"
+                src="${escapeAttribute(day.start_photo_url)}"
+                data-url="${escapeAttribute(day.start_photo_url)}"
+              >
+
               `
               :
               `
-                <div class="no-photo">
-                  Фото пока нет
-                </div>
+
+              <div class="no-photo">
+                Фото пока нет
+              </div>
+
               `;
 
 
@@ -3200,17 +4617,21 @@
             day.finish_photo_url
               ?
               `
-                <img
-                  class="attendance-photo"
-                  src="${escapeAttribute(day.finish_photo_url)}"
-                  onclick="openPhotoViewer('${escapeJsString(day.finish_photo_url)}')"
-                >
+
+              <img
+                class="attendance-photo"
+                src="${escapeAttribute(day.finish_photo_url)}"
+                data-url="${escapeAttribute(day.finish_photo_url)}"
+              >
+
               `
               :
               `
-                <div class="no-photo">
-                  Фото пока нет
-                </div>
+
+              <div class="no-photo">
+                Фото пока нет
+              </div>
+
               `;
 
 
@@ -3233,9 +4654,7 @@
               </div>
 
 
-              <div
-                class="day-status ${status.className}"
-              >
+              <div class="day-status ${status.className}">
                 ${status.text}
               </div>
 
@@ -3247,7 +4666,8 @@
               🏗️
               ${
                 escapeHtml(
-                  day.objects ||
+                  day.objects
+                  ||
                   "Объект не указан"
                 )
               }
@@ -3295,6 +4715,7 @@
 
               </div>
 
+
               <div class="day-salary">
 
                 ${
@@ -3310,6 +4731,7 @@
 
 
             <div class="attendance-photos">
+
 
               <div class="attendance-photo-card">
 
@@ -3332,6 +4754,7 @@
 
               </div>
 
+
             </div>
 
 
@@ -3340,15 +4763,36 @@
           `;
 
 
+          card
+            .querySelectorAll(
+              ".attendance-photo"
+            )
+            .forEach(
+              image => {
+
+                image.onclick =
+                  () => {
+
+                    openPhotoViewer(
+                      image.dataset.url
+                    );
+
+                  };
+
+              }
+            );
+
+
           if (
             timesheetData.role ===
             "admin"
           ) {
 
             const buttons =
-              document.createElement(
-                "div"
-              );
+              document
+                .createElement(
+                  "div"
+                );
 
 
             buttons.className =
@@ -3356,9 +4800,10 @@
 
 
             const editButton =
-              document.createElement(
-                "button"
-              );
+              document
+                .createElement(
+                  "button"
+                );
 
 
             editButton.className =
@@ -3386,9 +4831,10 @@
             ) {
 
               const historyButton =
-                document.createElement(
-                  "button"
-                );
+                document
+                  .createElement(
+                    "button"
+                  );
 
 
               historyButton.className =
@@ -3428,6 +4874,1542 @@
       );
 
   }
+
+
+
+  /* =========================
+     EMPLOYEES
+  ========================= */
+
+  async function loadEmployees() {
+
+    const loading =
+      document
+        .getElementById(
+          "employeesLoading"
+        );
+
+
+    const errorBox =
+      document
+        .getElementById(
+          "employeesError"
+        );
+
+
+    const list =
+      document
+        .getElementById(
+          "employeesList"
+        );
+
+
+    const empty =
+      document
+        .getElementById(
+          "employeesEmpty"
+        );
+
+
+    loading
+      .classList
+      .remove(
+        "hidden"
+      );
+
+
+    errorBox
+      .classList
+      .add(
+        "hidden"
+      );
+
+
+    empty
+      .classList
+      .add(
+        "hidden"
+      );
+
+
+    list.innerHTML =
+      "";
+
+
+    try {
+
+      const result =
+        await callApi(
+          {
+            action:
+              "get_employees"
+          }
+        );
+
+
+      employeesData =
+        result.employees
+        ||
+        [];
+
+
+      loading
+        .classList
+        .add(
+          "hidden"
+        );
+
+
+      renderEmployees();
+
+    } catch (error) {
+
+      loading
+        .classList
+        .add(
+          "hidden"
+        );
+
+
+      errorBox.innerText =
+        "Ошибка загрузки сотрудников: "
+        +
+        error.message;
+
+
+      errorBox
+        .classList
+        .remove(
+          "hidden"
+        );
+
+    }
+
+  }
+
+
+  function renderEmployees() {
+
+    const list =
+      document
+        .getElementById(
+          "employeesList"
+        );
+
+
+    const empty =
+      document
+        .getElementById(
+          "employeesEmpty"
+        );
+
+
+    list.innerHTML =
+      "";
+
+
+    if (
+      employeesData.length ===
+      0
+    ) {
+
+      empty
+        .classList
+        .remove(
+          "hidden"
+        );
+
+
+      return;
+
+    }
+
+
+    empty
+      .classList
+      .add(
+        "hidden"
+      );
+
+
+    employeesData
+      .forEach(
+        employee => {
+
+          const card =
+            document
+              .createElement(
+                "div"
+              );
+
+
+          card.className =
+            "staff-card"
+            +
+            (
+              employee.is_active
+                ?
+                ""
+                :
+                " inactive"
+            );
+
+
+          const fullName =
+            [
+              employee.first_name,
+              employee.last_name
+            ]
+            .filter(
+              Boolean
+            )
+            .join(
+              " "
+            );
+
+
+          const username =
+            employee.username
+              ?
+              "@"
+              +
+              employee.username
+              :
+              "Не указан";
+
+
+          const roleText =
+            employee.role ===
+            "admin"
+              ?
+              "Администратор"
+              :
+              "Сотрудник";
+
+
+          const statusText =
+            employee.is_active
+              ?
+              "Активен"
+              :
+              "Отключён";
+
+
+          const statusClass =
+            employee.is_active
+              ?
+              "staff-active"
+              :
+              "staff-inactive";
+
+
+          card.innerHTML = `
+
+            <div class="staff-top">
+
+              <div class="staff-avatar">
+                👷
+              </div>
+
+
+              <div class="staff-main">
+
+                <div class="staff-name">
+                  ${escapeHtml(fullName)}
+                </div>
+
+                <div class="staff-username">
+                  ${escapeHtml(username)}
+                </div>
+
+              </div>
+
+
+              <div class="staff-status ${statusClass}">
+                ${statusText}
+              </div>
+
+            </div>
+
+
+            <div class="staff-details">
+
+              <div class="staff-detail">
+
+                <div class="staff-detail-label">
+                  Telegram ID
+                </div>
+
+                <div class="staff-detail-value">
+                  ${escapeHtml(employee.telegram_id)}
+                </div>
+
+              </div>
+
+
+              <div class="staff-detail">
+
+                <div class="staff-detail-label">
+                  Дневная ставка
+                </div>
+
+                <div class="staff-detail-value">
+
+                  ${
+                    formatMoney(
+                      employee.daily_rate,
+                      employee.currency
+                      ||
+                      "THB"
+                    )
+                  }
+
+                </div>
+
+              </div>
+
+            </div>
+
+
+            <div class="staff-role">
+              ${roleText}
+            </div>
+
+
+            <div class="staff-actions">
+
+              <button
+                class="staff-edit-button"
+                type="button"
+              >
+                ✏️ Редактировать
+              </button>
+
+
+              <button
+                class="staff-toggle-button ${
+                  employee.is_active
+                    ?
+                    ""
+                    :
+                    "activate"
+                }"
+                type="button"
+              >
+
+                ${
+                  employee.is_active
+                    ?
+                    "⛔ Отключить"
+                    :
+                    "✓ Активировать"
+                }
+
+              </button>
+
+            </div>
+
+          `;
+
+
+          const buttons =
+            card.querySelectorAll(
+              "button"
+            );
+
+
+          buttons[0].onclick =
+            () => {
+
+              openEditEmployeeModal(
+                employee
+              );
+
+            };
+
+
+          buttons[1].onclick =
+            () => {
+
+              toggleEmployee(
+                employee
+              );
+
+            };
+
+
+          list.appendChild(
+            card
+          );
+
+        }
+      );
+
+  }
+
+
+  function openCreateEmployeeModal() {
+
+    editingEmployee =
+      null;
+
+
+    document
+      .getElementById(
+        "employeeModalTitle"
+      )
+      .innerText =
+      "Добавить сотрудника";
+
+
+    document
+      .getElementById(
+        "employeeModalSubtitle"
+      )
+      .innerText =
+      "Заполните данные нового сотрудника";
+
+
+    document
+      .getElementById(
+        "staffTelegramId"
+      )
+      .value =
+      "";
+
+
+    document
+      .getElementById(
+        "staffFirstName"
+      )
+      .value =
+      "";
+
+
+    document
+      .getElementById(
+        "staffLastName"
+      )
+      .value =
+      "";
+
+
+    document
+      .getElementById(
+        "staffUsername"
+      )
+      .value =
+      "";
+
+
+    document
+      .getElementById(
+        "staffDailyRate"
+      )
+      .value =
+      "";
+
+
+    document
+      .getElementById(
+        "staffRole"
+      )
+      .value =
+      "employee";
+
+
+    document
+      .getElementById(
+        "employeeModal"
+      )
+      .classList
+      .add(
+        "active"
+      );
+
+  }
+
+
+  function openEditEmployeeModal(
+    employee
+  ) {
+
+    editingEmployee =
+      employee;
+
+
+    document
+      .getElementById(
+        "employeeModalTitle"
+      )
+      .innerText =
+      "Редактировать сотрудника";
+
+
+    document
+      .getElementById(
+        "employeeModalSubtitle"
+      )
+      .innerText =
+      [
+        employee.first_name,
+        employee.last_name
+      ]
+      .filter(
+        Boolean
+      )
+      .join(
+        " "
+      );
+
+
+    document
+      .getElementById(
+        "staffTelegramId"
+      )
+      .value =
+      employee.telegram_id
+      ||
+      "";
+
+
+    document
+      .getElementById(
+        "staffFirstName"
+      )
+      .value =
+      employee.first_name
+      ||
+      "";
+
+
+    document
+      .getElementById(
+        "staffLastName"
+      )
+      .value =
+      employee.last_name
+      ||
+      "";
+
+
+    document
+      .getElementById(
+        "staffUsername"
+      )
+      .value =
+      employee.username
+      ?
+      "@"
+      +
+      employee.username
+      :
+      "";
+
+
+    document
+      .getElementById(
+        "staffDailyRate"
+      )
+      .value =
+      employee.daily_rate
+      ||
+      0;
+
+
+    document
+      .getElementById(
+        "staffRole"
+      )
+      .value =
+      employee.role
+      ||
+      "employee";
+
+
+    document
+      .getElementById(
+        "employeeModal"
+      )
+      .classList
+      .add(
+        "active"
+      );
+
+  }
+
+
+  function closeEmployeeModal() {
+
+    editingEmployee =
+      null;
+
+
+    document
+      .getElementById(
+        "employeeModal"
+      )
+      .classList
+      .remove(
+        "active"
+      );
+
+  }
+
+
+  function employeeOverlayClick(
+    event
+  ) {
+
+    if (
+      event.target.id ===
+      "employeeModal"
+    ) {
+
+      closeEmployeeModal();
+
+    }
+
+  }
+
+
+  async function saveEmployee() {
+
+    const telegramIdValue =
+      Number(
+        document
+          .getElementById(
+            "staffTelegramId"
+          )
+          .value
+      );
+
+
+    const firstName =
+      document
+        .getElementById(
+          "staffFirstName"
+        )
+        .value
+        .trim();
+
+
+    const lastName =
+      document
+        .getElementById(
+          "staffLastName"
+        )
+        .value
+        .trim();
+
+
+    const username =
+      document
+        .getElementById(
+          "staffUsername"
+        )
+        .value
+        .trim();
+
+
+    const dailyRate =
+      Number(
+        document
+          .getElementById(
+            "staffDailyRate"
+          )
+          .value
+      );
+
+
+    const role =
+      document
+        .getElementById(
+          "staffRole"
+        )
+        .value;
+
+
+    if (
+      !Number.isSafeInteger(
+        telegramIdValue
+      )
+      ||
+      telegramIdValue <= 0
+    ) {
+
+      showMessage(
+        "Укажите корректный Telegram ID"
+      );
+
+
+      return;
+
+    }
+
+
+    if (
+      !firstName
+    ) {
+
+      showMessage(
+        "Введите имя сотрудника"
+      );
+
+
+      return;
+
+    }
+
+
+    if (
+      !Number.isFinite(
+        dailyRate
+      )
+      ||
+      dailyRate < 0
+    ) {
+
+      showMessage(
+        "Укажите корректную дневную ставку"
+      );
+
+
+      return;
+
+    }
+
+
+    const saveButton =
+      document
+        .getElementById(
+          "saveEmployeeButton"
+        );
+
+
+    const saving =
+      document
+        .getElementById(
+          "employeeSavingMessage"
+        );
+
+
+    saveButton.disabled =
+      true;
+
+
+    saving
+      .classList
+      .remove(
+        "hidden"
+      );
+
+
+    try {
+
+      if (
+        editingEmployee
+      ) {
+
+        await callApi(
+          {
+
+            action:
+              "update_employee",
+
+            employee_id:
+              editingEmployee.id,
+
+            telegram_id:
+              telegramIdValue,
+
+            first_name:
+              firstName,
+
+            last_name:
+              lastName,
+
+            username:
+              username,
+
+            daily_rate:
+              dailyRate,
+
+            role:
+              role
+
+          }
+        );
+
+      } else {
+
+        await callApi(
+          {
+
+            action:
+              "create_employee",
+
+            telegram_id:
+              telegramIdValue,
+
+            first_name:
+              firstName,
+
+            last_name:
+              lastName,
+
+            username:
+              username,
+
+            daily_rate:
+              dailyRate,
+
+            role:
+              role
+
+          }
+        );
+
+      }
+
+
+      closeEmployeeModal();
+
+
+      await loadEmployees();
+
+
+      showMessage(
+        editingEmployee
+          ?
+          "Данные сотрудника сохранены"
+          :
+          "Сотрудник добавлен"
+      );
+
+    } catch (error) {
+
+      showMessage(
+        error.message
+      );
+
+    } finally {
+
+      saveButton.disabled =
+        false;
+
+
+      saving
+        .classList
+        .add(
+          "hidden"
+        );
+
+    }
+
+  }
+
+
+  async function toggleEmployee(
+    employee
+  ) {
+
+    const newActive =
+      !employee.is_active;
+
+
+    const actionText =
+      newActive
+        ?
+        "активировать"
+        :
+        "отключить";
+
+
+    const confirmed =
+      confirm(
+        `Вы уверены, что хотите ${actionText} сотрудника?`
+      );
+
+
+    if (
+      !confirmed
+    ) {
+      return;
+    }
+
+
+    try {
+
+      await callApi(
+        {
+
+          action:
+            "set_employee_active",
+
+          employee_id:
+            employee.id,
+
+          is_active:
+            newActive
+
+        }
+      );
+
+
+      await loadEmployees();
+
+
+      showMessage(
+        newActive
+          ?
+          "Сотрудник активирован"
+          :
+          "Сотрудник отключён"
+      );
+
+    } catch (error) {
+
+      showMessage(
+        error.message
+      );
+
+    }
+
+  }
+
+
+
+  /* =========================
+     EDIT TIMESHEET
+  ========================= */
+
+  function openEditModal(
+    day
+  ) {
+
+    editingDay =
+      day;
+
+
+    document
+      .getElementById(
+        "editModalSubtitle"
+      )
+      .innerText =
+      day.employee_name
+      +
+      " • "
+      +
+      formatShortDate(
+        day.work_date
+      );
+
+
+    document
+      .getElementById(
+        "editPaidDays"
+      )
+      .value =
+      String(
+        Number(
+          day.paid_days
+          ||
+          0
+        )
+      );
+
+
+    document
+      .getElementById(
+        "editObject"
+      )
+      .value =
+      day.objects
+      ||
+      "";
+
+
+    document
+      .getElementById(
+        "editNote"
+      )
+      .value =
+      day.override_note
+      ||
+      "";
+
+
+    const removeButton =
+      document
+        .getElementById(
+          "removeOverrideButton"
+        );
+
+
+    if (
+      day.is_overridden
+    ) {
+
+      removeButton
+        .classList
+        .remove(
+          "hidden"
+        );
+
+    } else {
+
+      removeButton
+        .classList
+        .add(
+          "hidden"
+        );
+
+    }
+
+
+    document
+      .getElementById(
+        "editModal"
+      )
+      .classList
+      .add(
+        "active"
+      );
+
+  }
+
+
+  function closeEditModal() {
+
+    editingDay =
+      null;
+
+
+    document
+      .getElementById(
+        "editModal"
+      )
+      .classList
+      .remove(
+        "active"
+      );
+
+  }
+
+
+  function editOverlayClick(
+    event
+  ) {
+
+    if (
+      event.target.id ===
+      "editModal"
+    ) {
+
+      closeEditModal();
+
+    }
+
+  }
+
+
+  async function saveOverride() {
+
+    if (
+      !editingDay
+    ) {
+      return;
+    }
+
+
+    const saving =
+      document
+        .getElementById(
+          "editSavingMessage"
+        );
+
+
+    const button =
+      document
+        .getElementById(
+          "saveOverrideButton"
+        );
+
+
+    saving
+      .classList
+      .remove(
+        "hidden"
+      );
+
+
+    button.disabled =
+      true;
+
+
+    try {
+
+      await callApi(
+        {
+
+          action:
+            "save_override",
+
+          employee_id:
+            editingDay.employee_id,
+
+          work_date:
+            editingDay.work_date,
+
+          paid_days:
+            Number(
+              document
+                .getElementById(
+                  "editPaidDays"
+                )
+                .value
+            ),
+
+          object_name:
+            document
+              .getElementById(
+                "editObject"
+              )
+              .value,
+
+          note:
+            document
+              .getElementById(
+                "editNote"
+              )
+              .value
+
+        }
+      );
+
+
+      closeEditModal();
+
+
+      await loadTimesheet();
+
+
+      showMessage(
+        "Корректировка сохранена"
+      );
+
+    } catch (error) {
+
+      showMessage(
+        error.message
+      );
+
+    } finally {
+
+      saving
+        .classList
+        .add(
+          "hidden"
+        );
+
+
+      button.disabled =
+        false;
+
+    }
+
+  }
+
+
+  async function removeOverride() {
+
+    if (
+      !editingDay
+    ) {
+      return;
+    }
+
+
+    if (
+      !confirm(
+        "Вернуть автоматический расчёт?"
+      )
+    ) {
+      return;
+    }
+
+
+    try {
+
+      await callApi(
+        {
+
+          action:
+            "remove_override",
+
+          employee_id:
+            editingDay.employee_id,
+
+          work_date:
+            editingDay.work_date
+
+        }
+      );
+
+
+      closeEditModal();
+
+
+      await loadTimesheet();
+
+
+      showMessage(
+        "Автоматический расчёт восстановлен"
+      );
+
+    } catch (error) {
+
+      showMessage(
+        error.message
+      );
+
+    }
+
+  }
+
+
+
+  /* =========================
+     HISTORY
+  ========================= */
+
+  async function openHistoryModal(
+    day
+  ) {
+
+    document
+      .getElementById(
+        "historyModal"
+      )
+      .classList
+      .add(
+        "active"
+      );
+
+
+    document
+      .getElementById(
+        "historyModalSubtitle"
+      )
+      .innerText =
+      day.employee_name
+      +
+      " • "
+      +
+      formatShortDate(
+        day.work_date
+      );
+
+
+    const loading =
+      document
+        .getElementById(
+          "historyLoading"
+        );
+
+
+    const errorBox =
+      document
+        .getElementById(
+          "historyError"
+        );
+
+
+    const empty =
+      document
+        .getElementById(
+          "historyEmpty"
+        );
+
+
+    const list =
+      document
+        .getElementById(
+          "historyList"
+        );
+
+
+    loading
+      .classList
+      .remove(
+        "hidden"
+      );
+
+
+    errorBox
+      .classList
+      .add(
+        "hidden"
+      );
+
+
+    empty
+      .classList
+      .add(
+        "hidden"
+      );
+
+
+    list.innerHTML =
+      "";
+
+
+    try {
+
+      const result =
+        await callApi(
+          {
+
+            action:
+              "get_history",
+
+            employee_id:
+              day.employee_id,
+
+            work_date:
+              day.work_date
+
+          }
+        );
+
+
+      loading
+        .classList
+        .add(
+          "hidden"
+        );
+
+
+      const history =
+        result.history
+        ||
+        [];
+
+
+      if (
+        history.length ===
+        0
+      ) {
+
+        empty
+          .classList
+          .remove(
+            "hidden"
+          );
+
+
+        return;
+
+      }
+
+
+      history.forEach(
+        item => {
+
+          const box =
+            document
+              .createElement(
+                "div"
+              );
+
+
+          box.className =
+            "history-item";
+
+
+          const oldDays =
+            item.old_paid_days ===
+            null
+              ?
+              "автоматически"
+              :
+              Number(
+                item.old_paid_days
+              )
+              +
+              " дня";
+
+
+          const newDays =
+            item.new_paid_days ===
+            null
+              ?
+              "—"
+              :
+              Number(
+                item.new_paid_days
+              )
+              +
+              " дня";
+
+
+          let objectLine =
+            "";
+
+
+          if (
+            item.old_object_name
+            ||
+            item.new_object_name
+          ) {
+
+            objectLine = `
+
+              <div class="history-line">
+
+                🏗️ Объект:
+
+                ${
+                  escapeHtml(
+                    item.old_object_name
+                    ||
+                    "автоматический"
+                  )
+                }
+
+                <span class="history-arrow">
+                  →
+                </span>
+
+                ${
+                  escapeHtml(
+                    item.new_object_name
+                    ||
+                    "автоматический"
+                  )
+                }
+
+              </div>
+
+            `;
+
+          }
+
+
+          let comment =
+            "";
+
+
+          if (
+            item.comment
+          ) {
+
+            comment = `
+
+              <div class="history-comment">
+
+                💬
+                ${escapeHtml(item.comment)}
+
+              </div>
+
+            `;
+
+          }
+
+
+          box.innerHTML = `
+
+            <div class="history-date">
+
+              ${formatDateTime(item.changed_at)}
+
+            </div>
+
+
+            <div class="history-change">
+
+              ${escapeHtml(oldDays)}
+
+              <span class="history-arrow">
+                →
+              </span>
+
+              ${escapeHtml(newDays)}
+
+            </div>
+
+
+            ${objectLine}
+
+            ${comment}
+
+          `;
+
+
+          list.appendChild(
+            box
+          );
+
+        }
+      );
+
+    } catch (error) {
+
+      loading
+        .classList
+        .add(
+          "hidden"
+        );
+
+
+      errorBox.innerText =
+        "Не удалось загрузить историю: "
+        +
+        error.message;
+
+
+      errorBox
+        .classList
+        .remove(
+          "hidden"
+        );
+
+    }
+
+  }
+
+
+  function closeHistoryModal() {
+
+    document
+      .getElementById(
+        "historyModal"
+      )
+      .classList
+      .remove(
+        "active"
+      );
+
+  }
+
+
+  function historyOverlayClick(
+    event
+  ) {
+
+    if (
+      event.target.id ===
+      "historyModal"
+    ) {
+
+      closeHistoryModal();
+
+    }
+
+  }
+
 
 
   /* =========================
@@ -3480,590 +6462,6 @@
   }
 
 
-  /* =========================
-     РЕДАКТИРОВАНИЕ
-  ========================= */
-
-  function openEditModal(day) {
-
-    editingDay =
-      day;
-
-
-    document
-      .getElementById(
-        "editModalSubtitle"
-      )
-      .innerText =
-      day.employee_name
-      +
-      " • "
-      +
-      formatShortDate(
-        day.work_date
-      );
-
-
-    document
-      .getElementById(
-        "editPaidDays"
-      )
-      .value =
-      String(
-        Number(
-          day.paid_days || 0
-        )
-      );
-
-
-    document
-      .getElementById(
-        "editObject"
-      )
-      .value =
-      day.objects ||
-      "";
-
-
-    document
-      .getElementById(
-        "editNote"
-      )
-      .value =
-      day.override_note ||
-      "";
-
-
-    const removeButton =
-      document.getElementById(
-        "removeOverrideButton"
-      );
-
-
-    if (
-      day.is_overridden
-    ) {
-
-      removeButton
-        .classList
-        .remove("hidden");
-
-    } else {
-
-      removeButton
-        .classList
-        .add("hidden");
-
-    }
-
-
-    document
-      .getElementById(
-        "editModal"
-      )
-      .classList
-      .add("active");
-
-  }
-
-
-  function closeEditModal() {
-
-    editingDay =
-      null;
-
-    document
-      .getElementById(
-        "editModal"
-      )
-      .classList
-      .remove("active");
-
-  }
-
-
-  function editOverlayClick(
-    event
-  ) {
-
-    if (
-      event.target.id ===
-      "editModal"
-    ) {
-
-      closeEditModal();
-
-    }
-
-  }
-
-
-  async function saveOverride() {
-
-    if (!editingDay) {
-      return;
-    }
-
-
-    const saving =
-      document.getElementById(
-        "editSavingMessage"
-      );
-
-
-    const button =
-      document.getElementById(
-        "saveOverrideButton"
-      );
-
-
-    saving
-      .classList
-      .remove("hidden");
-
-    button.disabled =
-      true;
-
-
-    try {
-
-      await callTimesheetApi(
-        {
-
-          action:
-            "save_override",
-
-          employee_id:
-            editingDay.employee_id,
-
-          work_date:
-            editingDay.work_date,
-
-          paid_days:
-            Number(
-              document
-                .getElementById(
-                  "editPaidDays"
-                )
-                .value
-            ),
-
-          object_name:
-            document
-              .getElementById(
-                "editObject"
-              )
-              .value,
-
-          note:
-            document
-              .getElementById(
-                "editNote"
-              )
-              .value
-
-        }
-      );
-
-
-      closeEditModal();
-
-      await loadTimesheet();
-
-
-      if (tg) {
-
-        tg.showAlert(
-          "Корректировка сохранена"
-        );
-
-      } else {
-
-        alert(
-          "Корректировка сохранена"
-        );
-
-      }
-
-    } catch (error) {
-
-      alert(
-        error.message
-      );
-
-    } finally {
-
-      saving
-        .classList
-        .add("hidden");
-
-      button.disabled =
-        false;
-
-    }
-
-  }
-
-
-  async function removeOverride() {
-
-    if (!editingDay) {
-      return;
-    }
-
-
-    if (
-      !confirm(
-        "Вернуть автоматический расчёт?"
-      )
-    ) {
-      return;
-    }
-
-
-    try {
-
-      await callTimesheetApi(
-        {
-
-          action:
-            "remove_override",
-
-          employee_id:
-            editingDay.employee_id,
-
-          work_date:
-            editingDay.work_date
-
-        }
-      );
-
-
-      closeEditModal();
-
-      await loadTimesheet();
-
-
-      if (tg) {
-
-        tg.showAlert(
-          "Автоматический расчёт восстановлен"
-        );
-
-      }
-
-    } catch (error) {
-
-      alert(
-        error.message
-      );
-
-    }
-
-  }
-
-
-  /* =========================
-     ИСТОРИЯ
-  ========================= */
-
-  async function openHistoryModal(
-    day
-  ) {
-
-    document
-      .getElementById(
-        "historyModal"
-      )
-      .classList
-      .add("active");
-
-
-    document
-      .getElementById(
-        "historyModalSubtitle"
-      )
-      .innerText =
-      day.employee_name
-      +
-      " • "
-      +
-      formatShortDate(
-        day.work_date
-      );
-
-
-    const loading =
-      document.getElementById(
-        "historyLoading"
-      );
-
-    const errorBox =
-      document.getElementById(
-        "historyError"
-      );
-
-    const empty =
-      document.getElementById(
-        "historyEmpty"
-      );
-
-    const list =
-      document.getElementById(
-        "historyList"
-      );
-
-
-    loading
-      .classList
-      .remove("hidden");
-
-    errorBox
-      .classList
-      .add("hidden");
-
-    empty
-      .classList
-      .add("hidden");
-
-    list.innerHTML =
-      "";
-
-
-    try {
-
-      const result =
-        await callTimesheetApi(
-          {
-
-            action:
-              "get_history",
-
-            employee_id:
-              day.employee_id,
-
-            work_date:
-              day.work_date
-
-          }
-        );
-
-
-      loading
-        .classList
-        .add("hidden");
-
-
-      const history =
-        result.history ||
-        [];
-
-
-      if (
-        history.length ===
-        0
-      ) {
-
-        empty
-          .classList
-          .remove("hidden");
-
-        return;
-
-      }
-
-
-      history.forEach(
-        item => {
-
-          const box =
-            document.createElement(
-              "div"
-            );
-
-
-          box.className =
-            "history-item";
-
-
-          const oldDays =
-            item.old_paid_days === null
-              ?
-              "автоматически"
-              :
-              Number(
-                item.old_paid_days
-              ) + " дня";
-
-
-          const newDays =
-            item.new_paid_days === null
-              ?
-              "—"
-              :
-              Number(
-                item.new_paid_days
-              ) + " дня";
-
-
-          let objectLine =
-            "";
-
-
-          if (
-            item.old_object_name ||
-            item.new_object_name
-          ) {
-
-            objectLine = `
-
-              <div class="history-line">
-
-                🏗️ Объект:
-                ${
-                  escapeHtml(
-                    item.old_object_name ||
-                    "автоматический"
-                  )
-                }
-
-                <span class="history-arrow">
-                  →
-                </span>
-
-                ${
-                  escapeHtml(
-                    item.new_object_name ||
-                    "автоматический"
-                  )
-                }
-
-              </div>
-
-            `;
-
-          }
-
-
-          let comment =
-            "";
-
-
-          if (
-            item.comment
-          ) {
-
-            comment = `
-
-              <div class="history-comment">
-
-                💬
-                ${escapeHtml(
-                  item.comment
-                )}
-
-              </div>
-
-            `;
-
-          }
-
-
-          box.innerHTML = `
-
-            <div class="history-date">
-
-              ${formatDateTime(
-                item.changed_at
-              )}
-
-            </div>
-
-
-            <div class="history-change">
-
-              ${
-                escapeHtml(
-                  oldDays
-                )
-              }
-
-              <span class="history-arrow">
-                →
-              </span>
-
-              ${
-                escapeHtml(
-                  newDays
-                )
-              }
-
-            </div>
-
-
-            ${objectLine}
-
-            ${comment}
-
-          `;
-
-
-          list.appendChild(
-            box
-          );
-
-        }
-      );
-
-    } catch (error) {
-
-      loading
-        .classList
-        .add("hidden");
-
-
-      errorBox.innerText =
-        "Не удалось загрузить историю: "
-        +
-        error.message;
-
-
-      errorBox
-        .classList
-        .remove("hidden");
-
-    }
-
-  }
-
-
-  function closeHistoryModal() {
-
-    document
-      .getElementById(
-        "historyModal"
-      )
-      .classList
-      .remove("active");
-
-  }
-
-
-  function historyOverlayClick(
-    event
-  ) {
-
-    if (
-      event.target.id ===
-      "historyModal"
-    ) {
-
-      closeHistoryModal();
-
-    }
-
-  }
-
 
   /* =========================
      STATUS
@@ -4079,11 +6477,13 @@
     ) {
 
       return {
+
         className:
           "status-full",
 
         text:
           "1 день"
+
       };
 
     }
@@ -4095,11 +6495,13 @@
     ) {
 
       return {
+
         className:
           "status-half",
 
         text:
           "0,5 дня"
+
       };
 
     }
@@ -4111,11 +6513,13 @@
     ) {
 
       return {
+
         className:
           "status-review",
 
         text:
           "Проверить"
+
       };
 
     }
@@ -4127,30 +6531,66 @@
     ) {
 
       return {
+
         className:
           "status-zero",
 
         text:
           "0 дней"
+
       };
 
     }
 
 
     return {
+
       className:
         "status-zero",
 
       text:
-        status ||
+        status
+        ||
         "Нет данных"
+
     };
 
   }
 
 
+
   /* =========================
-     ESCAPING
+     MESSAGES
+  ========================= */
+
+  function showMessage(
+    message
+  ) {
+
+    if (
+      tg &&
+      typeof tg.showAlert ===
+      "function"
+    ) {
+
+      tg.showAlert(
+        message
+      );
+
+    } else {
+
+      alert(
+        message
+      );
+
+    }
+
+  }
+
+
+
+  /* =========================
+     ESCAPE
   ========================= */
 
   function escapeHtml(
@@ -4158,28 +6598,30 @@
   ) {
 
     return String(
-      value ?? ""
+      value
+      ??
+      ""
     )
-      .replaceAll(
-        "&",
-        "&amp;"
-      )
-      .replaceAll(
-        "<",
-        "&lt;"
-      )
-      .replaceAll(
-        ">",
-        "&gt;"
-      )
-      .replaceAll(
-        '"',
-        "&quot;"
-      )
-      .replaceAll(
-        "'",
-        "&#039;"
-      );
+    .replaceAll(
+      "&",
+      "&amp;"
+    )
+    .replaceAll(
+      "<",
+      "&lt;"
+    )
+    .replaceAll(
+      ">",
+      "&gt;"
+    )
+    .replaceAll(
+      '"',
+      "&quot;"
+    )
+    .replaceAll(
+      "'",
+      "&#039;"
+    );
 
   }
 
@@ -4195,33 +6637,8 @@
   }
 
 
-  function escapeJsString(
-    value
-  ) {
-
-    return String(
-      value ?? ""
-    )
-      .replaceAll(
-        "\\",
-        "\\\\"
-      )
-      .replaceAll(
-        "'",
-        "\\'"
-      )
-      .replaceAll(
-        "\n",
-        ""
-      )
-      .replaceAll(
-        "\r",
-        ""
-      );
-
-  }
-
 </script>
+
 
 </body>
 
