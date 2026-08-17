@@ -217,7 +217,8 @@
       border-radius: 18px;
       padding: 16px;
       margin-bottom: 18px;
-      box-shadow: 0 2px 8px rgba(0,0,0,0.04);
+      box-shadow:
+        0 2px 8px rgba(0,0,0,0.04);
     }
 
     .employee-row {
@@ -292,7 +293,8 @@
 
       cursor: pointer;
 
-      box-shadow: 0 2px 8px rgba(0,0,0,0.04);
+      box-shadow:
+        0 2px 8px rgba(0,0,0,0.04);
     }
 
     .object-button.selected {
@@ -313,7 +315,7 @@
 
 
     /* =========================
-       НАЧАЛ / ЗАКОНЧИЛ
+       ТИП ОТМЕТКИ
     ========================= */
 
     .work-type-grid {
@@ -334,7 +336,8 @@
 
       cursor: pointer;
 
-      box-shadow: 0 2px 8px rgba(0,0,0,0.04);
+      box-shadow:
+        0 2px 8px rgba(0,0,0,0.04);
     }
 
     .work-icon {
@@ -369,7 +372,9 @@
       border-radius: 18px;
       padding: 16px;
       margin-top: 18px;
-      box-shadow: 0 2px 8px rgba(0,0,0,0.04);
+
+      box-shadow:
+        0 2px 8px rgba(0,0,0,0.04);
     }
 
     .time-label {
@@ -442,6 +447,23 @@
       cursor: default;
     }
 
+    .photo-status {
+      margin-top: 10px;
+      text-align: center;
+      font-size: 14px;
+      color: #8e8e93;
+    }
+
+    .success-message {
+      background: #e9f8ef;
+      color: #157347;
+      padding: 14px;
+      border-radius: 15px;
+      text-align: center;
+      font-weight: 650;
+      margin-top: 12px;
+    }
+
 
     /* =========================
        ТАБЕЛЬ
@@ -453,7 +475,8 @@
       border-radius: 20px;
       padding: 16px;
       margin-bottom: 16px;
-      box-shadow: 0 2px 8px rgba(0,0,0,0.04);
+      box-shadow:
+        0 2px 8px rgba(0,0,0,0.04);
     }
 
     .filter-label,
@@ -560,7 +583,8 @@
       background: #ffffff;
       border-radius: 18px;
       padding: 16px;
-      box-shadow: 0 2px 8px rgba(0,0,0,0.04);
+      box-shadow:
+        0 2px 8px rgba(0,0,0,0.04);
     }
 
     .day-card.corrected {
@@ -683,6 +707,59 @@
       font-size: 13px;
       line-height: 1.4;
     }
+
+
+    /* =========================
+       ФОТО В ТАБЕЛЕ
+    ========================= */
+
+    .attendance-photos {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 9px;
+      margin-top: 13px;
+    }
+
+    .attendance-photo-card {
+      background: #f7f7f8;
+      border-radius: 14px;
+      overflow: hidden;
+    }
+
+    .attendance-photo-title {
+      padding: 9px 10px;
+      font-size: 12px;
+      font-weight: 700;
+      color: #5d5d62;
+    }
+
+    .attendance-photo {
+      width: 100%;
+      height: 150px;
+      display: block;
+      object-fit: cover;
+      background: #eeeeF1;
+      cursor: pointer;
+    }
+
+    .no-photo {
+      height: 150px;
+
+      display: flex;
+      align-items: center;
+      justify-content: center;
+
+      text-align: center;
+      padding: 10px;
+
+      color: #aaaab0;
+      font-size: 12px;
+    }
+
+
+    /* =========================
+       ADMIN
+    ========================= */
 
     .admin-buttons {
       display: grid;
@@ -887,6 +964,38 @@
       padding: 10px;
       font-size: 13px;
       line-height: 1.4;
+    }
+
+
+    /* =========================
+       PHOTO VIEWER
+    ========================= */
+
+    .photo-viewer {
+      display: none;
+
+      position: fixed;
+      inset: 0;
+
+      z-index: 20000;
+
+      background: rgba(0,0,0,0.92);
+
+      align-items: center;
+      justify-content: center;
+
+      padding: 16px;
+    }
+
+    .photo-viewer.active {
+      display: flex;
+    }
+
+    .photo-viewer img {
+      max-width: 100%;
+      max-height: 90vh;
+      object-fit: contain;
+      border-radius: 10px;
     }
 
   </style>
@@ -1152,7 +1261,7 @@
 
       <button
         class="work-type-button start"
-        onclick="selectWorkType(this, 'Начал работу')"
+        onclick="selectWorkType(this, 'start')"
       >
         <span class="work-icon">▶️</span>
         <span class="work-title">Начал работу</span>
@@ -1161,7 +1270,7 @@
 
       <button
         class="work-type-button finish"
-        onclick="selectWorkType(this, 'Закончил работу')"
+        onclick="selectWorkType(this, 'finish')"
       >
         <span class="work-icon">⏹️</span>
         <span class="work-title">Закончил работу</span>
@@ -1203,7 +1312,7 @@
       type="file"
       id="photoInput"
       accept="image/*"
-      capture="environment"
+      capture="user"
       onchange="showPhoto(event)"
     >
 
@@ -1221,11 +1330,27 @@
     <button
       id="sendButton"
       class="action-button send-button disabled-button"
-      onclick="sendMark()"
+      onclick="saveAttendance()"
       disabled
     >
       ✓ Отправить отметку
     </button>
+
+
+    <div
+      id="photoStatus"
+      class="photo-status hidden"
+    >
+      Подготавливаем фото...
+    </div>
+
+
+    <div
+      id="photoSuccess"
+      class="success-message hidden"
+    >
+      ✓ Фотоотметка сохранена
+    </div>
 
   </div>
 
@@ -1526,6 +1651,24 @@
 
 
 
+<!-- ПРОСМОТР ФОТО -->
+
+<div
+  id="photoViewer"
+  class="photo-viewer"
+  onclick="closePhotoViewer()"
+>
+
+  <img
+    id="photoViewerImage"
+    src=""
+    alt="Фото отметки"
+  >
+
+</div>
+
+
+
 <script>
 
   const tg =
@@ -1547,7 +1690,9 @@
 
   let selectedObject = null;
   let selectedWorkType = null;
-  let photoSelected = false;
+
+  let selectedPhotoBase64 = null;
+  let selectedPhotoMime = "image/jpeg";
 
   let employeeName = "Олег";
   let telegramId = null;
@@ -1581,6 +1726,10 @@
   }
 
 
+  /* =========================
+     ДАТА И ВРЕМЯ
+  ========================= */
+
   function formatDate(date) {
 
     return date.toLocaleDateString(
@@ -1591,6 +1740,26 @@
         year: "numeric"
       }
     );
+
+  }
+
+
+  function localDateISO(date) {
+
+    const year =
+      date.getFullYear();
+
+    const month =
+      String(
+        date.getMonth() + 1
+      ).padStart(2, "0");
+
+    const day =
+      String(
+        date.getDate()
+      ).padStart(2, "0");
+
+    return `${year}-${month}-${day}`;
 
   }
 
@@ -1643,9 +1812,17 @@
   function formatTime(date) {
 
     return [
-      String(date.getHours()).padStart(2, "0"),
-      String(date.getMinutes()).padStart(2, "0"),
-      String(date.getSeconds()).padStart(2, "0")
+      String(
+        date.getHours()
+      ).padStart(2, "0"),
+
+      String(
+        date.getMinutes()
+      ).padStart(2, "0"),
+
+      String(
+        date.getSeconds()
+      ).padStart(2, "0")
     ].join(":");
 
   }
@@ -1692,17 +1869,23 @@
       new Date();
 
     document
-      .getElementById("currentTime")
+      .getElementById(
+        "currentTime"
+      )
       .innerText =
       formatTime(now);
 
     document
-      .getElementById("currentDate")
+      .getElementById(
+        "currentDate"
+      )
       .innerText =
       formatDate(now);
 
     document
-      .getElementById("employeeName")
+      .getElementById(
+        "employeeName"
+      )
       .innerText =
       employeeName;
 
@@ -1727,7 +1910,9 @@
       .querySelectorAll(".screen")
       .forEach(
         screen =>
-          screen.classList.remove("active")
+          screen
+            .classList
+            .remove("active")
       );
 
   }
@@ -1738,8 +1923,11 @@
     hideAllScreens();
 
     document
-      .getElementById("mainScreen")
-      .classList.add("active");
+      .getElementById(
+        "mainScreen"
+      )
+      .classList
+      .add("active");
 
     window.scrollTo(0, 0);
 
@@ -1750,9 +1938,14 @@
 
     hideAllScreens();
 
+    resetPhotoForm();
+
     document
-      .getElementById("photoScreen")
-      .classList.add("active");
+      .getElementById(
+        "photoScreen"
+      )
+      .classList
+      .add("active");
 
     updateDateAndTime();
 
@@ -1766,8 +1959,11 @@
     hideAllScreens();
 
     document
-      .getElementById("timesheetScreen")
-      .classList.add("active");
+      .getElementById(
+        "timesheetScreen"
+      )
+      .classList
+      .add("active");
 
 
     const monthInput =
@@ -1803,6 +1999,110 @@
   /* =========================
      ФОТООТМЕТКА
   ========================= */
+
+  function resetPhotoForm() {
+
+    selectedObject =
+      null;
+
+    selectedWorkType =
+      null;
+
+    selectedPhotoBase64 =
+      null;
+
+    selectedPhotoMime =
+      "image/jpeg";
+
+
+    document
+      .querySelectorAll(
+        ".object-button"
+      )
+      .forEach(
+        item =>
+          item.classList.remove(
+            "selected"
+          )
+      );
+
+
+    document
+      .querySelectorAll(
+        ".work-type-button"
+      )
+      .forEach(
+        item =>
+          item.classList.remove(
+            "selected"
+          )
+      );
+
+
+    const input =
+      document.getElementById(
+        "photoInput"
+      );
+
+    input.value =
+      "";
+
+
+    document
+      .getElementById(
+        "photoBox"
+      )
+      .innerHTML =
+      "Сначала выберите объект и тип отметки";
+
+
+    const photoButton =
+      document.getElementById(
+        "photoButton"
+      );
+
+    photoButton.disabled =
+      true;
+
+    photoButton
+      .classList
+      .add(
+        "disabled-button"
+      );
+
+
+    const sendButton =
+      document.getElementById(
+        "sendButton"
+      );
+
+    sendButton.disabled =
+      true;
+
+    sendButton
+      .classList
+      .add(
+        "disabled-button"
+      );
+
+
+    document
+      .getElementById(
+        "photoStatus"
+      )
+      .classList
+      .add("hidden");
+
+
+    document
+      .getElementById(
+        "photoSuccess"
+      )
+      .classList
+      .add("hidden");
+
+  }
+
 
   function selectObject(
     button,
@@ -1889,7 +2189,7 @@
         );
 
 
-      if (!photoSelected) {
+      if (!selectedPhotoBase64) {
 
         document
           .getElementById(
@@ -1925,6 +2225,7 @@
       return;
     }
 
+
     document
       .getElementById(
         "photoInput"
@@ -1934,113 +2235,367 @@
   }
 
 
-  function showPhoto(event) {
+  async function showPhoto(event) {
 
     const file =
       event.target.files[0];
+
 
     if (!file) {
       return;
     }
 
 
-    const reader =
-      new FileReader();
+    const status =
+      document.getElementById(
+        "photoStatus"
+      );
 
 
-    reader.onload =
-      function(e) {
+    status.innerText =
+      "Подготавливаем фото...";
 
-        document
-          .getElementById(
-            "photoBox"
-          )
-          .innerHTML =
-          '<img src="' +
-          e.target.result +
-          '">';
+    status
+      .classList
+      .remove("hidden");
 
 
-        photoSelected =
-          true;
+    try {
+
+      const compressed =
+        await compressImage(
+          file,
+          1280,
+          0.78
+        );
 
 
-        const button =
-          document.getElementById(
-            "sendButton"
-          );
+      selectedPhotoBase64 =
+        compressed.base64;
+
+      selectedPhotoMime =
+        compressed.mime;
 
 
-        button.disabled =
-          false;
-
-        button
-          .classList
-          .remove(
-            "disabled-button"
-          );
-
-      };
+      document
+        .getElementById(
+          "photoBox"
+        )
+        .innerHTML =
+        '<img src="' +
+        compressed.preview +
+        '">';
 
 
-    reader.readAsDataURL(file);
+      const sendButton =
+        document.getElementById(
+          "sendButton"
+        );
+
+
+      sendButton.disabled =
+        false;
+
+      sendButton
+        .classList
+        .remove(
+          "disabled-button"
+        );
+
+
+      status
+        .classList
+        .add("hidden");
+
+    } catch (error) {
+
+      status.innerText =
+        "Не удалось обработать фото";
+
+
+      selectedPhotoBase64 =
+        null;
+
+    }
 
   }
 
 
-  function sendMark() {
+  function compressImage(
+    file,
+    maxSize,
+    quality
+  ) {
+
+    return new Promise(
+      (
+        resolve,
+        reject
+      ) => {
+
+        const reader =
+          new FileReader();
+
+
+        reader.onerror =
+          () =>
+            reject(
+              new Error(
+                "Ошибка чтения фото"
+              )
+            );
+
+
+        reader.onload =
+          () => {
+
+            const image =
+              new Image();
+
+
+            image.onerror =
+              () =>
+                reject(
+                  new Error(
+                    "Ошибка изображения"
+                  )
+                );
+
+
+            image.onload =
+              () => {
+
+                let width =
+                  image.width;
+
+                let height =
+                  image.height;
+
+
+                if (
+                  width >
+                  maxSize ||
+                  height >
+                  maxSize
+                ) {
+
+                  const scale =
+                    Math.min(
+                      maxSize / width,
+                      maxSize / height
+                    );
+
+
+                  width =
+                    Math.round(
+                      width * scale
+                    );
+
+
+                  height =
+                    Math.round(
+                      height * scale
+                    );
+
+                }
+
+
+                const canvas =
+                  document.createElement(
+                    "canvas"
+                  );
+
+
+                canvas.width =
+                  width;
+
+                canvas.height =
+                  height;
+
+
+                const context =
+                  canvas.getContext(
+                    "2d"
+                  );
+
+
+                context.drawImage(
+                  image,
+                  0,
+                  0,
+                  width,
+                  height
+                );
+
+
+                const mime =
+                  "image/jpeg";
+
+
+                const dataUrl =
+                  canvas.toDataURL(
+                    mime,
+                    quality
+                  );
+
+
+                const base64 =
+                  dataUrl.split(",")[1];
+
+
+                resolve(
+                  {
+                    base64:
+                      base64,
+
+                    mime:
+                      mime,
+
+                    preview:
+                      dataUrl
+                  }
+                );
+
+              };
+
+
+            image.src =
+              reader.result;
+
+          };
+
+
+        reader.readAsDataURL(
+          file
+        );
+
+      }
+    );
+
+  }
+
+
+  async function saveAttendance() {
 
     if (
       !selectedObject ||
       !selectedWorkType ||
-      !photoSelected
+      !selectedPhotoBase64
     ) {
       return;
     }
+
+
+    const button =
+      document.getElementById(
+        "sendButton"
+      );
+
+
+    const status =
+      document.getElementById(
+        "photoStatus"
+      );
+
+
+    const success =
+      document.getElementById(
+        "photoSuccess"
+      );
+
+
+    button.disabled =
+      true;
+
+
+    status.innerText =
+      "Сохраняем фотоотметку...";
+
+    status
+      .classList
+      .remove("hidden");
+
+
+    success
+      .classList
+      .add("hidden");
 
 
     const now =
       new Date();
 
 
-    const data = {
+    try {
 
-      employee:
-        employeeName,
+      await callTimesheetApi(
+        {
 
-      telegram_id:
-        telegramId,
+          action:
+            "save_attendance",
 
-      object:
-        selectedObject,
+          object_name:
+            selectedObject,
 
-      work_type:
-        selectedWorkType,
+          mark_type:
+            selectedWorkType,
 
-      date:
-        formatDate(now),
+          work_date:
+            localDateISO(now),
 
-      time:
-        formatTime(now)
+          mark_time:
+            formatTime(now),
 
-    };
+          photo_base64:
+            selectedPhotoBase64,
 
+          mime_type:
+            selectedPhotoMime
 
-    if (
-      tg &&
-      typeof tg.sendData ===
-      "function"
-    ) {
-
-      tg.sendData(
-        JSON.stringify(data)
+        }
       );
 
-    } else {
 
-      alert(
-        "Отправка работает только внутри Telegram"
+      status
+        .classList
+        .add("hidden");
+
+
+      success
+        .classList
+        .remove("hidden");
+
+
+      if (tg) {
+
+        tg.HapticFeedback
+          ?.notificationOccurred(
+            "success"
+          );
+
+      }
+
+
+      setTimeout(
+        () => {
+
+          resetPhotoForm();
+
+          goToMain();
+
+        },
+        1600
       );
+
+    } catch (error) {
+
+      status.innerText =
+        "Ошибка: "
+        +
+        error.message;
+
+
+      button.disabled =
+        false;
 
     }
 
@@ -2071,7 +2626,8 @@
       await fetch(
         TIMESHEET_API,
         {
-          method: "POST",
+          method:
+            "POST",
 
           headers: {
             "Content-Type":
@@ -2111,7 +2667,7 @@
 
 
   /* =========================
-     ЗАГРУЗКА ТАБЕЛЯ
+     ТАБЕЛЬ
   ========================= */
 
   async function loadTimesheet() {
@@ -2242,7 +2798,9 @@
 
 
         option.value =
-          String(employee.id);
+          String(
+            employee.id
+          );
 
 
         option.textContent =
@@ -2443,7 +3001,12 @@
                 </div>
 
                 <div class="summary-value">
-                  ${Number(summary.total_paid_days || 0)}
+                  ${
+                    Number(
+                      summary.total_paid_days ||
+                      0
+                    )
+                  }
                 </div>
 
               </div>
@@ -2604,13 +3167,51 @@
                   Комментарий:
                 </strong>
 
-                ${escapeHtml(day.override_note)}
+                ${escapeHtml(
+                  day.override_note
+                )}
 
               </div>
 
             `;
 
           }
+
+
+          const startPhoto =
+            day.start_photo_url
+              ?
+              `
+                <img
+                  class="attendance-photo"
+                  src="${escapeAttribute(day.start_photo_url)}"
+                  onclick="openPhotoViewer('${escapeJsString(day.start_photo_url)}')"
+                >
+              `
+              :
+              `
+                <div class="no-photo">
+                  Фото пока нет
+                </div>
+              `;
+
+
+          const finishPhoto =
+            day.finish_photo_url
+              ?
+              `
+                <img
+                  class="attendance-photo"
+                  src="${escapeAttribute(day.finish_photo_url)}"
+                  onclick="openPhotoViewer('${escapeJsString(day.finish_photo_url)}')"
+                >
+              `
+              :
+              `
+                <div class="no-photo">
+                  Фото пока нет
+                </div>
+              `;
 
 
           card.innerHTML = `
@@ -2708,6 +3309,32 @@
             </div>
 
 
+            <div class="attendance-photos">
+
+              <div class="attendance-photo-card">
+
+                <div class="attendance-photo-title">
+                  📸 Начало
+                </div>
+
+                ${startPhoto}
+
+              </div>
+
+
+              <div class="attendance-photo-card">
+
+                <div class="attendance-photo-title">
+                  📸 Окончание
+                </div>
+
+                ${finishPhoto}
+
+              </div>
+
+            </div>
+
+
             ${note}
 
           `;
@@ -2723,6 +3350,7 @@
                 "div"
               );
 
+
             buttons.className =
               "admin-buttons";
 
@@ -2732,15 +3360,20 @@
                 "button"
               );
 
+
             editButton.className =
               "admin-edit-button";
+
 
             editButton.textContent =
               "✏️ Редактировать день";
 
+
             editButton.onclick =
               () =>
-                openEditModal(day);
+                openEditModal(
+                  day
+                );
 
 
             buttons.appendChild(
@@ -2757,11 +3390,14 @@
                   "button"
                 );
 
+
               historyButton.className =
                 "history-button";
 
+
               historyButton.textContent =
                 "🕘 История изменений";
+
 
               historyButton.onclick =
                 () =>
@@ -2790,6 +3426,56 @@
 
         }
       );
+
+  }
+
+
+  /* =========================
+     PHOTO VIEWER
+  ========================= */
+
+  function openPhotoViewer(
+    url
+  ) {
+
+    document
+      .getElementById(
+        "photoViewerImage"
+      )
+      .src =
+      url;
+
+
+    document
+      .getElementById(
+        "photoViewer"
+      )
+      .classList
+      .add(
+        "active"
+      );
+
+  }
+
+
+  function closePhotoViewer() {
+
+    document
+      .getElementById(
+        "photoViewer"
+      )
+      .classList
+      .remove(
+        "active"
+      );
+
+
+    document
+      .getElementById(
+        "photoViewerImage"
+      )
+      .src =
+      "";
 
   }
 
@@ -3174,7 +3860,8 @@
 
 
       if (
-        history.length === 0
+        history.length ===
+        0
       ) {
 
         empty
@@ -3193,6 +3880,7 @@
             document.createElement(
               "div"
             );
+
 
           box.className =
             "history-item";
@@ -3378,7 +4066,7 @@
 
 
   /* =========================
-     СТАТУСЫ
+     STATUS
   ========================= */
 
   function getStatusStyle(
@@ -3461,6 +4149,10 @@
   }
 
 
+  /* =========================
+     ESCAPING
+  ========================= */
+
   function escapeHtml(
     value
   ) {
@@ -3468,11 +4160,64 @@
     return String(
       value ?? ""
     )
-      .replaceAll("&", "&amp;")
-      .replaceAll("<", "&lt;")
-      .replaceAll(">", "&gt;")
-      .replaceAll('"', "&quot;")
-      .replaceAll("'", "&#039;");
+      .replaceAll(
+        "&",
+        "&amp;"
+      )
+      .replaceAll(
+        "<",
+        "&lt;"
+      )
+      .replaceAll(
+        ">",
+        "&gt;"
+      )
+      .replaceAll(
+        '"',
+        "&quot;"
+      )
+      .replaceAll(
+        "'",
+        "&#039;"
+      );
+
+  }
+
+
+  function escapeAttribute(
+    value
+  ) {
+
+    return escapeHtml(
+      value
+    );
+
+  }
+
+
+  function escapeJsString(
+    value
+  ) {
+
+    return String(
+      value ?? ""
+    )
+      .replaceAll(
+        "\\",
+        "\\\\"
+      )
+      .replaceAll(
+        "'",
+        "\\'"
+      )
+      .replaceAll(
+        "\n",
+        ""
+      )
+      .replaceAll(
+        "\r",
+        ""
+      );
 
   }
 
