@@ -64,9 +64,9 @@
     }
 
 
-    /* ========================================
+    /* =========================
        HEADER
-    ======================================== */
+    ========================= */
 
     .header {
       margin-bottom: 24px;
@@ -86,9 +86,9 @@
     }
 
 
-    /* ========================================
+    /* =========================
        ГЛАВНОЕ МЕНЮ
-    ======================================== */
+    ========================= */
 
     .menu {
       display: flex;
@@ -111,13 +111,9 @@
       padding: 11px 14px;
 
       box-shadow:
-        0 2px 8px rgba(0, 0, 0, 0.04);
+        0 2px 8px rgba(0,0,0,0.04);
 
       cursor: pointer;
-
-      transition:
-        transform 0.12s ease,
-        background 0.12s ease;
     }
 
     .menu-button:active {
@@ -141,41 +137,15 @@
       margin-right: 14px;
     }
 
-    .blue {
-      background: #e8f2ff;
-    }
-
-    .green {
-      background: #e9f8ef;
-    }
-
-    .yellow {
-      background: #fff7dc;
-    }
-
-    .orange {
-      background: #fff0e5;
-    }
-
-    .purple {
-      background: #f2eaff;
-    }
-
-    .red {
-      background: #ffe9e9;
-    }
-
-    .gray {
-      background: #eeeeF1;
-    }
-
-    .pink {
-      background: #ffeaf3;
-    }
-
-    .teal {
-      background: #e5f8f6;
-    }
+    .blue { background: #e8f2ff; }
+    .green { background: #e9f8ef; }
+    .yellow { background: #fff7dc; }
+    .orange { background: #fff0e5; }
+    .purple { background: #f2eaff; }
+    .red { background: #ffe9e9; }
+    .gray { background: #eeeeF1; }
+    .pink { background: #ffeaf3; }
+    .teal { background: #e5f8f6; }
 
     .menu-text {
       flex: 1;
@@ -203,20 +173,17 @@
     }
 
 
-    /* ========================================
+    /* =========================
        ОБЩИЕ
-    ======================================== */
+    ========================= */
 
     .back-button {
       border: none;
       background: none;
-
       font-size: 17px;
       color: #2481cc;
-
       padding: 4px 0;
       margin-bottom: 20px;
-
       cursor: pointer;
     }
 
@@ -241,18 +208,16 @@
     }
 
 
-    /* ========================================
+    /* =========================
        СОТРУДНИК
-    ======================================== */
+    ========================= */
 
     .employee-card {
       background: #ffffff;
       border-radius: 18px;
       padding: 16px;
       margin-bottom: 18px;
-
-      box-shadow:
-        0 2px 8px rgba(0,0,0,0.04);
+      box-shadow: 0 2px 8px rgba(0,0,0,0.04);
     }
 
     .employee-row {
@@ -265,7 +230,6 @@
       width: 48px;
       height: 48px;
       min-width: 48px;
-
       border-radius: 50%;
       background: #e8f2ff;
 
@@ -298,9 +262,9 @@
     }
 
 
-    /* ========================================
-       ОБЪЕКТ
-    ======================================== */
+    /* =========================
+       ОБЪЕКТЫ
+    ========================= */
 
     .object-list {
       display: flex;
@@ -328,8 +292,7 @@
 
       cursor: pointer;
 
-      box-shadow:
-        0 2px 8px rgba(0,0,0,0.04);
+      box-shadow: 0 2px 8px rgba(0,0,0,0.04);
     }
 
     .object-button.selected {
@@ -349,9 +312,9 @@
     }
 
 
-    /* ========================================
+    /* =========================
        НАЧАЛ / ЗАКОНЧИЛ
-    ======================================== */
+    ========================= */
 
     .work-type-grid {
       display: grid;
@@ -371,8 +334,7 @@
 
       cursor: pointer;
 
-      box-shadow:
-        0 2px 8px rgba(0,0,0,0.04);
+      box-shadow: 0 2px 8px rgba(0,0,0,0.04);
     }
 
     .work-icon {
@@ -398,18 +360,16 @@
     }
 
 
-    /* ========================================
+    /* =========================
        ВРЕМЯ
-    ======================================== */
+    ========================= */
 
     .time-card {
       background: #ffffff;
       border-radius: 18px;
       padding: 16px;
       margin-top: 18px;
-
-      box-shadow:
-        0 2px 8px rgba(0,0,0,0.04);
+      box-shadow: 0 2px 8px rgba(0,0,0,0.04);
     }
 
     .time-label {
@@ -424,13 +384,12 @@
     }
 
 
-    /* ========================================
+    /* =========================
        ФОТО
-    ======================================== */
+    ========================= */
 
     .photo-box {
       min-height: 220px;
-
       background: #ffffff;
 
       border: 2px dashed #d1d1d6;
@@ -458,26 +417,15 @@
       display: none;
     }
 
-
-    /* ========================================
-       КНОПКИ
-    ======================================== */
-
     .action-button {
       width: 100%;
-
       border: none;
       border-radius: 16px;
-
       padding: 17px;
-
       color: white;
-
       font-size: 17px;
       font-weight: 650;
-
       cursor: pointer;
-
       margin-bottom: 10px;
     }
 
@@ -495,25 +443,24 @@
     }
 
 
-    /* ========================================
+    /* =========================
        ТАБЕЛЬ
-    ======================================== */
+    ========================= */
 
-    .filters-card {
+    .filters-card,
+    .summary-card {
       background: #ffffff;
       border-radius: 20px;
       padding: 16px;
-
-      box-shadow:
-        0 2px 8px rgba(0,0,0,0.04);
-
       margin-bottom: 16px;
+      box-shadow: 0 2px 8px rgba(0,0,0,0.04);
     }
 
-    .filter-label {
+    .filter-label,
+    .modal-label {
       display: block;
       font-size: 12px;
-      font-weight: 600;
+      font-weight: 650;
       color: #8e8e93;
       margin-bottom: 7px;
     }
@@ -524,13 +471,10 @@
     .modal-select,
     .modal-textarea {
       width: 100%;
-
       border: 1px solid #e1e1e6;
       border-radius: 13px;
-
       background: #f7f7f8;
       color: #1c1c1e;
-
       outline: none;
     }
 
@@ -550,18 +494,6 @@
 
     .filter-group + .filter-group {
       margin-top: 14px;
-    }
-
-    .summary-card {
-      background: #ffffff;
-
-      border-radius: 20px;
-
-      padding: 18px;
-      margin-bottom: 16px;
-
-      box-shadow:
-        0 2px 8px rgba(0,0,0,0.04);
     }
 
     .summary-name {
@@ -601,11 +533,8 @@
 
     .salary-box {
       margin-top: 12px;
-
       background: #e9f8ef;
-
       border-radius: 16px;
-
       padding: 16px;
     }
 
@@ -629,13 +558,9 @@
 
     .day-card {
       background: #ffffff;
-
       border-radius: 18px;
-
       padding: 16px;
-
-      box-shadow:
-        0 2px 8px rgba(0,0,0,0.04);
+      box-shadow: 0 2px 8px rgba(0,0,0,0.04);
     }
 
     .day-card.corrected {
@@ -663,27 +588,19 @@
 
     .corrected-label {
       display: inline-block;
-
       margin-top: 7px;
-
       padding: 4px 8px;
-
       border-radius: 20px;
-
       background: #f2eaff;
       color: #6941c6;
-
       font-size: 11px;
       font-weight: 700;
     }
 
     .day-status {
       flex-shrink: 0;
-
       border-radius: 50px;
-
       padding: 6px 10px;
-
       font-size: 12px;
       font-weight: 700;
     }
@@ -743,9 +660,7 @@
       align-items: center;
       justify-content: space-between;
       gap: 10px;
-
       border-top: 1px solid #f0f0f2;
-
       padding-top: 12px;
     }
 
@@ -759,58 +674,57 @@
       font-weight: 750;
     }
 
-    .admin-edit-button {
-      width: 100%;
+    .override-note {
+      margin-top: 10px;
+      padding: 10px 12px;
+      border-radius: 12px;
+      background: #faf8ff;
+      color: #6941c6;
+      font-size: 13px;
+      line-height: 1.4;
+    }
 
+    .admin-buttons {
+      display: grid;
+      grid-template-columns: 1fr;
+      gap: 8px;
       margin-top: 13px;
+    }
 
+    .admin-edit-button,
+    .history-button {
+      width: 100%;
       border: none;
       border-radius: 13px;
-
-      background: #f2eaff;
-      color: #6941c6;
-
       padding: 12px;
-
       font-size: 14px;
       font-weight: 700;
-
       cursor: pointer;
     }
 
-    .override-note {
-      margin-top: 10px;
-
-      padding: 10px 12px;
-
-      border-radius: 12px;
-
-      background: #faf8ff;
-
+    .admin-edit-button {
+      background: #f2eaff;
       color: #6941c6;
+    }
 
-      font-size: 13px;
-      line-height: 1.35;
+    .history-button {
+      background: #eef7ff;
+      color: #1769aa;
     }
 
 
-    /* ========================================
-       ЗАГРУЗКА / ОШИБКИ
-    ======================================== */
+    /* =========================
+       LOADING
+    ========================= */
 
     .loading-card,
     .empty-card,
     .error-card {
       background: #ffffff;
-
       border-radius: 18px;
-
       padding: 22px;
-
       text-align: center;
-
       color: #8e8e93;
-
       margin-top: 16px;
     }
 
@@ -820,21 +734,16 @@
     }
 
 
-    /* ========================================
-       MODAL
-    ======================================== */
+    /* =========================
+       MODALS
+    ========================= */
 
     .modal-overlay {
       display: none;
-
       position: fixed;
-
       inset: 0;
-
       z-index: 9999;
-
       background: rgba(0,0,0,0.45);
-
       align-items: flex-end;
       justify-content: center;
     }
@@ -846,33 +755,24 @@
     .modal {
       width: 100%;
       max-width: 650px;
-
       max-height: 92vh;
-
       overflow-y: auto;
-
       background: #f4f6f8;
-
       border-radius: 24px 24px 0 0;
-
       padding: 20px 16px 30px;
     }
 
     .modal-handle {
       width: 44px;
       height: 5px;
-
       border-radius: 10px;
-
       background: #d1d1d6;
-
       margin: 0 auto 20px;
     }
 
     .modal-title {
       font-size: 23px;
       font-weight: 750;
-
       margin-bottom: 4px;
     }
 
@@ -884,11 +784,8 @@
 
     .modal-card {
       background: white;
-
       border-radius: 18px;
-
       padding: 16px;
-
       margin-bottom: 12px;
     }
 
@@ -900,80 +797,100 @@
       margin-bottom: 0;
     }
 
-    .modal-label {
-      display: block;
-
-      font-size: 13px;
-      font-weight: 650;
-
-      color: #5d5d62;
-
-      margin-bottom: 7px;
-    }
-
     .save-edit-button {
       width: 100%;
-
       border: none;
       border-radius: 16px;
-
       background: #2481cc;
       color: white;
-
       padding: 16px;
-
       font-size: 16px;
       font-weight: 700;
-
-      margin-top: 4px;
-
       cursor: pointer;
     }
 
     .remove-edit-button {
       width: 100%;
-
       border: none;
       border-radius: 16px;
-
       background: #ffffff;
       color: #b42318;
-
       padding: 15px;
-
       font-size: 15px;
       font-weight: 650;
-
       margin-top: 10px;
-
       cursor: pointer;
     }
 
     .close-modal-button {
       width: 100%;
-
       border: none;
       background: transparent;
-
       color: #66666b;
-
       padding: 14px;
-
       font-size: 15px;
-
       cursor: pointer;
     }
 
     .saving-message {
       margin-top: 12px;
-
       text-align: center;
-
       font-size: 14px;
       color: #8e8e93;
     }
 
+
+    /* =========================
+       HISTORY
+    ========================= */
+
+    .history-list {
+      display: flex;
+      flex-direction: column;
+      gap: 10px;
+    }
+
+    .history-item {
+      background: #ffffff;
+      border-radius: 16px;
+      padding: 15px;
+    }
+
+    .history-date {
+      font-size: 12px;
+      color: #8e8e93;
+      margin-bottom: 9px;
+    }
+
+    .history-change {
+      font-size: 15px;
+      font-weight: 700;
+      margin-bottom: 7px;
+    }
+
+    .history-line {
+      font-size: 13px;
+      color: #5d5d62;
+      margin-top: 5px;
+      line-height: 1.4;
+    }
+
+    .history-arrow {
+      color: #8e8e93;
+      margin: 0 5px;
+    }
+
+    .history-comment {
+      margin-top: 10px;
+      background: #f7f7f8;
+      border-radius: 10px;
+      padding: 10px;
+      font-size: 13px;
+      line-height: 1.4;
+    }
+
   </style>
+
 </head>
 
 
@@ -982,56 +899,30 @@
 <div class="container">
 
 
-  <!-- ========================================
-       ГЛАВНЫЙ ЭКРАН
-  ========================================= -->
+  <!-- ГЛАВНЫЙ ЭКРАН -->
 
-  <div
-    id="mainScreen"
-    class="screen active"
-  >
+  <div id="mainScreen" class="screen active">
 
     <div class="header">
-
-      <h1 class="header-title">
-        Task
-      </h1>
-
-      <p class="header-subtitle">
-        Рабочая панель
-      </p>
-
+      <h1 class="header-title">Task</h1>
+      <p class="header-subtitle">Рабочая панель</p>
     </div>
 
 
     <div class="menu">
 
-
       <button
         class="menu-button"
         onclick="openPhotoScreen()"
       >
-
-        <div class="icon blue">
-          📸
-        </div>
+        <div class="icon blue">📸</div>
 
         <div class="menu-text">
-
-          <span class="menu-title">
-            Фотоотметка
-          </span>
-
-          <span class="menu-description">
-            Начало и окончание работы
-          </span>
-
+          <span class="menu-title">Фотоотметка</span>
+          <span class="menu-description">Начало и окончание работы</span>
         </div>
 
-        <div class="arrow">
-          ›
-        </div>
-
+        <div class="arrow">›</div>
       </button>
 
 
@@ -1039,216 +930,125 @@
         class="menu-button"
         onclick="openTimesheetScreen()"
       >
-
-        <div class="icon teal">
-          📊
-        </div>
+        <div class="icon teal">📊</div>
 
         <div class="menu-text">
-
-          <span class="menu-title">
-            Табель
-          </span>
-
-          <span class="menu-description">
-            Рабочие дни и зарплата
-          </span>
-
+          <span class="menu-title">Табель</span>
+          <span class="menu-description">Рабочие дни и зарплата</span>
         </div>
 
-        <div class="arrow">
-          ›
-        </div>
-
+        <div class="arrow">›</div>
       </button>
 
 
       <button class="menu-button">
         <div class="icon green">⚙️</div>
-
         <div class="menu-text">
-          <span class="menu-title">
-            Рабочий процесс
-          </span>
-
-          <span class="menu-description">
-            Задачи и статус работ
-          </span>
+          <span class="menu-title">Рабочий процесс</span>
+          <span class="menu-description">Задачи и статус работ</span>
         </div>
-
         <div class="arrow">›</div>
       </button>
 
 
       <button class="menu-button">
         <div class="icon yellow">💡</div>
-
         <div class="menu-text">
-          <span class="menu-title">
-            База знаний
-          </span>
-
-          <span class="menu-description">
-            Инструкции и материалы
-          </span>
+          <span class="menu-title">База знаний</span>
+          <span class="menu-description">Инструкции и материалы</span>
         </div>
-
         <div class="arrow">›</div>
       </button>
 
 
       <button class="menu-button">
         <div class="icon blue">⚡</div>
-
         <div class="menu-text">
-          <span class="menu-title">
-            Быстрый отчёт
-          </span>
-
-          <span class="menu-description">
-            Быстро сообщить о работе
-          </span>
+          <span class="menu-title">Быстрый отчёт</span>
+          <span class="menu-description">Быстро сообщить о работе</span>
         </div>
-
         <div class="arrow">›</div>
       </button>
 
 
       <button class="menu-button">
         <div class="icon purple">📝</div>
-
         <div class="menu-text">
-          <span class="menu-title">
-            Дневной отчёт
-          </span>
-
-          <span class="menu-description">
-            Итоги рабочего дня
-          </span>
+          <span class="menu-title">Дневной отчёт</span>
+          <span class="menu-description">Итоги рабочего дня</span>
         </div>
-
         <div class="arrow">›</div>
       </button>
 
 
       <button class="menu-button">
         <div class="icon orange">🧾</div>
-
         <div class="menu-text">
-          <span class="menu-title">
-            Счета и фактуры
-          </span>
-
-          <span class="menu-description">
-            Документы и оплаты
-          </span>
+          <span class="menu-title">Счета и фактуры</span>
+          <span class="menu-description">Документы и оплаты</span>
         </div>
-
         <div class="arrow">›</div>
       </button>
 
 
       <button class="menu-button">
         <div class="icon gray">🏭</div>
-
         <div class="menu-text">
-          <span class="menu-title">
-            Данные поставщиков
-          </span>
-
-          <span class="menu-description">
-            Контакты и информация
-          </span>
+          <span class="menu-title">Данные поставщиков</span>
+          <span class="menu-description">Контакты и информация</span>
         </div>
-
         <div class="arrow">›</div>
       </button>
 
 
       <button class="menu-button">
         <div class="icon yellow">⚡</div>
-
         <div class="menu-text">
-          <span class="menu-title">
-            Показания счётчика
-          </span>
-
-          <span class="menu-description">
-            Передать текущие показания
-          </span>
+          <span class="menu-title">Показания счётчика</span>
+          <span class="menu-description">Передать текущие показания</span>
         </div>
-
         <div class="arrow">›</div>
       </button>
 
 
       <button class="menu-button">
         <div class="icon blue">👷</div>
-
         <div class="menu-text">
-          <span class="menu-title">
-            Информация о работнике
-          </span>
-
-          <span class="menu-description">
-            Профиль сотрудника
-          </span>
+          <span class="menu-title">Информация о работнике</span>
+          <span class="menu-description">Профиль сотрудника</span>
         </div>
-
         <div class="arrow">›</div>
       </button>
 
 
       <button class="menu-button">
         <div class="icon red">📍</div>
-
         <div class="menu-text">
-          <span class="menu-title">
-            Смотрер
-          </span>
-
-          <span class="menu-description">
-            Контроль рабочего процесса
-          </span>
+          <span class="menu-title">Смотрер</span>
+          <span class="menu-description">Контроль рабочего процесса</span>
         </div>
-
         <div class="arrow">›</div>
       </button>
 
 
       <button class="menu-button">
         <div class="icon pink">🎁</div>
-
         <div class="menu-text">
-          <span class="menu-title">
-            Премия
-          </span>
-
-          <span class="menu-description">
-            Бонусы и вознаграждения
-          </span>
+          <span class="menu-title">Премия</span>
+          <span class="menu-description">Бонусы и вознаграждения</span>
         </div>
-
         <div class="arrow">›</div>
       </button>
 
 
       <button class="menu-button">
         <div class="icon purple">🌐</div>
-
         <div class="menu-text">
-          <span class="menu-title">
-            Выбор языка
-          </span>
-
-          <span class="menu-description">
-            Язык приложения
-          </span>
+          <span class="menu-title">Выбор языка</span>
+          <span class="menu-description">Язык приложения</span>
         </div>
-
         <div class="arrow">›</div>
       </button>
-
 
     </div>
 
@@ -1256,14 +1056,9 @@
 
 
 
-  <!-- ========================================
-       ФОТООТМЕТКА
-  ========================================= -->
+  <!-- ФОТООТМЕТКА -->
 
-  <div
-    id="photoScreen"
-    class="screen"
-  >
+  <div id="photoScreen" class="screen">
 
     <button
       class="back-button"
@@ -1272,11 +1067,7 @@
       ← Назад
     </button>
 
-
-    <h2 class="page-title">
-      📸 Фотоотметка
-    </h2>
-
+    <h2 class="page-title">📸 Фотоотметка</h2>
 
     <p class="page-description">
       Отметка сотрудника о начале или окончании работы на объекте.
@@ -1287,9 +1078,7 @@
 
       <div class="employee-row">
 
-        <div class="employee-avatar">
-          👷
-        </div>
+        <div class="employee-avatar">👷</div>
 
         <div class="employee-info">
 
@@ -1403,8 +1192,8 @@
 
 
     <div
-      class="photo-box"
       id="photoBox"
+      class="photo-box"
     >
       Сначала выберите объект и тип отметки
     </div>
@@ -1442,14 +1231,9 @@
 
 
 
-  <!-- ========================================
-       ТАБЕЛЬ
-  ========================================= -->
+  <!-- ТАБЕЛЬ -->
 
-  <div
-    id="timesheetScreen"
-    class="screen"
-  >
+  <div id="timesheetScreen" class="screen">
 
     <button
       class="back-button"
@@ -1501,9 +1285,11 @@
           class="employee-select"
           onchange="renderTimesheet()"
         >
+
           <option value="all">
             Все сотрудники
           </option>
+
         </select>
 
       </div>
@@ -1525,9 +1311,7 @@
     ></div>
 
 
-    <div
-      id="summaryContainer"
-    ></div>
+    <div id="summaryContainer"></div>
 
 
     <div
@@ -1550,14 +1334,12 @@
 
 
 
-<!-- ========================================
-     МОДАЛЬНОЕ ОКНО РЕДАКТИРОВАНИЯ
-========================================= -->
+<!-- РЕДАКТИРОВАНИЕ -->
 
 <div
   id="editModal"
   class="modal-overlay"
-  onclick="overlayClick(event)"
+  onclick="editOverlayClick(event)"
 >
 
   <div class="modal">
@@ -1588,6 +1370,7 @@
           id="editPaidDays"
           class="modal-select"
         >
+
           <option value="0">
             0 дней — не оплачивать
           </option>
@@ -1599,6 +1382,7 @@
           <option value="1">
             1 день — полный день
           </option>
+
         </select>
 
       </div>
@@ -1614,7 +1398,6 @@
           id="editObject"
           class="modal-input"
           type="text"
-          placeholder="Например: Объект 1"
         >
 
       </div>
@@ -1629,7 +1412,7 @@
         <textarea
           id="editNote"
           class="modal-textarea"
-          placeholder="Например: сотрудник забыл сделать вечернюю отметку"
+          placeholder="Например: сотрудник забыл вечернюю отметку"
         ></textarea>
 
       </div>
@@ -1676,6 +1459,73 @@
 
 
 
+<!-- ИСТОРИЯ -->
+
+<div
+  id="historyModal"
+  class="modal-overlay"
+  onclick="historyOverlayClick(event)"
+>
+
+  <div class="modal">
+
+    <div class="modal-handle"></div>
+
+
+    <div class="modal-title">
+      🕘 История изменений
+    </div>
+
+
+    <div
+      id="historyModalSubtitle"
+      class="modal-subtitle"
+    >
+      —
+    </div>
+
+
+    <div
+      id="historyLoading"
+      class="loading-card"
+    >
+      Загружаем историю...
+    </div>
+
+
+    <div
+      id="historyError"
+      class="error-card hidden"
+    ></div>
+
+
+    <div
+      id="historyList"
+      class="history-list"
+    ></div>
+
+
+    <div
+      id="historyEmpty"
+      class="empty-card hidden"
+    >
+      Изменений для этого дня пока нет.
+    </div>
+
+
+    <button
+      class="close-modal-button"
+      onclick="closeHistoryModal()"
+    >
+      Закрыть
+    </button>
+
+  </div>
+
+</div>
+
+
+
 <script>
 
   const tg =
@@ -1703,13 +1553,8 @@
   let telegramId = null;
 
   let timesheetData = null;
-
   let editingDay = null;
 
-
-  /* ========================================
-     TELEGRAM USER
-  ======================================== */
 
   if (
     tg &&
@@ -1736,10 +1581,6 @@
   }
 
 
-  /* ========================================
-     ДАТЫ
-  ======================================== */
-
   function formatDate(date) {
 
     return date.toLocaleDateString(
@@ -1762,8 +1603,7 @@
 
     const date =
       new Date(
-        value +
-        "T00:00:00"
+        value + "T00:00:00"
       );
 
     return date.toLocaleDateString(
@@ -1777,20 +1617,35 @@
   }
 
 
+  function formatDateTime(value) {
+
+    if (!value) {
+      return "—";
+    }
+
+    const date =
+      new Date(value);
+
+    return date.toLocaleString(
+      "ru-RU",
+      {
+        day: "2-digit",
+        month: "2-digit",
+        year: "numeric",
+        hour: "2-digit",
+        minute: "2-digit"
+      }
+    );
+
+  }
+
+
   function formatTime(date) {
 
     return [
-      String(
-        date.getHours()
-      ).padStart(2, "0"),
-
-      String(
-        date.getMinutes()
-      ).padStart(2, "0"),
-
-      String(
-        date.getSeconds()
-      ).padStart(2, "0")
+      String(date.getHours()).padStart(2, "0"),
+      String(date.getMinutes()).padStart(2, "0"),
+      String(date.getSeconds()).padStart(2, "0")
     ].join(":");
 
   }
@@ -1837,23 +1692,17 @@
       new Date();
 
     document
-      .getElementById(
-        "currentTime"
-      )
+      .getElementById("currentTime")
       .innerText =
       formatTime(now);
 
     document
-      .getElementById(
-        "currentDate"
-      )
+      .getElementById("currentDate")
       .innerText =
       formatDate(now);
 
     document
-      .getElementById(
-        "employeeName"
-      )
+      .getElementById("employeeName")
       .innerText =
       employeeName;
 
@@ -1868,21 +1717,17 @@
   updateDateAndTime();
 
 
-  /* ========================================
+  /* =========================
      ЭКРАНЫ
-  ======================================== */
+  ========================= */
 
   function hideAllScreens() {
 
     document
-      .querySelectorAll(
-        ".screen"
-      )
+      .querySelectorAll(".screen")
       .forEach(
         screen =>
-          screen
-            .classList
-            .remove("active")
+          screen.classList.remove("active")
       );
 
   }
@@ -1893,16 +1738,10 @@
     hideAllScreens();
 
     document
-      .getElementById(
-        "mainScreen"
-      )
-      .classList
-      .add("active");
+      .getElementById("mainScreen")
+      .classList.add("active");
 
-    window.scrollTo(
-      0,
-      0
-    );
+    window.scrollTo(0, 0);
 
   }
 
@@ -1912,18 +1751,12 @@
     hideAllScreens();
 
     document
-      .getElementById(
-        "photoScreen"
-      )
-      .classList
-      .add("active");
+      .getElementById("photoScreen")
+      .classList.add("active");
 
     updateDateAndTime();
 
-    window.scrollTo(
-      0,
-      0
-    );
+    window.scrollTo(0, 0);
 
   }
 
@@ -1933,18 +1766,14 @@
     hideAllScreens();
 
     document
-      .getElementById(
-        "timesheetScreen"
-      )
-      .classList
-      .add("active");
+      .getElementById("timesheetScreen")
+      .classList.add("active");
 
 
     const monthInput =
-      document
-        .getElementById(
-          "timesheetMonth"
-        );
+      document.getElementById(
+        "timesheetMonth"
+      );
 
 
     if (!monthInput.value) {
@@ -1959,27 +1788,21 @@
         +
         String(
           now.getMonth() + 1
-        ).padStart(
-          2,
-          "0"
-        );
+        ).padStart(2, "0");
 
     }
 
 
     loadTimesheet();
 
-    window.scrollTo(
-      0,
-      0
-    );
+    window.scrollTo(0, 0);
 
   }
 
 
-  /* ========================================
+  /* =========================
      ФОТООТМЕТКА
-  ======================================== */
+  ========================= */
 
   function selectObject(
     button,
@@ -1992,19 +1815,15 @@
       )
       .forEach(
         item =>
-          item
-            .classList
-            .remove(
-              "selected"
-            )
+          item.classList.remove(
+            "selected"
+          )
       );
 
 
     button
       .classList
-      .add(
-        "selected"
-      );
+      .add("selected");
 
 
     selectedObject =
@@ -2027,19 +1846,15 @@
       )
       .forEach(
         item =>
-          item
-            .classList
-            .remove(
-              "selected"
-            )
+          item.classList.remove(
+            "selected"
+          )
       );
 
 
     button
       .classList
-      .add(
-        "selected"
-      );
+      .add("selected");
 
 
     selectedWorkType =
@@ -2054,10 +1869,9 @@
   function checkPhotoAvailability() {
 
     const button =
-      document
-        .getElementById(
-          "photoButton"
-        );
+      document.getElementById(
+        "photoButton"
+      );
 
 
     if (
@@ -2073,6 +1887,7 @@
         .remove(
           "disabled-button"
         );
+
 
       if (!photoSelected) {
 
@@ -2122,9 +1937,7 @@
   function showPhoto(event) {
 
     const file =
-      event
-        .target
-        .files[0];
+      event.target.files[0];
 
     if (!file) {
       return;
@@ -2153,10 +1966,9 @@
 
 
         const button =
-          document
-            .getElementById(
-              "sendButton"
-            );
+          document.getElementById(
+            "sendButton"
+          );
 
 
         button.disabled =
@@ -2171,9 +1983,7 @@
       };
 
 
-    reader.readAsDataURL(
-      file
-    );
+    reader.readAsDataURL(file);
 
   }
 
@@ -2223,9 +2033,7 @@
     ) {
 
       tg.sendData(
-        JSON.stringify(
-          data
-        )
+        JSON.stringify(data)
       );
 
     } else {
@@ -2239,9 +2047,9 @@
   }
 
 
-  /* ========================================
+  /* =========================
      API
-  ======================================== */
+  ========================= */
 
   async function callTimesheetApi(
     payload
@@ -2263,8 +2071,7 @@
       await fetch(
         TIMESHEET_API,
         {
-          method:
-            "POST",
+          method: "POST",
 
           headers: {
             "Content-Type":
@@ -2303,36 +2110,30 @@
   }
 
 
-  /* ========================================
+  /* =========================
      ЗАГРУЗКА ТАБЕЛЯ
-  ======================================== */
+  ========================= */
 
   async function loadTimesheet() {
 
     const loading =
-      document
-        .getElementById(
-          "timesheetLoading"
-        );
+      document.getElementById(
+        "timesheetLoading"
+      );
 
     const errorBox =
-      document
-        .getElementById(
-          "timesheetError"
-        );
+      document.getElementById(
+        "timesheetError"
+      );
 
 
     loading
       .classList
-      .remove(
-        "hidden"
-      );
+      .remove("hidden");
 
     errorBox
       .classList
-      .add(
-        "hidden"
-      );
+      .add("hidden");
 
 
     try {
@@ -2364,17 +2165,13 @@
 
       loading
         .classList
-        .add(
-          "hidden"
-        );
+        .add("hidden");
 
     } catch (error) {
 
       loading
         .classList
-        .add(
-          "hidden"
-        );
+        .add("hidden");
 
 
       errorBox.innerText =
@@ -2385,32 +2182,24 @@
 
       errorBox
         .classList
-        .remove(
-          "hidden"
-        );
+        .remove("hidden");
 
     }
 
   }
 
 
-  /* ========================================
-     ФИЛЬТР СОТРУДНИКА
-  ======================================== */
-
   function setupEmployeeFilter() {
 
     const group =
-      document
-        .getElementById(
-          "employeeFilterGroup"
-        );
+      document.getElementById(
+        "employeeFilterGroup"
+      );
 
     const select =
-      document
-        .getElementById(
-          "timesheetEmployee"
-        );
+      document.getElementById(
+        "timesheetEmployee"
+      );
 
 
     if (
@@ -2418,22 +2207,18 @@
       "admin"
     ) {
 
-      group
-        .classList
-        .add(
-          "hidden"
-        );
+      group.classList.add(
+        "hidden"
+      );
 
       return;
 
     }
 
 
-    group
-      .classList
-      .remove(
-        "hidden"
-      );
+    group.classList.remove(
+      "hidden"
+    );
 
 
     const oldValue =
@@ -2451,16 +2236,13 @@
       employee => {
 
         const option =
-          document
-            .createElement(
-              "option"
-            );
+          document.createElement(
+            "option"
+          );
 
 
         option.value =
-          String(
-            employee.id
-          );
+          String(employee.id);
 
 
         option.textContent =
@@ -2504,10 +2286,6 @@
 
   }
 
-
-  /* ========================================
-     РЕНДЕР
-  ======================================== */
 
   function renderTimesheet() {
 
@@ -2589,10 +2367,9 @@
   ) {
 
     const container =
-      document
-        .getElementById(
-          "summaryContainer"
-        );
+      document.getElementById(
+        "summaryContainer"
+      );
 
 
     container.innerHTML =
@@ -2634,6 +2411,7 @@
             <div class="summary-grid">
 
               <div class="summary-item">
+
                 <div class="summary-label">
                   Полных дней
                 </div>
@@ -2641,10 +2419,12 @@
                 <div class="summary-value">
                   ${summary.full_days || 0}
                 </div>
+
               </div>
 
 
               <div class="summary-item">
+
                 <div class="summary-label">
                   Половин дня
                 </div>
@@ -2652,10 +2432,12 @@
                 <div class="summary-value">
                   ${summary.half_days || 0}
                 </div>
+
               </div>
 
 
               <div class="summary-item">
+
                 <div class="summary-label">
                   Оплачиваемых дней
                 </div>
@@ -2663,10 +2445,12 @@
                 <div class="summary-value">
                   ${Number(summary.total_paid_days || 0)}
                 </div>
+
               </div>
 
 
               <div class="summary-item">
+
                 <div class="summary-label">
                   Исправлено
                 </div>
@@ -2674,6 +2458,7 @@
                 <div class="summary-value">
                   ${summary.corrected_days || 0}
                 </div>
+
               </div>
 
             </div>
@@ -2686,12 +2471,14 @@
               </div>
 
               <div class="salary-value">
+
                 ${
                   formatMoney(
                     summary.total_salary,
                     summary.currency
                   )
                 }
+
               </div>
 
             </div>
@@ -2710,16 +2497,14 @@
   ) {
 
     const list =
-      document
-        .getElementById(
-          "timesheetList"
-        );
+      document.getElementById(
+        "timesheetList"
+      );
 
     const empty =
-      document
-        .getElementById(
-          "timesheetEmpty"
-        );
+      document.getElementById(
+        "timesheetEmpty"
+      );
 
 
     list.innerHTML =
@@ -2727,15 +2512,12 @@
 
 
     if (
-      daily.length ===
-      0
+      daily.length === 0
     ) {
 
       empty
         .classList
-        .remove(
-          "hidden"
-        );
+        .remove("hidden");
 
       return;
 
@@ -2744,31 +2526,24 @@
 
     empty
       .classList
-      .add(
-        "hidden"
-      );
+      .add("hidden");
 
 
     daily
       .slice()
       .sort(
         (a,b) =>
-          new Date(
-            b.work_date
-          )
+          new Date(b.work_date)
           -
-          new Date(
-            a.work_date
-          )
+          new Date(a.work_date)
       )
       .forEach(
         day => {
 
           const card =
-            document
-              .createElement(
-                "div"
-              );
+            document.createElement(
+              "div"
+            );
 
 
           card.className =
@@ -2797,29 +2572,6 @@
             getStatusStyle(
               day.day_status
             );
-
-
-          let adminButton =
-            "";
-
-
-          if (
-            timesheetData.role ===
-            "admin"
-          ) {
-
-            adminButton = `
-
-              <button
-                class="admin-edit-button"
-                onclick='openEditModal(${JSON.stringify(day)})'
-              >
-                ✏️ Редактировать день
-              </button>
-
-            `;
-
-          }
 
 
           let corrected =
@@ -2890,6 +2642,7 @@
 
 
             <div class="day-object">
+
               🏗️
               ${
                 escapeHtml(
@@ -2897,6 +2650,7 @@
                   "Объект не указан"
                 )
               }
+
             </div>
 
 
@@ -2933,18 +2687,22 @@
             <div class="day-bottom">
 
               <div class="paid-days">
+
                 Зачтено:
                 ${Number(day.paid_days || 0)}
                 дня
+
               </div>
 
               <div class="day-salary">
+
                 ${
                   formatMoney(
                     day.day_salary,
                     day.currency
                   )
                 }
+
               </div>
 
             </div>
@@ -2952,9 +2710,78 @@
 
             ${note}
 
-            ${adminButton}
-
           `;
+
+
+          if (
+            timesheetData.role ===
+            "admin"
+          ) {
+
+            const buttons =
+              document.createElement(
+                "div"
+              );
+
+            buttons.className =
+              "admin-buttons";
+
+
+            const editButton =
+              document.createElement(
+                "button"
+              );
+
+            editButton.className =
+              "admin-edit-button";
+
+            editButton.textContent =
+              "✏️ Редактировать день";
+
+            editButton.onclick =
+              () =>
+                openEditModal(day);
+
+
+            buttons.appendChild(
+              editButton
+            );
+
+
+            if (
+              day.is_overridden
+            ) {
+
+              const historyButton =
+                document.createElement(
+                  "button"
+                );
+
+              historyButton.className =
+                "history-button";
+
+              historyButton.textContent =
+                "🕘 История изменений";
+
+              historyButton.onclick =
+                () =>
+                  openHistoryModal(
+                    day
+                  );
+
+
+              buttons.appendChild(
+                historyButton
+              );
+
+            }
+
+
+            card.appendChild(
+              buttons
+            );
+
+          }
 
 
           list.appendChild(
@@ -2967,22 +2794,11 @@
   }
 
 
-  /* ========================================
-     MODAL
-  ======================================== */
+  /* =========================
+     РЕДАКТИРОВАНИЕ
+  ========================= */
 
-  function openEditModal(
-    day
-  ) {
-
-    if (
-      !timesheetData ||
-      timesheetData.role !==
-      "admin"
-    ) {
-      return;
-    }
-
+  function openEditModal(day) {
 
     editingDay =
       day;
@@ -2993,14 +2809,12 @@
         "editModalSubtitle"
       )
       .innerText =
-      (
-        day.employee_name
-        +
-        " • "
-        +
-        formatShortDate(
-          day.work_date
-        )
+      day.employee_name
+      +
+      " • "
+      +
+      formatShortDate(
+        day.work_date
       );
 
 
@@ -3035,10 +2849,9 @@
 
 
     const removeButton =
-      document
-        .getElementById(
-          "removeOverrideButton"
-        );
+      document.getElementById(
+        "removeOverrideButton"
+      );
 
 
     if (
@@ -3047,17 +2860,13 @@
 
       removeButton
         .classList
-        .remove(
-          "hidden"
-        );
+        .remove("hidden");
 
     } else {
 
       removeButton
         .classList
-        .add(
-          "hidden"
-        );
+        .add("hidden");
 
     }
 
@@ -3067,9 +2876,7 @@
         "editModal"
       )
       .classList
-      .add(
-        "active"
-      );
+      .add("active");
 
   }
 
@@ -3079,20 +2886,17 @@
     editingDay =
       null;
 
-
     document
       .getElementById(
         "editModal"
       )
       .classList
-      .remove(
-        "active"
-      );
+      .remove("active");
 
   }
 
 
-  function overlayClick(
+  function editOverlayClick(
     event
   ) {
 
@@ -3116,27 +2920,22 @@
 
 
     const saving =
-      document
-        .getElementById(
-          "editSavingMessage"
-        );
+      document.getElementById(
+        "editSavingMessage"
+      );
 
 
-    const saveButton =
-      document
-        .getElementById(
-          "saveOverrideButton"
-        );
+    const button =
+      document.getElementById(
+        "saveOverrideButton"
+      );
 
 
     saving
       .classList
-      .remove(
-        "hidden"
-      );
+      .remove("hidden");
 
-
-    saveButton.disabled =
+    button.disabled =
       true;
 
 
@@ -3183,7 +2982,6 @@
 
       closeEditModal();
 
-
       await loadTimesheet();
 
 
@@ -3203,30 +3001,17 @@
 
     } catch (error) {
 
-      if (tg) {
-
-        tg.showAlert(
-          error.message
-        );
-
-      } else {
-
-        alert(
-          error.message
-        );
-
-      }
+      alert(
+        error.message
+      );
 
     } finally {
 
       saving
         .classList
-        .add(
-          "hidden"
-        );
+        .add("hidden");
 
-
-      saveButton.disabled =
+      button.disabled =
         false;
 
     }
@@ -3241,13 +3026,11 @@
     }
 
 
-    const confirmed =
-      confirm(
-        "Вернуть автоматический расчёт для этого дня?"
-      );
-
-
-    if (!confirmed) {
+    if (
+      !confirm(
+        "Вернуть автоматический расчёт?"
+      )
+    ) {
       return;
     }
 
@@ -3272,7 +3055,6 @@
 
       closeEditModal();
 
-
       await loadTimesheet();
 
 
@@ -3286,28 +3068,318 @@
 
     } catch (error) {
 
-      if (tg) {
-
-        tg.showAlert(
-          error.message
-        );
-
-      } else {
-
-        alert(
-          error.message
-        );
-
-      }
+      alert(
+        error.message
+      );
 
     }
 
   }
 
 
-  /* ========================================
-     STATUS
-  ======================================== */
+  /* =========================
+     ИСТОРИЯ
+  ========================= */
+
+  async function openHistoryModal(
+    day
+  ) {
+
+    document
+      .getElementById(
+        "historyModal"
+      )
+      .classList
+      .add("active");
+
+
+    document
+      .getElementById(
+        "historyModalSubtitle"
+      )
+      .innerText =
+      day.employee_name
+      +
+      " • "
+      +
+      formatShortDate(
+        day.work_date
+      );
+
+
+    const loading =
+      document.getElementById(
+        "historyLoading"
+      );
+
+    const errorBox =
+      document.getElementById(
+        "historyError"
+      );
+
+    const empty =
+      document.getElementById(
+        "historyEmpty"
+      );
+
+    const list =
+      document.getElementById(
+        "historyList"
+      );
+
+
+    loading
+      .classList
+      .remove("hidden");
+
+    errorBox
+      .classList
+      .add("hidden");
+
+    empty
+      .classList
+      .add("hidden");
+
+    list.innerHTML =
+      "";
+
+
+    try {
+
+      const result =
+        await callTimesheetApi(
+          {
+
+            action:
+              "get_history",
+
+            employee_id:
+              day.employee_id,
+
+            work_date:
+              day.work_date
+
+          }
+        );
+
+
+      loading
+        .classList
+        .add("hidden");
+
+
+      const history =
+        result.history ||
+        [];
+
+
+      if (
+        history.length === 0
+      ) {
+
+        empty
+          .classList
+          .remove("hidden");
+
+        return;
+
+      }
+
+
+      history.forEach(
+        item => {
+
+          const box =
+            document.createElement(
+              "div"
+            );
+
+          box.className =
+            "history-item";
+
+
+          const oldDays =
+            item.old_paid_days === null
+              ?
+              "автоматически"
+              :
+              Number(
+                item.old_paid_days
+              ) + " дня";
+
+
+          const newDays =
+            item.new_paid_days === null
+              ?
+              "—"
+              :
+              Number(
+                item.new_paid_days
+              ) + " дня";
+
+
+          let objectLine =
+            "";
+
+
+          if (
+            item.old_object_name ||
+            item.new_object_name
+          ) {
+
+            objectLine = `
+
+              <div class="history-line">
+
+                🏗️ Объект:
+                ${
+                  escapeHtml(
+                    item.old_object_name ||
+                    "автоматический"
+                  )
+                }
+
+                <span class="history-arrow">
+                  →
+                </span>
+
+                ${
+                  escapeHtml(
+                    item.new_object_name ||
+                    "автоматический"
+                  )
+                }
+
+              </div>
+
+            `;
+
+          }
+
+
+          let comment =
+            "";
+
+
+          if (
+            item.comment
+          ) {
+
+            comment = `
+
+              <div class="history-comment">
+
+                💬
+                ${escapeHtml(
+                  item.comment
+                )}
+
+              </div>
+
+            `;
+
+          }
+
+
+          box.innerHTML = `
+
+            <div class="history-date">
+
+              ${formatDateTime(
+                item.changed_at
+              )}
+
+            </div>
+
+
+            <div class="history-change">
+
+              ${
+                escapeHtml(
+                  oldDays
+                )
+              }
+
+              <span class="history-arrow">
+                →
+              </span>
+
+              ${
+                escapeHtml(
+                  newDays
+                )
+              }
+
+            </div>
+
+
+            ${objectLine}
+
+            ${comment}
+
+          `;
+
+
+          list.appendChild(
+            box
+          );
+
+        }
+      );
+
+    } catch (error) {
+
+      loading
+        .classList
+        .add("hidden");
+
+
+      errorBox.innerText =
+        "Не удалось загрузить историю: "
+        +
+        error.message;
+
+
+      errorBox
+        .classList
+        .remove("hidden");
+
+    }
+
+  }
+
+
+  function closeHistoryModal() {
+
+    document
+      .getElementById(
+        "historyModal"
+      )
+      .classList
+      .remove("active");
+
+  }
+
+
+  function historyOverlayClick(
+    event
+  ) {
+
+    if (
+      event.target.id ===
+      "historyModal"
+    ) {
+
+      closeHistoryModal();
+
+    }
+
+  }
+
+
+  /* =========================
+     СТАТУСЫ
+  ========================= */
 
   function getStatusStyle(
     status
@@ -3389,10 +3461,6 @@
   }
 
 
-  /* ========================================
-     ESCAPE
-  ======================================== */
-
   function escapeHtml(
     value
   ) {
@@ -3400,26 +3468,11 @@
     return String(
       value ?? ""
     )
-      .replaceAll(
-        "&",
-        "&amp;"
-      )
-      .replaceAll(
-        "<",
-        "&lt;"
-      )
-      .replaceAll(
-        ">",
-        "&gt;"
-      )
-      .replaceAll(
-        '"',
-        "&quot;"
-      )
-      .replaceAll(
-        "'",
-        "&#039;"
-      );
+      .replaceAll("&", "&amp;")
+      .replaceAll("<", "&lt;")
+      .replaceAll(">", "&gt;")
+      .replaceAll('"', "&quot;")
+      .replaceAll("'", "&#039;");
 
   }
 
