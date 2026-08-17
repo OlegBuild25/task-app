@@ -35,8 +35,13 @@
 
     button,
     select,
-    input {
+    input,
+    textarea {
       font: inherit;
+    }
+
+    button {
+      -webkit-tap-highlight-color: transparent;
     }
 
     .container {
@@ -54,6 +59,10 @@
       display: block;
     }
 
+    .hidden {
+      display: none !important;
+    }
+
 
     /* ========================================
        HEADER
@@ -66,17 +75,13 @@
     .header-title {
       font-size: 30px;
       font-weight: 750;
-
       margin: 0 0 5px;
-
       letter-spacing: -0.7px;
     }
 
     .header-subtitle {
       margin: 0;
-
       font-size: 15px;
-
       color: #8e8e93;
     }
 
@@ -88,7 +93,6 @@
     .menu {
       display: flex;
       flex-direction: column;
-
       gap: 10px;
     }
 
@@ -118,7 +122,6 @@
 
     .menu-button:active {
       transform: scale(0.98);
-
       background: #f7f7f8;
     }
 
@@ -176,41 +179,32 @@
 
     .menu-text {
       flex: 1;
-
       text-align: left;
     }
 
     .menu-title {
       display: block;
-
       font-size: 17px;
       font-weight: 600;
-
       color: #202124;
-
       margin-bottom: 3px;
     }
 
     .menu-description {
       display: block;
-
       font-size: 13px;
-
       color: #9a9aa0;
     }
 
     .arrow {
       font-size: 29px;
-      font-weight: 300;
-
       color: #c7c7cc;
-
       padding-left: 8px;
     }
 
 
     /* ========================================
-       ОБЩИЕ ЭЛЕМЕНТЫ ЭКРАНОВ
+       ОБЩИЕ
     ======================================== */
 
     .back-button {
@@ -218,11 +212,9 @@
       background: none;
 
       font-size: 17px;
-
       color: #2481cc;
 
       padding: 4px 0;
-
       margin-bottom: 20px;
 
       cursor: pointer;
@@ -231,26 +223,20 @@
     .page-title {
       font-size: 28px;
       font-weight: 750;
-
       margin: 0 0 8px;
     }
 
     .page-description {
       color: #8e8e93;
-
       font-size: 15px;
-
       margin: 0 0 20px;
-
       line-height: 1.4;
     }
 
     .section-title {
       font-size: 15px;
       font-weight: 700;
-
       color: #5d5d62;
-
       margin: 22px 0 10px;
     }
 
@@ -261,21 +247,17 @@
 
     .employee-card {
       background: #ffffff;
-
       border-radius: 18px;
-
       padding: 16px;
-
       margin-bottom: 18px;
 
       box-shadow:
-        0 2px 8px rgba(0, 0, 0, 0.04);
+        0 2px 8px rgba(0,0,0,0.04);
     }
 
     .employee-row {
       display: flex;
       align-items: center;
-
       gap: 12px;
     }
 
@@ -285,7 +267,6 @@
       min-width: 48px;
 
       border-radius: 50%;
-
       background: #e8f2ff;
 
       display: flex;
@@ -301,9 +282,7 @@
 
     .employee-label {
       font-size: 12px;
-
       color: #8e8e93;
-
       margin-bottom: 3px;
     }
 
@@ -314,21 +293,18 @@
 
     .employee-date {
       font-size: 14px;
-
       color: #8e8e93;
-
       margin-top: 4px;
     }
 
 
     /* ========================================
-       ВЫБОР ОБЪЕКТА
+       ОБЪЕКТ
     ======================================== */
 
     .object-list {
       display: flex;
       flex-direction: column;
-
       gap: 10px;
     }
 
@@ -353,26 +329,22 @@
       cursor: pointer;
 
       box-shadow:
-        0 2px 8px rgba(0, 0, 0, 0.04);
+        0 2px 8px rgba(0,0,0,0.04);
     }
 
     .object-button.selected {
       border-color: #2481cc;
-
       background: #eef7ff;
     }
 
     .object-check {
       display: none;
-
       color: #2481cc;
-
       font-size: 22px;
       font-weight: bold;
     }
 
-    .object-button.selected
-    .object-check {
+    .object-button.selected .object-check {
       display: block;
     }
 
@@ -383,9 +355,7 @@
 
     .work-type-grid {
       display: grid;
-
       grid-template-columns: 1fr 1fr;
-
       gap: 10px;
     }
 
@@ -402,33 +372,28 @@
       cursor: pointer;
 
       box-shadow:
-        0 2px 8px rgba(0, 0, 0, 0.04);
+        0 2px 8px rgba(0,0,0,0.04);
     }
 
     .work-icon {
       display: block;
-
       font-size: 28px;
-
       margin-bottom: 8px;
     }
 
     .work-title {
       display: block;
-
       font-size: 16px;
       font-weight: 700;
     }
 
     .work-type-button.start.selected {
       border-color: #30a46c;
-
       background: #edfaf3;
     }
 
     .work-type-button.finish.selected {
       border-color: #e05d5d;
-
       background: #fff1f1;
     }
 
@@ -439,22 +404,17 @@
 
     .time-card {
       background: #ffffff;
-
       border-radius: 18px;
-
       padding: 16px;
-
       margin-top: 18px;
 
       box-shadow:
-        0 2px 8px rgba(0, 0, 0, 0.04);
+        0 2px 8px rgba(0,0,0,0.04);
     }
 
     .time-label {
       font-size: 13px;
-
       color: #8e8e93;
-
       margin-bottom: 5px;
     }
 
@@ -481,21 +441,16 @@
       align-items: center;
 
       text-align: center;
-
       color: #8e8e93;
 
       padding: 20px;
-
       margin: 10px 0 14px;
     }
 
     .photo-box img {
       width: 100%;
-
       max-height: 500px;
-
       object-fit: contain;
-
       border-radius: 16px;
     }
 
@@ -536,7 +491,6 @@
 
     .disabled-button {
       opacity: 0.4;
-
       cursor: default;
     }
 
@@ -547,44 +501,51 @@
 
     .filters-card {
       background: #ffffff;
-
       border-radius: 20px;
-
       padding: 16px;
 
       box-shadow:
-        0 2px 8px rgba(0, 0, 0, 0.04);
+        0 2px 8px rgba(0,0,0,0.04);
 
       margin-bottom: 16px;
     }
 
     .filter-label {
       display: block;
-
       font-size: 12px;
       font-weight: 600;
-
       color: #8e8e93;
-
       margin-bottom: 7px;
     }
 
     .month-input,
-    .employee-select {
+    .employee-select,
+    .modal-input,
+    .modal-select,
+    .modal-textarea {
       width: 100%;
-
-      height: 48px;
 
       border: 1px solid #e1e1e6;
       border-radius: 13px;
 
       background: #f7f7f8;
-
-      padding: 0 12px;
-
       color: #1c1c1e;
 
       outline: none;
+    }
+
+    .month-input,
+    .employee-select,
+    .modal-input,
+    .modal-select {
+      height: 48px;
+      padding: 0 12px;
+    }
+
+    .modal-textarea {
+      min-height: 90px;
+      resize: vertical;
+      padding: 12px;
     }
 
     .filter-group + .filter-group {
@@ -597,50 +558,39 @@
       border-radius: 20px;
 
       padding: 18px;
-
       margin-bottom: 16px;
 
       box-shadow:
-        0 2px 8px rgba(0, 0, 0, 0.04);
+        0 2px 8px rgba(0,0,0,0.04);
     }
 
     .summary-name {
       font-size: 20px;
       font-weight: 750;
-
       margin-bottom: 4px;
     }
 
     .summary-rate {
       font-size: 14px;
-
       color: #8e8e93;
-
       margin-bottom: 18px;
     }
 
     .summary-grid {
       display: grid;
-
-      grid-template-columns:
-        repeat(2, 1fr);
-
+      grid-template-columns: repeat(2, 1fr);
       gap: 10px;
     }
 
     .summary-item {
       background: #f7f7f8;
-
       border-radius: 15px;
-
       padding: 13px;
     }
 
     .summary-label {
       font-size: 12px;
-
       color: #8e8e93;
-
       margin-bottom: 5px;
     }
 
@@ -661,23 +611,19 @@
 
     .salary-label {
       font-size: 13px;
-
       color: #4f7560;
-
       margin-bottom: 4px;
     }
 
     .salary-value {
       font-size: 27px;
       font-weight: 800;
-
       color: #157347;
     }
 
     .timesheet-list {
       display: flex;
       flex-direction: column;
-
       gap: 10px;
     }
 
@@ -689,17 +635,18 @@
       padding: 16px;
 
       box-shadow:
-        0 2px 8px rgba(0, 0, 0, 0.04);
+        0 2px 8px rgba(0,0,0,0.04);
+    }
+
+    .day-card.corrected {
+      border: 1px solid #c9b9ff;
     }
 
     .day-top {
       display: flex;
-
       align-items: flex-start;
       justify-content: space-between;
-
       gap: 10px;
-
       margin-bottom: 12px;
     }
 
@@ -710,10 +657,24 @@
 
     .day-employee {
       margin-top: 3px;
-
       font-size: 13px;
-
       color: #8e8e93;
+    }
+
+    .corrected-label {
+      display: inline-block;
+
+      margin-top: 7px;
+
+      padding: 4px 8px;
+
+      border-radius: 20px;
+
+      background: #f2eaff;
+      color: #6941c6;
+
+      font-size: 11px;
+      font-weight: 700;
     }
 
     .day-status {
@@ -729,60 +690,46 @@
 
     .status-full {
       background: #e9f8ef;
-
       color: #157347;
     }
 
     .status-half {
       background: #fff7dc;
-
       color: #936a00;
     }
 
     .status-review {
       background: #ffe9e9;
-
       color: #b42318;
     }
 
     .status-zero {
       background: #eeeeF1;
-
       color: #66666b;
     }
 
     .day-object {
       font-size: 14px;
-
       margin-bottom: 12px;
-
       color: #48484a;
     }
 
     .day-times {
       display: grid;
-
-      grid-template-columns:
-        1fr 1fr;
-
+      grid-template-columns: 1fr 1fr;
       gap: 8px;
-
       margin-bottom: 12px;
     }
 
     .time-mini-card {
       background: #f7f7f8;
-
       border-radius: 13px;
-
       padding: 10px 12px;
     }
 
     .time-mini-label {
       font-size: 11px;
-
       color: #8e8e93;
-
       margin-bottom: 4px;
     }
 
@@ -793,10 +740,8 @@
 
     .day-bottom {
       display: flex;
-
       align-items: center;
       justify-content: space-between;
-
       gap: 10px;
 
       border-top: 1px solid #f0f0f2;
@@ -806,7 +751,6 @@
 
     .paid-days {
       font-size: 14px;
-
       color: #66666b;
     }
 
@@ -815,9 +759,43 @@
       font-weight: 750;
     }
 
+    .admin-edit-button {
+      width: 100%;
+
+      margin-top: 13px;
+
+      border: none;
+      border-radius: 13px;
+
+      background: #f2eaff;
+      color: #6941c6;
+
+      padding: 12px;
+
+      font-size: 14px;
+      font-weight: 700;
+
+      cursor: pointer;
+    }
+
+    .override-note {
+      margin-top: 10px;
+
+      padding: 10px 12px;
+
+      border-radius: 12px;
+
+      background: #faf8ff;
+
+      color: #6941c6;
+
+      font-size: 13px;
+      line-height: 1.35;
+    }
+
 
     /* ========================================
-       LOADING / ERRORS
+       ЗАГРУЗКА / ОШИБКИ
     ======================================== */
 
     .loading-card,
@@ -838,12 +816,161 @@
 
     .error-card {
       background: #fff1f1;
-
       color: #b42318;
     }
 
-    .hidden {
-      display: none !important;
+
+    /* ========================================
+       MODAL
+    ======================================== */
+
+    .modal-overlay {
+      display: none;
+
+      position: fixed;
+
+      inset: 0;
+
+      z-index: 9999;
+
+      background: rgba(0,0,0,0.45);
+
+      align-items: flex-end;
+      justify-content: center;
+    }
+
+    .modal-overlay.active {
+      display: flex;
+    }
+
+    .modal {
+      width: 100%;
+      max-width: 650px;
+
+      max-height: 92vh;
+
+      overflow-y: auto;
+
+      background: #f4f6f8;
+
+      border-radius: 24px 24px 0 0;
+
+      padding: 20px 16px 30px;
+    }
+
+    .modal-handle {
+      width: 44px;
+      height: 5px;
+
+      border-radius: 10px;
+
+      background: #d1d1d6;
+
+      margin: 0 auto 20px;
+    }
+
+    .modal-title {
+      font-size: 23px;
+      font-weight: 750;
+
+      margin-bottom: 4px;
+    }
+
+    .modal-subtitle {
+      font-size: 14px;
+      color: #8e8e93;
+      margin-bottom: 20px;
+    }
+
+    .modal-card {
+      background: white;
+
+      border-radius: 18px;
+
+      padding: 16px;
+
+      margin-bottom: 12px;
+    }
+
+    .modal-field {
+      margin-bottom: 15px;
+    }
+
+    .modal-field:last-child {
+      margin-bottom: 0;
+    }
+
+    .modal-label {
+      display: block;
+
+      font-size: 13px;
+      font-weight: 650;
+
+      color: #5d5d62;
+
+      margin-bottom: 7px;
+    }
+
+    .save-edit-button {
+      width: 100%;
+
+      border: none;
+      border-radius: 16px;
+
+      background: #2481cc;
+      color: white;
+
+      padding: 16px;
+
+      font-size: 16px;
+      font-weight: 700;
+
+      margin-top: 4px;
+
+      cursor: pointer;
+    }
+
+    .remove-edit-button {
+      width: 100%;
+
+      border: none;
+      border-radius: 16px;
+
+      background: #ffffff;
+      color: #b42318;
+
+      padding: 15px;
+
+      font-size: 15px;
+      font-weight: 650;
+
+      margin-top: 10px;
+
+      cursor: pointer;
+    }
+
+    .close-modal-button {
+      width: 100%;
+
+      border: none;
+      background: transparent;
+
+      color: #66666b;
+
+      padding: 14px;
+
+      font-size: 15px;
+
+      cursor: pointer;
+    }
+
+    .saving-message {
+      margin-top: 12px;
+
+      text-align: center;
+
+      font-size: 14px;
+      color: #8e8e93;
     }
 
   </style>
@@ -908,8 +1035,6 @@
       </button>
 
 
-      <!-- НОВЫЙ РАЗДЕЛ ТАБЕЛЬ -->
-
       <button
         class="menu-button"
         onclick="openTimesheetScreen()"
@@ -939,13 +1064,9 @@
 
 
       <button class="menu-button">
-
-        <div class="icon green">
-          ⚙️
-        </div>
+        <div class="icon green">⚙️</div>
 
         <div class="menu-text">
-
           <span class="menu-title">
             Рабочий процесс
           </span>
@@ -953,24 +1074,16 @@
           <span class="menu-description">
             Задачи и статус работ
           </span>
-
         </div>
 
-        <div class="arrow">
-          ›
-        </div>
-
+        <div class="arrow">›</div>
       </button>
 
 
       <button class="menu-button">
-
-        <div class="icon yellow">
-          💡
-        </div>
+        <div class="icon yellow">💡</div>
 
         <div class="menu-text">
-
           <span class="menu-title">
             База знаний
           </span>
@@ -978,24 +1091,16 @@
           <span class="menu-description">
             Инструкции и материалы
           </span>
-
         </div>
 
-        <div class="arrow">
-          ›
-        </div>
-
+        <div class="arrow">›</div>
       </button>
 
 
       <button class="menu-button">
-
-        <div class="icon blue">
-          ⚡
-        </div>
+        <div class="icon blue">⚡</div>
 
         <div class="menu-text">
-
           <span class="menu-title">
             Быстрый отчёт
           </span>
@@ -1003,24 +1108,16 @@
           <span class="menu-description">
             Быстро сообщить о работе
           </span>
-
         </div>
 
-        <div class="arrow">
-          ›
-        </div>
-
+        <div class="arrow">›</div>
       </button>
 
 
       <button class="menu-button">
-
-        <div class="icon purple">
-          📝
-        </div>
+        <div class="icon purple">📝</div>
 
         <div class="menu-text">
-
           <span class="menu-title">
             Дневной отчёт
           </span>
@@ -1028,24 +1125,16 @@
           <span class="menu-description">
             Итоги рабочего дня
           </span>
-
         </div>
 
-        <div class="arrow">
-          ›
-        </div>
-
+        <div class="arrow">›</div>
       </button>
 
 
       <button class="menu-button">
-
-        <div class="icon orange">
-          🧾
-        </div>
+        <div class="icon orange">🧾</div>
 
         <div class="menu-text">
-
           <span class="menu-title">
             Счета и фактуры
           </span>
@@ -1053,24 +1142,16 @@
           <span class="menu-description">
             Документы и оплаты
           </span>
-
         </div>
 
-        <div class="arrow">
-          ›
-        </div>
-
+        <div class="arrow">›</div>
       </button>
 
 
       <button class="menu-button">
-
-        <div class="icon gray">
-          🏭
-        </div>
+        <div class="icon gray">🏭</div>
 
         <div class="menu-text">
-
           <span class="menu-title">
             Данные поставщиков
           </span>
@@ -1078,24 +1159,16 @@
           <span class="menu-description">
             Контакты и информация
           </span>
-
         </div>
 
-        <div class="arrow">
-          ›
-        </div>
-
+        <div class="arrow">›</div>
       </button>
 
 
       <button class="menu-button">
-
-        <div class="icon yellow">
-          ⚡
-        </div>
+        <div class="icon yellow">⚡</div>
 
         <div class="menu-text">
-
           <span class="menu-title">
             Показания счётчика
           </span>
@@ -1103,24 +1176,16 @@
           <span class="menu-description">
             Передать текущие показания
           </span>
-
         </div>
 
-        <div class="arrow">
-          ›
-        </div>
-
+        <div class="arrow">›</div>
       </button>
 
 
       <button class="menu-button">
-
-        <div class="icon blue">
-          👷
-        </div>
+        <div class="icon blue">👷</div>
 
         <div class="menu-text">
-
           <span class="menu-title">
             Информация о работнике
           </span>
@@ -1128,24 +1193,16 @@
           <span class="menu-description">
             Профиль сотрудника
           </span>
-
         </div>
 
-        <div class="arrow">
-          ›
-        </div>
-
+        <div class="arrow">›</div>
       </button>
 
 
       <button class="menu-button">
-
-        <div class="icon red">
-          📍
-        </div>
+        <div class="icon red">📍</div>
 
         <div class="menu-text">
-
           <span class="menu-title">
             Смотрер
           </span>
@@ -1153,24 +1210,16 @@
           <span class="menu-description">
             Контроль рабочего процесса
           </span>
-
         </div>
 
-        <div class="arrow">
-          ›
-        </div>
-
+        <div class="arrow">›</div>
       </button>
 
 
       <button class="menu-button">
-
-        <div class="icon pink">
-          🎁
-        </div>
+        <div class="icon pink">🎁</div>
 
         <div class="menu-text">
-
           <span class="menu-title">
             Премия
           </span>
@@ -1178,24 +1227,16 @@
           <span class="menu-description">
             Бонусы и вознаграждения
           </span>
-
         </div>
 
-        <div class="arrow">
-          ›
-        </div>
-
+        <div class="arrow">›</div>
       </button>
 
 
       <button class="menu-button">
-
-        <div class="icon purple">
-          🌐
-        </div>
+        <div class="icon purple">🌐</div>
 
         <div class="menu-text">
-
           <span class="menu-title">
             Выбор языка
           </span>
@@ -1203,13 +1244,9 @@
           <span class="menu-description">
             Язык приложения
           </span>
-
         </div>
 
-        <div class="arrow">
-          ›
-        </div>
-
+        <div class="arrow">›</div>
       </button>
 
 
@@ -1292,15 +1329,8 @@
         class="object-button"
         onclick="selectObject(this, '1')"
       >
-
-        <span>
-          🏗️ Объект 1
-        </span>
-
-        <span class="object-check">
-          ✓
-        </span>
-
+        <span>🏗️ Объект 1</span>
+        <span class="object-check">✓</span>
       </button>
 
 
@@ -1308,15 +1338,8 @@
         class="object-button"
         onclick="selectObject(this, '2')"
       >
-
-        <span>
-          🏗️ Объект 2
-        </span>
-
-        <span class="object-check">
-          ✓
-        </span>
-
+        <span>🏗️ Объект 2</span>
+        <span class="object-check">✓</span>
       </button>
 
 
@@ -1324,15 +1347,8 @@
         class="object-button"
         onclick="selectObject(this, '3')"
       >
-
-        <span>
-          🏗️ Объект 3
-        </span>
-
-        <span class="object-check">
-          ✓
-        </span>
-
+        <span>🏗️ Объект 3</span>
+        <span class="object-check">✓</span>
       </button>
 
     </div>
@@ -1349,15 +1365,8 @@
         class="work-type-button start"
         onclick="selectWorkType(this, 'Начал работу')"
       >
-
-        <span class="work-icon">
-          ▶️
-        </span>
-
-        <span class="work-title">
-          Начал работу
-        </span>
-
+        <span class="work-icon">▶️</span>
+        <span class="work-title">Начал работу</span>
       </button>
 
 
@@ -1365,15 +1374,8 @@
         class="work-type-button finish"
         onclick="selectWorkType(this, 'Закончил работу')"
       >
-
-        <span class="work-icon">
-          ⏹️
-        </span>
-
-        <span class="work-title">
-          Закончил работу
-        </span>
-
+        <span class="work-icon">⏹️</span>
+        <span class="work-title">Закончил работу</span>
       </button>
 
     </div>
@@ -1469,13 +1471,9 @@
 
     <div class="filters-card">
 
-
       <div class="filter-group">
 
-        <label
-          class="filter-label"
-          for="timesheetMonth"
-        >
+        <label class="filter-label">
           Месяц
         </label>
 
@@ -1494,10 +1492,7 @@
         class="filter-group hidden"
       >
 
-        <label
-          class="filter-label"
-          for="timesheetEmployee"
-        >
+        <label class="filter-label">
           Сотрудник
         </label>
 
@@ -1506,15 +1501,12 @@
           class="employee-select"
           onchange="renderTimesheet()"
         >
-
           <option value="all">
             Все сотрудники
           </option>
-
         </select>
 
       </div>
-
 
     </div>
 
@@ -1530,21 +1522,18 @@
     <div
       id="timesheetError"
       class="error-card hidden"
-    >
-    </div>
+    ></div>
 
 
     <div
       id="summaryContainer"
-    >
-    </div>
+    ></div>
 
 
     <div
       id="timesheetList"
       class="timesheet-list"
-    >
-    </div>
+    ></div>
 
 
     <div
@@ -1561,11 +1550,133 @@
 
 
 
-<script>
+<!-- ========================================
+     МОДАЛЬНОЕ ОКНО РЕДАКТИРОВАНИЯ
+========================================= -->
 
-  /* ========================================
-     TELEGRAM
-  ======================================== */
+<div
+  id="editModal"
+  class="modal-overlay"
+  onclick="overlayClick(event)"
+>
+
+  <div class="modal">
+
+    <div class="modal-handle"></div>
+
+    <div class="modal-title">
+      Редактировать день
+    </div>
+
+    <div
+      id="editModalSubtitle"
+      class="modal-subtitle"
+    >
+      —
+    </div>
+
+
+    <div class="modal-card">
+
+      <div class="modal-field">
+
+        <label class="modal-label">
+          Оплачиваемый день
+        </label>
+
+        <select
+          id="editPaidDays"
+          class="modal-select"
+        >
+          <option value="0">
+            0 дней — не оплачивать
+          </option>
+
+          <option value="0.5">
+            0,5 дня — половина дня
+          </option>
+
+          <option value="1">
+            1 день — полный день
+          </option>
+        </select>
+
+      </div>
+
+
+      <div class="modal-field">
+
+        <label class="modal-label">
+          Объект
+        </label>
+
+        <input
+          id="editObject"
+          class="modal-input"
+          type="text"
+          placeholder="Например: Объект 1"
+        >
+
+      </div>
+
+
+      <div class="modal-field">
+
+        <label class="modal-label">
+          Причина корректировки
+        </label>
+
+        <textarea
+          id="editNote"
+          class="modal-textarea"
+          placeholder="Например: сотрудник забыл сделать вечернюю отметку"
+        ></textarea>
+
+      </div>
+
+    </div>
+
+
+    <button
+      id="saveOverrideButton"
+      class="save-edit-button"
+      onclick="saveOverride()"
+    >
+      ✓ Сохранить корректировку
+    </button>
+
+
+    <button
+      id="removeOverrideButton"
+      class="remove-edit-button hidden"
+      onclick="removeOverride()"
+    >
+      ↩ Вернуть автоматический расчёт
+    </button>
+
+
+    <button
+      class="close-modal-button"
+      onclick="closeEditModal()"
+    >
+      Отмена
+    </button>
+
+
+    <div
+      id="editSavingMessage"
+      class="saving-message hidden"
+    >
+      Сохраняем...
+    </div>
+
+  </div>
+
+</div>
+
+
+
+<script>
 
   const tg =
     window.Telegram &&
@@ -1575,11 +1686,8 @@
 
 
   if (tg) {
-
     tg.ready();
-
     tg.expand();
-
   }
 
 
@@ -1587,22 +1695,16 @@
     "https://rvsqqbhxomiynourskgy.supabase.co/functions/v1/timesheet-api";
 
 
-  /* ========================================
-     ПЕРЕМЕННЫЕ
-  ======================================== */
-
   let selectedObject = null;
-
   let selectedWorkType = null;
-
   let photoSelected = false;
 
   let employeeName = "Олег";
-
   let telegramId = null;
 
-
   let timesheetData = null;
+
+  let editingDay = null;
 
 
   /* ========================================
@@ -1615,34 +1717,27 @@
     tg.initDataUnsafe.user
   ) {
 
-    const telegramUser =
+    const user =
       tg.initDataUnsafe.user;
 
-
     telegramId =
-      telegramUser.id;
-
+      user.id;
 
     employeeName =
-      telegramUser.first_name ||
+      user.first_name ||
       "Сотрудник";
 
-
-    if (
-      telegramUser.last_name
-    ) {
-
+    if (user.last_name) {
       employeeName +=
         " " +
-        telegramUser.last_name;
-
+        user.last_name;
     }
 
   }
 
 
   /* ========================================
-     ДАТА
+     ДАТЫ
   ======================================== */
 
   function formatDate(date) {
@@ -1659,21 +1754,17 @@
   }
 
 
-  function formatShortDate(
-    dateText
-  ) {
+  function formatShortDate(value) {
 
-    if (!dateText) {
+    if (!value) {
       return "—";
     }
 
-
     const date =
       new Date(
-        dateText +
+        value +
         "T00:00:00"
       );
-
 
     return date.toLocaleDateString(
       "ru-RU",
@@ -1686,80 +1777,41 @@
   }
 
 
-  /* ========================================
-     ВРЕМЯ
-  ======================================== */
-
   function formatTime(date) {
 
-    const hours =
+    return [
       String(
         date.getHours()
-      ).padStart(
-        2,
-        "0"
-      );
+      ).padStart(2, "0"),
 
-
-    const minutes =
       String(
         date.getMinutes()
-      ).padStart(
-        2,
-        "0"
-      );
+      ).padStart(2, "0"),
 
-
-    const seconds =
       String(
         date.getSeconds()
-      ).padStart(
-        2,
-        "0"
-      );
-
-
-    return (
-      hours +
-      ":" +
-      minutes +
-      ":" +
-      seconds
-    );
+      ).padStart(2, "0")
+    ].join(":");
 
   }
 
 
-  function shortTime(
-    time
-  ) {
+  function shortTime(value) {
 
-    if (!time) {
+    if (!value) {
       return "—";
     }
 
-
-    return String(time)
-      .substring(
-        0,
-        5
-      );
+    return String(value)
+      .substring(0, 5);
 
   }
 
-
-  /* ========================================
-     ДЕНЬГИ
-  ======================================== */
 
   function formatMoney(
     value,
     currency = "THB"
   ) {
-
-    const number =
-      Number(value || 0);
-
 
     return (
       new Intl.NumberFormat(
@@ -1767,7 +1819,9 @@
         {
           maximumFractionDigits: 0
         }
-      ).format(number)
+      ).format(
+        Number(value || 0)
+      )
       +
       " "
       +
@@ -1777,15 +1831,10 @@
   }
 
 
-  /* ========================================
-     ОБНОВЛЯЕМ ДАТУ И ВРЕМЯ
-  ======================================== */
-
   function updateDateAndTime() {
 
     const now =
       new Date();
-
 
     document
       .getElementById(
@@ -1794,14 +1843,12 @@
       .innerText =
       formatTime(now);
 
-
     document
       .getElementById(
         "currentDate"
       )
       .innerText =
       formatDate(now);
-
 
     document
       .getElementById(
@@ -1818,12 +1865,11 @@
     1000
   );
 
-
   updateDateAndTime();
 
 
   /* ========================================
-     ПЕРЕКЛЮЧЕНИЕ ЭКРАНОВ
+     ЭКРАНЫ
   ======================================== */
 
   function hideAllScreens() {
@@ -1833,15 +1879,10 @@
         ".screen"
       )
       .forEach(
-        function(screen) {
-
+        screen =>
           screen
             .classList
-            .remove(
-              "active"
-            );
-
-        }
+            .remove("active")
       );
 
   }
@@ -1851,16 +1892,12 @@
 
     hideAllScreens();
 
-
     document
       .getElementById(
         "mainScreen"
       )
       .classList
-      .add(
-        "active"
-      );
-
+      .add("active");
 
     window.scrollTo(
       0,
@@ -1874,19 +1911,14 @@
 
     hideAllScreens();
 
-
     document
       .getElementById(
         "photoScreen"
       )
       .classList
-      .add(
-        "active"
-      );
-
+      .add("active");
 
     updateDateAndTime();
-
 
     window.scrollTo(
       0,
@@ -1900,34 +1932,31 @@
 
     hideAllScreens();
 
-
     document
       .getElementById(
         "timesheetScreen"
       )
       .classList
-      .add(
-        "active"
-      );
+      .add("active");
 
 
-    if (
-      !document
+    const monthInput =
+      document
         .getElementById(
           "timesheetMonth"
-        )
-        .value
-    ) {
+        );
+
+
+    if (!monthInput.value) {
 
       const now =
         new Date();
 
-
-      const year =
-        now.getFullYear();
-
-
-      const month =
+      monthInput.value =
+        now.getFullYear()
+        +
+        "-"
+        +
         String(
           now.getMonth() + 1
         ).padStart(
@@ -1935,19 +1964,10 @@
           "0"
         );
 
-
-      document
-        .getElementById(
-          "timesheetMonth"
-        )
-        .value =
-        `${year}-${month}`;
-
     }
 
 
     loadTimesheet();
-
 
     window.scrollTo(
       0,
@@ -1958,7 +1978,7 @@
 
 
   /* ========================================
-     ВЫБОР ОБЪЕКТА
+     ФОТООТМЕТКА
   ======================================== */
 
   function selectObject(
@@ -1971,15 +1991,12 @@
         ".object-button"
       )
       .forEach(
-        function(item) {
-
+        item =>
           item
             .classList
             .remove(
               "selected"
-            );
-
-        }
+            )
       );
 
 
@@ -1999,10 +2016,6 @@
   }
 
 
-  /* ========================================
-     НАЧАЛ / ЗАКОНЧИЛ
-  ======================================== */
-
   function selectWorkType(
     button,
     workType
@@ -2013,15 +2026,12 @@
         ".work-type-button"
       )
       .forEach(
-        function(item) {
-
+        item =>
           item
             .classList
             .remove(
               "selected"
-            );
-
-        }
+            )
       );
 
 
@@ -2043,10 +2053,11 @@
 
   function checkPhotoAvailability() {
 
-    const photoButton =
-      document.getElementById(
-        "photoButton"
-      );
+    const button =
+      document
+        .getElementById(
+          "photoButton"
+        );
 
 
     if (
@@ -2054,16 +2065,14 @@
       selectedWorkType
     ) {
 
-      photoButton.disabled =
+      button.disabled =
         false;
 
-
-      photoButton
+      button
         .classList
         .remove(
           "disabled-button"
         );
-
 
       if (!photoSelected) {
 
@@ -2078,11 +2087,10 @@
 
     } else {
 
-      photoButton.disabled =
+      button.disabled =
         true;
 
-
-      photoButton
+      button
         .classList
         .add(
           "disabled-button"
@@ -2093,21 +2101,14 @@
   }
 
 
-  /* ========================================
-     ФОТО
-  ======================================== */
-
   function openCamera() {
 
     if (
       !selectedObject ||
       !selectedWorkType
     ) {
-
       return;
-
     }
-
 
     document
       .getElementById(
@@ -2124,7 +2125,6 @@
       event
         .target
         .files[0];
-
 
     if (!file) {
       return;
@@ -2152,17 +2152,17 @@
           true;
 
 
-        const sendButton =
-          document.getElementById(
-            "sendButton"
-          );
+        const button =
+          document
+            .getElementById(
+              "sendButton"
+            );
 
 
-        sendButton.disabled =
+        button.disabled =
           false;
 
-
-        sendButton
+        button
           .classList
           .remove(
             "disabled-button"
@@ -2178,10 +2178,6 @@
   }
 
 
-  /* ========================================
-     ОТПРАВКА ОТМЕТКИ В БОТА
-  ======================================== */
-
   function sendMark() {
 
     if (
@@ -2189,9 +2185,7 @@
       !selectedWorkType ||
       !photoSelected
     ) {
-
       return;
-
     }
 
 
@@ -2199,7 +2193,7 @@
       new Date();
 
 
-    const markData = {
+    const data = {
 
       employee:
         employeeName,
@@ -2225,22 +2219,86 @@
     if (
       tg &&
       typeof tg.sendData ===
-        "function"
+      "function"
     ) {
 
       tg.sendData(
         JSON.stringify(
-          markData
+          data
         )
       );
 
     } else {
 
       alert(
-        "Отправка отметки работает только внутри Telegram"
+        "Отправка работает только внутри Telegram"
       );
 
     }
+
+  }
+
+
+  /* ========================================
+     API
+  ======================================== */
+
+  async function callTimesheetApi(
+    payload
+  ) {
+
+    if (
+      !tg ||
+      !tg.initData
+    ) {
+
+      throw new Error(
+        "Нет данных авторизации Telegram"
+      );
+
+    }
+
+
+    const response =
+      await fetch(
+        TIMESHEET_API,
+        {
+          method:
+            "POST",
+
+          headers: {
+            "Content-Type":
+              "application/json"
+          },
+
+          body:
+            JSON.stringify(
+              {
+                initData:
+                  tg.initData,
+
+                ...payload
+              }
+            )
+        }
+      );
+
+
+    const result =
+      await response.json();
+
+
+    if (!response.ok) {
+
+      throw new Error(
+        result.error ||
+        "Ошибка сервера"
+      );
+
+    }
+
+
+    return result;
 
   }
 
@@ -2252,150 +2310,71 @@
   async function loadTimesheet() {
 
     const loading =
-      document.getElementById(
-        "timesheetLoading"
-      );
-
-
-    const errorBox =
-      document.getElementById(
-        "timesheetError"
-      );
-
-
-    const empty =
-      document.getElementById(
-        "timesheetEmpty"
-      );
-
-
-    loading.classList.remove(
-      "hidden"
-    );
-
-
-    errorBox.classList.add(
-      "hidden"
-    );
-
-
-    empty.classList.add(
-      "hidden"
-    );
-
-
-    document
-      .getElementById(
-        "summaryContainer"
-      )
-      .innerHTML = "";
-
-
-    document
-      .getElementById(
-        "timesheetList"
-      )
-      .innerHTML = "";
-
-
-    if (
-      !tg ||
-      !tg.initData
-    ) {
-
-      loading.classList.add(
-        "hidden"
-      );
-
-
-      errorBox.innerText =
-        "Табель необходимо открывать внутри Telegram.";
-
-
-      errorBox.classList.remove(
-        "hidden"
-      );
-
-
-      return;
-
-    }
-
-
-    const month =
       document
         .getElementById(
-          "timesheetMonth"
-        )
-        .value;
+          "timesheetLoading"
+        );
+
+    const errorBox =
+      document
+        .getElementById(
+          "timesheetError"
+        );
+
+
+    loading
+      .classList
+      .remove(
+        "hidden"
+      );
+
+    errorBox
+      .classList
+      .add(
+        "hidden"
+      );
 
 
     try {
 
-      const response =
-        await fetch(
-          TIMESHEET_API,
+      const month =
+        document
+          .getElementById(
+            "timesheetMonth"
+          )
+          .value;
+
+
+      timesheetData =
+        await callTimesheetApi(
           {
-            method:
-              "POST",
+            action:
+              "get_timesheet",
 
-            headers: {
-              "Content-Type":
-                "application/json"
-            },
-
-            body:
-              JSON.stringify(
-                {
-                  initData:
-                    tg.initData,
-
-                  month:
-                    month
-                }
-              )
+            month:
+              month
           }
         );
 
 
-      const data =
-        await response.json();
-
-
-      if (!response.ok) {
-
-        throw new Error(
-          data.error ||
-          "Не удалось загрузить табель"
-        );
-
-      }
-
-
-      timesheetData =
-        data;
-
-
       setupEmployeeFilter();
-
 
       renderTimesheet();
 
 
-      loading.classList.add(
-        "hidden"
-      );
+      loading
+        .classList
+        .add(
+          "hidden"
+        );
 
     } catch (error) {
 
-      console.error(
-        error
-      );
-
-
-      loading.classList.add(
-        "hidden"
-      );
+      loading
+        .classList
+        .add(
+          "hidden"
+        );
 
 
       errorBox.innerText =
@@ -2404,9 +2383,11 @@
         error.message;
 
 
-      errorBox.classList.remove(
-        "hidden"
-      );
+      errorBox
+        .classList
+        .remove(
+          "hidden"
+        );
 
     }
 
@@ -2414,21 +2395,22 @@
 
 
   /* ========================================
-     ФИЛЬТР СОТРУДНИКОВ
+     ФИЛЬТР СОТРУДНИКА
   ======================================== */
 
   function setupEmployeeFilter() {
 
     const group =
-      document.getElementById(
-        "employeeFilterGroup"
-      );
-
+      document
+        .getElementById(
+          "employeeFilterGroup"
+        );
 
     const select =
-      document.getElementById(
-        "timesheetEmployee"
-      );
+      document
+        .getElementById(
+          "timesheetEmployee"
+        );
 
 
     if (
@@ -2436,22 +2418,25 @@
       "admin"
     ) {
 
-      group.classList.add(
-        "hidden"
-      );
-
+      group
+        .classList
+        .add(
+          "hidden"
+        );
 
       return;
 
     }
 
 
-    group.classList.remove(
-      "hidden"
-    );
+    group
+      .classList
+      .remove(
+        "hidden"
+      );
 
 
-    const previousValue =
+    const oldValue =
       select.value;
 
 
@@ -2463,12 +2448,13 @@
       timesheetData.employees ||
       []
     ).forEach(
-      function(employee) {
+      employee => {
 
         const option =
-          document.createElement(
-            "option"
-          );
+          document
+            .createElement(
+              "option"
+            );
 
 
         option.value =
@@ -2477,17 +2463,13 @@
           );
 
 
-        const fullName =
+        option.textContent =
           [
             employee.first_name,
             employee.last_name
           ]
           .filter(Boolean)
           .join(" ");
-
-
-        option.textContent =
-          fullName;
 
 
         select.appendChild(
@@ -2498,7 +2480,7 @@
     );
 
 
-    const exists =
+    if (
       Array
         .from(
           select.options
@@ -2506,14 +2488,12 @@
         .some(
           option =>
             option.value ===
-            previousValue
-        );
-
-
-    if (exists) {
+            oldValue
+        )
+    ) {
 
       select.value =
-        previousValue;
+        oldValue;
 
     } else {
 
@@ -2526,7 +2506,7 @@
 
 
   /* ========================================
-     РЕНДЕР ТАБЕЛЯ
+     РЕНДЕР
   ======================================== */
 
   function renderTimesheet() {
@@ -2536,21 +2516,21 @@
     }
 
 
-    const select =
-      document.getElementById(
-        "timesheetEmployee"
-      );
-
-
-    const selectedEmployee =
+    const selected =
       timesheetData.role ===
       "admin"
-        ? select.value
-        : String(
-            timesheetData
-              .current_user
-              .id
-          );
+        ?
+        document
+          .getElementById(
+            "timesheetEmployee"
+          )
+          .value
+        :
+        String(
+          timesheetData
+            .current_user
+            .id
+        );
 
 
     let daily =
@@ -2566,7 +2546,7 @@
 
 
     if (
-      selectedEmployee !==
+      selected !==
       "all"
     ) {
 
@@ -2576,7 +2556,7 @@
             String(
               row.employee_id
             ) ===
-            selectedEmployee
+            selected
         );
 
 
@@ -2586,15 +2566,14 @@
             String(
               row.employee_id
             ) ===
-            selectedEmployee
+            selected
         );
 
     }
 
 
     renderSummary(
-      summaries,
-      selectedEmployee
+      summaries
     );
 
 
@@ -2605,214 +2584,175 @@
   }
 
 
-  /* ========================================
-     ИТОГ МЕСЯЦА
-  ======================================== */
-
   function renderSummary(
-    summaries,
-    selectedEmployee
+    summaries
   ) {
 
     const container =
-      document.getElementById(
-        "summaryContainer"
-      );
-
-
-    container.innerHTML = "";
-
-
-    if (
-      selectedEmployee ===
-      "all"
-    ) {
-
-      summaries.forEach(
-        function(summary) {
-
-          container.innerHTML +=
-            createSummaryCard(
-              summary
-            );
-
-        }
-      );
-
-
-      return;
-
-    }
-
-
-    if (
-      summaries.length === 0
-    ) {
-
-      return;
-
-    }
+      document
+        .getElementById(
+          "summaryContainer"
+        );
 
 
     container.innerHTML =
-      createSummaryCard(
-        summaries[0]
-      );
+      "";
+
+
+    summaries.forEach(
+      summary => {
+
+        const name =
+          summary.employee_name ||
+          [
+            summary.first_name,
+            summary.last_name
+          ]
+          .filter(Boolean)
+          .join(" ");
+
+
+        container.innerHTML += `
+
+          <div class="summary-card">
+
+            <div class="summary-name">
+              ${escapeHtml(name)}
+            </div>
+
+            <div class="summary-rate">
+              Дневная ставка:
+              ${
+                formatMoney(
+                  summary.daily_rate,
+                  summary.currency
+                )
+              }
+            </div>
+
+
+            <div class="summary-grid">
+
+              <div class="summary-item">
+                <div class="summary-label">
+                  Полных дней
+                </div>
+
+                <div class="summary-value">
+                  ${summary.full_days || 0}
+                </div>
+              </div>
+
+
+              <div class="summary-item">
+                <div class="summary-label">
+                  Половин дня
+                </div>
+
+                <div class="summary-value">
+                  ${summary.half_days || 0}
+                </div>
+              </div>
+
+
+              <div class="summary-item">
+                <div class="summary-label">
+                  Оплачиваемых дней
+                </div>
+
+                <div class="summary-value">
+                  ${Number(summary.total_paid_days || 0)}
+                </div>
+              </div>
+
+
+              <div class="summary-item">
+                <div class="summary-label">
+                  Исправлено
+                </div>
+
+                <div class="summary-value">
+                  ${summary.corrected_days || 0}
+                </div>
+              </div>
+
+            </div>
+
+
+            <div class="salary-box">
+
+              <div class="salary-label">
+                Начислено за месяц
+              </div>
+
+              <div class="salary-value">
+                ${
+                  formatMoney(
+                    summary.total_salary,
+                    summary.currency
+                  )
+                }
+              </div>
+
+            </div>
+
+          </div>
+        `;
+
+      }
+    );
 
   }
 
-
-  function createSummaryCard(
-    summary
-  ) {
-
-    const name =
-      summary.employee_name ||
-      [
-        summary.first_name,
-        summary.last_name
-      ]
-      .filter(Boolean)
-      .join(" ");
-
-
-    const currency =
-      summary.currency ||
-      "THB";
-
-
-    return `
-      <div class="summary-card">
-
-        <div class="summary-name">
-          ${escapeHtml(name)}
-        </div>
-
-        <div class="summary-rate">
-          Дневная ставка:
-          ${formatMoney(
-            summary.daily_rate,
-            currency
-          )}
-        </div>
-
-        <div class="summary-grid">
-
-          <div class="summary-item">
-            <div class="summary-label">
-              Полных дней
-            </div>
-
-            <div class="summary-value">
-              ${summary.full_days || 0}
-            </div>
-          </div>
-
-
-          <div class="summary-item">
-            <div class="summary-label">
-              Половин дня
-            </div>
-
-            <div class="summary-value">
-              ${summary.half_days || 0}
-            </div>
-          </div>
-
-
-          <div class="summary-item">
-            <div class="summary-label">
-              Оплачиваемых дней
-            </div>
-
-            <div class="summary-value">
-              ${Number(
-                summary.total_paid_days || 0
-              )}
-            </div>
-          </div>
-
-
-          <div class="summary-item">
-            <div class="summary-label">
-              Требуют проверки
-            </div>
-
-            <div class="summary-value">
-              ${summary.review_days || 0}
-            </div>
-          </div>
-
-        </div>
-
-
-        <div class="salary-box">
-
-          <div class="salary-label">
-            Начислено за месяц
-          </div>
-
-          <div class="salary-value">
-            ${formatMoney(
-              summary.total_salary,
-              currency
-            )}
-          </div>
-
-        </div>
-
-      </div>
-    `;
-
-  }
-
-
-  /* ========================================
-     ДНИ
-  ======================================== */
 
   function renderDays(
     daily
   ) {
 
     const list =
-      document.getElementById(
-        "timesheetList"
-      );
-
+      document
+        .getElementById(
+          "timesheetList"
+        );
 
     const empty =
-      document.getElementById(
-        "timesheetEmpty"
-      );
+      document
+        .getElementById(
+          "timesheetEmpty"
+        );
 
 
-    list.innerHTML = "";
+    list.innerHTML =
+      "";
 
 
     if (
-      daily.length === 0
+      daily.length ===
+      0
     ) {
 
-      empty.classList.remove(
-        "hidden"
-      );
-
+      empty
+        .classList
+        .remove(
+          "hidden"
+        );
 
       return;
 
     }
 
 
-    empty.classList.add(
-      "hidden"
-    );
+    empty
+      .classList
+      .add(
+        "hidden"
+      );
 
 
     daily
       .slice()
       .sort(
-        (a, b) =>
+        (a,b) =>
           new Date(
             b.work_date
           )
@@ -2822,11 +2762,24 @@
           )
       )
       .forEach(
-        function(day) {
+        day => {
 
-          const status =
-            getStatusStyle(
-              day.day_status
+          const card =
+            document
+              .createElement(
+                "div"
+              );
+
+
+          card.className =
+            "day-card"
+            +
+            (
+              day.is_overridden
+                ?
+                " corrected"
+                :
+                ""
             );
 
 
@@ -2840,19 +2793,72 @@
             .join(" ");
 
 
-          const currency =
-            day.currency ||
-            "THB";
-
-
-          const card =
-            document.createElement(
-              "div"
+          const status =
+            getStatusStyle(
+              day.day_status
             );
 
 
-          card.className =
-            "day-card";
+          let adminButton =
+            "";
+
+
+          if (
+            timesheetData.role ===
+            "admin"
+          ) {
+
+            adminButton = `
+
+              <button
+                class="admin-edit-button"
+                onclick='openEditModal(${JSON.stringify(day)})'
+              >
+                ✏️ Редактировать день
+              </button>
+
+            `;
+
+          }
+
+
+          let corrected =
+            "";
+
+
+          if (
+            day.is_overridden
+          ) {
+
+            corrected =
+              '<div class="corrected-label">✏️ Изменено администратором</div>';
+
+          }
+
+
+          let note =
+            "";
+
+
+          if (
+            day.override_note
+          ) {
+
+            note = `
+
+              <div class="override-note">
+
+                <strong>
+                  Комментарий:
+                </strong>
+
+                ${escapeHtml(day.override_note)}
+
+              </div>
+
+            `;
+
+          }
 
 
           card.innerHTML = `
@@ -2862,14 +2868,14 @@
               <div>
 
                 <div class="day-date">
-                  ${formatShortDate(
-                    day.work_date
-                  )}
+                  ${formatShortDate(day.work_date)}
                 </div>
 
                 <div class="day-employee">
                   ${escapeHtml(name)}
                 </div>
+
+                ${corrected}
 
               </div>
 
@@ -2877,9 +2883,7 @@
               <div
                 class="day-status ${status.className}"
               >
-                ${escapeHtml(
-                  status.text
-                )}
+                ${status.text}
               </div>
 
             </div>
@@ -2888,11 +2892,10 @@
             <div class="day-object">
               🏗️
               ${
-                day.objects
-                  ? escapeHtml(
-                      day.objects
-                    )
-                  : "Объект не указан"
+                escapeHtml(
+                  day.objects ||
+                  "Объект не указан"
+                )
               }
             </div>
 
@@ -2906,9 +2909,7 @@
                 </div>
 
                 <div class="time-mini-value">
-                  ${shortTime(
-                    day.start_time
-                  )}
+                  ${shortTime(day.start_time)}
                 </div>
 
               </div>
@@ -2921,9 +2922,7 @@
                 </div>
 
                 <div class="time-mini-value">
-                  ${shortTime(
-                    day.finish_time
-                  )}
+                  ${shortTime(day.finish_time)}
                 </div>
 
               </div>
@@ -2935,20 +2934,25 @@
 
               <div class="paid-days">
                 Зачтено:
-                ${Number(
-                  day.paid_days || 0
-                )}
+                ${Number(day.paid_days || 0)}
                 дня
               </div>
 
               <div class="day-salary">
-                ${formatMoney(
-                  day.day_salary,
-                  currency
-                )}
+                ${
+                  formatMoney(
+                    day.day_salary,
+                    day.currency
+                  )
+                }
               </div>
 
             </div>
+
+
+            ${note}
+
+            ${adminButton}
 
           `;
 
@@ -2962,6 +2966,348 @@
 
   }
 
+
+  /* ========================================
+     MODAL
+  ======================================== */
+
+  function openEditModal(
+    day
+  ) {
+
+    if (
+      !timesheetData ||
+      timesheetData.role !==
+      "admin"
+    ) {
+      return;
+    }
+
+
+    editingDay =
+      day;
+
+
+    document
+      .getElementById(
+        "editModalSubtitle"
+      )
+      .innerText =
+      (
+        day.employee_name
+        +
+        " • "
+        +
+        formatShortDate(
+          day.work_date
+        )
+      );
+
+
+    document
+      .getElementById(
+        "editPaidDays"
+      )
+      .value =
+      String(
+        Number(
+          day.paid_days || 0
+        )
+      );
+
+
+    document
+      .getElementById(
+        "editObject"
+      )
+      .value =
+      day.objects ||
+      "";
+
+
+    document
+      .getElementById(
+        "editNote"
+      )
+      .value =
+      day.override_note ||
+      "";
+
+
+    const removeButton =
+      document
+        .getElementById(
+          "removeOverrideButton"
+        );
+
+
+    if (
+      day.is_overridden
+    ) {
+
+      removeButton
+        .classList
+        .remove(
+          "hidden"
+        );
+
+    } else {
+
+      removeButton
+        .classList
+        .add(
+          "hidden"
+        );
+
+    }
+
+
+    document
+      .getElementById(
+        "editModal"
+      )
+      .classList
+      .add(
+        "active"
+      );
+
+  }
+
+
+  function closeEditModal() {
+
+    editingDay =
+      null;
+
+
+    document
+      .getElementById(
+        "editModal"
+      )
+      .classList
+      .remove(
+        "active"
+      );
+
+  }
+
+
+  function overlayClick(
+    event
+  ) {
+
+    if (
+      event.target.id ===
+      "editModal"
+    ) {
+
+      closeEditModal();
+
+    }
+
+  }
+
+
+  async function saveOverride() {
+
+    if (!editingDay) {
+      return;
+    }
+
+
+    const saving =
+      document
+        .getElementById(
+          "editSavingMessage"
+        );
+
+
+    const saveButton =
+      document
+        .getElementById(
+          "saveOverrideButton"
+        );
+
+
+    saving
+      .classList
+      .remove(
+        "hidden"
+      );
+
+
+    saveButton.disabled =
+      true;
+
+
+    try {
+
+      await callTimesheetApi(
+        {
+
+          action:
+            "save_override",
+
+          employee_id:
+            editingDay.employee_id,
+
+          work_date:
+            editingDay.work_date,
+
+          paid_days:
+            Number(
+              document
+                .getElementById(
+                  "editPaidDays"
+                )
+                .value
+            ),
+
+          object_name:
+            document
+              .getElementById(
+                "editObject"
+              )
+              .value,
+
+          note:
+            document
+              .getElementById(
+                "editNote"
+              )
+              .value
+
+        }
+      );
+
+
+      closeEditModal();
+
+
+      await loadTimesheet();
+
+
+      if (tg) {
+
+        tg.showAlert(
+          "Корректировка сохранена"
+        );
+
+      } else {
+
+        alert(
+          "Корректировка сохранена"
+        );
+
+      }
+
+    } catch (error) {
+
+      if (tg) {
+
+        tg.showAlert(
+          error.message
+        );
+
+      } else {
+
+        alert(
+          error.message
+        );
+
+      }
+
+    } finally {
+
+      saving
+        .classList
+        .add(
+          "hidden"
+        );
+
+
+      saveButton.disabled =
+        false;
+
+    }
+
+  }
+
+
+  async function removeOverride() {
+
+    if (!editingDay) {
+      return;
+    }
+
+
+    const confirmed =
+      confirm(
+        "Вернуть автоматический расчёт для этого дня?"
+      );
+
+
+    if (!confirmed) {
+      return;
+    }
+
+
+    try {
+
+      await callTimesheetApi(
+        {
+
+          action:
+            "remove_override",
+
+          employee_id:
+            editingDay.employee_id,
+
+          work_date:
+            editingDay.work_date
+
+        }
+      );
+
+
+      closeEditModal();
+
+
+      await loadTimesheet();
+
+
+      if (tg) {
+
+        tg.showAlert(
+          "Автоматический расчёт восстановлен"
+        );
+
+      }
+
+    } catch (error) {
+
+      if (tg) {
+
+        tg.showAlert(
+          error.message
+        );
+
+      } else {
+
+        alert(
+          error.message
+        );
+
+      }
+
+    }
+
+  }
+
+
+  /* ========================================
+     STATUS
+  ======================================== */
 
   function getStatusStyle(
     status
@@ -3015,19 +3361,36 @@
     }
 
 
+    if (
+      status ===
+      "Не оплачивается"
+    ) {
+
+      return {
+        className:
+          "status-zero",
+
+        text:
+          "0 дней"
+      };
+
+    }
+
+
     return {
       className:
         "status-zero",
 
       text:
-        status || "Нет данных"
+        status ||
+        "Нет данных"
     };
 
   }
 
 
   /* ========================================
-     HTML SECURITY
+     ESCAPE
   ======================================== */
 
   function escapeHtml(
@@ -3037,31 +3400,30 @@
     return String(
       value ?? ""
     )
-    .replaceAll(
-      "&",
-      "&amp;"
-    )
-    .replaceAll(
-      "<",
-      "&lt;"
-    )
-    .replaceAll(
-      ">",
-      "&gt;"
-    )
-    .replaceAll(
-      '"',
-      "&quot;"
-    )
-    .replaceAll(
-      "'",
-      "&#039;"
-    );
+      .replaceAll(
+        "&",
+        "&amp;"
+      )
+      .replaceAll(
+        "<",
+        "&lt;"
+      )
+      .replaceAll(
+        ">",
+        "&gt;"
+      )
+      .replaceAll(
+        '"',
+        "&quot;"
+      )
+      .replaceAll(
+        "'",
+        "&#039;"
+      );
 
   }
 
 </script>
-
 
 </body>
 
