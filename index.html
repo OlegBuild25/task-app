@@ -1810,17 +1810,388 @@
     </div>
 
 
-    <!-- ADMIN DASHBOARD -->
+    <!-- MENU -->
+
+    <div class="menu">
+
+
+      <button
+        id="dashboardMenuButton"
+        class="menu-button hidden"
+        onclick="openDashboardScreen()"
+      >
+
+        <div class="icon blue">
+          📈
+        </div>
+
+        <div class="menu-text">
+
+          <span class="menu-title">
+            Сводка
+          </span>
+
+          <span class="menu-description">
+            Сотрудники, отметки и зарплата
+          </span>
+
+        </div>
+
+        <div class="arrow">›</div>
+
+      </button>
+
+
+      <button
+        class="menu-button"
+        onclick="openPhotoScreen()"
+      >
+
+        <div class="icon blue">
+          📸
+        </div>
+
+        <div class="menu-text">
+
+          <span class="menu-title">
+            Фотоотметка
+          </span>
+
+          <span class="menu-description">
+            Начало и окончание работы
+          </span>
+
+        </div>
+
+        <div class="arrow">›</div>
+
+      </button>
+
+
+      <button
+        class="menu-button"
+        onclick="openTimesheetScreen()"
+      >
+
+        <div class="icon teal">
+          📊
+        </div>
+
+        <div class="menu-text">
+
+          <span class="menu-title">
+            Табель
+          </span>
+
+          <span class="menu-description">
+            Рабочие дни и зарплата
+          </span>
+
+        </div>
+
+        <div class="arrow">›</div>
+
+      </button>
+
+
+      <button class="menu-button">
+
+        <div class="icon green">
+          ⚙️
+        </div>
+
+        <div class="menu-text">
+
+          <span class="menu-title">
+            Рабочий процесс
+          </span>
+
+          <span class="menu-description">
+            Задачи и статус работ
+          </span>
+
+        </div>
+
+        <div class="arrow">›</div>
+
+      </button>
+
+
+      <button class="menu-button">
+
+        <div class="icon yellow">
+          💡
+        </div>
+
+        <div class="menu-text">
+
+          <span class="menu-title">
+            База знаний
+          </span>
+
+          <span class="menu-description">
+            Инструкции и материалы
+          </span>
+
+        </div>
+
+        <div class="arrow">›</div>
+
+      </button>
+
+
+      <button class="menu-button">
+
+        <div class="icon blue">
+          ⚡
+        </div>
+
+        <div class="menu-text">
+
+          <span class="menu-title">
+            Быстрый отчёт
+          </span>
+
+          <span class="menu-description">
+            Быстро сообщить о работе
+          </span>
+
+        </div>
+
+        <div class="arrow">›</div>
+
+      </button>
+
+
+      <button class="menu-button">
+
+        <div class="icon purple">
+          📝
+        </div>
+
+        <div class="menu-text">
+
+          <span class="menu-title">
+            Дневной отчёт
+          </span>
+
+          <span class="menu-description">
+            Итоги рабочего дня
+          </span>
+
+        </div>
+
+        <div class="arrow">›</div>
+
+      </button>
+
+
+      <button class="menu-button">
+
+        <div class="icon orange">
+          🧾
+        </div>
+
+        <div class="menu-text">
+
+          <span class="menu-title">
+            Счета и фактуры
+          </span>
+
+          <span class="menu-description">
+            Документы и оплаты
+          </span>
+
+        </div>
+
+        <div class="arrow">›</div>
+
+      </button>
+
+
+      <button class="menu-button">
+
+        <div class="icon gray">
+          🏭
+        </div>
+
+        <div class="menu-text">
+
+          <span class="menu-title">
+            Данные поставщиков
+          </span>
+
+          <span class="menu-description">
+            Контакты и информация
+          </span>
+
+        </div>
+
+        <div class="arrow">›</div>
+
+      </button>
+
+
+      <button class="menu-button">
+
+        <div class="icon yellow">
+          ⚡
+        </div>
+
+        <div class="menu-text">
+
+          <span class="menu-title">
+            Показания счётчика
+          </span>
+
+          <span class="menu-description">
+            Передать текущие показания
+          </span>
+
+        </div>
+
+        <div class="arrow">›</div>
+
+      </button>
+
+
+      <button
+        id="employeesMenuButton"
+        class="menu-button"
+        onclick="openEmployeesScreen()"
+      >
+
+        <div class="icon blue">
+          👷
+        </div>
+
+        <div class="menu-text">
+
+          <span class="menu-title">
+            Сотрудники
+          </span>
+
+          <span class="menu-description">
+            Управление сотрудниками
+          </span>
+
+        </div>
+
+        <div class="arrow">›</div>
+
+      </button>
+
+
+      <button class="menu-button">
+
+        <div class="icon red">
+          📍
+        </div>
+
+        <div class="menu-text">
+
+          <span class="menu-title">
+            Смотрер
+          </span>
+
+          <span class="menu-description">
+            Контроль рабочего процесса
+          </span>
+
+        </div>
+
+        <div class="arrow">›</div>
+
+      </button>
+
+
+      <button
+        class="menu-button"
+        onclick="openPayrollScreen()"
+      >
+
+        <div class="icon pink">
+          🎁
+        </div>
+
+        <div class="menu-text">
+
+          <span class="menu-title">
+            Премия
+          </span>
+
+          <span class="menu-description">
+            Премии, удержания и выплаты
+          </span>
+
+        </div>
+
+        <div class="arrow">›</div>
+
+      </button>
+
+
+      <button class="menu-button">
+
+        <div class="icon purple">
+          🌐
+        </div>
+
+        <div class="menu-text">
+
+          <span class="menu-title">
+            Выбор языка
+          </span>
+
+          <span class="menu-description">
+            Язык приложения
+          </span>
+
+        </div>
+
+        <div class="arrow">›</div>
+
+      </button>
+
+
+    </div>
+
+  </div>
+
+
+
+  <!-- DASHBOARD -->
+
+  <div
+    id="dashboardScreen"
+    class="screen"
+  >
+
+    <button
+      class="back-button"
+      onclick="goToMain()"
+    >
+      ← Назад
+    </button>
+
+    <h2 class="page-title">
+      📈 Сводка
+    </h2>
+
+    <p class="page-description">
+      Статистика сотрудников, отметок и зарплаты.
+    </p>
+
 
     <div
       id="adminDashboard"
-      class="dashboard hidden"
+      class="dashboard"
     >
 
       <div class="dashboard-header">
 
         <div class="dashboard-title">
-          Сводка
+          Сегодня
         </div>
 
         <button
@@ -2144,326 +2515,6 @@
 
 
       </div>
-
-    </div>
-
-
-    <!-- MENU -->
-
-    <div class="menu">
-
-
-      <button
-        class="menu-button"
-        onclick="openPhotoScreen()"
-      >
-
-        <div class="icon blue">
-          📸
-        </div>
-
-        <div class="menu-text">
-
-          <span class="menu-title">
-            Фотоотметка
-          </span>
-
-          <span class="menu-description">
-            Начало и окончание работы
-          </span>
-
-        </div>
-
-        <div class="arrow">›</div>
-
-      </button>
-
-
-      <button
-        class="menu-button"
-        onclick="openTimesheetScreen()"
-      >
-
-        <div class="icon teal">
-          📊
-        </div>
-
-        <div class="menu-text">
-
-          <span class="menu-title">
-            Табель
-          </span>
-
-          <span class="menu-description">
-            Рабочие дни и зарплата
-          </span>
-
-        </div>
-
-        <div class="arrow">›</div>
-
-      </button>
-
-
-      <button class="menu-button">
-
-        <div class="icon green">
-          ⚙️
-        </div>
-
-        <div class="menu-text">
-
-          <span class="menu-title">
-            Рабочий процесс
-          </span>
-
-          <span class="menu-description">
-            Задачи и статус работ
-          </span>
-
-        </div>
-
-        <div class="arrow">›</div>
-
-      </button>
-
-
-      <button class="menu-button">
-
-        <div class="icon yellow">
-          💡
-        </div>
-
-        <div class="menu-text">
-
-          <span class="menu-title">
-            База знаний
-          </span>
-
-          <span class="menu-description">
-            Инструкции и материалы
-          </span>
-
-        </div>
-
-        <div class="arrow">›</div>
-
-      </button>
-
-
-      <button class="menu-button">
-
-        <div class="icon blue">
-          ⚡
-        </div>
-
-        <div class="menu-text">
-
-          <span class="menu-title">
-            Быстрый отчёт
-          </span>
-
-          <span class="menu-description">
-            Быстро сообщить о работе
-          </span>
-
-        </div>
-
-        <div class="arrow">›</div>
-
-      </button>
-
-
-      <button class="menu-button">
-
-        <div class="icon purple">
-          📝
-        </div>
-
-        <div class="menu-text">
-
-          <span class="menu-title">
-            Дневной отчёт
-          </span>
-
-          <span class="menu-description">
-            Итоги рабочего дня
-          </span>
-
-        </div>
-
-        <div class="arrow">›</div>
-
-      </button>
-
-
-      <button class="menu-button">
-
-        <div class="icon orange">
-          🧾
-        </div>
-
-        <div class="menu-text">
-
-          <span class="menu-title">
-            Счета и фактуры
-          </span>
-
-          <span class="menu-description">
-            Документы и оплаты
-          </span>
-
-        </div>
-
-        <div class="arrow">›</div>
-
-      </button>
-
-
-      <button class="menu-button">
-
-        <div class="icon gray">
-          🏭
-        </div>
-
-        <div class="menu-text">
-
-          <span class="menu-title">
-            Данные поставщиков
-          </span>
-
-          <span class="menu-description">
-            Контакты и информация
-          </span>
-
-        </div>
-
-        <div class="arrow">›</div>
-
-      </button>
-
-
-      <button class="menu-button">
-
-        <div class="icon yellow">
-          ⚡
-        </div>
-
-        <div class="menu-text">
-
-          <span class="menu-title">
-            Показания счётчика
-          </span>
-
-          <span class="menu-description">
-            Передать текущие показания
-          </span>
-
-        </div>
-
-        <div class="arrow">›</div>
-
-      </button>
-
-
-      <button
-        id="employeesMenuButton"
-        class="menu-button"
-        onclick="openEmployeesScreen()"
-      >
-
-        <div class="icon blue">
-          👷
-        </div>
-
-        <div class="menu-text">
-
-          <span class="menu-title">
-            Сотрудники
-          </span>
-
-          <span class="menu-description">
-            Управление сотрудниками
-          </span>
-
-        </div>
-
-        <div class="arrow">›</div>
-
-      </button>
-
-
-      <button class="menu-button">
-
-        <div class="icon red">
-          📍
-        </div>
-
-        <div class="menu-text">
-
-          <span class="menu-title">
-            Смотрер
-          </span>
-
-          <span class="menu-description">
-            Контроль рабочего процесса
-          </span>
-
-        </div>
-
-        <div class="arrow">›</div>
-
-      </button>
-
-
-      <button
-        class="menu-button"
-        onclick="openPayrollScreen()"
-      >
-
-        <div class="icon pink">
-          🎁
-        </div>
-
-        <div class="menu-text">
-
-          <span class="menu-title">
-            Премия
-          </span>
-
-          <span class="menu-description">
-            Премии, удержания и выплаты
-          </span>
-
-        </div>
-
-        <div class="arrow">›</div>
-
-      </button>
-
-
-      <button class="menu-button">
-
-        <div class="icon purple">
-          🌐
-        </div>
-
-        <div class="menu-text">
-
-          <span class="menu-title">
-            Выбор языка
-          </span>
-
-          <span class="menu-description">
-            Язык приложения
-          </span>
-
-        </div>
-
-        <div class="arrow">›</div>
-
-      </button>
-
 
     </div>
 
@@ -4156,17 +4207,6 @@
       );
 
 
-    if (
-      timesheetData &&
-      timesheetData.role ===
-      "admin"
-    ) {
-
-      loadDashboard();
-
-    }
-
-
     window.scrollTo(
       0,
       0
@@ -4431,9 +4471,9 @@
       );
 
 
-    const dashboard =
+    const dashboardButton =
       document.getElementById(
-        "adminDashboard"
+        "dashboardMenuButton"
       );
 
 
@@ -4448,7 +4488,7 @@
       );
 
 
-      dashboard.classList.remove(
+      dashboardButton.classList.remove(
         "hidden"
       );
 
@@ -4459,7 +4499,7 @@
       );
 
 
-      dashboard.classList.add(
+      dashboardButton.classList.add(
         "hidden"
       );
 
@@ -4472,6 +4512,46 @@
   /* ========================================
      DASHBOARD
   ======================================== */
+
+  function openDashboardScreen() {
+
+    if (
+      !timesheetData ||
+      timesheetData.role !==
+      "admin"
+    ) {
+
+      showMessage(
+        "Недостаточно прав"
+      );
+
+      return;
+
+    }
+
+
+    hideAllScreens();
+
+
+    document
+      .getElementById(
+        "dashboardScreen"
+      )
+      .classList.add(
+        "active"
+      );
+
+
+    window.scrollTo(
+      0,
+      0
+    );
+
+
+    loadDashboard();
+
+  }
+
 
   async function loadDashboard() {
 
