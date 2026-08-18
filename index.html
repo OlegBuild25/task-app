@@ -1480,6 +1480,19 @@
       line-height: 1.4;
     }
 
+    .cancel-advance-button {
+      width: 100%;
+      margin-top: 10px;
+      padding: 10px 12px;
+      border: none;
+      border-radius: 11px;
+      background: #fff0f0;
+      color: #b42318;
+      font-size: 12px;
+      font-weight: 750;
+      cursor: pointer;
+    }
+
 
     /* ================================
        MODALS
@@ -8687,12 +8700,123 @@
         `;
 
 
+        if (
+          !cancelled &&
+          payrollData &&
+          payrollData.role ===
+          "admin"
+        ) {
+
+          const cancelButton =
+            document.createElement(
+              "button"
+            );
+
+
+          cancelButton.className =
+            "cancel-advance-button";
+
+          cancelButton.innerText =
+            "↩ Отменить аванс";
+
+          cancelButton.onclick =
+            () =>
+              cancelPayrollAdvance(
+                item
+              );
+
+
+          card.appendChild(
+            cancelButton
+          );
+
+        }
+
+
         list.appendChild(
           card
         );
 
       }
     );
+
+  }
+
+
+  async function cancelPayrollAdvance(
+    item
+  ) {
+
+    if (
+      !item ||
+      !item.id
+    ) {
+
+      showMessage(
+        "Не удалось определить аванс"
+      );
+
+      return;
+
+    }
+
+
+    if (
+      !confirm(
+        "Отменить этот аванс? Запись останется в истории и не будет учитываться в сумме авансов."
+      )
+    ) {
+      return;
+    }
+
+
+    const cancelReason =
+      prompt(
+        "Причина отмены (необязательно):",
+        ""
+      );
+
+
+    if (
+      cancelReason ===
+      null
+    ) {
+      return;
+    }
+
+
+    try {
+
+      await callApi(
+        {
+          action:
+            "cancel_payroll_advance",
+
+          advance_id:
+            Number(
+              item.id
+            ),
+
+          cancel_reason:
+            cancelReason.trim()
+        }
+      );
+
+
+      await loadPayrollAdvances();
+
+
+      showMessage(
+        "Аванс отменён"
+      );
+
+    } catch (error) {
+
+      showMessage(
+        error.message
+      );
+
+    }
 
   }
 
