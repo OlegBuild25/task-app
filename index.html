@@ -3943,12 +3943,12 @@
       photo_finished: "Закончил работу",
       photo_current_time: "Текущее время",
       photo_take_step: "3. Сделайте фото",
-      photo_choose_first: t("photo_choose_first"),
-      photo_ready: t("photo_ready"),
+      photo_choose_first: "Сначала выберите объект и тип отметки",
+      photo_ready: "Теперь можно сделать фото",
       photo_take_or_choose: "📸 Сделать или выбрать фото",
       photo_send: "✓ Отправить отметку",
       photo_saved: "✓ Фотоотметка сохранена",
-      photo_error: t("photo_error"),
+      photo_error: "Не удалось обработать фото",
       back: "← Назад",
       saved: "Язык сохранён"
     },
@@ -4832,7 +4832,9 @@
         "photoBox"
       )
       .innerHTML =
-      "Сначала выберите объект и тип отметки";
+      t(
+        "photo_choose_first"
+      );
 
 
     const photoButton =
@@ -4964,7 +4966,9 @@
           "photoBox"
         )
         .innerText =
-        "Теперь можно сделать фото";
+        t(
+          "photo_ready"
+        );
 
     }
 
@@ -5034,7 +5038,9 @@
     } catch {
 
       showMessage(
-        "Не удалось обработать фото"
+        t(
+          "photo_error"
+        )
       );
 
     }
