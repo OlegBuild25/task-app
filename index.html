@@ -3447,20 +3447,6 @@
      HELPERS
   ================================= */
 
-  function currentLocale() {
-
-    const locales = {
-      ru: "ru-RU",
-      en: "en-GB",
-      my: "my-MM",
-      th: "th-TH"
-    };
-
-    return locales[currentLanguage] || "ru-RU";
-
-  }
-
-
   function localDateISO(date) {
 
     const year =
@@ -3540,7 +3526,7 @@
   function formatDate(date) {
 
     return date.toLocaleDateString(
-      currentLocale(),
+      "ru-RU",
       {
         day: "2-digit",
         month: "long",
@@ -3562,7 +3548,7 @@
       "T00:00:00"
     )
     .toLocaleDateString(
-      currentLocale(),
+      "ru-RU",
       {
         day: "2-digit",
         month: "long"
@@ -3593,7 +3579,7 @@
 
     const result =
       date.toLocaleDateString(
-        currentLocale(),
+        "ru-RU",
         {
           month: "long",
           year: "numeric"
@@ -3617,7 +3603,7 @@
 
     return new Date(value)
       .toLocaleString(
-        currentLocale(),
+        "ru-RU",
         {
           day: "2-digit",
           month: "2-digit",
@@ -3918,945 +3904,124 @@
   ================================= */
 
   const translations = {
-  "ru": {
-    "main_subtitle": "Рабочая панель",
-    "menu_dashboard": "Сводка",
-    "menu_dashboard_desc": "Сотрудники, отметки и зарплата",
-    "menu_photo": "Фотоотметка",
-    "menu_photo_desc": "Начало и окончание работы",
-    "menu_timesheet": "Табель",
-    "menu_timesheet_desc": "Рабочие дни и зарплата",
-    "menu_employees": "Сотрудники",
-    "menu_employees_desc": "Управление сотрудниками",
-    "menu_payroll": "Премии и выплаты",
-    "menu_payroll_desc": "Начисления, удержания и выплаты",
-    "menu_language": "Язык",
-    "menu_language_desc": "Русский / English / မြန်မာ / ไทย",
-    "language_title": "🌐 Язык",
-    "language_description": "Выберите язык приложения.",
-    "language_note": "Выбранный язык сохраняется на этом устройстве.",
-    "back": "← Назад",
-    "saved": "Язык сохранён",
-    "dashboard_title": "📈 Сводка",
-    "dashboard_description": "Текущая ситуация по сотрудникам и зарплате.",
-    "today": "Сегодня",
-    "refresh": "↻ Обновить",
-    "loading_dashboard": "Загружаем сводку...",
-    "active_employees": "Активных сотрудников",
-    "started_work": "Начали работу",
-    "finished_work": "Закончили работу",
-    "not_marked": "Не отметились",
-    "needs_review": "Требуют проверки",
-    "new_requests": "Новых заявок",
-    "by_timesheet": "По табелю",
-    "bonuses": "Премии",
-    "deductions": "Удержания",
-    "paid": "Выплачено",
-    "remaining_to_pay": "Осталось выплатить",
-    "unpaid_employees": "Не выплачено сотрудникам",
-    "total_accrued": "Всего начислено",
-    "attention_needed": "⚠️ Нужно внимание",
-    "open_requests": "🔔 Открыть заявки",
-    "salary": "Зарплата",
-    "finish_without_start": "Есть окончание работы без начала",
-    "no_mark_today": "Сегодня ещё нет фотоотметки",
-    "photo_title": "📸 Фотоотметка",
-    "photo_description": "Отметка о начале или окончании работы.",
-    "employee": "Сотрудник",
-    "choose_object": "1. Выберите объект",
-    "object_1": "🏗️ Объект 1",
-    "object_2": "🏗️ Объект 2",
-    "object_3": "🏗️ Объект 3",
-    "choose_mark_type": "2. Выберите тип отметки",
-    "work_started": "Начал работу",
-    "work_finished": "Закончил работу",
-    "current_time": "Текущее время",
-    "take_photo_step": "3. Сделайте фото",
-    "photo_choose_first": "Сначала выберите объект и тип отметки",
-    "photo_ready": "Теперь можно сделать фото",
-    "take_or_choose_photo": "📸 Сделать или выбрать фото",
-    "send_mark": "✓ Отправить отметку",
-    "photo_saved": "✓ Фотоотметка сохранена",
-    "photo_error": t("photo_error"),
-    "timesheet_title": "📊 Табель",
-    "timesheet_description": "Рабочие дни, фотоотметки и зарплата.",
-    "month": "Месяц",
-    "all_employees": "Все сотрудники",
-    "loading_timesheet": "Загружаем табель...",
-    "timesheet_empty": "За выбранный месяц отметок пока нет.",
-    "daily_rate": "Дневная ставка",
-    "full_days": "Полных дней",
-    "half_days": "Половин дня",
-    "paid_days": "Оплачиваемых дней",
-    "corrected": "Исправлено",
-    "accrued_month": "Начислено за месяц",
-    "no_photo": "Нет фото",
-    "object_not_set": "Объект не указан",
-    "start": "Начало",
-    "finish": "Окончание",
-    "credited": "Зачтено",
-    "day_word": "дня",
-    "edit_day_btn": "✏️ Редактировать день",
-    "change_history_btn": "🕘 История изменений",
-    "status_full": "1 день",
-    "status_half": "0,5 дня",
-    "status_review": "Проверить",
-    "status_zero": "0 дней",
-    "auto": "авто",
-    "history_empty": "Истории пока нет",
-    "loading_short": "Загружаем...",
-    "employees_title": "👷 Сотрудники",
-    "employees_description": "Управление сотрудниками и заявками.",
-    "new_requests_title": "🔔 Новые заявки",
-    "add_employee": "+ Добавить сотрудника",
-    "loading_employees": "Загружаем сотрудников...",
-    "new_request": "Новая заявка",
-    "accept": "✓ Принять",
-    "reject": "✕ Отклонить",
-    "rate": "Ставка",
-    "edit": "✏️ Редактировать",
-    "disable": "⛔ Отключить",
-    "activate": "✓ Активировать",
-    "edit_employee": "Редактировать сотрудника",
-    "fill_employee": t("fill_employee"),
-    "disable_word": t("disable_word"),
-    "activate_word": t("activate_word"),
-    "confirm_employee_action": "Вы хотите {action} сотрудника?",
-    "enter_valid_rate": t("enter_valid_rate"),
-    "reject_request_confirm": t("reject_request_confirm"),
-    "request_waiting": t("request_waiting"),
-    "payroll_title": "💰 Премии и выплаты",
-    "payroll_description": "Зарплата, премии, удержания и выплаты.",
-    "add_adjustment": "+ Добавить премию / удержание",
-    "loading": "Загружаем...",
-    "adjustment_history": "История начислений",
-    "paid_days_meta": "оплачиваемых дней",
-    "unpaid": "⏳ Не выплачено",
-    "paid_badge": "✓ Выплачено",
-    "bonus": "Премия",
-    "deduction": "Удержание",
-    "to_pay": "К выплате",
-    "paid_amount": "✅ Выплачено:",
-    "calculation_changed": "⚠️ Расчёт изменился после выплаты.",
-    "difference": "Разница",
-    "mark_paid": "✓ Отметить выплаченным",
-    "payment_history_btn": "🕘 История выплаты",
-    "cancel_payment": "↩ Отменить выплату",
-    "choose_employee_amount": t("choose_employee_amount"),
-    "bonus_label": "🎁 Премия",
-    "deduction_label": "➖ Удержание",
-    "delete": "🗑 Удалить",
-    "delete_adjustment_confirm": t("delete_adjustment_confirm"),
-    "cancel_payment_confirm": t("cancel_payment_confirm"),
-    "cancel_reason": t("cancel_reason"),
-    "change": "Изменение",
-    "paid_action": "✅ Выплачено",
-    "cancelled_action": "↩ Выплата отменена",
-    "reopened_action": "✅ Выплата подтверждена повторно",
-    "request_sent": "Заявка отправлена",
-    "request_sent_text": "Ваша заявка на подключение отправлена администратору. После подтверждения откройте приложение ещё раз.",
-    "check_access": "🔄 Проверить доступ",
-    "edit_day": "Редактировать день",
-    "paid_day": "Оплачиваемый день",
-    "zero_days": "0 дней",
-    "half_day": "0,5 дня",
-    "one_day": "1 день",
-    "object": "Объект",
-    "change_reason": "Причина изменения",
-    "save": "✓ Сохранить",
-    "restore_auto": "↩ Вернуть автоматический расчёт",
-    "cancel": "Отмена",
-    "change_history": "🕘 История изменений",
-    "close": "Закрыть",
-    "first_name": "Имя",
-    "last_name": "Фамилия",
-    "role": "Роль",
-    "administrator": "Администратор",
-    "approve_employee": "✓ Принять сотрудника",
-    "confirm": "✓ Подтвердить",
-    "new_adjustment": "Новое начисление",
-    "type": "Тип",
-    "amount": "Сумма",
-    "comment": "Комментарий",
-    "confirm_payment": "💰 Подтвердить выплату",
-    "payment_history": "💰 История выплаты",
-    "restore_auto_confirm": t("restore_auto_confirm")
-  },
-  "en": {
-    "main_subtitle": "Work panel",
-    "menu_dashboard": "Summary",
-    "menu_dashboard_desc": "Employees, attendance and salary",
-    "menu_photo": "Photo attendance",
-    "menu_photo_desc": "Start and finish of work",
-    "menu_timesheet": "Timesheet",
-    "menu_timesheet_desc": "Work days and salary",
-    "menu_employees": "Employees",
-    "menu_employees_desc": "Employee management",
-    "menu_payroll": "Bonuses and payments",
-    "menu_payroll_desc": "Bonuses, deductions and payments",
-    "menu_language": "Language",
-    "menu_language_desc": "Русский / English / မြန်မာ / ไทย",
-    "language_title": "🌐 Language",
-    "language_description": "Choose the application language.",
-    "language_note": "The selected language is saved on this device.",
-    "back": "← Back",
-    "saved": "Language saved",
-    "dashboard_title": "📈 Summary",
-    "dashboard_description": "Current employee and payroll status.",
-    "today": "Today",
-    "refresh": "↻ Refresh",
-    "loading_dashboard": "Loading summary...",
-    "active_employees": "Active employees",
-    "started_work": "Started work",
-    "finished_work": "Finished work",
-    "not_marked": "Not checked in",
-    "needs_review": "Needs review",
-    "new_requests": "New requests",
-    "by_timesheet": "By timesheet",
-    "bonuses": "Bonuses",
-    "deductions": "Deductions",
-    "paid": "Paid",
-    "remaining_to_pay": "Remaining to pay",
-    "unpaid_employees": "Employees unpaid",
-    "total_accrued": "Total accrued",
-    "attention_needed": "⚠️ Needs attention",
-    "open_requests": "🔔 Open requests",
-    "salary": "Salary",
-    "finish_without_start": "Finish mark without a start mark",
-    "no_mark_today": "No photo attendance today yet",
-    "photo_title": "📸 Photo attendance",
-    "photo_description": "Mark the start or end of work.",
-    "employee": "Employee",
-    "choose_object": "1. Choose a site",
-    "object_1": "🏗️ Site 1",
-    "object_2": "🏗️ Site 2",
-    "object_3": "🏗️ Site 3",
-    "choose_mark_type": "2. Choose mark type",
-    "work_started": "Started work",
-    "work_finished": "Finished work",
-    "current_time": "Current time",
-    "take_photo_step": "3. Take a photo",
-    "photo_choose_first": "First choose a site and mark type",
-    "photo_ready": "You can now take a photo",
-    "take_or_choose_photo": "📸 Take or choose a photo",
-    "send_mark": "✓ Send mark",
-    "photo_saved": "✓ Photo attendance saved",
-    "photo_error": "Could not process the photo",
-    "timesheet_title": "📊 Timesheet",
-    "timesheet_description": "Work days, photo attendance and salary.",
-    "month": "Month",
-    "all_employees": "All employees",
-    "loading_timesheet": "Loading timesheet...",
-    "timesheet_empty": "No marks for the selected month yet.",
-    "daily_rate": "Daily rate",
-    "full_days": "Full days",
-    "half_days": "Half days",
-    "paid_days": "Paid days",
-    "corrected": "Corrected",
-    "accrued_month": "Accrued for the month",
-    "no_photo": "No photo",
-    "object_not_set": "Site not specified",
-    "start": "Start",
-    "finish": "Finish",
-    "credited": "Credited",
-    "day_word": "day",
-    "edit_day_btn": "✏️ Edit day",
-    "change_history_btn": "🕘 Change history",
-    "status_full": "1 day",
-    "status_half": "0.5 day",
-    "status_review": "Review",
-    "status_zero": "0 days",
-    "auto": "auto",
-    "history_empty": "No history yet",
-    "loading_short": "Loading...",
-    "employees_title": "👷 Employees",
-    "employees_description": "Manage employees and requests.",
-    "new_requests_title": "🔔 New requests",
-    "add_employee": "+ Add employee",
-    "loading_employees": "Loading employees...",
-    "new_request": "New request",
-    "accept": "✓ Accept",
-    "reject": "✕ Reject",
-    "rate": "Rate",
-    "edit": "✏️ Edit",
-    "disable": "⛔ Disable",
-    "activate": "✓ Activate",
-    "edit_employee": "Edit employee",
-    "fill_employee": "Enter Telegram ID, name and rate",
-    "disable_word": "disable",
-    "activate_word": "activate",
-    "confirm_employee_action": "Do you want to {action} this employee?",
-    "enter_valid_rate": "Enter a valid rate",
-    "reject_request_confirm": "Reject this request?",
-    "request_waiting": "The request is still awaiting approval",
-    "payroll_title": "💰 Bonuses and payments",
-    "payroll_description": "Salary, bonuses, deductions and payments.",
-    "add_adjustment": "+ Add bonus / deduction",
-    "loading": "Loading...",
-    "adjustment_history": "Adjustment history",
-    "paid_days_meta": "paid days",
-    "unpaid": "⏳ Unpaid",
-    "paid_badge": "✓ Paid",
-    "bonus": "Bonus",
-    "deduction": "Deduction",
-    "to_pay": "To pay",
-    "paid_amount": "✅ Paid:",
-    "calculation_changed": "⚠️ Calculation changed after payment.",
-    "difference": "Difference",
-    "mark_paid": "✓ Mark as paid",
-    "payment_history_btn": "🕘 Payment history",
-    "cancel_payment": "↩ Cancel payment",
-    "choose_employee_amount": "Choose an employee and enter an amount",
-    "bonus_label": "🎁 Bonus",
-    "deduction_label": "➖ Deduction",
-    "delete": "🗑 Delete",
-    "delete_adjustment_confirm": "Delete this adjustment?",
-    "cancel_payment_confirm": "Cancel the payment mark?",
-    "cancel_reason": "Cancellation reason (optional):",
-    "change": "Change",
-    "paid_action": "✅ Paid",
-    "cancelled_action": "↩ Payment cancelled",
-    "reopened_action": "✅ Payment confirmed again",
-    "request_sent": "Request sent",
-    "request_sent_text": "Your access request was sent to the administrator. After approval, open the app again.",
-    "check_access": "🔄 Check access",
-    "edit_day": "Edit day",
-    "paid_day": "Paid day",
-    "zero_days": "0 days",
-    "half_day": "0.5 day",
-    "one_day": "1 day",
-    "object": "Site",
-    "change_reason": "Reason for change",
-    "save": "✓ Save",
-    "restore_auto": "↩ Restore automatic calculation",
-    "cancel": "Cancel",
-    "change_history": "🕘 Change history",
-    "close": "Close",
-    "first_name": "First name",
-    "last_name": "Last name",
-    "role": "Role",
-    "administrator": "Administrator",
-    "approve_employee": "✓ Approve employee",
-    "confirm": "✓ Confirm",
-    "new_adjustment": "New adjustment",
-    "type": "Type",
-    "amount": "Amount",
-    "comment": "Comment",
-    "confirm_payment": "💰 Confirm payment",
-    "payment_history": "💰 Payment history",
-    "restore_auto_confirm": "Restore automatic calculation?"
-  },
-  "my": {
-    "main_subtitle": "အလုပ်ခွင် စီမံခန့်ခွဲမှု",
-    "menu_dashboard": "အကျဉ်းချုပ်",
-    "menu_dashboard_desc": "ဝန်ထမ်း၊ အလုပ်မှတ်တမ်းနှင့် လစာ",
-    "menu_photo": "ဓာတ်ပုံမှတ်တမ်း",
-    "menu_photo_desc": "အလုပ်စတင်ချိန်နှင့် ပြီးဆုံးချိန်",
-    "menu_timesheet": "အလုပ်ချိန်စာရင်း",
-    "menu_timesheet_desc": "အလုပ်ရက်များနှင့် လစာ",
-    "menu_employees": "ဝန်ထမ်းများ",
-    "menu_employees_desc": "ဝန်ထမ်းစီမံခန့်ခွဲမှု",
-    "menu_payroll": "ဆုကြေးနှင့် ငွေပေးချေမှု",
-    "menu_payroll_desc": "ဆုကြေး၊ ဖြတ်တောက်မှုနှင့် ငွေပေးချေမှု",
-    "menu_language": "ဘာသာစကား",
-    "menu_language_desc": "Русский / English / မြန်မာ / ไทย",
-    "language_title": "🌐 ဘာသာစကား",
-    "language_description": "အက်ပ်အသုံးပြုမည့် ဘာသာစကားကို ရွေးချယ်ပါ။",
-    "language_note": "ရွေးချယ်ထားသော ဘာသာစကားကို ဤစက်တွင် သိမ်းဆည်းထားမည်။",
-    "back": "← နောက်သို့",
-    "saved": "ဘာသာစကားကို သိမ်းဆည်းပြီးပါပြီ",
-    "dashboard_title": "📈 အကျဉ်းချုပ်",
-    "dashboard_description": "ဝန်ထမ်းများနှင့် လစာ၏ လက်ရှိအခြေအနေ။",
-    "today": "ယနေ့",
-    "refresh": "↻ ပြန်လည်စတင်",
-    "loading_dashboard": "အကျဉ်းချုပ်ကို ဖွင့်နေသည်...",
-    "active_employees": "အလုပ်လုပ်နေသော ဝန်ထမ်းများ",
-    "started_work": "အလုပ်စတင်ပြီး",
-    "finished_work": "အလုပ်ပြီးဆုံးပြီး",
-    "not_marked": "မမှတ်တမ်းတင်ရသေး",
-    "needs_review": "စစ်ဆေးရန်လိုအပ်",
-    "new_requests": "တောင်းဆိုချက်အသစ်များ",
-    "by_timesheet": "အလုပ်ချိန်စာရင်းအရ",
-    "bonuses": "ဆုကြေး",
-    "deductions": "ဖြတ်တောက်မှု",
-    "paid": "ပေးချေပြီး",
-    "remaining_to_pay": "ပေးရန်ကျန်",
-    "unpaid_employees": "မပေးရသေးသော ဝန်ထမ်းများ",
-    "total_accrued": "စုစုပေါင်းတွက်ချက်ငွေ",
-    "attention_needed": "⚠️ အာရုံစိုက်ရန်လိုအပ်",
-    "open_requests": "🔔 တောင်းဆိုချက်များဖွင့်ရန်",
-    "salary": "လစာ",
-    "finish_without_start": "စတင်မှတ်တမ်းမရှိဘဲ ပြီးဆုံးမှတ်တမ်းရှိသည်",
-    "no_mark_today": "ယနေ့ ဓာတ်ပုံမှတ်တမ်း မရှိသေးပါ",
-    "photo_title": "📸 ဓာတ်ပုံမှတ်တမ်း",
-    "photo_description": "အလုပ်စတင်ခြင်း သို့မဟုတ် ပြီးဆုံးခြင်းကို မှတ်တမ်းတင်ပါ။",
-    "employee": "ဝန်ထမ်း",
-    "choose_object": "1. လုပ်ငန်းနေရာကို ရွေးပါ",
-    "object_1": "🏗️ လုပ်ငန်းနေရာ 1",
-    "object_2": "🏗️ လုပ်ငန်းနေရာ 2",
-    "object_3": "🏗️ လုပ်ငန်းနေရာ 3",
-    "choose_mark_type": "2. မှတ်တမ်းအမျိုးအစားရွေးပါ",
-    "work_started": "အလုပ်စတင်",
-    "work_finished": "အလုပ်ပြီးဆုံး",
-    "current_time": "လက်ရှိအချိန်",
-    "take_photo_step": "3. ဓာတ်ပုံရိုက်ပါ",
-    "photo_choose_first": "အရင်ဆုံး လုပ်ငန်းနေရာနှင့် မှတ်တမ်းအမျိုးအစားကို ရွေးပါ",
-    "photo_ready": "ယခု ဓာတ်ပုံရိုက်နိုင်ပါပြီ",
-    "take_or_choose_photo": "📸 ဓာတ်ပုံရိုက်ရန် သို့မဟုတ် ရွေးရန်",
-    "send_mark": "✓ မှတ်တမ်းပို့ရန်",
-    "photo_saved": "✓ ဓာတ်ပုံမှတ်တမ်း သိမ်းဆည်းပြီးပါပြီ",
-    "photo_error": "ဓာတ်ပုံကို စီမံမရပါ",
-    "timesheet_title": "📊 အလုပ်ချိန်စာရင်း",
-    "timesheet_description": "အလုပ်ရက်၊ ဓာတ်ပုံမှတ်တမ်းနှင့် လစာ။",
-    "month": "လ",
-    "all_employees": "ဝန်ထမ်းအားလုံး",
-    "loading_timesheet": "အလုပ်ချိန်စာရင်းကို ဖွင့်နေသည်...",
-    "timesheet_empty": "ရွေးထားသောလအတွက် မှတ်တမ်းမရှိသေးပါ။",
-    "daily_rate": "တစ်ရက်လစာ",
-    "full_days": "အပြည့်ရက်",
-    "half_days": "တစ်ဝက်ရက်",
-    "paid_days": "လစာတွက်ရက်",
-    "corrected": "ပြင်ဆင်ပြီး",
-    "accrued_month": "ဤလအတွက်တွက်ချက်ငွေ",
-    "no_photo": "ဓာတ်ပုံမရှိ",
-    "object_not_set": "လုပ်ငန်းနေရာ မသတ်မှတ်ထား",
-    "start": "စတင်",
-    "finish": "ပြီးဆုံး",
-    "credited": "တွက်ချက်ထား",
-    "day_word": "ရက်",
-    "edit_day_btn": "✏️ ရက်ကို ပြင်ဆင်",
-    "change_history_btn": "🕘 ပြောင်းလဲမှုမှတ်တမ်း",
-    "status_full": "1 ရက်",
-    "status_half": "0.5 ရက်",
-    "status_review": "စစ်ဆေးရန်",
-    "status_zero": "0 ရက်",
-    "auto": "အလိုအလျောက်",
-    "history_empty": "မှတ်တမ်းမရှိသေး",
-    "loading_short": "ဖွင့်နေသည်...",
-    "employees_title": "👷 ဝန်ထမ်းများ",
-    "employees_description": "ဝန်ထမ်းများနှင့် တောင်းဆိုချက်များကို စီမံပါ။",
-    "new_requests_title": "🔔 တောင်းဆိုချက်အသစ်များ",
-    "add_employee": "+ ဝန်ထမ်းထည့်ရန်",
-    "loading_employees": "ဝန်ထမ်းများကို ဖွင့်နေသည်...",
-    "new_request": "တောင်းဆိုချက်အသစ်",
-    "accept": "✓ လက်ခံ",
-    "reject": "✕ ငြင်းပယ်",
-    "rate": "လစာနှုန်း",
-    "edit": "✏️ ပြင်ဆင်",
-    "disable": "⛔ ပိတ်ရန်",
-    "activate": "✓ ဖွင့်ရန်",
-    "edit_employee": "ဝန်ထမ်းကို ပြင်ဆင်",
-    "fill_employee": "Telegram ID၊ အမည်နှင့် လစာနှုန်းကို ဖြည့်ပါ",
-    "disable_word": "ပိတ်",
-    "activate_word": "ဖွင့်",
-    "confirm_employee_action": "ဤဝန်ထမ်းကို {action} မလား?",
-    "enter_valid_rate": "မှန်ကန်သော လစာနှုန်းထည့်ပါ",
-    "reject_request_confirm": "ဤတောင်းဆိုချက်ကို ငြင်းပယ်မလား?",
-    "request_waiting": "တောင်းဆိုချက်သည် အတည်ပြုမှုကို စောင့်နေဆဲဖြစ်သည်",
-    "payroll_title": "💰 ဆုကြေးနှင့် ငွေပေးချေမှု",
-    "payroll_description": "လစာ၊ ဆုကြေး၊ ဖြတ်တောက်မှုနှင့် ငွေပေးချေမှု။",
-    "add_adjustment": "+ ဆုကြေး / ဖြတ်တောက်မှု ထည့်ရန်",
-    "loading": "ဖွင့်နေသည်...",
-    "adjustment_history": "ငွေစာရင်းပြောင်းလဲမှုမှတ်တမ်း",
-    "paid_days_meta": "လစာတွက်ရက်",
-    "unpaid": "⏳ မပေးရသေး",
-    "paid_badge": "✓ ပေးချေပြီး",
-    "bonus": "ဆုကြေး",
-    "deduction": "ဖြတ်တောက်မှု",
-    "to_pay": "ပေးရန်",
-    "paid_amount": "✅ ပေးချေပြီး:",
-    "calculation_changed": "⚠️ ပေးချေပြီးနောက် တွက်ချက်မှု ပြောင်းသွားသည်။",
-    "difference": "ကွာခြားချက်",
-    "mark_paid": "✓ ပေးချေပြီးဟုမှတ်ရန်",
-    "payment_history_btn": "🕘 ငွေပေးချေမှုမှတ်တမ်း",
-    "cancel_payment": "↩ ငွေပေးချေမှု ပယ်ဖျက်",
-    "choose_employee_amount": "ဝန်ထမ်းရွေးပြီး ငွေပမာဏထည့်ပါ",
-    "bonus_label": "🎁 ဆုကြေး",
-    "deduction_label": "➖ ဖြတ်တောက်မှု",
-    "delete": "🗑 ဖျက်ရန်",
-    "delete_adjustment_confirm": "ဤငွေစာရင်းကို ဖျက်မလား?",
-    "cancel_payment_confirm": "ငွေပေးချေမှုမှတ်တမ်းကို ပယ်ဖျက်မလား?",
-    "cancel_reason": "ပယ်ဖျက်ရသည့်အကြောင်းရင်း (မဖြည့်လည်းရ):",
-    "change": "ပြောင်းလဲမှု",
-    "paid_action": "✅ ပေးချေပြီး",
-    "cancelled_action": "↩ ငွေပေးချေမှု ပယ်ဖျက်ပြီး",
-    "reopened_action": "✅ ငွေပေးချေမှုကို ထပ်မံအတည်ပြုပြီး",
-    "request_sent": "တောင်းဆိုချက် ပို့ပြီး",
-    "request_sent_text": "ဝင်ရောက်ခွင့်တောင်းဆိုချက်ကို အက်ဒမင်ထံ ပို့ပြီးပါပြီ။ အတည်ပြုပြီးနောက် အက်ပ်ကို ပြန်ဖွင့်ပါ။",
-    "check_access": "🔄 ဝင်ရောက်ခွင့် စစ်ဆေးရန်",
-    "edit_day": "ရက်ကို ပြင်ဆင်",
-    "paid_day": "လစာတွက်ရက်",
-    "zero_days": "0 ရက်",
-    "half_day": "0.5 ရက်",
-    "one_day": "1 ရက်",
-    "object": "လုပ်ငန်းနေရာ",
-    "change_reason": "ပြောင်းလဲရသည့်အကြောင်းရင်း",
-    "save": "✓ သိမ်းဆည်းရန်",
-    "restore_auto": "↩ အလိုအလျောက်တွက်ချက်မှု ပြန်ထားရန်",
-    "cancel": "ပယ်ဖျက်",
-    "change_history": "🕘 ပြောင်းလဲမှုမှတ်တမ်း",
-    "close": "ပိတ်ရန်",
-    "first_name": "အမည်",
-    "last_name": "အမည်နောက်ပိုင်း",
-    "role": "တာဝန်",
-    "administrator": "အက်ဒမင်",
-    "approve_employee": "✓ ဝန်ထမ်းကို အတည်ပြုရန်",
-    "confirm": "✓ အတည်ပြုရန်",
-    "new_adjustment": "ငွေစာရင်းအသစ်",
-    "type": "အမျိုးအစား",
-    "amount": "ငွေပမာဏ",
-    "comment": "မှတ်ချက်",
-    "confirm_payment": "💰 ငွေပေးချေမှု အတည်ပြုရန်",
-    "payment_history": "💰 ငွေပေးချေမှုမှတ်တမ်း",
-    "restore_auto_confirm": "အလိုအလျောက်တွက်ချက်မှုကို ပြန်ထားမလား?"
-  },
-  "th": {
-    "main_subtitle": "แผงการทำงาน",
-    "menu_dashboard": "สรุป",
-    "menu_dashboard_desc": "พนักงาน การลงเวลา และเงินเดือน",
-    "menu_photo": "ลงเวลาด้วยรูปภาพ",
-    "menu_photo_desc": "เริ่มงานและเลิกงาน",
-    "menu_timesheet": "ตารางเวลา",
-    "menu_timesheet_desc": "วันทำงานและเงินเดือน",
-    "menu_employees": "พนักงาน",
-    "menu_employees_desc": "จัดการพนักงาน",
-    "menu_payroll": "โบนัสและการจ่ายเงิน",
-    "menu_payroll_desc": "โบนัส การหักเงิน และการจ่ายเงิน",
-    "menu_language": "ภาษา",
-    "menu_language_desc": "Русский / English / မြန်မာ / ไทย",
-    "language_title": "🌐 ภาษา",
-    "language_description": "เลือกภาษาของแอป",
-    "language_note": "ภาษาที่เลือกจะถูกบันทึกไว้ในอุปกรณ์นี้",
-    "back": "← ย้อนกลับ",
-    "saved": "บันทึกภาษาแล้ว",
-    "dashboard_title": "📈 สรุป",
-    "dashboard_description": "สถานะปัจจุบันของพนักงานและเงินเดือน",
-    "today": "วันนี้",
-    "refresh": "↻ รีเฟรช",
-    "loading_dashboard": "กำลังโหลดสรุป...",
-    "active_employees": "พนักงานที่ใช้งานอยู่",
-    "started_work": "เริ่มงานแล้ว",
-    "finished_work": "เลิกงานแล้ว",
-    "not_marked": "ยังไม่ได้ลงเวลา",
-    "needs_review": "ต้องตรวจสอบ",
-    "new_requests": "คำขอใหม่",
-    "by_timesheet": "ตามตารางเวลา",
-    "bonuses": "โบนัส",
-    "deductions": "หักเงิน",
-    "paid": "จ่ายแล้ว",
-    "remaining_to_pay": "คงเหลือต้องจ่าย",
-    "unpaid_employees": "พนักงานที่ยังไม่ได้รับเงิน",
-    "total_accrued": "ยอดรวมที่คำนวณ",
-    "attention_needed": "⚠️ ต้องตรวจสอบ",
-    "open_requests": "🔔 เปิดคำขอ",
-    "salary": "เงินเดือน",
-    "finish_without_start": "มีเวลาเลิกงานแต่ไม่มีเวลาเริ่มงาน",
-    "no_mark_today": "วันนี้ยังไม่มีการลงเวลาด้วยรูปภาพ",
-    "photo_title": "📸 ลงเวลาด้วยรูปภาพ",
-    "photo_description": "ลงเวลาเริ่มงานหรือเลิกงาน",
-    "employee": "พนักงาน",
-    "choose_object": "1. เลือกไซต์งาน",
-    "object_1": "🏗️ ไซต์งาน 1",
-    "object_2": "🏗️ ไซต์งาน 2",
-    "object_3": "🏗️ ไซต์งาน 3",
-    "choose_mark_type": "2. เลือกประเภทการลงเวลา",
-    "work_started": "เริ่มงาน",
-    "work_finished": "เลิกงาน",
-    "current_time": "เวลาปัจจุบัน",
-    "take_photo_step": "3. ถ่ายรูป",
-    "photo_choose_first": "กรุณาเลือกไซต์งานและประเภทการลงเวลาก่อน",
-    "photo_ready": "ตอนนี้สามารถถ่ายรูปได้",
-    "take_or_choose_photo": "📸 ถ่ายหรือเลือกรูป",
-    "send_mark": "✓ ส่งการลงเวลา",
-    "photo_saved": "✓ บันทึกการลงเวลาแล้ว",
-    "photo_error": "ไม่สามารถประมวลผลรูปภาพได้",
-    "timesheet_title": "📊 ตารางเวลา",
-    "timesheet_description": "วันทำงาน การลงเวลาด้วยรูปภาพ และเงินเดือน",
-    "month": "เดือน",
-    "all_employees": "พนักงานทั้งหมด",
-    "loading_timesheet": "กำลังโหลดตารางเวลา...",
-    "timesheet_empty": "ยังไม่มีรายการในเดือนที่เลือก",
-    "daily_rate": "ค่าจ้างรายวัน",
-    "full_days": "วันเต็ม",
-    "half_days": "ครึ่งวัน",
-    "paid_days": "วันที่คิดค่าจ้าง",
-    "corrected": "แก้ไขแล้ว",
-    "accrued_month": "ยอดคำนวณประจำเดือน",
-    "no_photo": "ไม่มีรูป",
-    "object_not_set": "ไม่ได้ระบุไซต์งาน",
-    "start": "เริ่ม",
-    "finish": "สิ้นสุด",
-    "credited": "คิดแล้ว",
-    "day_word": "วัน",
-    "edit_day_btn": "✏️ แก้ไขวัน",
-    "change_history_btn": "🕘 ประวัติการแก้ไข",
-    "status_full": "1 วัน",
-    "status_half": "0.5 วัน",
-    "status_review": "ตรวจสอบ",
-    "status_zero": "0 วัน",
-    "auto": "อัตโนมัติ",
-    "history_empty": "ยังไม่มีประวัติ",
-    "loading_short": "กำลังโหลด...",
-    "employees_title": "👷 พนักงาน",
-    "employees_description": "จัดการพนักงานและคำขอ",
-    "new_requests_title": "🔔 คำขอใหม่",
-    "add_employee": "+ เพิ่มพนักงาน",
-    "loading_employees": "กำลังโหลดพนักงาน...",
-    "new_request": "คำขอใหม่",
-    "accept": "✓ รับ",
-    "reject": "✕ ปฏิเสธ",
-    "rate": "อัตรา",
-    "edit": "✏️ แก้ไข",
-    "disable": "⛔ ปิดใช้งาน",
-    "activate": "✓ เปิดใช้งาน",
-    "edit_employee": "แก้ไขพนักงาน",
-    "fill_employee": "กรอก Telegram ID ชื่อ และอัตราค่าจ้าง",
-    "disable_word": "ปิดใช้งาน",
-    "activate_word": "เปิดใช้งาน",
-    "confirm_employee_action": "ต้องการ{action}พนักงานคนนี้หรือไม่?",
-    "enter_valid_rate": "กรอกอัตราค่าจ้างที่ถูกต้อง",
-    "reject_request_confirm": "ปฏิเสธคำขอนี้หรือไม่?",
-    "request_waiting": "คำขอยังรอการอนุมัติ",
-    "payroll_title": "💰 โบนัสและการจ่ายเงิน",
-    "payroll_description": "เงินเดือน โบนัส การหักเงิน และการจ่ายเงิน",
-    "add_adjustment": "+ เพิ่มโบนัส / หักเงิน",
-    "loading": "กำลังโหลด...",
-    "adjustment_history": "ประวัติรายการปรับเงิน",
-    "paid_days_meta": "วันที่คิดค่าจ้าง",
-    "unpaid": "⏳ ยังไม่ได้จ่าย",
-    "paid_badge": "✓ จ่ายแล้ว",
-    "bonus": "โบนัส",
-    "deduction": "หักเงิน",
-    "to_pay": "ยอดที่ต้องจ่าย",
-    "paid_amount": "✅ จ่ายแล้ว:",
-    "calculation_changed": "⚠️ ยอดคำนวณเปลี่ยนหลังจากจ่ายเงินแล้ว",
-    "difference": "ส่วนต่าง",
-    "mark_paid": "✓ ทำเครื่องหมายว่าจ่ายแล้ว",
-    "payment_history_btn": "🕘 ประวัติการจ่ายเงิน",
-    "cancel_payment": "↩ ยกเลิกการจ่ายเงิน",
-    "choose_employee_amount": "เลือกพนักงานและกรอกจำนวนเงิน",
-    "bonus_label": "🎁 โบนัส",
-    "deduction_label": "➖ หักเงิน",
-    "delete": "🗑 ลบ",
-    "delete_adjustment_confirm": "ลบรายการนี้หรือไม่?",
-    "cancel_payment_confirm": "ยกเลิกสถานะการจ่ายเงินหรือไม่?",
-    "cancel_reason": "เหตุผลที่ยกเลิก (ไม่บังคับ):",
-    "change": "การเปลี่ยนแปลง",
-    "paid_action": "✅ จ่ายแล้ว",
-    "cancelled_action": "↩ ยกเลิกการจ่ายเงินแล้ว",
-    "reopened_action": "✅ ยืนยันการจ่ายเงินอีกครั้ง",
-    "request_sent": "ส่งคำขอแล้ว",
-    "request_sent_text": "ส่งคำขอเข้าใช้งานไปยังผู้ดูแลแล้ว หลังจากได้รับการอนุมัติ ให้เปิดแอปอีกครั้ง",
-    "check_access": "🔄 ตรวจสอบสิทธิ์",
-    "edit_day": "แก้ไขวัน",
-    "paid_day": "วันที่คิดค่าจ้าง",
-    "zero_days": "0 วัน",
-    "half_day": "0.5 วัน",
-    "one_day": "1 วัน",
-    "object": "ไซต์งาน",
-    "change_reason": "เหตุผลที่แก้ไข",
-    "save": "✓ บันทึก",
-    "restore_auto": "↩ กลับไปคำนวณอัตโนมัติ",
-    "cancel": "ยกเลิก",
-    "change_history": "🕘 ประวัติการแก้ไข",
-    "close": "ปิด",
-    "first_name": "ชื่อ",
-    "last_name": "นามสกุล",
-    "role": "บทบาท",
-    "administrator": "ผู้ดูแล",
-    "approve_employee": "✓ อนุมัติพนักงาน",
-    "confirm": "✓ ยืนยัน",
-    "new_adjustment": "รายการใหม่",
-    "type": "ประเภท",
-    "amount": "จำนวนเงิน",
-    "comment": "หมายเหตุ",
-    "confirm_payment": "💰 ยืนยันการจ่ายเงิน",
-    "payment_history": "💰 ประวัติการจ่ายเงิน",
-    "restore_auto_confirm": "กลับไปใช้การคำนวณอัตโนมัติหรือไม่?"
-  }
-};
 
+    ru: {
+      main_subtitle: "Рабочая панель",
 
-  const autoTextMap = {
-  "Рабочая панель": "main_subtitle",
-  "Сводка": "menu_dashboard",
-  "Сотрудники, отметки и зарплата": "menu_dashboard_desc",
-  "Фотоотметка": "menu_photo",
-  "Начало и окончание работы": "menu_photo_desc",
-  "Табель": "menu_timesheet",
-  "Рабочие дни и зарплата": "menu_timesheet_desc",
-  "Сотрудники": "menu_employees",
-  "Управление сотрудниками": "menu_employees_desc",
-  "Премии и выплаты": "menu_payroll",
-  "Начисления, удержания и выплаты": "menu_payroll_desc",
-  "Язык": "menu_language",
-  "📈 Сводка": "dashboard_title",
-  "Текущая ситуация по сотрудникам и зарплате.": "dashboard_description",
-  "Сегодня": "today",
-  "↻ Обновить": "refresh",
-  "Загружаем сводку...": "loading_dashboard",
-  "Активных сотрудников": "active_employees",
-  "Начали работу": "started_work",
-  "Закончили работу": "finished_work",
-  "Не отметились": "not_marked",
-  "Требуют проверки": "needs_review",
-  "Новых заявок": "new_requests",
-  "💰 Зарплата": "salary",
-  "По табелю": "by_timesheet",
-  "Премии": "bonuses",
-  "Удержания": "deductions",
-  "Выплачено": "paid",
-  "Осталось выплатить": "remaining_to_pay",
-  "Не выплачено сотрудникам": "unpaid_employees",
-  "Всего начислено": "total_accrued",
-  "⚠️ Нужно внимание": "attention_needed",
-  "🔔 Открыть заявки": "open_requests",
-  "Есть окончание работы без начала": "finish_without_start",
-  "Сегодня ещё нет фотоотметки": "no_mark_today",
-  "📸 Фотоотметка": "photo_title",
-  "Отметка о начале или окончании работы.": "photo_description",
-  "Сотрудник": "employee",
-  "1. Выберите объект": "choose_object",
-  "🏗️ Объект 1": "object_1",
-  "🏗️ Объект 2": "object_2",
-  "🏗️ Объект 3": "object_3",
-  "2. Выберите тип отметки": "choose_mark_type",
-  "Начал работу": "work_started",
-  "Закончил работу": "work_finished",
-  "Текущее время": "current_time",
-  "3. Сделайте фото": "take_photo_step",
-  "Сначала выберите объект и тип отметки": "photo_choose_first",
-  "Теперь можно сделать фото": "photo_ready",
-  "📸 Сделать или выбрать фото": "take_or_choose_photo",
-  "✓ Отправить отметку": "send_mark",
-  "✓ Фотоотметка сохранена": "photo_saved",
-  "📊 Табель": "timesheet_title",
-  "Рабочие дни, фотоотметки и зарплата.": "timesheet_description",
-  "Месяц": "month",
-  "Все сотрудники": "all_employees",
-  "Загружаем табель...": "loading_timesheet",
-  "За выбранный месяц отметок пока нет.": "timesheet_empty",
-  "Дневная ставка:": "daily_rate",
-  "Полных дней": "full_days",
-  "Половин дня": "half_days",
-  "Оплачиваемых дней": "paid_days",
-  "Исправлено": "corrected",
-  "Начислено за месяц": "accrued_month",
-  "Нет фото": "no_photo",
-  "Объект не указан": "object_not_set",
-  "Начало": "start",
-  "Окончание": "finish",
-  "Зачтено:": "credited",
-  "✏️ Редактировать день": "edit_day_btn",
-  "🕘 История изменений": "change_history_btn",
-  "1 день": "status_full",
-  "0,5 дня": "status_half",
-  "Проверить": "status_review",
-  "0 дней": "status_zero",
-  "авто": "auto",
-  "Истории пока нет": "history_empty",
-  "Загружаем...": "loading_short",
-  "👷 Сотрудники": "employees_title",
-  "Управление сотрудниками и заявками.": "employees_description",
-  "🔔 Новые заявки": "new_requests_title",
-  "+ Добавить сотрудника": "add_employee",
-  "Загружаем сотрудников...": "loading_employees",
-  "Новая заявка": "new_request",
-  "✓ Принять": "accept",
-  "✕ Отклонить": "reject",
-  "Ставка": "rate",
-  "✏️ Редактировать": "edit",
-  "⛔ Отключить": "disable",
-  "✓ Активировать": "activate",
-  "Редактировать сотрудника": "edit_employee",
-  "💰 Премии и выплаты": "payroll_title",
-  "Зарплата, премии, удержания и выплаты.": "payroll_description",
-  "+ Добавить премию / удержание": "add_adjustment",
-  "История начислений": "adjustment_history",
-  "⏳ Не выплачено": "unpaid",
-  "✓ Выплачено": "paid_badge",
-  "К выплате": "to_pay",
-  "✅ Выплачено:": "paid_amount",
-  "⚠️ Расчёт изменился после выплаты.": "calculation_changed",
-  "Разница:": "difference",
-  "✓ Отметить выплаченным": "mark_paid",
-  "🕘 История выплаты": "payment_history_btn",
-  "↩ Отменить выплату": "cancel_payment",
-  "🎁 Премия": "bonus_label",
-  "➖ Удержание": "deduction_label",
-  "🗑 Удалить": "delete",
-  "Изменение": "change",
-  "↩ Выплата отменена": "cancelled_action",
-  "✅ Выплата подтверждена повторно": "reopened_action",
-  "Заявка отправлена": "request_sent",
-  "Ваша заявка на подключение отправлена администратору. После подтверждения откройте приложение ещё раз.": "request_sent_text",
-  "🔄 Проверить доступ": "check_access",
-  "Редактировать день": "edit_day",
-  "Оплачиваемый день": "paid_day",
-  "Объект": "object",
-  "Причина изменения": "change_reason",
-  "✓ Сохранить": "save",
-  "↩ Вернуть автоматический расчёт": "restore_auto",
-  "Отмена": "cancel",
-  "Закрыть": "close",
-  "Имя": "first_name",
-  "Фамилия": "last_name",
-  "Дневная ставка": "daily_rate",
-  "Роль": "role",
-  "Администратор": "administrator",
-  "✓ Принять сотрудника": "approve_employee",
-  "✓ Подтвердить": "confirm",
-  "Новое начисление": "new_adjustment",
-  "Тип": "type",
-  "Премия": "bonus",
-  "Удержание": "deduction",
-  "Сумма": "amount",
-  "Комментарий": "comment",
-  "💰 Подтвердить выплату": "confirm_payment",
-  "💰 История выплаты": "payment_history"
-};
+      menu_dashboard: "Сводка",
+      menu_dashboard_desc: "Сотрудники, отметки и зарплата",
 
+      menu_photo: "Фотоотметка",
+      menu_photo_desc: "Начало и окончание работы",
 
-  function translateAutomaticText() {
+      menu_timesheet: "Табель",
+      menu_timesheet_desc: "Рабочие дни и зарплата",
 
-    const walker =
-      document.createTreeWalker(
-        document.body,
-        NodeFilter.SHOW_TEXT
-      );
+      menu_employees: "Сотрудники",
+      menu_employees_desc: "Управление сотрудниками",
 
-    const nodes = [];
+      menu_payroll: "Премии и выплаты",
+      menu_payroll_desc: "Начисления, удержания и выплаты",
 
-    while (
-      walker.nextNode()
-    ) {
-      nodes.push(
-        walker.currentNode
-      );
+      menu_language: "Язык",
+      menu_language_desc: "Русский / English / မြန်မာ / ไทย",
+
+      language_title: "🌐 Язык",
+      language_description: "Выберите язык приложения.",
+      language_note: "На этом шаге мы переводим главное меню, раздел выбора языка и кнопки «Назад». Остальные разделы переведём следующим шагом.",
+
+      back: "← Назад",
+      saved: "Язык сохранён"
+    },
+
+    en: {
+      main_subtitle: "Work panel",
+
+      menu_dashboard: "Summary",
+      menu_dashboard_desc: "Employees, attendance and salary",
+
+      menu_photo: "Photo attendance",
+      menu_photo_desc: "Start and finish of work",
+
+      menu_timesheet: "Timesheet",
+      menu_timesheet_desc: "Work days and salary",
+
+      menu_employees: "Employees",
+      menu_employees_desc: "Employee management",
+
+      menu_payroll: "Bonuses and payments",
+      menu_payroll_desc: "Bonuses, deductions and payments",
+
+      menu_language: "Language",
+      menu_language_desc: "Русский / English / မြန်မာ / ไทย",
+
+      language_title: "🌐 Language",
+      language_description: "Choose the application language.",
+      language_note: "At this step, the main menu, language screen and Back buttons are translated. The remaining sections will be translated in the next step.",
+
+      back: "← Back",
+      saved: "Language saved"
+    },
+
+    my: {
+      main_subtitle: "အလုပ်ခွင် စီမံခန့်ခွဲမှု",
+
+      menu_dashboard: "အကျဉ်းချုပ်",
+      menu_dashboard_desc: "ဝန်ထမ်း၊ အလုပ်မှတ်တမ်းနှင့် လစာ",
+
+      menu_photo: "ဓာတ်ပုံမှတ်တမ်း",
+      menu_photo_desc: "အလုပ်စတင်ချိန်နှင့် ပြီးဆုံးချိန်",
+
+      menu_timesheet: "အလုပ်ချိန်စာရင်း",
+      menu_timesheet_desc: "အလုပ်ရက်များနှင့် လစာ",
+
+      menu_employees: "ဝန်ထမ်းများ",
+      menu_employees_desc: "ဝန်ထမ်းစီမံခန့်ခွဲမှု",
+
+      menu_payroll: "ဆုကြေးနှင့် ငွေပေးချေမှု",
+      menu_payroll_desc: "ဆုကြေး၊ ဖြတ်တောက်မှုနှင့် ငွေပေးချေမှု",
+
+      menu_language: "ဘာသာစကား",
+      menu_language_desc: "Русский / English / မြန်မာ / ไทย",
+
+      language_title: "🌐 ဘာသာစကား",
+      language_description: "အက်ပ်အသုံးပြုမည့် ဘာသာစကားကို ရွေးချယ်ပါ။",
+      language_note: "ယခုအဆင့်တွင် အဓိကမီနူး၊ ဘာသာစကားရွေးချယ်သည့် စာမျက်နှာနှင့် နောက်သို့ ခလုတ်များကို ဘာသာပြန်ထားသည်။ ကျန်အပိုင်းများကို နောက်အဆင့်တွင် ဘာသာပြန်မည်။",
+
+      back: "← နောက်သို့",
+      saved: "ဘာသာစကားကို သိမ်းဆည်းပြီးပါပြီ"
+    },
+
+    th: {
+      main_subtitle: "แผงการทำงาน",
+
+      menu_dashboard: "สรุป",
+      menu_dashboard_desc: "พนักงาน การลงเวลา และเงินเดือน",
+
+      menu_photo: "ลงเวลาด้วยรูปภาพ",
+      menu_photo_desc: "เริ่มงานและเลิกงาน",
+
+      menu_timesheet: "ตารางเวลา",
+      menu_timesheet_desc: "วันทำงานและเงินเดือน",
+
+      menu_employees: "พนักงาน",
+      menu_employees_desc: "จัดการพนักงาน",
+
+      menu_payroll: "โบนัสและการจ่ายเงิน",
+      menu_payroll_desc: "โบนัส การหักเงิน และการจ่ายเงิน",
+
+      menu_language: "ภาษา",
+      menu_language_desc: "Русский / English / မြန်မာ / ไทย",
+
+      language_title: "🌐 ภาษา",
+      language_description: "เลือกภาษาของแอป",
+      language_note: "ในขั้นตอนนี้ได้แปลเมนูหลัก หน้าการเลือกภาษา และปุ่มย้อนกลับแล้ว ส่วนอื่น ๆ จะแปลในขั้นตอนถัดไป",
+
+      back: "← ย้อนกลับ",
+      saved: "บันทึกภาษาแล้ว"
     }
 
-
-    nodes.forEach(
-      node => {
-
-        const parent =
-          node.parentElement;
-
-        if (
-          !parent ||
-          parent.closest(
-            "script, style"
-          ) ||
-          parent.hasAttribute(
-            "data-i18n"
-          )
-        ) {
-          return;
-        }
-
-
-        const raw =
-          node.nodeValue;
-
-        const trimmed =
-          raw.trim();
-
-        if (!trimmed) {
-          return;
-        }
-
-
-        if (
-          !node.__taskOriginalText
-        ) {
-          node.__taskOriginalText =
-            trimmed;
-        }
-
-
-        const original =
-          node.__taskOriginalText;
-
-        let translated =
-          original;
-
-
-        const exactKey =
-          autoTextMap[original];
-
-        if (
-          exactKey
-        ) {
-
-          translated =
-            t(exactKey);
-
-        } else {
-
-          let match;
-
-
-          match =
-            original.match(
-              /^(\d+(?:[.,]\d+)?)\s+оплачиваемых дней$/
-            );
-
-          if (match) {
-            translated =
-              `${match[1]} ${t("paid_days_meta")}`;
-          }
-
-
-          match =
-            original.match(
-              /^Зачтено:\s*([\d.,]+)\s*дня$/
-            );
-
-          if (match) {
-            translated =
-              `${t("credited")}: ${match[1]} ${t("day_word")}`;
-          }
-
-
-          match =
-            original.match(
-              /^Дневная ставка:\s*(.+)$/
-            );
-
-          if (match) {
-            translated =
-              `${t("daily_rate")}: ${match[1]}`;
-          }
-
-
-          match =
-            original.match(
-              /^🔔 Новых заявок:\s*(\d+)\s*—\s*открыть$/
-            );
-
-          if (match) {
-            translated =
-              `🔔 ${t("new_requests")}: ${match[1]}`;
-          }
-
-        }
-
-
-        const leading =
-          raw.match(/^\s*/)[0];
-
-        const trailing =
-          raw.match(/\s*$/)[0];
-
-        node.nodeValue =
-          leading +
-          translated +
-          trailing;
-
-      }
-    );
-
-  }
+  };
 
 
   function t(key) {
@@ -4879,12 +4044,16 @@
 
   function applyLanguage() {
 
-    if (
-      !translations[currentLanguage]
-    ) {
-      currentLanguage =
-        "ru";
-    }
+    const languagePack =
+      translations[currentLanguage]
+      ?
+      currentLanguage
+      :
+      "ru";
+
+
+    currentLanguage =
+      languagePack;
 
 
     document.documentElement.lang =
@@ -4915,96 +4084,7 @@
       );
 
 
-    translateAutomaticText();
-
     renderLanguageSelection();
-
-
-    if (
-      timesheetData &&
-      document
-        .getElementById(
-          "timesheetScreen"
-        )
-        .classList.contains(
-          "active"
-        )
-    ) {
-
-      setupEmployeeFilter();
-      renderTimesheet();
-
-      setTimeout(
-        translateAutomaticText,
-        0
-      );
-
-    }
-
-
-    if (
-      dashboardData &&
-      document
-        .getElementById(
-          "dashboardScreen"
-        )
-        .classList.contains(
-          "active"
-        )
-    ) {
-
-      renderDashboard();
-      setTimeout(translateAutomaticText, 0);
-
-      setTimeout(
-        translateAutomaticText,
-        0
-      );
-
-    }
-
-
-    if (
-      payrollData &&
-      document
-        .getElementById(
-          "payrollScreen"
-        )
-        .classList.contains(
-          "active"
-        )
-    ) {
-
-      renderPayroll();
-      setTimeout(translateAutomaticText, 0);
-
-      setTimeout(
-        translateAutomaticText,
-        0
-      );
-
-    }
-
-
-    if (
-      document
-        .getElementById(
-          "employeesScreen"
-        )
-        .classList.contains(
-          "active"
-        )
-    ) {
-
-      renderRequests();
-      renderEmployees();
-
-      setTimeout(
-        translateAutomaticText,
-        0
-      );
-
-    }
 
   }
 
@@ -5714,8 +4794,6 @@
         "hidden"
       );
 
-    setTimeout(translateAutomaticText, 0);
-
   }
 
 
@@ -6367,8 +5445,6 @@
     renderTimesheetDays(
       days
     );
-
-    setTimeout(translateAutomaticText, 0);
 
   }
 
@@ -7227,8 +6303,6 @@
 
       renderEmployees();
 
-      setTimeout(translateAutomaticText, 0);
-
     } catch (error) {
 
       errorBox.innerText =
@@ -7745,7 +6819,7 @@
 
     if (
       !confirm(
-        t("confirm_employee_action").replace("{action}", actionText)
+        `Вы хотите ${actionText} сотрудника?`
       )
     ) {
       return;
