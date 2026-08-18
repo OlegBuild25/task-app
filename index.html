@@ -2324,11 +2324,11 @@
       <span data-i18n="back">← Назад</span>
     </button>
 
-    <h2 class="page-title">
+    <h2 class="page-title" data-i18n="timesheet_title">
       📊 Табель
     </h2>
 
-    <p class="page-description">
+    <p class="page-description" data-i18n="timesheet_description">
       Рабочие дни, фотоотметки и зарплата.
     </p>
 
@@ -2337,7 +2337,7 @@
 
       <div class="filter-group">
 
-        <label class="filter-label">
+        <label class="filter-label" data-i18n="timesheet_month">
           Месяц
         </label>
 
@@ -2356,7 +2356,7 @@
         class="filter-group hidden"
       >
 
-        <label class="filter-label">
+        <label class="filter-label" data-i18n="timesheet_employee">
           Сотрудник
         </label>
 
@@ -2366,7 +2366,7 @@
           onchange="renderTimesheet()"
         >
 
-          <option value="all">
+          <option value="all" data-i18n="timesheet_all_employees">
             Все сотрудники
           </option>
 
@@ -2381,7 +2381,7 @@
       id="timesheetLoading"
       class="loading-card hidden"
     >
-      Загружаем табель...
+      <span data-i18n="timesheet_loading">Загружаем табель...</span>
     </div>
 
 
@@ -2404,7 +2404,7 @@
       id="timesheetEmpty"
       class="empty-card hidden"
     >
-      За выбранный месяц отметок пока нет.
+      <span data-i18n="timesheet_empty">За выбранный месяц отметок пока нет.</span>
     </div>
 
   </div>
@@ -3949,6 +3949,35 @@
       photo_send: "✓ Отправить отметку",
       photo_saved: "✓ Фотоотметка сохранена",
       photo_error: "Не удалось обработать фото",
+
+      timesheet_title: "📊 Табель",
+      timesheet_description: "Рабочие дни, фотоотметки и зарплата.",
+      timesheet_month: "Месяц",
+      timesheet_employee: "Сотрудник",
+      timesheet_all_employees: "Все сотрудники",
+      timesheet_loading: "Загружаем табель...",
+      timesheet_empty: "За выбранный месяц отметок пока нет.",
+      timesheet_daily_rate: "Дневная ставка",
+      timesheet_full_days: "Полных дней",
+      timesheet_half_days: "Половин дня",
+      timesheet_paid_days: "Оплачиваемых дней",
+      timesheet_corrected: "Исправлено",
+      timesheet_accrued: "Начислено за месяц",
+      timesheet_no_photo: "Нет фото",
+      timesheet_object_not_set: "Объект не указан",
+      timesheet_start: "Начало",
+      timesheet_finish: "Окончание",
+      timesheet_credited: "Зачтено",
+      timesheet_day_word: "дня",
+      timesheet_edit_day: "✏️ Редактировать день",
+      timesheet_history: "🕘 История изменений",
+      timesheet_status_full: "1 день",
+      timesheet_status_half: "0,5 дня",
+      timesheet_status_review: "Проверить",
+      timesheet_status_zero: "0 дней",
+      timesheet_auto: "авто",
+      timesheet_history_empty: "Истории пока нет",
+      timesheet_loading_short: "Загружаем...",
       back: "← Назад",
       saved: "Язык сохранён"
     },
@@ -3997,6 +4026,35 @@
       photo_send: "✓ Send attendance mark",
       photo_saved: "✓ Photo attendance saved",
       photo_error: "Could not process the photo",
+
+      timesheet_title: "📊 Timesheet",
+      timesheet_description: "Work days, photo attendance and salary.",
+      timesheet_month: "Month",
+      timesheet_employee: "Employee",
+      timesheet_all_employees: "All employees",
+      timesheet_loading: "Loading timesheet...",
+      timesheet_empty: "No marks for the selected month yet.",
+      timesheet_daily_rate: "Daily rate",
+      timesheet_full_days: "Full days",
+      timesheet_half_days: "Half days",
+      timesheet_paid_days: "Paid days",
+      timesheet_corrected: "Corrected",
+      timesheet_accrued: "Accrued for the month",
+      timesheet_no_photo: "No photo",
+      timesheet_object_not_set: "Site not specified",
+      timesheet_start: "Start",
+      timesheet_finish: "Finish",
+      timesheet_credited: "Credited",
+      timesheet_day_word: "day",
+      timesheet_edit_day: "✏️ Edit day",
+      timesheet_history: "🕘 Change history",
+      timesheet_status_full: "1 day",
+      timesheet_status_half: "0.5 day",
+      timesheet_status_review: "Review",
+      timesheet_status_zero: "0 days",
+      timesheet_auto: "auto",
+      timesheet_history_empty: "No history yet",
+      timesheet_loading_short: "Loading...",
       back: "← Back",
       saved: "Language saved"
     },
@@ -4045,6 +4103,35 @@
       photo_send: "✓ မှတ်တမ်းပို့ရန်",
       photo_saved: "✓ ဓာတ်ပုံမှတ်တမ်း သိမ်းဆည်းပြီးပါပြီ",
       photo_error: "ဓာတ်ပုံကို စီမံမရပါ",
+
+      timesheet_title: "📊 အလုပ်ချိန်စာရင်း",
+      timesheet_description: "အလုပ်ရက်၊ ဓာတ်ပုံမှတ်တမ်းနှင့် လစာ။",
+      timesheet_month: "လ",
+      timesheet_employee: "ဝန်ထမ်း",
+      timesheet_all_employees: "ဝန်ထမ်းအားလုံး",
+      timesheet_loading: "အလုပ်ချိန်စာရင်းကို ဖွင့်နေသည်...",
+      timesheet_empty: "ရွေးထားသောလအတွက် မှတ်တမ်းမရှိသေးပါ။",
+      timesheet_daily_rate: "တစ်ရက်လစာ",
+      timesheet_full_days: "အပြည့်ရက်",
+      timesheet_half_days: "တစ်ဝက်ရက်",
+      timesheet_paid_days: "လစာတွက်ရက်",
+      timesheet_corrected: "ပြင်ဆင်ပြီး",
+      timesheet_accrued: "ဤလအတွက်တွက်ချက်ငွေ",
+      timesheet_no_photo: "ဓာတ်ပုံမရှိ",
+      timesheet_object_not_set: "လုပ်ငန်းနေရာ မသတ်မှတ်ထား",
+      timesheet_start: "စတင်",
+      timesheet_finish: "ပြီးဆုံး",
+      timesheet_credited: "တွက်ချက်ထား",
+      timesheet_day_word: "ရက်",
+      timesheet_edit_day: "✏️ ရက်ကို ပြင်ဆင်",
+      timesheet_history: "🕘 ပြောင်းလဲမှုမှတ်တမ်း",
+      timesheet_status_full: "1 ရက်",
+      timesheet_status_half: "0.5 ရက်",
+      timesheet_status_review: "စစ်ဆေးရန်",
+      timesheet_status_zero: "0 ရက်",
+      timesheet_auto: "အလိုအလျောက်",
+      timesheet_history_empty: "မှတ်တမ်းမရှိသေး",
+      timesheet_loading_short: "ဖွင့်နေသည်...",
       back: "← နောက်သို့",
       saved: "ဘာသာစကားကို သိမ်းဆည်းပြီးပါပြီ"
     },
@@ -4093,6 +4180,35 @@
       photo_send: "✓ ส่งการลงเวลา",
       photo_saved: "✓ บันทึกการลงเวลาแล้ว",
       photo_error: "ไม่สามารถประมวลผลรูปภาพได้",
+
+      timesheet_title: "📊 ตารางเวลา",
+      timesheet_description: "วันทำงาน การลงเวลาด้วยรูปภาพ และเงินเดือน",
+      timesheet_month: "เดือน",
+      timesheet_employee: "พนักงาน",
+      timesheet_all_employees: "พนักงานทั้งหมด",
+      timesheet_loading: "กำลังโหลดตารางเวลา...",
+      timesheet_empty: "ยังไม่มีรายการในเดือนที่เลือก",
+      timesheet_daily_rate: "ค่าจ้างรายวัน",
+      timesheet_full_days: "วันเต็ม",
+      timesheet_half_days: "ครึ่งวัน",
+      timesheet_paid_days: "วันที่คิดค่าจ้าง",
+      timesheet_corrected: "แก้ไขแล้ว",
+      timesheet_accrued: "ยอดคำนวณประจำเดือน",
+      timesheet_no_photo: "ไม่มีรูป",
+      timesheet_object_not_set: "ไม่ได้ระบุไซต์งาน",
+      timesheet_start: "เริ่ม",
+      timesheet_finish: "สิ้นสุด",
+      timesheet_credited: "คิดแล้ว",
+      timesheet_day_word: "วัน",
+      timesheet_edit_day: "✏️ แก้ไขวัน",
+      timesheet_history: "🕘 ประวัติการแก้ไข",
+      timesheet_status_full: "1 วัน",
+      timesheet_status_half: "0.5 วัน",
+      timesheet_status_review: "ตรวจสอบ",
+      timesheet_status_zero: "0 วัน",
+      timesheet_auto: "อัตโนมัติ",
+      timesheet_history_empty: "ยังไม่มีประวัติ",
+      timesheet_loading_short: "กำลังโหลด...",
       back: "← ย้อนกลับ",
       saved: "บันทึกภาษาแล้ว"
     }
@@ -4161,6 +4277,23 @@
 
 
     renderLanguageSelection();
+
+
+    if (
+      timesheetData &&
+      document
+        .getElementById(
+          "timesheetScreen"
+        )
+        .classList.contains(
+          "active"
+        )
+    ) {
+
+      setupEmployeeFilter();
+      renderTimesheet();
+
+    }
 
   }
 
@@ -5406,7 +5539,7 @@
 
 
     select.innerHTML =
-      '<option value="all">Все сотрудники</option>';
+      '<option value="all">' + escapeHtml(t("timesheet_all_employees")) + '</option>';
 
 
     (
@@ -5576,7 +5709,7 @@
           </div>
 
           <div class="summary-rate">
-            Дневная ставка:
+            ${t("timesheet_daily_rate")}:
             ${formatMoney(item.daily_rate, item.currency)}
           </div>
 
@@ -5585,7 +5718,7 @@
             <div class="summary-item">
 
               <div class="summary-label">
-                Полных дней
+                ${t("timesheet_full_days")}
               </div>
 
               <div class="summary-value">
@@ -5597,7 +5730,7 @@
             <div class="summary-item">
 
               <div class="summary-label">
-                Половин дня
+                ${t("timesheet_half_days")}
               </div>
 
               <div class="summary-value">
@@ -5609,7 +5742,7 @@
             <div class="summary-item">
 
               <div class="summary-label">
-                Оплачиваемых дней
+                ${t("timesheet_paid_days")}
               </div>
 
               <div class="summary-value">
@@ -5621,7 +5754,7 @@
             <div class="summary-item">
 
               <div class="summary-label">
-                Исправлено
+                ${t("timesheet_corrected")}
               </div>
 
               <div class="summary-value">
@@ -5635,7 +5768,7 @@
           <div class="salary-box">
 
             <div class="salary-label">
-              Начислено за месяц
+              ${t("timesheet_accrued")}
             </div>
 
             <div class="salary-value">
@@ -5723,7 +5856,7 @@
                 >
               `
               :
-              '<div class="no-photo">Нет фото</div>';
+              '<div class="no-photo">' + escapeHtml(t("timesheet_no_photo")) + '</div>';
 
 
           const finishPhoto =
@@ -5737,7 +5870,7 @@
                 >
               `
               :
-              '<div class="no-photo">Нет фото</div>';
+              '<div class="no-photo">' + escapeHtml(t("timesheet_no_photo")) + '</div>';
 
 
           const card =
@@ -5781,7 +5914,7 @@
             </div>
 
             <div class="day-object">
-              🏗️ ${escapeHtml(day.objects || "Объект не указан")}
+              🏗️ ${escapeHtml(day.objects || t("timesheet_object_not_set"))}
             </div>
 
             <div class="day-times">
@@ -5789,7 +5922,7 @@
               <div class="time-mini">
 
                 <div class="time-mini-label">
-                  Начало
+                  ${t("timesheet_start")}
                 </div>
 
                 <div class="time-mini-value">
@@ -5801,7 +5934,7 @@
               <div class="time-mini">
 
                 <div class="time-mini-label">
-                  Окончание
+                  ${t("timesheet_finish")}
                 </div>
 
                 <div class="time-mini-value">
@@ -5815,9 +5948,9 @@
             <div class="day-bottom">
 
               <div class="paid-days">
-                Зачтено:
+                ${t("timesheet_credited")}:
                 ${Number(day.paid_days || 0)}
-                дня
+                ${t("timesheet_day_word")}
               </div>
 
               <div class="day-salary">
@@ -5878,7 +6011,7 @@
               "admin-edit-button";
 
             edit.innerText =
-              "✏️ Редактировать день";
+              t("timesheet_edit_day");
 
             edit.onclick =
               () =>
@@ -5904,7 +6037,7 @@
                 "history-button";
 
               history.innerText =
-                "🕘 История изменений";
+                t("timesheet_history");
 
               history.onclick =
                 () =>
@@ -5947,7 +6080,7 @@
           "status-full",
 
         text:
-          "1 день"
+          t("timesheet_status_full")
       };
 
     }
@@ -5963,7 +6096,7 @@
           "status-half",
 
         text:
-          "0,5 дня"
+          t("timesheet_status_half")
       };
 
     }
@@ -5979,7 +6112,7 @@
           "status-review",
 
         text:
-          "Проверить"
+          t("timesheet_status_review")
       };
 
     }
@@ -5991,7 +6124,7 @@
 
       text:
         status ||
-        "0 дней"
+        t("timesheet_status_zero")
     };
 
   }
@@ -6190,7 +6323,7 @@
 
 
     list.innerHTML =
-      "Загружаем...";
+      t("timesheet_loading_short");
 
 
     openModal(
@@ -6230,7 +6363,7 @@
       ) {
 
         list.innerHTML =
-          '<div class="empty-card">Истории пока нет</div>';
+          '<div class="empty-card">' + escapeHtml(t("timesheet_history_empty")) + '</div>';
 
         return;
 
@@ -6257,7 +6390,7 @@
             </div>
 
             <div class="history-title">
-              ${item.old_paid_days ?? "авто"}
+              ${item.old_paid_days ?? t("timesheet_auto")}
               →
               ${item.new_paid_days ?? "—"}
             </div>
