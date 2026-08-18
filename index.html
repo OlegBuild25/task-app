@@ -775,8 +775,208 @@
        TIMESHEET
     ================================= */
 
+    .timesheet-view-tabs {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 8px;
+      margin: 2px 0 14px;
+      padding: 4px;
+      border-radius: 14px;
+      background: #f1f1f3;
+    }
+
+    .timesheet-view-tab {
+      min-height: 42px;
+      padding: 8px 10px;
+      border: 0;
+      border-radius: 11px;
+      background: transparent;
+      color: #77777c;
+      font-size: 12px;
+      font-weight: 750;
+      line-height: 1.15;
+      cursor: pointer;
+      -webkit-tap-highlight-color: transparent;
+    }
+
+    .timesheet-view-tab.active {
+      background: #ffffff;
+      color: #1c1c1e;
+      box-shadow: 0 1px 4px rgba(0, 0, 0, 0.08);
+    }
+
     .timesheet-employee-list-view {
       margin-top: 4px;
+    }
+
+    .timesheet-salary-stats-view {
+      margin-top: 4px;
+    }
+
+    .timesheet-salary-stats-card {
+      overflow: hidden;
+      border: 1px solid #e5e5e8;
+      border-radius: 16px;
+      background: #ffffff;
+    }
+
+    .timesheet-salary-stats-head {
+      padding: 13px 14px 11px;
+      border-bottom: 1px solid #ececef;
+    }
+
+    .timesheet-salary-stats-title {
+      color: #1c1c1e;
+      font-size: 15px;
+      font-weight: 800;
+    }
+
+    .timesheet-salary-stats-range {
+      margin-top: 3px;
+      color: #8e8e93;
+      font-size: 11px;
+      line-height: 1.35;
+    }
+
+    .timesheet-salary-stats-scroll {
+      width: 100%;
+      overflow-x: auto;
+      overflow-y: hidden;
+      -webkit-overflow-scrolling: touch;
+    }
+
+    .timesheet-salary-table {
+      width: max-content;
+      min-width: 100%;
+      border-collapse: separate;
+      border-spacing: 0;
+      table-layout: fixed;
+      font-size: 10px;
+      white-space: nowrap;
+    }
+
+    .timesheet-salary-table th,
+    .timesheet-salary-table td {
+      height: 34px;
+      padding: 0;
+      border-right: 1px solid #e8e8eb;
+      border-bottom: 1px solid #e8e8eb;
+      text-align: center;
+      vertical-align: middle;
+    }
+
+    .timesheet-salary-table thead th {
+      position: sticky;
+      top: 0;
+      z-index: 3;
+      height: 31px;
+      background: #f7f7f8;
+      color: #65656a;
+      font-size: 9px;
+      font-weight: 800;
+    }
+
+    .timesheet-salary-table tr:last-child td {
+      border-bottom: 0;
+    }
+
+    .timesheet-salary-table th:last-child,
+    .timesheet-salary-table td:last-child {
+      border-right: 0;
+    }
+
+    .timesheet-salary-employee-col {
+      position: sticky;
+      left: 0;
+      z-index: 2;
+      width: 112px;
+      min-width: 112px;
+      max-width: 112px;
+      padding: 0 8px !important;
+      background: #ffffff;
+      text-align: left !important;
+    }
+
+    .timesheet-salary-table thead .timesheet-salary-employee-col {
+      z-index: 5;
+      background: #f7f7f8;
+    }
+
+    .timesheet-salary-employee-name {
+      display: block;
+      overflow: hidden;
+      color: #1c1c1e;
+      font-size: 10px;
+      font-weight: 750;
+      line-height: 1.2;
+      text-overflow: ellipsis;
+      white-space: nowrap;
+    }
+
+    .timesheet-salary-day-col {
+      width: 31px;
+      min-width: 31px;
+      max-width: 31px;
+    }
+
+    .timesheet-salary-day-col.weekend,
+    .timesheet-salary-cell.weekend.empty {
+      background-image: repeating-linear-gradient(
+        135deg,
+        rgba(120, 120, 128, 0.04) 0,
+        rgba(120, 120, 128, 0.04) 4px,
+        rgba(120, 120, 128, 0.10) 4px,
+        rgba(120, 120, 128, 0.10) 5px
+      );
+    }
+
+    .timesheet-salary-cell {
+      width: 31px;
+      min-width: 31px;
+      max-width: 31px;
+      color: #8e8e93;
+      font-size: 9px;
+      font-weight: 700;
+    }
+
+    .timesheet-salary-cell.worked {
+      background: #a9cbbb;
+      color: #244a3a;
+      font-weight: 800;
+    }
+
+    .timesheet-salary-cell.review {
+      background: #fff1c9;
+      color: #8b6100;
+      font-weight: 900;
+    }
+
+    .timesheet-salary-cell.corrected {
+      box-shadow: inset 0 0 0 1px #4c8ac7;
+    }
+
+    .timesheet-salary-total-col {
+      width: 54px;
+      min-width: 54px;
+      max-width: 54px;
+      background: #fbfbfc;
+      color: #1c1c1e;
+      font-size: 9px;
+      font-weight: 800;
+    }
+
+    .timesheet-salary-money-col {
+      width: 76px;
+      min-width: 76px;
+      max-width: 76px;
+    }
+
+    .timesheet-salary-stats-note {
+      padding: 10px 13px 12px;
+      border-top: 1px solid #ececef;
+      color: #8e8e93;
+      font-size: 10px;
+      line-height: 1.4;
     }
 
     .timesheet-section-heading {
@@ -2784,6 +2984,34 @@
 
 
     <div
+      id="timesheetAdminViewTabs"
+      class="timesheet-view-tabs hidden"
+    >
+
+      <button
+        id="timesheetEmployeesTab"
+        class="timesheet-view-tab active"
+        type="button"
+        onclick="setTimesheetOverviewMode('employees')"
+        data-i18n="timesheet_view_employees"
+      >
+        Сотрудники
+      </button>
+
+      <button
+        id="timesheetSalaryStatsTab"
+        class="timesheet-view-tab"
+        type="button"
+        onclick="setTimesheetOverviewMode('salary_stats')"
+        data-i18n="timesheet_view_salary_stats"
+      >
+        Сводная статистика зарплат
+      </button>
+
+    </div>
+
+
+    <div
       id="timesheetEmployeeListView"
       class="timesheet-employee-list-view hidden"
     >
@@ -2796,6 +3024,48 @@
         id="timesheetEmployeeList"
         class="timesheet-employee-list"
       ></div>
+
+    </div>
+
+
+    <div
+      id="timesheetSalaryStatsView"
+      class="timesheet-salary-stats-view hidden"
+    >
+
+      <div class="timesheet-salary-stats-card">
+
+        <div class="timesheet-salary-stats-head">
+
+          <div
+            class="timesheet-salary-stats-title"
+            data-i18n="timesheet_salary_stats_title"
+          >
+            Сводная статистика зарплат
+          </div>
+
+          <div
+            id="timesheetSalaryStatsRange"
+            class="timesheet-salary-stats-range"
+          ></div>
+
+        </div>
+
+        <div class="timesheet-salary-stats-scroll">
+          <table
+            id="timesheetSalaryStatsTable"
+            class="timesheet-salary-table"
+          ></table>
+        </div>
+
+        <div
+          class="timesheet-salary-stats-note"
+          data-i18n="timesheet_salary_stats_hint"
+        >
+          1 день = 8 ч, 0,5 дня = 4 ч. Зарплата берётся из текущего расчёта табеля.
+        </div>
+
+      </div>
 
     </div>
 
@@ -4031,6 +4301,7 @@
 
   let timesheetData = null;
   let selectedTimesheetEmployeeId = null;
+  let timesheetOverviewMode = "employees";
   let dashboardData = null;
   let payrollData = null;
   let payrollAdvancesData = [];
@@ -4615,6 +4886,16 @@
       timesheet_employee: "Сотрудник",
       timesheet_all_employees: "Все сотрудники",
       timesheet_employees_list: "Сотрудники",
+      timesheet_view_employees: "Сотрудники",
+      timesheet_view_salary_stats: "Сводная статистика зарплат",
+      timesheet_salary_stats_title: "Сводная статистика зарплат",
+      timesheet_salary_stats_hint: "1 день = 8 ч, 0,5 дня = 4 ч. Зарплата берётся из текущего расчёта табеля.",
+      timesheet_stats_employee: "Сотрудник",
+      timesheet_stats_hours: "Часы",
+      timesheet_stats_days: "Дни",
+      timesheet_stats_salary: "Зарплата",
+      timesheet_stats_no_data: "Нет данных за выбранный месяц",
+      timesheet_hours_short: "ч",
       timesheet_back_to_employees: "← К сотрудникам",
       timesheet_employee_detail_hint: "Рабочие дни, фотоотметки и расчёт за выбранный месяц.",
       timesheet_inactive: "Неактивен",
@@ -4732,6 +5013,16 @@
       timesheet_employee: "Employee",
       timesheet_all_employees: "All employees",
       timesheet_employees_list: "Employees",
+      timesheet_view_employees: "Employees",
+      timesheet_view_salary_stats: "Salary summary",
+      timesheet_salary_stats_title: "Salary summary",
+      timesheet_salary_stats_hint: "1 day = 8 h, 0.5 day = 4 h. Salary uses the current timesheet calculation.",
+      timesheet_stats_employee: "Employee",
+      timesheet_stats_hours: "Hours",
+      timesheet_stats_days: "Days",
+      timesheet_stats_salary: "Salary",
+      timesheet_stats_no_data: "No data for the selected month",
+      timesheet_hours_short: "h",
       timesheet_back_to_employees: "← Employees",
       timesheet_employee_detail_hint: "Work days, photo attendance and calculation for the selected month.",
       timesheet_inactive: "Inactive",
@@ -4849,6 +5140,16 @@
       timesheet_employee: "ဝန်ထမ်း",
       timesheet_all_employees: "ဝန်ထမ်းအားလုံး",
       timesheet_employees_list: "ဝန်ထမ်းများ",
+      timesheet_view_employees: "ဝန်ထမ်းများ",
+      timesheet_view_salary_stats: "လစာအနှစ်ချုပ်",
+      timesheet_salary_stats_title: "လစာအနှစ်ချုပ်",
+      timesheet_salary_stats_hint: "၁ ရက် = ၈ နာရီ၊ ၀.၅ ရက် = ၄ နာရီ။ လစာကို လက်ရှိ အလုပ်ချိန်စာရင်းတွက်ချက်မှုမှ ယူထားသည်။",
+      timesheet_stats_employee: "ဝန်ထမ်း",
+      timesheet_stats_hours: "နာရီ",
+      timesheet_stats_days: "ရက်",
+      timesheet_stats_salary: "လစာ",
+      timesheet_stats_no_data: "ရွေးထားသောလအတွက် ဒေတာမရှိပါ",
+      timesheet_hours_short: "နာ",
       timesheet_back_to_employees: "← ဝန်ထမ်းများ",
       timesheet_employee_detail_hint: "ရွေးထားသောလအတွက် အလုပ်ရက်၊ ဓာတ်ပုံမှတ်တမ်းနှင့် တွက်ချက်မှု။",
       timesheet_inactive: "အသုံးမပြု",
@@ -4966,6 +5267,16 @@
       timesheet_employee: "พนักงาน",
       timesheet_all_employees: "พนักงานทั้งหมด",
       timesheet_employees_list: "พนักงาน",
+      timesheet_view_employees: "พนักงาน",
+      timesheet_view_salary_stats: "สรุปสถิติเงินเดือน",
+      timesheet_salary_stats_title: "สรุปสถิติเงินเดือน",
+      timesheet_salary_stats_hint: "1 วัน = 8 ชม. และ 0.5 วัน = 4 ชม. เงินเดือนใช้ยอดจากการคำนวณตารางเวลาปัจจุบัน",
+      timesheet_stats_employee: "พนักงาน",
+      timesheet_stats_hours: "ชั่วโมง",
+      timesheet_stats_days: "วัน",
+      timesheet_stats_salary: "เงินเดือน",
+      timesheet_stats_no_data: "ไม่มีข้อมูลสำหรับเดือนที่เลือก",
+      timesheet_hours_short: "ชม.",
       timesheet_back_to_employees: "← พนักงาน",
       timesheet_employee_detail_hint: "วันทำงาน การลงเวลาพร้อมรูป และการคำนวณของเดือนที่เลือก",
       timesheet_inactive: "ไม่ใช้งาน",
@@ -6364,6 +6675,9 @@
     selectedTimesheetEmployeeId =
       null;
 
+    timesheetOverviewMode =
+      "employees";
+
 
     hideAllScreens();
 
@@ -6613,6 +6927,454 @@
   }
 
 
+  function setTimesheetOverviewMode(mode) {
+
+    timesheetOverviewMode =
+      mode === "salary_stats"
+        ? "salary_stats"
+        : "employees";
+
+
+    selectedTimesheetEmployeeId =
+      null;
+
+
+    renderTimesheet();
+
+  }
+
+
+  function updateTimesheetOverviewTabs() {
+
+    const employeesTab =
+      document.getElementById(
+        "timesheetEmployeesTab"
+      );
+
+    const salaryStatsTab =
+      document.getElementById(
+        "timesheetSalaryStatsTab"
+      );
+
+
+    if (!employeesTab || !salaryStatsTab) {
+      return;
+    }
+
+
+    employeesTab.classList.toggle(
+      "active",
+      timesheetOverviewMode === "employees"
+    );
+
+    salaryStatsTab.classList.toggle(
+      "active",
+      timesheetOverviewMode === "salary_stats"
+    );
+
+  }
+
+
+  function getTimesheetMonthDays() {
+
+    const value =
+      document
+        .getElementById(
+          "timesheetMonth"
+        )
+        .value;
+
+
+    const match =
+      String(value || "")
+        .match(
+          /^(\d{4})-(\d{2})$/
+        );
+
+
+    if (!match) {
+      return [];
+    }
+
+
+    const year =
+      Number(match[1]);
+
+    const monthIndex =
+      Number(match[2]) - 1;
+
+    const fullMonthCount =
+      new Date(
+        year,
+        monthIndex + 1,
+        0
+      )
+      .getDate();
+
+
+    const today =
+      new Date();
+
+
+    const count =
+      today.getFullYear() === year
+      &&
+      today.getMonth() === monthIndex
+        ? Math.min(
+            today.getDate(),
+            fullMonthCount
+          )
+        : fullMonthCount;
+
+
+    return Array.from(
+      { length: count },
+      (_, index) => {
+
+        const day =
+          index + 1;
+
+        const date =
+          new Date(
+            year,
+            monthIndex,
+            day
+          );
+
+        return {
+          day,
+          iso:
+            `${year}-${String(monthIndex + 1).padStart(2, "0")}-${String(day).padStart(2, "0")}`,
+          weekend:
+            date.getDay() === 0
+            ||
+            date.getDay() === 6,
+        };
+
+      }
+    );
+
+  }
+
+
+  function formatStatsNumber(value) {
+
+    const number =
+      Number(value || 0);
+
+
+    if (
+      Math.abs(number - Math.round(number)) < 0.001
+    ) {
+      return String(Math.round(number));
+    }
+
+
+    return number
+      .toFixed(2)
+      .replace(/0+$/, "")
+      .replace(/\.$/, "");
+
+  }
+
+
+  function renderTimesheetSalaryStats() {
+
+    const table =
+      document.getElementById(
+        "timesheetSalaryStatsTable"
+      );
+
+    const range =
+      document.getElementById(
+        "timesheetSalaryStatsRange"
+      );
+
+
+    if (!table || !range) {
+      return;
+    }
+
+
+    const monthDays =
+      getTimesheetMonthDays();
+
+    const dailyRows =
+      timesheetData.daily_timesheet || [];
+
+    const summaries =
+      timesheetData.monthly_summary || [];
+
+    const employees =
+      (timesheetData.employees || [])
+      .slice()
+      .sort(
+        (a, b) => {
+
+          if (
+            Boolean(a.is_active) !==
+            Boolean(b.is_active)
+          ) {
+            return a.is_active ? -1 : 1;
+          }
+
+
+          return getTimesheetEmployeeName(a)
+            .localeCompare(
+              getTimesheetEmployeeName(b),
+              currentLanguage === "ru"
+                ? "ru"
+                : undefined
+            );
+
+        }
+      );
+
+
+    if (monthDays.length) {
+
+      const first =
+        monthDays[0].iso
+          .split("-")
+          .reverse()
+          .join(".");
+
+      const last =
+        monthDays[monthDays.length - 1].iso
+          .split("-")
+          .reverse()
+          .join(".");
+
+      range.innerText =
+        `${first} — ${last}`;
+
+    } else {
+
+      range.innerText = "";
+
+    }
+
+
+    if (!employees.length) {
+
+      table.innerHTML = `
+        <tbody>
+          <tr>
+            <td style="padding:16px;min-width:280px;text-align:left;">
+              ${escapeHtml(t("timesheet_stats_no_data"))}
+            </td>
+          </tr>
+        </tbody>
+      `;
+
+      return;
+    }
+
+
+    const dailyByEmployeeDate =
+      new Map();
+
+
+    dailyRows.forEach(
+      row => {
+        dailyByEmployeeDate.set(
+          `${row.employee_id}|${row.work_date}`,
+          row
+        );
+      }
+    );
+
+
+    const summaryByEmployee =
+      new Map(
+        summaries.map(
+          row => [
+            String(row.employee_id),
+            row
+          ]
+        )
+      );
+
+
+    const dayHeaders =
+      monthDays.map(
+        day => `
+          <th class="timesheet-salary-day-col ${day.weekend ? "weekend" : ""}">
+            ${String(day.day).padStart(2, "0")}
+          </th>
+        `
+      )
+      .join("");
+
+
+    const bodyRows =
+      employees.map(
+        employee => {
+
+          const employeeId =
+            String(employee.id);
+
+          const summary =
+            summaryByEmployee.get(employeeId)
+            ||
+            {};
+
+          let calculatedPaidDays =
+            0;
+
+
+          const dayCells =
+            monthDays.map(
+              day => {
+
+                const row =
+                  dailyByEmployeeDate.get(
+                    `${employeeId}|${day.iso}`
+                  );
+
+                const paidDays =
+                  Number(
+                    row?.paid_days || 0
+                  );
+
+                calculatedPaidDays +=
+                  paidDays;
+
+
+                const hours =
+                  paidDays * 8;
+
+                const status =
+                  row?.day_status
+                  ||
+                  row?.status
+                  ||
+                  "";
+
+                const isReview =
+                  status === "Требует проверки";
+
+                const classes = [
+                  "timesheet-salary-cell",
+                  day.weekend ? "weekend" : "",
+                  hours > 0 ? "worked" : "empty",
+                  isReview ? "review" : "",
+                  row?.is_overridden ? "corrected" : ""
+                ]
+                .filter(Boolean)
+                .join(" ");
+
+                let content =
+                  "—";
+
+
+                if (hours > 0) {
+
+                  content =
+                    `${formatStatsNumber(hours)}${escapeHtml(t("timesheet_hours_short"))}`;
+
+                } else if (isReview) {
+
+                  content =
+                    "!";
+
+                }
+
+
+                return `
+                  <td class="${classes}">
+                    ${content}
+                  </td>
+                `;
+
+              }
+            )
+            .join("");
+
+
+          const paidDaysTotal =
+            summary.total_paid_days !== undefined
+              ? Number(summary.total_paid_days || 0)
+              : calculatedPaidDays;
+
+          const hoursTotal =
+            paidDaysTotal * 8;
+
+          const salary =
+            Number(
+              summary.total_salary || 0
+            );
+
+          const currency =
+            summary.currency
+            ||
+            employee.currency
+            ||
+            "THB";
+
+
+          return `
+            <tr>
+
+              <td class="timesheet-salary-employee-col">
+                <span class="timesheet-salary-employee-name">
+                  ${escapeHtml(getTimesheetEmployeeName(employee))}
+                </span>
+              </td>
+
+              ${dayCells}
+
+              <td class="timesheet-salary-total-col">
+                ${formatStatsNumber(hoursTotal)}
+              </td>
+
+              <td class="timesheet-salary-total-col">
+                ${formatStatsNumber(paidDaysTotal)}
+              </td>
+
+              <td class="timesheet-salary-total-col timesheet-salary-money-col">
+                ${escapeHtml(formatMoney(salary, currency))}
+              </td>
+
+            </tr>
+          `;
+
+        }
+      )
+      .join("");
+
+
+    table.innerHTML = `
+      <thead>
+        <tr>
+          <th class="timesheet-salary-employee-col">
+            ${escapeHtml(t("timesheet_stats_employee"))}
+          </th>
+
+          ${dayHeaders}
+
+          <th class="timesheet-salary-total-col">
+            ${escapeHtml(t("timesheet_stats_hours"))}
+          </th>
+
+          <th class="timesheet-salary-total-col">
+            ${escapeHtml(t("timesheet_stats_days"))}
+          </th>
+
+          <th class="timesheet-salary-total-col timesheet-salary-money-col">
+            ${escapeHtml(t("timesheet_stats_salary"))}
+          </th>
+        </tr>
+      </thead>
+
+      <tbody>
+        ${bodyRows}
+      </tbody>
+    `;
+
+  }
+
+
   function renderTimesheetEmployeeList() {
 
     const list =
@@ -6819,6 +7581,9 @@
     selectedTimesheetEmployeeId =
       null;
 
+    timesheetOverviewMode =
+      "employees";
+
 
     renderTimesheet();
 
@@ -6843,6 +7608,16 @@
     const employeeListView =
       document.getElementById(
         "timesheetEmployeeListView"
+      );
+
+    const adminViewTabs =
+      document.getElementById(
+        "timesheetAdminViewTabs"
+      );
+
+    const salaryStatsView =
+      document.getElementById(
+        "timesheetSalaryStatsView"
       );
 
     const detailHeader =
@@ -6888,9 +7663,11 @@
       !selectedTimesheetEmployeeId
     ) {
 
-      employeeListView.classList.remove(
+      adminViewTabs.classList.remove(
         "hidden"
       );
+
+      updateTimesheetOverviewTabs();
 
       detailHeader.classList.add(
         "hidden"
@@ -6917,12 +7694,48 @@
       );
 
 
-      renderTimesheetEmployeeList();
+      if (
+        timesheetOverviewMode ===
+        "salary_stats"
+      ) {
+
+        employeeListView.classList.add(
+          "hidden"
+        );
+
+        salaryStatsView.classList.remove(
+          "hidden"
+        );
+
+        renderTimesheetSalaryStats();
+
+      } else {
+
+        salaryStatsView.classList.add(
+          "hidden"
+        );
+
+        employeeListView.classList.remove(
+          "hidden"
+        );
+
+        renderTimesheetEmployeeList();
+
+      }
+
 
       return;
 
     }
 
+
+    adminViewTabs.classList.add(
+      "hidden"
+    );
+
+    salaryStatsView.classList.add(
+      "hidden"
+    );
 
     employeeListView.classList.add(
       "hidden"
