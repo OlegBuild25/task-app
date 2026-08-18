@@ -3543,12 +3543,21 @@
       return "—";
     }
 
+
+    const locales = {
+      ru: "ru-RU",
+      en: "en-GB",
+      my: "my-MM",
+      th: "th-TH"
+    };
+
+
     return new Date(
       value +
       "T00:00:00"
     )
     .toLocaleDateString(
-      "ru-RU",
+      locales[currentLanguage] || "ru-RU",
       {
         day: "2-digit",
         month: "long"
@@ -5964,7 +5973,7 @@
               <div class="attendance-photo-card">
 
                 <div class="attendance-photo-title">
-                  📸 Начало
+                  📸 ${t("timesheet_start")}
                 </div>
 
                 ${startPhoto}
@@ -5974,7 +5983,7 @@
               <div class="attendance-photo-card">
 
                 <div class="attendance-photo-title">
-                  📸 Окончание
+                  📸 ${t("timesheet_finish")}
                 </div>
 
                 ${finishPhoto}
