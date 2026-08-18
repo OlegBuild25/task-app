@@ -189,6 +189,83 @@
 
 
     /* ================================
+       LANGUAGE
+    ================================= */
+
+    .language-list {
+      display: flex;
+      flex-direction: column;
+      gap: 10px;
+    }
+
+    .language-option {
+      width: 100%;
+      min-height: 68px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 12px;
+      padding: 12px 16px;
+      border: 2px solid transparent;
+      border-radius: 18px;
+      background: #ffffff;
+      box-shadow: 0 2px 8px rgba(0,0,0,0.04);
+      cursor: pointer;
+    }
+
+    .language-option.active {
+      border-color: #2481cc;
+      background: #eef7ff;
+    }
+
+    .language-option-main {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      min-width: 0;
+    }
+
+    .language-flag {
+      width: 42px;
+      height: 42px;
+      min-width: 42px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      border-radius: 13px;
+      background: #f7f7f8;
+      font-size: 24px;
+    }
+
+    .language-name {
+      font-size: 17px;
+      font-weight: 700;
+      text-align: left;
+    }
+
+    .language-check {
+      color: #2481cc;
+      font-size: 22px;
+      font-weight: 800;
+      opacity: 0;
+    }
+
+    .language-option.active .language-check {
+      opacity: 1;
+    }
+
+    .language-note {
+      margin-top: 14px;
+      padding: 13px 14px;
+      border-radius: 14px;
+      background: #fff7dc;
+      color: #7a5b00;
+      font-size: 13px;
+      line-height: 1.45;
+    }
+
+
+    /* ================================
        COMMON CARDS
     ================================= */
 
@@ -1643,6 +1720,32 @@
 
       </button>
 
+      <button
+        class="menu-button"
+        onclick="openLanguageScreen()"
+      >
+
+        <div class="icon purple">
+          🌐
+        </div>
+
+        <div class="menu-text">
+
+          <span class="menu-title">
+            Язык
+          </span>
+
+          <span class="menu-description">
+            Русский / English / မြန်မာ / ไทย
+          </span>
+
+        </div>
+
+        <div class="arrow">›</div>
+
+      </button>
+
+
 
     </div>
 
@@ -2488,6 +2591,143 @@
 
 
   <!-- ================================
+       LANGUAGE
+  ================================= -->
+
+  <div
+    id="languageScreen"
+    class="screen"
+  >
+
+    <button
+      class="back-button"
+      onclick="goToMain()"
+    >
+      ← Назад
+    </button>
+
+    <h2 class="page-title">
+      🌐 Язык
+    </h2>
+
+    <p class="page-description">
+      Выберите язык приложения.
+    </p>
+
+
+    <div class="language-list">
+
+      <button
+        class="language-option"
+        data-language="ru"
+        onclick="selectLanguage('ru')"
+      >
+
+        <div class="language-option-main">
+
+          <div class="language-flag">
+            🇷🇺
+          </div>
+
+          <div class="language-name">
+            Русский
+          </div>
+
+        </div>
+
+        <div class="language-check">
+          ✓
+        </div>
+
+      </button>
+
+
+      <button
+        class="language-option"
+        data-language="en"
+        onclick="selectLanguage('en')"
+      >
+
+        <div class="language-option-main">
+
+          <div class="language-flag">
+            🇬🇧
+          </div>
+
+          <div class="language-name">
+            English
+          </div>
+
+        </div>
+
+        <div class="language-check">
+          ✓
+        </div>
+
+      </button>
+
+
+      <button
+        class="language-option"
+        data-language="my"
+        onclick="selectLanguage('my')"
+      >
+
+        <div class="language-option-main">
+
+          <div class="language-flag">
+            🇲🇲
+          </div>
+
+          <div class="language-name">
+            မြန်မာ
+          </div>
+
+        </div>
+
+        <div class="language-check">
+          ✓
+        </div>
+
+      </button>
+
+
+      <button
+        class="language-option"
+        data-language="th"
+        onclick="selectLanguage('th')"
+      >
+
+        <div class="language-option-main">
+
+          <div class="language-flag">
+            🇹🇭
+          </div>
+
+          <div class="language-name">
+            ไทย
+          </div>
+
+        </div>
+
+        <div class="language-check">
+          ✓
+        </div>
+
+      </button>
+
+    </div>
+
+
+    <div class="language-note">
+      На этом шаге мы только добавляем выбор и сохранение языка.
+      Перевод существующих разделов добавим отдельно, не меняя их рабочую логику.
+    </div>
+
+  </div>
+
+
+  <!-- ================================
        WAITING
   ================================= -->
 
@@ -3171,6 +3411,13 @@
   let approvingRequest = null;
   let payingEmployee = null;
 
+  let currentLanguage =
+    localStorage.getItem(
+      "taskLanguage"
+    )
+    ||
+    "ru";
+
 
   let employeeName =
     "Сотрудник";
@@ -3647,6 +3894,109 @@
       .classList.toggle(
         "hidden",
         !isAdmin
+      );
+
+  }
+
+
+  /* ================================
+     LANGUAGE
+  ================================= */
+
+  function openLanguageScreen() {
+
+    hideAllScreens();
+
+    document
+      .getElementById(
+        "languageScreen"
+      )
+      .classList.add(
+        "active"
+      );
+
+    renderLanguageSelection();
+
+    window.scrollTo(
+      0,
+      0
+    );
+
+  }
+
+
+  function selectLanguage(
+    language
+  ) {
+
+    const allowedLanguages =
+      [
+        "ru",
+        "en",
+        "my",
+        "th"
+      ];
+
+
+    if (
+      !allowedLanguages.includes(
+        language
+      )
+    ) {
+      return;
+    }
+
+
+    currentLanguage =
+      language;
+
+
+    localStorage.setItem(
+      "taskLanguage",
+      currentLanguage
+    );
+
+
+    renderLanguageSelection();
+
+
+    const messages = {
+      ru:
+        "Язык сохранён",
+      en:
+        "Language saved",
+      my:
+        "ဘာသာစကားကို သိမ်းဆည်းပြီးပါပြီ",
+      th:
+        "บันทึกภาษาแล้ว"
+    };
+
+
+    showMessage(
+      messages[currentLanguage]
+    );
+
+  }
+
+
+  function renderLanguageSelection() {
+
+    document
+      .querySelectorAll(
+        ".language-option"
+      )
+      .forEach(
+        button => {
+
+          button
+            .classList
+            .toggle(
+              "active",
+              button.dataset.language ===
+              currentLanguage
+            );
+
+        }
       );
 
   }
