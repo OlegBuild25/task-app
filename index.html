@@ -2119,11 +2119,11 @@
       <span data-i18n="back">← Назад</span>
     </button>
 
-    <h2 class="page-title">
+    <h2 class="page-title" data-i18n="photo_title">
       📸 Фотоотметка
     </h2>
 
-    <p class="page-description">
+    <p class="page-description" data-i18n="photo_description">
       Отметка о начале или окончании работы.
     </p>
 
@@ -2138,7 +2138,7 @@
 
         <div>
 
-          <div class="employee-label">
+          <div class="employee-label" data-i18n="photo_employee">
             Сотрудник
           </div>
 
@@ -2163,7 +2163,7 @@
     </div>
 
 
-    <div class="section-title">
+    <div class="section-title" data-i18n="photo_choose_object">
       1. Выберите объект
     </div>
 
@@ -2174,7 +2174,7 @@
         class="object-button"
         onclick="selectObject(this, '1')"
       >
-        <span>🏗️ Объект 1</span>
+        <span data-i18n="photo_object_1">🏗️ Объект 1</span>
         <span class="object-check">✓</span>
       </button>
 
@@ -2183,7 +2183,7 @@
         class="object-button"
         onclick="selectObject(this, '2')"
       >
-        <span>🏗️ Объект 2</span>
+        <span data-i18n="photo_object_2">🏗️ Объект 2</span>
         <span class="object-check">✓</span>
       </button>
 
@@ -2192,14 +2192,14 @@
         class="object-button"
         onclick="selectObject(this, '3')"
       >
-        <span>🏗️ Объект 3</span>
+        <span data-i18n="photo_object_3">🏗️ Объект 3</span>
         <span class="object-check">✓</span>
       </button>
 
     </div>
 
 
-    <div class="section-title">
+    <div class="section-title" data-i18n="photo_choose_type">
       2. Выберите тип отметки
     </div>
 
@@ -2215,7 +2215,7 @@
           ▶️
         </span>
 
-        <span class="work-title">
+        <span class="work-title" data-i18n="photo_started">
           Начал работу
         </span>
 
@@ -2231,7 +2231,7 @@
           ⏹️
         </span>
 
-        <span class="work-title">
+        <span class="work-title" data-i18n="photo_finished">
           Закончил работу
         </span>
 
@@ -2242,7 +2242,7 @@
 
     <div class="time-card">
 
-      <div class="time-label">
+      <div class="time-label" data-i18n="photo_current_time">
         Текущее время
       </div>
 
@@ -2256,7 +2256,7 @@
     </div>
 
 
-    <div class="section-title">
+    <div class="section-title" data-i18n="photo_take_step">
       3. Сделайте фото
     </div>
 
@@ -2284,7 +2284,7 @@
       onclick="openCamera()"
       disabled
     >
-      📸 Сделать или выбрать фото
+      <span data-i18n="photo_take_or_choose">📸 Сделать или выбрать фото</span>
     </button>
 
 
@@ -2294,7 +2294,7 @@
       onclick="saveAttendance()"
       disabled
     >
-      ✓ Отправить отметку
+      <span data-i18n="photo_send">✓ Отправить отметку</span>
     </button>
 
 
@@ -2302,7 +2302,7 @@
       id="photoSuccess"
       class="success-message hidden"
     >
-      ✓ Фотоотметка сохранена
+      <span data-i18n="photo_saved">✓ Фотоотметка сохранена</span>
     </div>
 
   </div>
@@ -3930,6 +3930,25 @@
       language_description: "Выберите язык приложения.",
       language_note: "На этом шаге мы переводим главное меню, раздел выбора языка и кнопки «Назад». Остальные разделы переведём следующим шагом.",
 
+
+      photo_title: "📸 Фотоотметка",
+      photo_description: "Отметка о начале или окончании работы.",
+      photo_employee: "Сотрудник",
+      photo_choose_object: "1. Выберите объект",
+      photo_object_1: "🏗️ Объект 1",
+      photo_object_2: "🏗️ Объект 2",
+      photo_object_3: "🏗️ Объект 3",
+      photo_choose_type: "2. Выберите тип отметки",
+      photo_started: "Начал работу",
+      photo_finished: "Закончил работу",
+      photo_current_time: "Текущее время",
+      photo_take_step: "3. Сделайте фото",
+      photo_choose_first: t("photo_choose_first"),
+      photo_ready: t("photo_ready"),
+      photo_take_or_choose: "📸 Сделать или выбрать фото",
+      photo_send: "✓ Отправить отметку",
+      photo_saved: "✓ Фотоотметка сохранена",
+      photo_error: t("photo_error"),
       back: "← Назад",
       saved: "Язык сохранён"
     },
@@ -3959,6 +3978,25 @@
       language_description: "Choose the application language.",
       language_note: "At this step, the main menu, language screen and Back buttons are translated. The remaining sections will be translated in the next step.",
 
+
+      photo_title: "📸 Photo attendance",
+      photo_description: "Mark the start or end of work.",
+      photo_employee: "Employee",
+      photo_choose_object: "1. Choose a work site",
+      photo_object_1: "🏗️ Site 1",
+      photo_object_2: "🏗️ Site 2",
+      photo_object_3: "🏗️ Site 3",
+      photo_choose_type: "2. Choose mark type",
+      photo_started: "Started work",
+      photo_finished: "Finished work",
+      photo_current_time: "Current time",
+      photo_take_step: "3. Take a photo",
+      photo_choose_first: "First choose a work site and mark type",
+      photo_ready: "You can now take a photo",
+      photo_take_or_choose: "📸 Take or choose a photo",
+      photo_send: "✓ Send attendance mark",
+      photo_saved: "✓ Photo attendance saved",
+      photo_error: "Could not process the photo",
       back: "← Back",
       saved: "Language saved"
     },
@@ -3988,6 +4026,25 @@
       language_description: "အက်ပ်အသုံးပြုမည့် ဘာသာစကားကို ရွေးချယ်ပါ။",
       language_note: "ယခုအဆင့်တွင် အဓိကမီနူး၊ ဘာသာစကားရွေးချယ်သည့် စာမျက်နှာနှင့် နောက်သို့ ခလုတ်များကို ဘာသာပြန်ထားသည်။ ကျန်အပိုင်းများကို နောက်အဆင့်တွင် ဘာသာပြန်မည်။",
 
+
+      photo_title: "📸 ဓာတ်ပုံမှတ်တမ်း",
+      photo_description: "အလုပ်စတင်ခြင်း သို့မဟုတ် ပြီးဆုံးခြင်းကို မှတ်တမ်းတင်ပါ။",
+      photo_employee: "ဝန်ထမ်း",
+      photo_choose_object: "1. လုပ်ငန်းနေရာကို ရွေးပါ",
+      photo_object_1: "🏗️ လုပ်ငန်းနေရာ 1",
+      photo_object_2: "🏗️ လုပ်ငန်းနေရာ 2",
+      photo_object_3: "🏗️ လုပ်ငန်းနေရာ 3",
+      photo_choose_type: "2. မှတ်တမ်းအမျိုးအစားကို ရွေးပါ",
+      photo_started: "အလုပ်စတင်",
+      photo_finished: "အလုပ်ပြီးဆုံး",
+      photo_current_time: "လက်ရှိအချိန်",
+      photo_take_step: "3. ဓာတ်ပုံရိုက်ပါ",
+      photo_choose_first: "အရင်ဆုံး လုပ်ငန်းနေရာနှင့် မှတ်တမ်းအမျိုးအစားကို ရွေးပါ",
+      photo_ready: "ယခု ဓာတ်ပုံရိုက်နိုင်ပါပြီ",
+      photo_take_or_choose: "📸 ဓာတ်ပုံရိုက်ရန် သို့မဟုတ် ရွေးရန်",
+      photo_send: "✓ မှတ်တမ်းပို့ရန်",
+      photo_saved: "✓ ဓာတ်ပုံမှတ်တမ်း သိမ်းဆည်းပြီးပါပြီ",
+      photo_error: "ဓာတ်ပုံကို စီမံမရပါ",
       back: "← နောက်သို့",
       saved: "ဘာသာစကားကို သိမ်းဆည်းပြီးပါပြီ"
     },
@@ -4017,6 +4074,25 @@
       language_description: "เลือกภาษาของแอป",
       language_note: "ในขั้นตอนนี้ได้แปลเมนูหลัก หน้าการเลือกภาษา และปุ่มย้อนกลับแล้ว ส่วนอื่น ๆ จะแปลในขั้นตอนถัดไป",
 
+
+      photo_title: "📸 ลงเวลาด้วยรูปภาพ",
+      photo_description: "ลงเวลาเริ่มงานหรือเลิกงาน",
+      photo_employee: "พนักงาน",
+      photo_choose_object: "1. เลือกไซต์งาน",
+      photo_object_1: "🏗️ ไซต์งาน 1",
+      photo_object_2: "🏗️ ไซต์งาน 2",
+      photo_object_3: "🏗️ ไซต์งาน 3",
+      photo_choose_type: "2. เลือกประเภทการลงเวลา",
+      photo_started: "เริ่มงาน",
+      photo_finished: "เลิกงาน",
+      photo_current_time: "เวลาปัจจุบัน",
+      photo_take_step: "3. ถ่ายรูป",
+      photo_choose_first: "กรุณาเลือกไซต์งานและประเภทการลงเวลาก่อน",
+      photo_ready: "ตอนนี้สามารถถ่ายรูปได้",
+      photo_take_or_choose: "📸 ถ่ายหรือเลือกรูป",
+      photo_send: "✓ ส่งการลงเวลา",
+      photo_saved: "✓ บันทึกการลงเวลาแล้ว",
+      photo_error: "ไม่สามารถประมวลผลรูปภาพได้",
       back: "← ย้อนกลับ",
       saved: "บันทึกภาษาแล้ว"
     }
