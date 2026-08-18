@@ -1579,7 +1579,7 @@
         Task
       </h1>
 
-      <p class="header-subtitle">
+      <p class="header-subtitle" data-i18n="main_subtitle">
         Рабочая панель
       </p>
 
@@ -1601,11 +1601,11 @@
 
         <div class="menu-text">
 
-          <span class="menu-title">
+          <span class="menu-title" data-i18n="menu_dashboard">
             Сводка
           </span>
 
-          <span class="menu-description">
+          <span class="menu-description" data-i18n="menu_dashboard_desc">
             Сотрудники, отметки и зарплата
           </span>
 
@@ -1627,11 +1627,11 @@
 
         <div class="menu-text">
 
-          <span class="menu-title">
+          <span class="menu-title" data-i18n="menu_photo">
             Фотоотметка
           </span>
 
-          <span class="menu-description">
+          <span class="menu-description" data-i18n="menu_photo_desc">
             Начало и окончание работы
           </span>
 
@@ -1653,11 +1653,11 @@
 
         <div class="menu-text">
 
-          <span class="menu-title">
+          <span class="menu-title" data-i18n="menu_timesheet">
             Табель
           </span>
 
-          <span class="menu-description">
+          <span class="menu-description" data-i18n="menu_timesheet_desc">
             Рабочие дни и зарплата
           </span>
 
@@ -1680,11 +1680,11 @@
 
         <div class="menu-text">
 
-          <span class="menu-title">
+          <span class="menu-title" data-i18n="menu_employees">
             Сотрудники
           </span>
 
-          <span class="menu-description">
+          <span class="menu-description" data-i18n="menu_employees_desc">
             Управление сотрудниками
           </span>
 
@@ -1706,11 +1706,11 @@
 
         <div class="menu-text">
 
-          <span class="menu-title">
+          <span class="menu-title" data-i18n="menu_payroll">
             Премии и выплаты
           </span>
 
-          <span class="menu-description">
+          <span class="menu-description" data-i18n="menu_payroll_desc">
             Начисления, удержания и выплаты
           </span>
 
@@ -1731,11 +1731,11 @@
 
         <div class="menu-text">
 
-          <span class="menu-title">
+          <span class="menu-title" data-i18n="menu_language">
             Язык
           </span>
 
-          <span class="menu-description">
+          <span class="menu-description" data-i18n="menu_language_desc">
             Русский / English / မြန်မာ / ไทย
           </span>
 
@@ -1765,7 +1765,7 @@
       class="back-button"
       onclick="goToMain()"
     >
-      ← Назад
+      <span data-i18n="back">← Назад</span>
     </button>
 
     <h2 class="page-title">
@@ -2116,7 +2116,7 @@
       class="back-button"
       onclick="goToMain()"
     >
-      ← Назад
+      <span data-i18n="back">← Назад</span>
     </button>
 
     <h2 class="page-title">
@@ -2321,7 +2321,7 @@
       class="back-button"
       onclick="goToMain()"
     >
-      ← Назад
+      <span data-i18n="back">← Назад</span>
     </button>
 
     <h2 class="page-title">
@@ -2423,7 +2423,7 @@
       class="back-button"
       onclick="goToMain()"
     >
-      ← Назад
+      <span data-i18n="back">← Назад</span>
     </button>
 
     <h2 class="page-title">
@@ -2511,7 +2511,7 @@
       class="back-button"
       onclick="goToMain()"
     >
-      ← Назад
+      <span data-i18n="back">← Назад</span>
     </button>
 
     <h2 class="page-title">
@@ -2603,14 +2603,14 @@
       class="back-button"
       onclick="goToMain()"
     >
-      ← Назад
+      <span data-i18n="back">← Назад</span>
     </button>
 
-    <h2 class="page-title">
+    <h2 class="page-title" data-i18n="language_title">
       🌐 Язык
     </h2>
 
-    <p class="page-description">
+    <p class="page-description" data-i18n="language_description">
       Выберите язык приложения.
     </p>
 
@@ -2719,7 +2719,7 @@
     </div>
 
 
-    <div class="language-note">
+    <div class="language-note" data-i18n="language_note">
       На этом шаге мы только добавляем выбор и сохранение языка.
       Перевод существующих разделов добавим отдельно, не меняя их рабочую логику.
     </div>
@@ -3903,6 +3903,192 @@
      LANGUAGE
   ================================= */
 
+  const translations = {
+
+    ru: {
+      main_subtitle: "Рабочая панель",
+
+      menu_dashboard: "Сводка",
+      menu_dashboard_desc: "Сотрудники, отметки и зарплата",
+
+      menu_photo: "Фотоотметка",
+      menu_photo_desc: "Начало и окончание работы",
+
+      menu_timesheet: "Табель",
+      menu_timesheet_desc: "Рабочие дни и зарплата",
+
+      menu_employees: "Сотрудники",
+      menu_employees_desc: "Управление сотрудниками",
+
+      menu_payroll: "Премии и выплаты",
+      menu_payroll_desc: "Начисления, удержания и выплаты",
+
+      menu_language: "Язык",
+      menu_language_desc: "Русский / English / မြန်မာ / ไทย",
+
+      language_title: "🌐 Язык",
+      language_description: "Выберите язык приложения.",
+      language_note: "На этом шаге мы переводим главное меню, раздел выбора языка и кнопки «Назад». Остальные разделы переведём следующим шагом.",
+
+      back: "← Назад",
+      saved: "Язык сохранён"
+    },
+
+    en: {
+      main_subtitle: "Work panel",
+
+      menu_dashboard: "Summary",
+      menu_dashboard_desc: "Employees, attendance and salary",
+
+      menu_photo: "Photo attendance",
+      menu_photo_desc: "Start and finish of work",
+
+      menu_timesheet: "Timesheet",
+      menu_timesheet_desc: "Work days and salary",
+
+      menu_employees: "Employees",
+      menu_employees_desc: "Employee management",
+
+      menu_payroll: "Bonuses and payments",
+      menu_payroll_desc: "Bonuses, deductions and payments",
+
+      menu_language: "Language",
+      menu_language_desc: "Русский / English / မြန်မာ / ไทย",
+
+      language_title: "🌐 Language",
+      language_description: "Choose the application language.",
+      language_note: "At this step, the main menu, language screen and Back buttons are translated. The remaining sections will be translated in the next step.",
+
+      back: "← Back",
+      saved: "Language saved"
+    },
+
+    my: {
+      main_subtitle: "အလုပ်ခွင် စီမံခန့်ခွဲမှု",
+
+      menu_dashboard: "အကျဉ်းချုပ်",
+      menu_dashboard_desc: "ဝန်ထမ်း၊ အလုပ်မှတ်တမ်းနှင့် လစာ",
+
+      menu_photo: "ဓာတ်ပုံမှတ်တမ်း",
+      menu_photo_desc: "အလုပ်စတင်ချိန်နှင့် ပြီးဆုံးချိန်",
+
+      menu_timesheet: "အလုပ်ချိန်စာရင်း",
+      menu_timesheet_desc: "အလုပ်ရက်များနှင့် လစာ",
+
+      menu_employees: "ဝန်ထမ်းများ",
+      menu_employees_desc: "ဝန်ထမ်းစီမံခန့်ခွဲမှု",
+
+      menu_payroll: "ဆုကြေးနှင့် ငွေပေးချေမှု",
+      menu_payroll_desc: "ဆုကြေး၊ ဖြတ်တောက်မှုနှင့် ငွေပေးချေမှု",
+
+      menu_language: "ဘာသာစကား",
+      menu_language_desc: "Русский / English / မြန်မာ / ไทย",
+
+      language_title: "🌐 ဘာသာစကား",
+      language_description: "အက်ပ်အသုံးပြုမည့် ဘာသာစကားကို ရွေးချယ်ပါ။",
+      language_note: "ယခုအဆင့်တွင် အဓိကမီနူး၊ ဘာသာစကားရွေးချယ်သည့် စာမျက်နှာနှင့် နောက်သို့ ခလုတ်များကို ဘာသာပြန်ထားသည်။ ကျန်အပိုင်းများကို နောက်အဆင့်တွင် ဘာသာပြန်မည်။",
+
+      back: "← နောက်သို့",
+      saved: "ဘာသာစကားကို သိမ်းဆည်းပြီးပါပြီ"
+    },
+
+    th: {
+      main_subtitle: "แผงการทำงาน",
+
+      menu_dashboard: "สรุป",
+      menu_dashboard_desc: "พนักงาน การลงเวลา และเงินเดือน",
+
+      menu_photo: "ลงเวลาด้วยรูปภาพ",
+      menu_photo_desc: "เริ่มงานและเลิกงาน",
+
+      menu_timesheet: "ตารางเวลา",
+      menu_timesheet_desc: "วันทำงานและเงินเดือน",
+
+      menu_employees: "พนักงาน",
+      menu_employees_desc: "จัดการพนักงาน",
+
+      menu_payroll: "โบนัสและการจ่ายเงิน",
+      menu_payroll_desc: "โบนัส การหักเงิน และการจ่ายเงิน",
+
+      menu_language: "ภาษา",
+      menu_language_desc: "Русский / English / မြန်မာ / ไทย",
+
+      language_title: "🌐 ภาษา",
+      language_description: "เลือกภาษาของแอป",
+      language_note: "ในขั้นตอนนี้ได้แปลเมนูหลัก หน้าการเลือกภาษา และปุ่มย้อนกลับแล้ว ส่วนอื่น ๆ จะแปลในขั้นตอนถัดไป",
+
+      back: "← ย้อนกลับ",
+      saved: "บันทึกภาษาแล้ว"
+    }
+
+  };
+
+
+  function t(key) {
+
+    const languagePack =
+      translations[currentLanguage]
+      ||
+      translations.ru;
+
+    return (
+      languagePack[key]
+      ??
+      translations.ru[key]
+      ??
+      key
+    );
+
+  }
+
+
+  function applyLanguage() {
+
+    const languagePack =
+      translations[currentLanguage]
+      ?
+      currentLanguage
+      :
+      "ru";
+
+
+    currentLanguage =
+      languagePack;
+
+
+    document.documentElement.lang =
+      currentLanguage;
+
+
+    document
+      .querySelectorAll(
+        "[data-i18n]"
+      )
+      .forEach(
+        element => {
+
+          const key =
+            element.dataset.i18n;
+
+          if (
+            translations[currentLanguage][key] !==
+            undefined
+          ) {
+
+            element.textContent =
+              translations[currentLanguage][key];
+
+          }
+
+        }
+      );
+
+
+    renderLanguageSelection();
+
+  }
+
+
   function openLanguageScreen() {
 
     hideAllScreens();
@@ -3915,7 +4101,7 @@
         "active"
       );
 
-    renderLanguageSelection();
+    applyLanguage();
 
     window.scrollTo(
       0,
@@ -3957,23 +4143,11 @@
     );
 
 
-    renderLanguageSelection();
-
-
-    const messages = {
-      ru:
-        "Язык сохранён",
-      en:
-        "Language saved",
-      my:
-        "ဘာသာစကားကို သိမ်းဆည်းပြီးပါပြီ",
-      th:
-        "บันทึกภาษาแล้ว"
-    };
+    applyLanguage();
 
 
     showMessage(
-      messages[currentLanguage]
+      t("saved")
     );
 
   }
@@ -8008,6 +8182,8 @@
 
   }
 
+
+  applyLanguage();
 
   initializeApp();
 
