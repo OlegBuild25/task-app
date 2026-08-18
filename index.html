@@ -775,6 +775,126 @@
        TIMESHEET
     ================================= */
 
+    .timesheet-employee-list-view {
+      margin-top: 4px;
+    }
+
+    .timesheet-section-heading {
+      margin: 0 2px 10px;
+      color: #8e8e93;
+      font-size: 12px;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 0.04em;
+    }
+
+    .timesheet-employee-list {
+      display: flex;
+      flex-direction: column;
+      gap: 8px;
+    }
+
+    .timesheet-employee-row {
+      width: 100%;
+      min-height: 64px;
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      padding: 11px 13px;
+      border: 1px solid #ededf0;
+      border-radius: 16px;
+      background: #ffffff;
+      color: #1c1c1e;
+      text-align: left;
+      cursor: pointer;
+      -webkit-tap-highlight-color: transparent;
+    }
+
+    .timesheet-employee-row:active {
+      transform: scale(0.99);
+      background: #f7f7f8;
+    }
+
+    .timesheet-employee-row.inactive {
+      opacity: 0.58;
+    }
+
+    .timesheet-employee-avatar {
+      width: 42px;
+      height: 42px;
+      flex: 0 0 42px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      border-radius: 50%;
+      background: #eef4ff;
+      color: #315f9b;
+      font-size: 14px;
+      font-weight: 800;
+      text-transform: uppercase;
+    }
+
+    .timesheet-employee-main {
+      min-width: 0;
+      flex: 1;
+    }
+
+    .timesheet-employee-name {
+      overflow: hidden;
+      color: #1c1c1e;
+      font-size: 16px;
+      font-weight: 750;
+      line-height: 1.25;
+      text-overflow: ellipsis;
+      white-space: nowrap;
+    }
+
+    .timesheet-employee-meta {
+      margin-top: 3px;
+      overflow: hidden;
+      color: #8e8e93;
+      font-size: 12px;
+      text-overflow: ellipsis;
+      white-space: nowrap;
+    }
+
+    .timesheet-employee-badge {
+      flex: 0 0 auto;
+      padding: 5px 8px;
+      border-radius: 20px;
+      background: #f0f0f2;
+      color: #77777c;
+      font-size: 10px;
+      font-weight: 700;
+    }
+
+    .timesheet-employee-chevron {
+      flex: 0 0 auto;
+      color: #b5b5ba;
+      font-size: 22px;
+      line-height: 1;
+    }
+
+    .timesheet-detail-header {
+      margin-bottom: 12px;
+      padding: 14px 16px;
+      border-radius: 16px;
+      background: #f7f7f8;
+    }
+
+    .timesheet-detail-name {
+      color: #1c1c1e;
+      font-size: 20px;
+      font-weight: 800;
+    }
+
+    .timesheet-detail-hint {
+      margin-top: 4px;
+      color: #8e8e93;
+      font-size: 12px;
+      line-height: 1.35;
+    }
+
     .summary-card {
       padding: 16px;
       margin-bottom: 16px;
@@ -1585,6 +1705,63 @@
 
     .modal-field:last-child {
       margin-bottom: 0;
+    }
+
+    .staff-profile-photo-row {
+      display: flex;
+      align-items: center;
+      gap: 14px;
+      margin-top: 8px;
+    }
+
+    .staff-profile-photo-preview {
+      width: 82px;
+      height: 82px;
+      flex: 0 0 82px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      overflow: hidden;
+      border-radius: 16px;
+      background: #eef1f4;
+      color: #68707a;
+      font-size: 22px;
+      font-weight: 800;
+    }
+
+    .staff-profile-photo-preview img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+
+    .staff-profile-photo-controls {
+      min-width: 0;
+      flex: 1;
+    }
+
+    .staff-profile-photo-button {
+      width: 100%;
+      padding: 12px 14px;
+      border: none;
+      border-radius: 13px;
+      background: #eef6ff;
+      color: #1f6fae;
+      font-size: 13px;
+      font-weight: 800;
+      cursor: pointer;
+    }
+
+    .staff-profile-photo-button:disabled {
+      opacity: 0.5;
+      cursor: default;
+    }
+
+    .staff-profile-photo-hint {
+      margin-top: 7px;
+      color: #8e8e93;
+      font-size: 11px;
+      line-height: 1.35;
     }
 
     .save-button {
@@ -2507,10 +2684,19 @@
   >
 
     <button
+      id="timesheetMainBackButton"
       class="back-button"
       onclick="goToMain()"
     >
       <span data-i18n="back">← Назад</span>
+    </button>
+
+    <button
+      id="timesheetEmployeeBackButton"
+      class="back-button hidden"
+      onclick="backToTimesheetEmployees()"
+    >
+      <span data-i18n="timesheet_back_to_employees">← К сотрудникам</span>
     </button>
 
     <h2 class="page-title" data-i18n="timesheet_title">
@@ -2579,6 +2765,43 @@
 
         </select>
 
+      </div>
+
+    </div>
+
+
+    <div
+      id="timesheetEmployeeListView"
+      class="timesheet-employee-list-view hidden"
+    >
+
+      <div class="timesheet-section-heading" data-i18n="timesheet_employees_list">
+        Сотрудники
+      </div>
+
+      <div
+        id="timesheetEmployeeList"
+        class="timesheet-employee-list"
+      ></div>
+
+    </div>
+
+
+    <div
+      id="timesheetEmployeeDetailHeader"
+      class="timesheet-detail-header hidden"
+    >
+
+      <div
+        id="timesheetEmployeeDetailName"
+        class="timesheet-detail-name"
+      ></div>
+
+      <div
+        class="timesheet-detail-hint"
+        data-i18n="timesheet_employee_detail_hint"
+      >
+        Рабочие дни, фотоотметки и расчёт за выбранный месяц.
       </div>
 
     </div>
@@ -3182,6 +3405,54 @@
       <div class="modal-field">
 
         <label class="modal-label">
+          Фото сотрудника
+        </label>
+
+        <div class="staff-profile-photo-row">
+
+          <div
+            id="staffProfilePhotoPreview"
+            class="staff-profile-photo-preview"
+          >
+            👤
+          </div>
+
+          <div class="staff-profile-photo-controls">
+
+            <button
+              id="staffProfilePhotoButton"
+              class="staff-profile-photo-button"
+              type="button"
+              onclick="openEmployeeProfilePhotoPicker()"
+            >
+              📷 Выбрать фото
+            </button>
+
+            <div
+              id="staffProfilePhotoHint"
+              class="staff-profile-photo-hint"
+            >
+              JPG, PNG или WEBP
+            </div>
+
+          </div>
+
+        </div>
+
+        <input
+          id="staffProfilePhotoInput"
+          type="file"
+          accept="image/jpeg,image/png,image/webp"
+          onchange="handleEmployeeProfilePhoto(event)"
+          hidden
+        >
+
+      </div>
+
+
+      <div class="modal-field">
+
+        <label class="modal-label">
           Telegram ID
         </label>
 
@@ -3746,6 +4017,7 @@
 
 
   let timesheetData = null;
+  let selectedTimesheetEmployeeId = null;
   let dashboardData = null;
   let payrollData = null;
   let payrollAdvancesData = [];
@@ -4329,6 +4601,11 @@
       timesheet_month: "Месяц",
       timesheet_employee: "Сотрудник",
       timesheet_all_employees: "Все сотрудники",
+      timesheet_employees_list: "Сотрудники",
+      timesheet_back_to_employees: "← К сотрудникам",
+      timesheet_employee_detail_hint: "Рабочие дни, фотоотметки и расчёт за выбранный месяц.",
+      timesheet_inactive: "Неактивен",
+      timesheet_open_employee: "Открыть табель",
       timesheet_loading: "Загружаем табель...",
       timesheet_empty: "За выбранный месяц отметок пока нет.",
       timesheet_daily_rate: "Дневная ставка",
@@ -4441,6 +4718,11 @@
       timesheet_month: "Month",
       timesheet_employee: "Employee",
       timesheet_all_employees: "All employees",
+      timesheet_employees_list: "Employees",
+      timesheet_back_to_employees: "← Employees",
+      timesheet_employee_detail_hint: "Work days, photo attendance and calculation for the selected month.",
+      timesheet_inactive: "Inactive",
+      timesheet_open_employee: "Open timesheet",
       timesheet_loading: "Loading timesheet...",
       timesheet_empty: "No marks for the selected month yet.",
       timesheet_daily_rate: "Daily rate",
@@ -4553,6 +4835,11 @@
       timesheet_month: "လ",
       timesheet_employee: "ဝန်ထမ်း",
       timesheet_all_employees: "ဝန်ထမ်းအားလုံး",
+      timesheet_employees_list: "ဝန်ထမ်းများ",
+      timesheet_back_to_employees: "← ဝန်ထမ်းများ",
+      timesheet_employee_detail_hint: "ရွေးထားသောလအတွက် အလုပ်ရက်၊ ဓာတ်ပုံမှတ်တမ်းနှင့် တွက်ချက်မှု။",
+      timesheet_inactive: "အသုံးမပြု",
+      timesheet_open_employee: "အလုပ်ချိန်စာရင်းဖွင့်ရန်",
       timesheet_loading: "အလုပ်ချိန်စာရင်းကို ဖွင့်နေသည်...",
       timesheet_empty: "ရွေးထားသောလအတွက် မှတ်တမ်းမရှိသေးပါ။",
       timesheet_daily_rate: "တစ်ရက်လစာ",
@@ -4665,6 +4952,11 @@
       timesheet_month: "เดือน",
       timesheet_employee: "พนักงาน",
       timesheet_all_employees: "พนักงานทั้งหมด",
+      timesheet_employees_list: "พนักงาน",
+      timesheet_back_to_employees: "← พนักงาน",
+      timesheet_employee_detail_hint: "วันทำงาน การลงเวลาพร้อมรูป และการคำนวณของเดือนที่เลือก",
+      timesheet_inactive: "ไม่ใช้งาน",
+      timesheet_open_employee: "เปิดตารางเวลา",
       timesheet_loading: "กำลังโหลดตารางเวลา...",
       timesheet_empty: "ยังไม่มีรายการในเดือนที่เลือก",
       timesheet_daily_rate: "ค่าจ้างรายวัน",
@@ -6056,6 +6348,10 @@
 
   function openTimesheetScreen() {
 
+    selectedTimesheetEmployeeId =
+      null;
+
+
     hideAllScreens();
 
     document
@@ -6163,10 +6459,372 @@
         "employeeFilterGroup"
       );
 
-    const select =
-      document.getElementById(
-        "timesheetEmployee"
+
+    if (group) {
+
+      group.classList.add(
+        "hidden"
       );
+
+    }
+
+  }
+
+
+  function getTimesheetEmployeeName(employee) {
+
+    if (!employee) {
+      return "";
+    }
+
+
+    return (
+      employee.employee_name
+      ||
+      [
+        employee.first_name,
+        employee.last_name
+      ]
+      .filter(Boolean)
+      .join(" ")
+      ||
+      employee.username
+      ||
+      String(employee.id || "")
+    );
+
+  }
+
+
+  function getTimesheetEmployeeInitials(employee) {
+
+    const parts =
+      [
+        employee && employee.first_name,
+        employee && employee.last_name
+      ]
+      .filter(Boolean);
+
+
+    if (parts.length) {
+
+      return parts
+        .slice(0, 2)
+        .map(value =>
+          String(value)
+            .trim()
+            .charAt(0)
+        )
+        .join("")
+        .toUpperCase();
+
+    }
+
+
+    const name =
+      getTimesheetEmployeeName(
+        employee
+      );
+
+
+    return name
+      .trim()
+      .slice(0, 2)
+      .toUpperCase();
+
+  }
+
+
+  function renderTimesheetEmployeeList() {
+
+    const list =
+      document.getElementById(
+        "timesheetEmployeeList"
+      );
+
+
+    list.innerHTML = "";
+
+
+    const employees =
+      (
+        timesheetData.employees ||
+        []
+      )
+      .slice()
+      .sort(
+        (a, b) => {
+
+          if (
+            Boolean(a.is_active) !==
+            Boolean(b.is_active)
+          ) {
+
+            return a.is_active
+              ? -1
+              : 1;
+
+          }
+
+
+          return getTimesheetEmployeeName(a)
+            .localeCompare(
+              getTimesheetEmployeeName(b),
+              currentLanguage === "ru"
+                ? "ru"
+                : undefined
+            );
+
+        }
+      );
+
+
+    if (!employees.length) {
+
+      list.innerHTML = `
+        <div class="empty-card">
+          ${escapeHtml(t("timesheet_empty"))}
+        </div>
+      `;
+
+      return;
+
+    }
+
+
+    employees.forEach(
+      employee => {
+
+        const row =
+          document.createElement(
+            "button"
+          );
+
+
+        row.type =
+          "button";
+
+
+        row.className =
+          "timesheet-employee-row"
+          +
+          (
+            employee.is_active === false
+              ? " inactive"
+              : ""
+          );
+
+
+        const name =
+          getTimesheetEmployeeName(
+            employee
+          );
+
+
+        const secondary =
+          employee.username
+            ? "@" + employee.username
+            : t("timesheet_open_employee");
+
+
+        const inactiveBadge =
+          employee.is_active === false
+            ? `
+              <span class="timesheet-employee-badge">
+                ${escapeHtml(t("timesheet_inactive"))}
+              </span>
+            `
+            : "";
+
+
+        row.innerHTML = `
+
+          <span class="timesheet-employee-avatar">
+            ${escapeHtml(getTimesheetEmployeeInitials(employee))}
+          </span>
+
+          <span class="timesheet-employee-main">
+
+            <span class="timesheet-employee-name">
+              ${escapeHtml(name)}
+            </span>
+
+            <span class="timesheet-employee-meta">
+              ${escapeHtml(secondary)}
+            </span>
+
+          </span>
+
+          ${inactiveBadge}
+
+          <span class="timesheet-employee-chevron">
+            ›
+          </span>
+
+        `;
+
+
+        row.onclick =
+          () =>
+            openTimesheetEmployee(
+              employee.id
+            );
+
+
+        list.appendChild(
+          row
+        );
+
+      }
+    );
+
+  }
+
+
+  function openTimesheetEmployee(employeeId) {
+
+    selectedTimesheetEmployeeId =
+      String(employeeId);
+
+
+    renderTimesheet();
+
+
+    window.scrollTo(
+      {
+        top: 0,
+        behavior: "smooth"
+      }
+    );
+
+  }
+
+
+  function backToTimesheetEmployees() {
+
+    selectedTimesheetEmployeeId =
+      null;
+
+
+    renderTimesheet();
+
+
+    window.scrollTo(
+      {
+        top: 0,
+        behavior: "smooth"
+      }
+    );
+
+  }
+
+
+  function renderTimesheet() {
+
+    if (!timesheetData) {
+      return;
+    }
+
+
+    const employeeListView =
+      document.getElementById(
+        "timesheetEmployeeListView"
+      );
+
+    const detailHeader =
+      document.getElementById(
+        "timesheetEmployeeDetailHeader"
+      );
+
+    const detailName =
+      document.getElementById(
+        "timesheetEmployeeDetailName"
+      );
+
+    const mainBackButton =
+      document.getElementById(
+        "timesheetMainBackButton"
+      );
+
+    const employeeBackButton =
+      document.getElementById(
+        "timesheetEmployeeBackButton"
+      );
+
+    const summaryContainer =
+      document.getElementById(
+        "summaryContainer"
+      );
+
+    const list =
+      document.getElementById(
+        "timesheetList"
+      );
+
+    const empty =
+      document.getElementById(
+        "timesheetEmpty"
+      );
+
+
+    if (
+      timesheetData.role ===
+      "admin"
+      &&
+      !selectedTimesheetEmployeeId
+    ) {
+
+      employeeListView.classList.remove(
+        "hidden"
+      );
+
+      detailHeader.classList.add(
+        "hidden"
+      );
+
+      summaryContainer.classList.add(
+        "hidden"
+      );
+
+      list.classList.add(
+        "hidden"
+      );
+
+      empty.classList.add(
+        "hidden"
+      );
+
+      mainBackButton.classList.remove(
+        "hidden"
+      );
+
+      employeeBackButton.classList.add(
+        "hidden"
+      );
+
+
+      renderTimesheetEmployeeList();
+
+      return;
+
+    }
+
+
+    employeeListView.classList.add(
+      "hidden"
+    );
+
+    summaryContainer.classList.remove(
+      "hidden"
+    );
+
+    list.classList.remove(
+      "hidden"
+    );
+
+
+    let employeeId =
+      selectedTimesheetEmployeeId;
 
 
     if (
@@ -6174,85 +6832,13 @@
       "admin"
     ) {
 
-      group.classList.add(
-        "hidden"
-      );
-
-      return;
-
-    }
-
-
-    group.classList.remove(
-      "hidden"
-    );
-
-
-    const currentValue =
-      select.value;
-
-
-    select.innerHTML =
-      '<option value="all">' + escapeHtml(t("timesheet_all_employees")) + '</option>';
-
-
-    (
-      timesheetData.employees ||
-      []
-    )
-    .forEach(
-      employee => {
-
-        const option =
-          document.createElement(
-            "option"
-          );
-
-
-        option.value =
-          String(
-            employee.id
-          );
-
-
-        option.innerText =
-          [
-            employee.first_name,
-            employee.last_name
-          ]
-          .filter(Boolean)
-          .join(" ");
-
-
-        select.appendChild(
-          option
+      employeeId =
+        String(
+          timesheetData.current_user.id
         );
 
-      }
-    );
-
-
-    if (
-      Array
-        .from(
-          select.options
-        )
-        .some(
-          option =>
-            option.value ===
-            currentValue
-        )
-    ) {
-
-      select.value =
-        currentValue;
-
     }
 
-  }
-
-
-  function renderTimesheet() {
 
     let days =
       timesheetData.daily_timesheet ||
@@ -6263,46 +6849,87 @@
       [];
 
 
+    if (employeeId) {
+
+      days =
+        days.filter(
+          row =>
+            String(
+              row.employee_id
+            ) ===
+            String(employeeId)
+        );
+
+
+      summaries =
+        summaries.filter(
+          row =>
+            String(
+              row.employee_id
+            ) ===
+            String(employeeId)
+        );
+
+    }
+
+
+    let selectedEmployee =
+      null;
+
+
     if (
       timesheetData.role ===
       "admin"
     ) {
 
-      const selected =
-        document
-          .getElementById(
-            "timesheetEmployee"
-          )
-          .value;
+      selectedEmployee =
+        (
+          timesheetData.employees ||
+          []
+        )
+        .find(
+          item =>
+            String(item.id) ===
+            String(employeeId)
+        )
+        ||
+        summaries[0]
+        ||
+        days[0]
+        ||
+        null;
 
 
-      if (
-        selected !==
-        "all"
-      ) {
+      detailName.innerText =
+        getTimesheetEmployeeName(
+          selectedEmployee
+        );
 
-        days =
-          days.filter(
-            row =>
-              String(
-                row.employee_id
-              )
-              ===
-              selected
-          );
+      detailHeader.classList.remove(
+        "hidden"
+      );
 
+      mainBackButton.classList.add(
+        "hidden"
+      );
 
-        summaries =
-          summaries.filter(
-            row =>
-              String(
-                row.employee_id
-              )
-              ===
-              selected
-          );
+      employeeBackButton.classList.remove(
+        "hidden"
+      );
 
-      }
+    } else {
+
+      detailHeader.classList.add(
+        "hidden"
+      );
+
+      mainBackButton.classList.remove(
+        "hidden"
+      );
+
+      employeeBackButton.classList.add(
+        "hidden"
+      );
 
     }
 
@@ -6358,9 +6985,17 @@
 
         card.innerHTML = `
 
-          <div class="summary-name">
-            ${escapeHtml(name)}
-          </div>
+          ${
+            timesheetData.role === "admin"
+            &&
+            selectedTimesheetEmployeeId
+              ? ""
+              : `
+                <div class="summary-name">
+                  ${escapeHtml(name)}
+                </div>
+              `
+          }
 
           <div class="summary-rate">
             ${t("timesheet_daily_rate")}:
@@ -7468,12 +8103,331 @@
   }
 
 
+  function getEmployeeInitials(
+    employee
+  ) {
+
+    if (!employee) {
+      return "👤";
+    }
+
+
+    const initials =
+      [
+        employee.first_name,
+        employee.last_name
+      ]
+      .filter(Boolean)
+      .map(
+        value =>
+          String(value)
+            .trim()
+            .charAt(0)
+            .toUpperCase()
+      )
+      .join("")
+      .slice(0, 2);
+
+
+    return initials || "👤";
+
+  }
+
+
+  function renderEmployeeProfilePhotoField(
+    employee
+  ) {
+
+    const preview =
+      document.getElementById(
+        "staffProfilePhotoPreview"
+      );
+
+    const button =
+      document.getElementById(
+        "staffProfilePhotoButton"
+      );
+
+    const hint =
+      document.getElementById(
+        "staffProfilePhotoHint"
+      );
+
+    const input =
+      document.getElementById(
+        "staffProfilePhotoInput"
+      );
+
+
+    preview.innerHTML = "";
+
+
+    if (
+      employee &&
+      employee.profile_photo_url
+    ) {
+
+      const image =
+        document.createElement(
+          "img"
+        );
+
+      image.src =
+        employee.profile_photo_url;
+
+      image.alt =
+        "Фото сотрудника";
+
+      preview.appendChild(
+        image
+      );
+
+    } else {
+
+      const fallback =
+        document.createElement(
+          "span"
+        );
+
+      fallback.textContent =
+        getEmployeeInitials(
+          employee
+        );
+
+      preview.appendChild(
+        fallback
+      );
+
+    }
+
+
+    button.disabled =
+      !employee;
+
+    button.textContent =
+      employee
+        ?
+        (
+          employee.profile_photo_url
+            ?
+            "📷 Заменить фото"
+            :
+            "📷 Выбрать фото"
+        )
+        :
+        "📷 Выбрать фото";
+
+
+    hint.textContent =
+      employee
+        ?
+        "JPG, PNG или WEBP. Фото сохраняется сразу после выбора."
+        :
+        "Сначала сохраните нового сотрудника, затем откройте его редактирование и добавьте фото.";
+
+
+    input.value = "";
+
+  }
+
+
+  function openEmployeeProfilePhotoPicker() {
+
+    if (
+      !editingEmployee ||
+      !editingEmployee.id
+    ) {
+
+      showMessage(
+        "Сначала сохраните сотрудника"
+      );
+
+      return;
+
+    }
+
+
+    document
+      .getElementById(
+        "staffProfilePhotoInput"
+      )
+      .click();
+
+  }
+
+
+  async function handleEmployeeProfilePhoto(
+    event
+  ) {
+
+    const file =
+      event.target.files &&
+      event.target.files[0];
+
+
+    if (!file) {
+      return;
+    }
+
+
+    if (
+      !editingEmployee ||
+      !editingEmployee.id
+    ) {
+
+      showMessage(
+        "Сначала сохраните сотрудника"
+      );
+
+      event.target.value = "";
+      return;
+
+    }
+
+
+    if (
+      ![
+        "image/jpeg",
+        "image/png",
+        "image/webp"
+      ].includes(
+        file.type
+      )
+    ) {
+
+      showMessage(
+        "Поддерживаются только JPG, PNG и WEBP"
+      );
+
+      event.target.value = "";
+      return;
+
+    }
+
+
+    const button =
+      document.getElementById(
+        "staffProfilePhotoButton"
+      );
+
+    const preview =
+      document.getElementById(
+        "staffProfilePhotoPreview"
+      );
+
+
+    button.disabled = true;
+    button.textContent =
+      "⏳ Загрузка...";
+
+
+    try {
+
+      const compressed =
+        await compressImage(
+          file,
+          1000,
+          0.86
+        );
+
+
+      preview.innerHTML =
+        `<img src="${compressed.preview}" alt="Фото сотрудника">`;
+
+
+      const result =
+        await callApi(
+          {
+            action:
+              "upload_employee_profile_photo",
+
+            employee_id:
+              editingEmployee.id,
+
+            photo_base64:
+              compressed.base64,
+
+            mime_type:
+              compressed.mime
+          }
+        );
+
+
+      const updatedEmployee =
+        result.employee || {};
+
+
+      editingEmployee =
+        {
+          ...editingEmployee,
+          ...updatedEmployee
+        };
+
+
+      const employeeIndex =
+        employeesData.findIndex(
+          item =>
+            Number(item.id) ===
+            Number(editingEmployee.id)
+        );
+
+
+      if (
+        employeeIndex >= 0
+      ) {
+
+        employeesData[
+          employeeIndex
+        ] =
+          {
+            ...employeesData[
+              employeeIndex
+            ],
+            ...updatedEmployee
+          };
+
+      }
+
+
+      renderEmployeeProfilePhotoField(
+        editingEmployee
+      );
+
+
+      showMessage(
+        "Фото сотрудника сохранено"
+      );
+
+    } catch (error) {
+
+      renderEmployeeProfilePhotoField(
+        editingEmployee
+      );
+
+      showMessage(
+        error.message
+      );
+
+    } finally {
+
+      event.target.value = "";
+
+    }
+
+  }
+
+
   function openEmployeeModal(
     employee = null
   ) {
 
     editingEmployee =
       employee;
+
+
+    renderEmployeeProfilePhotoField(
+      employee
+    );
 
 
     setText(
