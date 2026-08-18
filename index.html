@@ -1178,18 +1178,29 @@
     ================================= */
 
     .payroll-toolbar {
+      display: flex;
+      flex-direction: column;
+      gap: 8px;
       margin-bottom: 16px;
     }
 
-    .payroll-add-button {
+    .payroll-add-button,
+    .payroll-advance-button {
       width: 100%;
       padding: 16px;
       border: none;
       border-radius: 16px;
-      background: #2481cc;
       color: #ffffff;
       font-weight: 700;
       cursor: pointer;
+    }
+
+    .payroll-add-button {
+      background: #2481cc;
+    }
+
+    .payroll-advance-button {
+      background: #2a8f63;
     }
 
     .payroll-list {
@@ -2623,6 +2634,13 @@
         + Добавить премию / удержание
       </button>
 
+      <button
+        class="payroll-advance-button"
+        onclick="openAdvanceModal()"
+      >
+        💵 Выдать аванс
+      </button>
+
     </div>
 
 
@@ -3298,6 +3316,111 @@
     <button
       class="close-modal-button"
       onclick="closeModal('adjustmentModal')"
+    >
+      Отмена
+    </button>
+
+  </div>
+
+</div>
+
+
+<!-- ================================
+     ADVANCE MODAL
+================================= -->
+
+<div
+  id="advanceModal"
+  class="modal-overlay"
+  onclick="overlayClose(event, 'advanceModal')"
+>
+
+  <div class="modal">
+
+    <div class="modal-handle"></div>
+
+    <div class="modal-title">
+      💵 Выдать аванс
+    </div>
+
+
+    <div class="modal-card">
+
+      <div class="modal-field">
+
+        <label class="modal-label">
+          Сотрудник
+        </label>
+
+        <select
+          id="advanceEmployee"
+          class="modal-select"
+        ></select>
+
+      </div>
+
+
+      <div class="modal-field">
+
+        <label class="modal-label">
+          Дата выдачи
+        </label>
+
+        <input
+          id="advanceDate"
+          class="modal-input"
+          type="date"
+        >
+
+      </div>
+
+
+      <div class="modal-field">
+
+        <label class="modal-label">
+          Сумма
+        </label>
+
+        <input
+          id="advanceAmount"
+          class="modal-input"
+          type="number"
+          min="0"
+          step="0.01"
+          inputmode="decimal"
+        >
+
+      </div>
+
+
+      <div class="modal-field">
+
+        <label class="modal-label">
+          Комментарий
+        </label>
+
+        <textarea
+          id="advanceNote"
+          class="modal-textarea"
+          placeholder="Необязательно"
+        ></textarea>
+
+      </div>
+
+    </div>
+
+
+    <button
+      class="save-button"
+      onclick="saveAdvance()"
+    >
+      ✓ Сохранить аванс
+    </button>
+
+
+    <button
+      class="close-modal-button"
+      onclick="closeModal('advanceModal')"
     >
       Отмена
     </button>
@@ -8300,6 +8423,252 @@
 
 
       await loadPayroll();
+
+    } catch (error) {
+
+      showMessage(
+        error.message
+      );
+
+    }
+
+  }
+
+
+  function openAdvanceModal() {
+
+    const select =
+      document.getElementById(
+        "advanceEmployee"
+      );
+
+
+    select.innerHTML =
+      "";
+
+
+    (
+      payrollData.employees ||
+      []
+    )
+    .filter(
+      employee =>
+        employee.is_active
+    )
+    .forEach(
+      employee => {
+
+        const option =
+          document.createElement(
+            "option"
+          );
+
+
+        option.value =
+          employee.id;
+
+        option.innerText =
+          [
+            employee.first_name,
+            employee.last_name
+          ]
+          .filter(Boolean)
+          .join(" ");
+
+
+        select.appendChild(
+          option
+        );
+
+      }
+    );
+
+
+    const selectedMonth =
+      document
+        .getElementById(
+          "payrollMonth"
+        )
+        .value;
+
+
+    const dateInput =
+      document.getElementById(
+        "advanceDate"
+      );
+
+
+    const [year, month] =
+      selectedMonth
+        .split("-")
+        .map(Number);
+
+
+    const monthStart =
+      `${selectedMonth}-01`;
+
+
+    const monthEnd =
+      localDateISO(
+        new Date(
+          year,
+          month,
+          0
+        )
+      );
+
+
+    const today =
+      new Date();
+
+
+    dateInput.min =
+      monthStart;
+
+    dateInput.max =
+      monthEnd;
+
+    dateInput.value =
+      localMonthISO(today) ===
+      selectedMonth
+        ?
+        localDateISO(today)
+        :
+        monthStart;
+
+
+    document
+      .getElementById(
+        "advanceAmount"
+      )
+      .value =
+      "";
+
+
+    document
+      .getElementById(
+        "advanceNote"
+      )
+      .value =
+      "";
+
+
+    openModal(
+      "advanceModal"
+    );
+
+  }
+
+
+  async function saveAdvance() {
+
+    const employeeId =
+      Number(
+        document
+          .getElementById(
+            "advanceEmployee"
+          )
+          .value
+      );
+
+
+    const advanceDate =
+      document
+        .getElementById(
+          "advanceDate"
+        )
+        .value;
+
+
+    const amount =
+      Number(
+        document
+          .getElementById(
+            "advanceAmount"
+          )
+          .value
+      );
+
+
+    const selectedMonth =
+      document
+        .getElementById(
+          "payrollMonth"
+        )
+        .value;
+
+
+    if (
+      !employeeId ||
+      !advanceDate ||
+      !Number.isFinite(amount) ||
+      amount <= 0
+    ) {
+
+      showMessage(
+        "Выберите сотрудника, дату и укажите сумму"
+      );
+
+      return;
+
+    }
+
+
+    if (
+      advanceDate.slice(
+        0,
+        7
+      ) !==
+      selectedMonth
+    ) {
+
+      showMessage(
+        "Дата аванса должна быть в выбранном месяце"
+      );
+
+      return;
+
+    }
+
+
+    try {
+
+      await callApi(
+        {
+          action:
+            "create_payroll_advance",
+
+          employee_id:
+            employeeId,
+
+          month:
+            selectedMonth,
+
+          advance_date:
+            advanceDate,
+
+          amount:
+            amount,
+
+          note:
+            document
+              .getElementById(
+                "advanceNote"
+              )
+              .value
+              .trim()
+        }
+      );
+
+
+      closeModal(
+        "advanceModal"
+      );
+
+
+      showMessage(
+        "Аванс сохранён"
+      );
 
     } catch (error) {
 
