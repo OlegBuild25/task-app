@@ -956,6 +956,8 @@
     }
 
     .timesheet-salary-total-col {
+      position: sticky;
+      z-index: 2;
       width: 54px;
       min-width: 54px;
       max-width: 54px;
@@ -965,10 +967,25 @@
       font-weight: 800;
     }
 
+    .timesheet-salary-hours-col {
+      right: 130px;
+      box-shadow: -1px 0 0 #e8e8eb;
+    }
+
+    .timesheet-salary-days-col {
+      right: 76px;
+    }
+
     .timesheet-salary-money-col {
+      right: 0;
       width: 76px;
       min-width: 76px;
       max-width: 76px;
+    }
+
+    .timesheet-salary-table thead .timesheet-salary-total-col {
+      z-index: 5;
+      background: #f7f7f8;
     }
 
     .timesheet-salary-stats-note {
@@ -7324,11 +7341,11 @@
 
               ${dayCells}
 
-              <td class="timesheet-salary-total-col">
+              <td class="timesheet-salary-total-col timesheet-salary-hours-col">
                 ${formatStatsNumber(hoursTotal)}
               </td>
 
-              <td class="timesheet-salary-total-col">
+              <td class="timesheet-salary-total-col timesheet-salary-days-col">
                 ${formatStatsNumber(paidDaysTotal)}
               </td>
 
@@ -7353,11 +7370,11 @@
 
           ${dayHeaders}
 
-          <th class="timesheet-salary-total-col">
+          <th class="timesheet-salary-total-col timesheet-salary-hours-col">
             ${escapeHtml(t("timesheet_stats_hours"))}
           </th>
 
-          <th class="timesheet-salary-total-col">
+          <th class="timesheet-salary-total-col timesheet-salary-days-col">
             ${escapeHtml(t("timesheet_stats_days"))}
           </th>
 
