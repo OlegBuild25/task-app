@@ -1295,6 +1295,37 @@
       font-weight: 800;
     }
 
+    .payroll-final-breakdown {
+      display: flex;
+      flex-direction: column;
+      gap: 7px;
+      margin-bottom: 11px;
+    }
+
+    .payroll-final-row {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 12px;
+      color: #55708a;
+      font-size: 12px;
+    }
+
+    .payroll-final-row strong {
+      color: #1f2937;
+      font-size: 14px;
+    }
+
+    .payroll-final-row.advance strong {
+      color: #b42318;
+    }
+
+    .payroll-final-divider {
+      height: 1px;
+      margin-bottom: 11px;
+      background: rgba(23, 105, 170, 0.14);
+    }
+
     .payment-info {
       margin-top: 10px;
       padding: 13px;
@@ -4319,6 +4350,9 @@
       payroll_deductions: "Удержания",
       payroll_daily_rate: "Дневная ставка",
       payroll_to_pay: "К выплате",
+      payroll_accrued: "Начислено",
+      payroll_advances: "Авансы",
+      payroll_remaining: "Осталось выплатить",
       payroll_paid_info: "✅ Выплачено:",
       payroll_changed_after_payment: "⚠️ Расчёт изменился после выплаты.",
       payroll_difference: "Разница",
@@ -4428,6 +4462,9 @@
       payroll_deductions: "Deductions",
       payroll_daily_rate: "Daily rate",
       payroll_to_pay: "To pay",
+      payroll_accrued: "Accrued",
+      payroll_advances: "Advances",
+      payroll_remaining: "Remaining to pay",
       payroll_paid_info: "✅ Paid:",
       payroll_changed_after_payment: "⚠️ Calculation changed after payment.",
       payroll_difference: "Difference",
@@ -4537,6 +4574,9 @@
       payroll_deductions: "ဖြတ်တောက်မှု",
       payroll_daily_rate: "တစ်ရက်လစာ",
       payroll_to_pay: "ပေးရန်",
+      payroll_accrued: "စုစုပေါင်းတွက်ချက်ထားသည်",
+      payroll_advances: "ကြိုတင်ငွေ",
+      payroll_remaining: "ကျန်ပေးရန်",
       payroll_paid_info: "✅ ပေးချေပြီး:",
       payroll_changed_after_payment: "⚠️ ပေးချေပြီးနောက် တွက်ချက်မှု ပြောင်းသွားသည်။",
       payroll_difference: "ကွာခြားချက်",
@@ -4646,6 +4686,9 @@
       payroll_deductions: "หักเงิน",
       payroll_daily_rate: "ค่าจ้างรายวัน",
       payroll_to_pay: "ยอดที่ต้องจ่าย",
+      payroll_accrued: "ยอดคำนวณ",
+      payroll_advances: "เงินล่วงหน้า",
+      payroll_remaining: "ยอดคงเหลือที่ต้องจ่าย",
       payroll_paid_info: "✅ จ่ายแล้ว:",
       payroll_changed_after_payment: "⚠️ ยอดคำนวณเปลี่ยนหลังจากจ่ายเงินแล้ว",
       payroll_difference: "ส่วนต่าง",
@@ -8200,12 +8243,35 @@
 
           <div class="payroll-final">
 
+            <div class="payroll-final-breakdown">
+
+              <div class="payroll-final-row">
+                <span>${t("payroll_accrued")}</span>
+                <strong>
+                  ${formatMoney(row.final_salary, row.currency)}
+                </strong>
+              </div>
+
+              <div class="payroll-final-row advance">
+                <span>${t("payroll_advances")}</span>
+                <strong>
+                  −${formatMoney(row.total_advance || 0, row.currency)}
+                </strong>
+              </div>
+
+            </div>
+
+            <div class="payroll-final-divider"></div>
+
             <div class="payroll-final-label">
-              ${t("payroll_to_pay")}
+              ${t("payroll_remaining")}
             </div>
 
             <div class="payroll-final-value">
-              ${formatMoney(row.final_salary, row.currency)}
+              ${formatMoney(
+                row.remaining_salary ?? row.final_salary,
+                row.currency
+              )}
             </div>
 
           </div>
@@ -9416,7 +9482,7 @@
     setText(
       "paymentAmount",
       formatMoney(
-        row.final_salary,
+        row.remaining_salary ?? row.final_salary,
         row.currency
       )
     );
