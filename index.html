@@ -728,6 +728,24 @@
       padding: 0 12px;
     }
 
+    .timesheet-month-picker {
+      display: grid;
+      grid-template-columns: 1fr 110px;
+      gap: 8px;
+    }
+
+    .timesheet-month-select,
+    .timesheet-year-input {
+      width: 100%;
+      height: 48px;
+      padding: 0 12px;
+      border: 1px solid #e1e1e6;
+      border-radius: 13px;
+      background: #f7f7f8;
+      color: #1c1c1e;
+      outline: none;
+    }
+
     .modal-textarea {
       min-height: 90px;
       padding: 12px;
@@ -2341,11 +2359,29 @@
           Месяц
         </label>
 
+        <div class="timesheet-month-picker">
+
+          <select
+            id="timesheetMonthName"
+            class="timesheet-month-select"
+            onchange="changeTimesheetMonth()"
+          ></select>
+
+          <input
+            id="timesheetYear"
+            class="timesheet-year-input"
+            type="number"
+            min="2000"
+            max="2100"
+            inputmode="numeric"
+            onchange="changeTimesheetMonth()"
+          >
+
+        </div>
+
         <input
           id="timesheetMonth"
-          class="month-input"
-          type="month"
-          onchange="loadTimesheet()"
+          type="hidden"
         >
 
       </div>
@@ -3959,6 +3995,19 @@
       photo_saved: "✓ Фотоотметка сохранена",
       photo_error: "Не удалось обработать фото",
 
+      timesheet_month_1: "Январь",
+      timesheet_month_2: "Февраль",
+      timesheet_month_3: "Март",
+      timesheet_month_4: "Апрель",
+      timesheet_month_5: "Май",
+      timesheet_month_6: "Июнь",
+      timesheet_month_7: "Июль",
+      timesheet_month_8: "Август",
+      timesheet_month_9: "Сентябрь",
+      timesheet_month_10: "Октябрь",
+      timesheet_month_11: "Ноябрь",
+      timesheet_month_12: "Декабрь",
+
       timesheet_title: "📊 Табель",
       timesheet_description: "Рабочие дни, фотоотметки и зарплата.",
       timesheet_month: "Месяц",
@@ -4035,6 +4084,19 @@
       photo_send: "✓ Send attendance mark",
       photo_saved: "✓ Photo attendance saved",
       photo_error: "Could not process the photo",
+
+      timesheet_month_1: "January",
+      timesheet_month_2: "February",
+      timesheet_month_3: "March",
+      timesheet_month_4: "April",
+      timesheet_month_5: "May",
+      timesheet_month_6: "June",
+      timesheet_month_7: "July",
+      timesheet_month_8: "August",
+      timesheet_month_9: "September",
+      timesheet_month_10: "October",
+      timesheet_month_11: "November",
+      timesheet_month_12: "December",
 
       timesheet_title: "📊 Timesheet",
       timesheet_description: "Work days, photo attendance and salary.",
@@ -4113,6 +4175,19 @@
       photo_saved: "✓ ဓာတ်ပုံမှတ်တမ်း သိမ်းဆည်းပြီးပါပြီ",
       photo_error: "ဓာတ်ပုံကို စီမံမရပါ",
 
+      timesheet_month_1: "ဇန်နဝါရီ",
+      timesheet_month_2: "ဖေဖော်ဝါရီ",
+      timesheet_month_3: "မတ်",
+      timesheet_month_4: "ဧပြီ",
+      timesheet_month_5: "မေ",
+      timesheet_month_6: "ဇွန်",
+      timesheet_month_7: "ဇူလိုင်",
+      timesheet_month_8: "ဩဂုတ်",
+      timesheet_month_9: "စက်တင်ဘာ",
+      timesheet_month_10: "အောက်တိုဘာ",
+      timesheet_month_11: "နိုဝင်ဘာ",
+      timesheet_month_12: "ဒီဇင်ဘာ",
+
       timesheet_title: "📊 အလုပ်ချိန်စာရင်း",
       timesheet_description: "အလုပ်ရက်၊ ဓာတ်ပုံမှတ်တမ်းနှင့် လစာ။",
       timesheet_month: "လ",
@@ -4189,6 +4264,19 @@
       photo_send: "✓ ส่งการลงเวลา",
       photo_saved: "✓ บันทึกการลงเวลาแล้ว",
       photo_error: "ไม่สามารถประมวลผลรูปภาพได้",
+
+      timesheet_month_1: "มกราคม",
+      timesheet_month_2: "กุมภาพันธ์",
+      timesheet_month_3: "มีนาคม",
+      timesheet_month_4: "เมษายน",
+      timesheet_month_5: "พฤษภาคม",
+      timesheet_month_6: "มิถุนายน",
+      timesheet_month_7: "กรกฎาคม",
+      timesheet_month_8: "สิงหาคม",
+      timesheet_month_9: "กันยายน",
+      timesheet_month_10: "ตุลาคม",
+      timesheet_month_11: "พฤศจิกายน",
+      timesheet_month_12: "ธันวาคม",
 
       timesheet_title: "📊 ตารางเวลา",
       timesheet_description: "วันทำงาน การลงเวลาด้วยรูปภาพ และเงินเดือน",
@@ -4299,6 +4387,7 @@
         )
     ) {
 
+      renderTimesheetMonthPicker();
       setupEmployeeFilter();
       renderTimesheet();
 
@@ -5411,6 +5500,129 @@
      TIMESHEET
   ================================= */
 
+  function renderTimesheetMonthPicker() {
+
+    const hidden =
+      document.getElementById(
+        "timesheetMonth"
+      );
+
+    const select =
+      document.getElementById(
+        "timesheetMonthName"
+      );
+
+    const yearInput =
+      document.getElementById(
+        "timesheetYear"
+      );
+
+
+    const value =
+      hidden.value ||
+      localMonthISO(
+        new Date()
+      );
+
+
+    const parts =
+      value.split("-");
+
+    const year =
+      parts[0];
+
+    const month =
+      parts[1];
+
+
+    select.innerHTML =
+      "";
+
+
+    for (
+      let i = 1;
+      i <= 12;
+      i++
+    ) {
+
+      const option =
+        document.createElement(
+          "option"
+        );
+
+      option.value =
+        String(i).padStart(
+          2,
+          "0"
+        );
+
+      option.innerText =
+        t(
+          "timesheet_month_" + i
+        );
+
+      select.appendChild(
+        option
+      );
+
+    }
+
+
+    select.value =
+      month;
+
+    yearInput.value =
+      year;
+
+  }
+
+
+  function changeTimesheetMonth() {
+
+    const select =
+      document.getElementById(
+        "timesheetMonthName"
+      );
+
+    const yearInput =
+      document.getElementById(
+        "timesheetYear"
+      );
+
+    const hidden =
+      document.getElementById(
+        "timesheetMonth"
+      );
+
+
+    const year =
+      String(
+        yearInput.value ||
+        new Date().getFullYear()
+      );
+
+    const month =
+      String(
+        select.value ||
+        new Date().getMonth() + 1
+      )
+      .padStart(
+        2,
+        "0"
+      );
+
+
+    hidden.value =
+      year +
+      "-" +
+      month;
+
+
+    loadTimesheet();
+
+  }
+
+
   function openTimesheetScreen() {
 
     hideAllScreens();
@@ -5439,6 +5651,8 @@
 
     }
 
+
+    renderTimesheetMonthPicker();
 
     loadTimesheet();
 
