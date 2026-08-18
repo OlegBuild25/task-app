@@ -2181,7 +2181,23 @@
           <div class="finance-item">
 
             <div class="finance-label">
-              Выплачено
+              Авансы
+            </div>
+
+            <div
+              id="dashAdvances"
+              class="finance-value red-text"
+            >
+              0 THB
+            </div>
+
+          </div>
+
+
+          <div class="finance-item">
+
+            <div class="finance-label">
+              Финальные выплаты
             </div>
 
             <div
@@ -5220,9 +5236,19 @@
     );
 
     setText(
+      "dashAdvances",
+      "−"
+      +
+      formatMoney(
+        month.advance_total,
+        dashboardData.currency
+      )
+    );
+
+    setText(
       "dashPaid",
       formatMoney(
-        month.paid_total,
+        month.final_paid_total,
         dashboardData.currency
       )
     );
