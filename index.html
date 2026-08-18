@@ -1398,6 +1398,88 @@
       font-weight: 700;
     }
 
+    .advances-summary {
+      margin-bottom: 10px;
+      padding: 13px 14px;
+      border-radius: 15px;
+      background: #edf8f2;
+      color: #166b4a;
+      font-size: 13px;
+      line-height: 1.45;
+    }
+
+    .advances-summary strong {
+      font-size: 16px;
+    }
+
+    .advance-history-card {
+      margin-bottom: 8px;
+      padding: 14px;
+      border-radius: 15px;
+      background: #ffffff;
+    }
+
+    .advance-history-card.cancelled {
+      opacity: 0.65;
+    }
+
+    .advance-history-row {
+      display: flex;
+      justify-content: space-between;
+      gap: 10px;
+      align-items: flex-start;
+    }
+
+    .advance-history-name {
+      font-weight: 750;
+    }
+
+    .advance-history-amount {
+      font-weight: 800;
+      color: #2a8f63;
+      white-space: nowrap;
+    }
+
+    .advance-history-card.cancelled .advance-history-amount {
+      color: #8e8e93;
+      text-decoration: line-through;
+    }
+
+    .advance-history-meta {
+      margin-top: 6px;
+      color: #8e8e93;
+      font-size: 12px;
+    }
+
+    .advance-history-note {
+      margin-top: 7px;
+      color: #5d5d62;
+      font-size: 13px;
+    }
+
+    .advance-history-status {
+      display: inline-block;
+      margin-top: 8px;
+      padding: 5px 8px;
+      border-radius: 999px;
+      background: #e9f8ef;
+      color: #157347;
+      font-size: 11px;
+      font-weight: 800;
+    }
+
+    .advance-history-status.cancelled {
+      background: #f1f1f3;
+      color: #6e6e73;
+    }
+
+    .advance-history-cancel-info {
+      margin-top: 7px;
+      color: #8e8e93;
+      font-size: 11px;
+      line-height: 1.4;
+    }
+
 
     /* ================================
        MODALS
@@ -2665,6 +2747,20 @@
 
 
     <div
+      id="advancesSection"
+      class="hidden"
+    >
+
+      <div class="adjustments-title">
+        💵 Авансы за месяц
+      </div>
+
+      <div id="advancesList"></div>
+
+    </div>
+
+
+    <div
       id="adjustmentsSection"
       class="hidden"
     >
@@ -3592,6 +3688,7 @@
   let timesheetData = null;
   let dashboardData = null;
   let payrollData = null;
+  let payrollAdvancesData = [];
 
   let employeesData = [];
   let employeeRequests = [];
@@ -7878,6 +7975,12 @@
       );
 
 
+    payrollAdvancesData =
+      [];
+
+    renderPayrollAdvances();
+
+
     loading.classList.remove(
       "hidden"
     );
@@ -7906,6 +8009,8 @@
 
 
       renderPayroll();
+
+      await loadPayrollAdvances();
 
     } catch (error) {
 
@@ -8266,6 +8371,328 @@
 
 
     renderAdjustments();
+
+  }
+
+
+  async function loadPayrollAdvances() {
+
+    try {
+
+      const result =
+        await callApi(
+          {
+            action:
+              "get_payroll_advances",
+
+            month:
+              document
+                .getElementById(
+                  "payrollMonth"
+                )
+                .value
+          }
+        );
+
+
+      payrollAdvancesData =
+        result.advances ||
+        [];
+
+
+      renderPayrollAdvances();
+
+    } catch (error) {
+
+      payrollAdvancesData =
+        [];
+
+      renderPayrollAdvances();
+
+      console.error(
+        "Не удалось загрузить авансы:",
+        error
+      );
+
+    }
+
+  }
+
+
+  function getAdvanceEmployeeName(
+    employeeId
+  ) {
+
+    const id =
+      Number(
+        employeeId
+      );
+
+
+    const employee =
+      (
+        payrollData?.employees ||
+        []
+      )
+      .find(
+        item =>
+          Number(item.id) ===
+          id
+      )
+      ||
+      (
+        Number(
+          payrollData?.current_user?.id
+        ) ===
+        id
+          ?
+          payrollData.current_user
+          :
+          null
+      );
+
+
+    if (
+      !employee
+    ) {
+
+      return `Сотрудник #${id}`;
+
+    }
+
+
+    return (
+      [
+        employee.first_name,
+        employee.last_name
+      ]
+      .filter(Boolean)
+      .join(" ")
+      ||
+      employee.username
+      ||
+      `Сотрудник #${id}`
+    );
+
+  }
+
+
+  function renderPayrollAdvances() {
+
+    const section =
+      document.getElementById(
+        "advancesSection"
+      );
+
+    const list =
+      document.getElementById(
+        "advancesList"
+      );
+
+
+    if (
+      !section ||
+      !list
+    ) {
+      return;
+    }
+
+
+    const advances =
+      payrollAdvancesData ||
+      [];
+
+
+    list.innerHTML =
+      "";
+
+
+    section.classList.toggle(
+      "hidden",
+      advances.length === 0
+    );
+
+
+    if (
+      advances.length === 0
+    ) {
+      return;
+    }
+
+
+    const activeTotal =
+      advances
+        .filter(
+          item =>
+            item.status ===
+            "active"
+        )
+        .reduce(
+          (
+            sum,
+            item
+          ) =>
+            sum
+            +
+            Number(
+              item.amount ||
+              0
+            ),
+          0
+        );
+
+
+    const summary =
+      document.createElement(
+        "div"
+      );
+
+
+    summary.className =
+      "advances-summary";
+
+
+    summary.innerHTML = `
+      Активные авансы за месяц:
+      <br>
+      <strong>
+        ${formatMoney(activeTotal)}
+      </strong>
+    `;
+
+
+    list.appendChild(
+      summary
+    );
+
+
+    advances.forEach(
+      item => {
+
+        const cancelled =
+          item.status ===
+          "cancelled";
+
+
+        const card =
+          document.createElement(
+            "div"
+          );
+
+
+        card.className =
+          "advance-history-card"
+          +
+          (
+            cancelled
+              ?
+              " cancelled"
+              :
+              ""
+          );
+
+
+        card.innerHTML = `
+
+          <div class="advance-history-row">
+
+            <div class="advance-history-name">
+              ${escapeHtml(
+                getAdvanceEmployeeName(
+                  item.employee_id
+                )
+              )}
+            </div>
+
+            <div class="advance-history-amount">
+              ${formatMoney(
+                item.amount,
+                item.currency ||
+                "THB"
+              )}
+            </div>
+
+          </div>
+
+
+          <div class="advance-history-meta">
+            📅 ${formatShortDate(
+              item.advance_date
+            )}
+          </div>
+
+
+          ${
+            item.note
+              ?
+              `
+                <div class="advance-history-note">
+                  💬 ${escapeHtml(item.note)}
+                </div>
+              `
+              :
+              ""
+          }
+
+
+          <div class="advance-history-status ${cancelled ? "cancelled" : ""}">
+            ${cancelled ? "Отменён" : "Активен"}
+          </div>
+
+
+          ${
+            cancelled
+              ?
+              `
+                <div class="advance-history-cancel-info">
+
+                  ${
+                    item.cancelled_at
+                      ?
+                      "Отменён: "
+                      +
+                      formatDateTime(
+                        item.cancelled_at
+                      )
+                      :
+                      ""
+                  }
+
+                  ${
+                    item.cancel_reason
+                      ?
+                      (
+                        item.cancelled_at
+                          ?
+                          "<br>"
+                          :
+                          ""
+                      )
+                      +
+                      "Причина: "
+                      +
+                      escapeHtml(
+                        item.cancel_reason
+                      )
+                      :
+                      ""
+                  }
+
+                </div>
+              `
+              :
+              ""
+          }
+
+        `;
+
+
+        list.appendChild(
+          card
+        );
+
+      }
+    );
 
   }
 
@@ -8664,6 +9091,9 @@
       closeModal(
         "advanceModal"
       );
+
+
+      await loadPayrollAdvances();
 
 
       showMessage(
