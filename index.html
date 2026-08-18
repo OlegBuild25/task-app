@@ -746,6 +746,24 @@
       outline: none;
     }
 
+    .payroll-month-picker {
+      display: grid;
+      grid-template-columns: 1fr 110px;
+      gap: 8px;
+    }
+
+    .payroll-month-select,
+    .payroll-year-input {
+      width: 100%;
+      height: 48px;
+      padding: 0 12px;
+      border: 1px solid #e1e1e6;
+      border-radius: 13px;
+      background: #f7f7f8;
+      color: #1c1c1e;
+      outline: none;
+    }
+
     .modal-textarea {
       min-height: 90px;
       padding: 12px;
@@ -2550,26 +2568,44 @@
       <span data-i18n="back">← Назад</span>
     </button>
 
-    <h2 class="page-title">
+    <h2 class="page-title" data-i18n="payroll_title">
       💰 Премии и выплаты
     </h2>
 
-    <p class="page-description">
+    <p class="page-description" data-i18n="payroll_description">
       Зарплата, премии, удержания и выплаты.
     </p>
 
 
     <div class="filters-card">
 
-      <label class="filter-label">
+      <label class="filter-label" data-i18n="payroll_month">
         Месяц
       </label>
 
+      <div class="payroll-month-picker">
+
+        <select
+          id="payrollMonthName"
+          class="payroll-month-select"
+          onchange="changePayrollMonth()"
+        ></select>
+
+        <input
+          id="payrollYear"
+          class="payroll-year-input"
+          type="number"
+          min="2000"
+          max="2100"
+          inputmode="numeric"
+          onchange="changePayrollMonth()"
+        >
+
+      </div>
+
       <input
         id="payrollMonth"
-        class="month-input"
-        type="month"
-        onchange="loadPayroll()"
+        type="hidden"
       >
 
     </div>
@@ -2594,7 +2630,7 @@
       id="payrollLoading"
       class="loading-card hidden"
     >
-      Загружаем...
+      <span data-i18n="payroll_loading">Загружаем...</span>
     </div>
 
 
@@ -2615,7 +2651,7 @@
       class="hidden"
     >
 
-      <div class="adjustments-title">
+      <div class="adjustments-title" data-i18n="payroll_adjustment_history">
         История начислений
       </div>
 
@@ -4036,6 +4072,25 @@
       timesheet_auto: "авто",
       timesheet_history_empty: "Истории пока нет",
       timesheet_loading_short: "Загружаем...",
+
+      payroll_title: "💰 Премии и выплаты",
+      payroll_description: "Зарплата, премии, удержания и выплаты.",
+      payroll_month: "Месяц",
+      payroll_loading: "Загружаем...",
+      payroll_adjustment_history: "История начислений",
+      payroll_paid_days_meta: "оплачиваемых дней",
+      payroll_paid_badge: "✓ Выплачено",
+      payroll_unpaid_badge: "⏳ Не выплачено",
+      payroll_by_timesheet: "По табелю",
+      payroll_bonuses: "Премии",
+      payroll_deductions: "Удержания",
+      payroll_daily_rate: "Дневная ставка",
+      payroll_to_pay: "К выплате",
+      payroll_paid_info: "✅ Выплачено:",
+      payroll_changed_after_payment: "⚠️ Расчёт изменился после выплаты.",
+      payroll_difference: "Разница",
+      payroll_bonus_label: "🎁 Премия",
+      payroll_deduction_label: "➖ Удержание",
       back: "← Назад",
       saved: "Язык сохранён"
     },
@@ -4126,6 +4181,25 @@
       timesheet_auto: "auto",
       timesheet_history_empty: "No history yet",
       timesheet_loading_short: "Loading...",
+
+      payroll_title: "💰 Bonuses and payments",
+      payroll_description: "Salary, bonuses, deductions and payments.",
+      payroll_month: "Month",
+      payroll_loading: "Loading...",
+      payroll_adjustment_history: "Adjustment history",
+      payroll_paid_days_meta: "paid days",
+      payroll_paid_badge: "✓ Paid",
+      payroll_unpaid_badge: "⏳ Unpaid",
+      payroll_by_timesheet: "By timesheet",
+      payroll_bonuses: "Bonuses",
+      payroll_deductions: "Deductions",
+      payroll_daily_rate: "Daily rate",
+      payroll_to_pay: "To pay",
+      payroll_paid_info: "✅ Paid:",
+      payroll_changed_after_payment: "⚠️ Calculation changed after payment.",
+      payroll_difference: "Difference",
+      payroll_bonus_label: "🎁 Bonus",
+      payroll_deduction_label: "➖ Deduction",
       back: "← Back",
       saved: "Language saved"
     },
@@ -4216,6 +4290,25 @@
       timesheet_auto: "အလိုအလျောက်",
       timesheet_history_empty: "မှတ်တမ်းမရှိသေး",
       timesheet_loading_short: "ဖွင့်နေသည်...",
+
+      payroll_title: "💰 ဆုကြေးနှင့် ငွေပေးချေမှု",
+      payroll_description: "လစာ၊ ဆုကြေး၊ ဖြတ်တောက်မှုနှင့် ငွေပေးချေမှု။",
+      payroll_month: "လ",
+      payroll_loading: "ဖွင့်နေသည်...",
+      payroll_adjustment_history: "ငွေစာရင်းပြောင်းလဲမှုမှတ်တမ်း",
+      payroll_paid_days_meta: "လစာတွက်ရက်",
+      payroll_paid_badge: "✓ ပေးချေပြီး",
+      payroll_unpaid_badge: "⏳ မပေးရသေး",
+      payroll_by_timesheet: "အလုပ်ချိန်စာရင်းအရ",
+      payroll_bonuses: "ဆုကြေး",
+      payroll_deductions: "ဖြတ်တောက်မှု",
+      payroll_daily_rate: "တစ်ရက်လစာ",
+      payroll_to_pay: "ပေးရန်",
+      payroll_paid_info: "✅ ပေးချေပြီး:",
+      payroll_changed_after_payment: "⚠️ ပေးချေပြီးနောက် တွက်ချက်မှု ပြောင်းသွားသည်။",
+      payroll_difference: "ကွာခြားချက်",
+      payroll_bonus_label: "🎁 ဆုကြေး",
+      payroll_deduction_label: "➖ ဖြတ်တောက်မှု",
       back: "← နောက်သို့",
       saved: "ဘာသာစကားကို သိမ်းဆည်းပြီးပါပြီ"
     },
@@ -4306,6 +4399,25 @@
       timesheet_auto: "อัตโนมัติ",
       timesheet_history_empty: "ยังไม่มีประวัติ",
       timesheet_loading_short: "กำลังโหลด...",
+
+      payroll_title: "💰 โบนัสและการจ่ายเงิน",
+      payroll_description: "เงินเดือน โบนัส การหักเงิน และการจ่ายเงิน",
+      payroll_month: "เดือน",
+      payroll_loading: "กำลังโหลด...",
+      payroll_adjustment_history: "ประวัติรายการปรับเงิน",
+      payroll_paid_days_meta: "วันที่คิดค่าจ้าง",
+      payroll_paid_badge: "✓ จ่ายแล้ว",
+      payroll_unpaid_badge: "⏳ ยังไม่ได้จ่าย",
+      payroll_by_timesheet: "ตามตารางเวลา",
+      payroll_bonuses: "โบนัส",
+      payroll_deductions: "หักเงิน",
+      payroll_daily_rate: "ค่าจ้างรายวัน",
+      payroll_to_pay: "ยอดที่ต้องจ่าย",
+      payroll_paid_info: "✅ จ่ายแล้ว:",
+      payroll_changed_after_payment: "⚠️ ยอดคำนวณเปลี่ยนหลังจากจ่ายเงินแล้ว",
+      payroll_difference: "ส่วนต่าง",
+      payroll_bonus_label: "🎁 โบนัส",
+      payroll_deduction_label: "➖ หักเงิน",
       back: "← ย้อนกลับ",
       saved: "บันทึกภาษาแล้ว"
     }
@@ -4390,6 +4502,23 @@
       renderTimesheetMonthPicker();
       setupEmployeeFilter();
       renderTimesheet();
+
+    }
+
+
+    if (
+      payrollData &&
+      document
+        .getElementById(
+          "payrollScreen"
+        )
+        .classList.contains(
+          "active"
+        )
+    ) {
+
+      renderPayrollMonthPicker();
+      renderPayroll();
 
     }
 
@@ -7452,6 +7581,129 @@
      PAYROLL
   ================================= */
 
+  function renderPayrollMonthPicker() {
+
+    const hidden =
+      document.getElementById(
+        "payrollMonth"
+      );
+
+    const select =
+      document.getElementById(
+        "payrollMonthName"
+      );
+
+    const yearInput =
+      document.getElementById(
+        "payrollYear"
+      );
+
+
+    const value =
+      hidden.value ||
+      localMonthISO(
+        new Date()
+      );
+
+
+    const parts =
+      value.split("-");
+
+    const year =
+      parts[0];
+
+    const month =
+      parts[1];
+
+
+    select.innerHTML =
+      "";
+
+
+    for (
+      let i = 1;
+      i <= 12;
+      i++
+    ) {
+
+      const option =
+        document.createElement(
+          "option"
+        );
+
+      option.value =
+        String(i).padStart(
+          2,
+          "0"
+        );
+
+      option.innerText =
+        t(
+          "timesheet_month_" + i
+        );
+
+      select.appendChild(
+        option
+      );
+
+    }
+
+
+    select.value =
+      month;
+
+    yearInput.value =
+      year;
+
+  }
+
+
+  function changePayrollMonth() {
+
+    const select =
+      document.getElementById(
+        "payrollMonthName"
+      );
+
+    const yearInput =
+      document.getElementById(
+        "payrollYear"
+      );
+
+    const hidden =
+      document.getElementById(
+        "payrollMonth"
+      );
+
+
+    const year =
+      String(
+        yearInput.value ||
+        new Date().getFullYear()
+      );
+
+    const month =
+      String(
+        select.value ||
+        new Date().getMonth() + 1
+      )
+      .padStart(
+        2,
+        "0"
+      );
+
+
+    hidden.value =
+      year +
+      "-" +
+      month;
+
+
+    loadPayroll();
+
+  }
+
+
   function openPayrollScreen() {
 
     hideAllScreens();
@@ -7482,6 +7734,8 @@
 
     }
 
+
+    renderPayrollMonthPicker();
 
     loadPayroll();
 
@@ -7635,13 +7889,13 @@
 
               <div class="payroll-meta">
                 ${Number(row.total_paid_days || 0)}
-                оплачиваемых дней
+                ${t("payroll_paid_days_meta")}
               </div>
 
             </div>
 
             <div class="payment-badge ${paid ? "paid" : "unpaid"}">
-              ${paid ? "✓ Выплачено" : "⏳ Не выплачено"}
+              ${paid ? t("payroll_paid_badge") : t("payroll_unpaid_badge")}
             </div>
 
           </div>
@@ -7652,7 +7906,7 @@
             <div class="payroll-stat">
 
               <div class="payroll-stat-label">
-                По табелю
+                ${t("payroll_by_timesheet")}
               </div>
 
               <div class="payroll-stat-value">
@@ -7665,7 +7919,7 @@
             <div class="payroll-stat">
 
               <div class="payroll-stat-label">
-                Премии
+                ${t("payroll_bonuses")}
               </div>
 
               <div class="payroll-stat-value green-text">
@@ -7678,7 +7932,7 @@
             <div class="payroll-stat">
 
               <div class="payroll-stat-label">
-                Удержания
+                ${t("payroll_deductions")}
               </div>
 
               <div class="payroll-stat-value red-text">
@@ -7691,7 +7945,7 @@
             <div class="payroll-stat">
 
               <div class="payroll-stat-label">
-                Дневная ставка
+                ${t("payroll_daily_rate")}
               </div>
 
               <div class="payroll-stat-value">
@@ -7706,7 +7960,7 @@
           <div class="payroll-final">
 
             <div class="payroll-final-label">
-              К выплате
+              ${t("payroll_to_pay")}
             </div>
 
             <div class="payroll-final-value">
@@ -7722,7 +7976,7 @@
               `
                 <div class="payment-info">
 
-                  ✅ Выплачено:
+                  ${t("payroll_paid_info")}
                   <strong>
                     ${formatMoney(row.paid_amount, row.currency)}
                   </strong>
@@ -7757,11 +8011,11 @@
               `
                 <div class="payment-warning">
 
-                  ⚠️ Расчёт изменился после выплаты.
+                  ${t("payroll_changed_after_payment")}
 
                   <br>
 
-                  Разница:
+                  ${t("payroll_difference")}:
                   ${
                     difference > 0
                       ?
@@ -8109,7 +8363,7 @@
           <div class="adjustment-row">
 
             <div class="adjustment-type">
-              ${bonus ? "🎁 Премия" : "➖ Удержание"}
+              ${bonus ? t("payroll_bonus_label") : t("payroll_deduction_label")}
             </div>
 
             <div class="adjustment-amount ${bonus ? "green-text" : "red-text"}">
